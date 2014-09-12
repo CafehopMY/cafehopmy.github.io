@@ -5,44 +5,28 @@ body
     color: $red
     font-family: $body-font
     font-size: 1.2em
-    position: relative
-    z-index: -100 //make sure body is behind all elements, doesn't overlap
-
 header
     width: 100%
     height: $header-height
+header, .navbar-header
     background-color: $orange
-
 nav 
     ul
-        display: block
-        @include clear-spacing
         li
             @include non-text-link-style
             margin-left: $space
             a
-                display: inline !important
                 &:hover, &:focus
                     color: $beige
                     text-decoration: none
                     background-color: $dark-orange !important
-            img 
-                display: inline-block
-                vertical-align: middle
         li.soc-media-links
-            @include clear-spacing
             a 
                 padding: 0
                 margin-right: $space/2
-
             a:hover, a:focus
                 background-color: $orange //no color change when hover over soc media icons
                 color: $bright-orange
-    img#menu-icon
-        display: none
-        margin-right: $space* 2
-.navbar-header 
-    background-color: $orange
 .navbar-toggle
     margin: ($header-height - 34px)/2
     .icon-bar
@@ -50,17 +34,9 @@ nav
         height: 3px
         border-radius: 3px 
         width: 30px
-.navbar-collapse
-    max-height: 310px
-    background-color: $orange
-    &.collapse.in 
-        li 
-            padding-bottom: $space * 2
-            display: block
-            a 
-                background-color: transparent
-.nav
-    opacity: 1
+
+.nav 
+    margin: ($header-height - 50px)/2 0 
 .navbar-brand
     height: $header-height
     padding: $space 0
@@ -79,10 +55,23 @@ nav
         font-size: 3em
         text-align: left
         display: inline-block
-.nav 
-    li 
-        height: 30px
-        padding: $header-height - 60px 0
+
+.navbar-collapse
+    max-height: 310px
+    background-color: $orange
+
+@media (max-width: 768px)
+    .navbar-collapse.collapse.in 
+        li 
+            padding: 0
+            margin: 0
+            background-color: $orange
+            width: 100%
+            a 
+                background-color: transparent
+                display: block
+                width: 100%
+                border-radius: 0
 
 div.clear-both
     clear: both
@@ -256,7 +245,6 @@ $logo-size-small: $logo-size * 0.8
 @media only screen and (max-width : 650px)
     header    
         padding: 0
-    @include smaller-imgs
     body
         font-size: 1em
     // h1
@@ -271,8 +259,6 @@ $logo-size-small: $logo-size * 0.8
         font-size: 2.2em
     h2, h3, h4
         font-size: 2em
-
-
     footer 
         padding: $space/2
         div#footer-wrapper
