@@ -12,6 +12,10 @@ invoice.config(['$routeProvider', function($routeProvider){
 		.when('/contact', {
 			templateUrl: 'app/contact/views/contact.html',
 		})
+		.when('/faq', {
+			templateUrl: 'app/faq/views/faq.html',
+			controller: 'FaqController'
+		})
 		.when('/map', {
 			templateUrl: 'app/map/views/map.html',
 		})
