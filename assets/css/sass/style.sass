@@ -8,7 +8,6 @@ body
     position: relative
 header
     width: 100%
-    height: $header-height
 header, .navbar-header
     background-color: $orange
 nav 
@@ -56,23 +55,6 @@ nav
         font-size: 3em
         text-align: left
         display: inline-block
-
-.navbar-collapse
-    max-height: 310px
-    background-color: $orange
-
-@media (max-width: 768px)
-    .navbar-collapse.collapse.in 
-        li 
-            padding: 0
-            margin: 0
-            background-color: $orange
-            width: 100%
-            a 
-                background-color: transparent
-                display: block
-                width: 100%
-                border-radius: 0
 
 div.clear-both
     clear: both
@@ -220,7 +202,7 @@ div.heading-img
 div.mouseover-text
     background-color: white     
     position: absolute
-    z-index: 10000
+    z-index: 99
     font-size: 0.8em
     padding: $space/4
     @include rounded-corners(4px)
@@ -243,18 +225,10 @@ $logo-size-small: $logo-size * 0.8
             padding: $space/2
 
 @media only screen and (max-width : 650px)
-    header    
-        padding: 0
     body
         font-size: 1em
-    // h1
-    //     font-size: 2.5em
-    // h2, h3
-    //     font-size: 1.5em
 
 @media only screen and (max-width : 480px)
-    header    
-        padding: 0
     h1
         font-size: 2.2em
     h2, h3, h4
