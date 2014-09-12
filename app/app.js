@@ -9,4 +9,7 @@ invoice.config(['$routeProvider', function($routeProvider){
 		.when('/about', {
 			templateUrl: 'app/about/views/about.html',
 		})
+		.when('/contact', {
+			templateUrl: 'app/contact/views/contact.html',
+		})
 }]);
