@@ -1,0 +1,124 @@
+// Static variables
+
+//Colors
+$space: 12px
+$white: #fff
+$red: #90120e
+$dark-red: #90110d
+$orange: #ec6338
+$light-orange: #f8b582
+$bright-orange: #f07e2d
+$dark-orange: darken($orange, 15%)
+$beige: #f9c36f
+$light-beige:#ffe9c6
+$brown: #412218
+$dark-brown: #160703
+$light-brown: lighten($brown, 30%)
+$green: #7dc4a5
+$search-box-color: $light-orange
+$scroller-rail-color: $light-orange
+
+// Proportions
+$wrapper-width: 1000px
+$sidebar-width: 30%
+$logo-size: 80px
+$sponsor_width: 100px
+$map-height: 350px
+$header-height: 150px
+$heading-icon-size: 200px
+$menu-icon-size: 36px
+
+
+$small-font: 0.8em
+$min-section-height: 400px
+
+//Responsive
+$mobile-icon-size: 80px
+
+// Font families
+$header-font: 'Matchbook', Helvetica, Arial, sans-serif
+$body-font: 'Champagne', Helvetica, Arial, sans-serif
+$bold-font: 'Champagne Bold', Helvetica, Arial, sans-serif
+
+
+// Custom Fonts
+@font-face
+    font-family: 'Matchbook'
+    src: url('./fonts/Matchbook.eot')
+    src: url('./fonts/Matchbook.eot?#iefix') format('embedded-opentype'), url('./fonts/Matchbook.ttf')
+    // src: local("Matchbook"), url('./fonts/Matchbook.ttf') format("truetype")
+    font-weight: normal
+
+@font-face
+    font-family: 'Champagne'
+    src: url('./fonts/Champagne_&_Limousines.eot')
+    src: url('./fonts/Champagne_&_Limousines.eot?#iefix') format('embedded-opentype'), url('./fonts/Champagne_&_Limousines.ttf')
+    // src: local("Champagne & Limousines"), url('./fonts/Champagne_&_Limousines.ttf') format("truetype")
+    font-weight: normal
+
+@font-face
+    font-family: 'Champagne Bold'
+    src: url('./fonts/Champagne_&_Limousines_Bold.eot')
+    src: url('./fonts/Champagne_&_Limousines_Bold.eot?#iefix') format('embedded-opentype'), url('./fonts/Champagne_&_Limousines_Bold.ttf')
+    // src: local("Champagne & Limousines Bold"), url('./fonts/Champagne_&_Limousines_Bold.ttf') format("truetype")
+    font-weight: bold
+    font-style: normal
+
+@mixin wrapper-style
+    width: 95%
+    margin: 0 auto 
+
+
+//Mixins
+@mixin dark-shadow
+    box-shadow: 0px 0px $space $dark-brown
+
+@mixin small-shadow($color)
+    box-shadow: 2px 3px $color
+
+@mixin insignificant-text
+    font-size: 0.5em
+    font-style: italic
+
+@mixin rounded-corners ($radius)
+    -moz-border-radius: $radius
+    -webkit-border-radius: $radius
+    -khtml-border-radius: $radius
+    border-radius: $radius
+
+@mixin small-text-shadow($color)
+    text-shadow: $color 1px 1px 0
+
+@mixin text-shadow($color)
+    text-shadow: $color 1px 2px 0
+
+@mixin box-sizing
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+@mixin clear-spacing
+    margin: 0 
+    padding: 0    
+
+@mixin center-element
+    margin: 0 auto    
+
+@mixin fade-in
+    -o-transition: .5s
+    -ms-transition: .5s
+    -moz-transition: .5s
+    -webkit-transition: .5s
+    transition: .5s    
+    
+@mixin non-text-link-style
+    a 
+        @include rounded-corners($space/2)
+        @include text-shadow($dark-orange)
+        background-color: $orange
+        color: $beige
+        text-decoration: none    
+        font-weight: bold
+        @include fade-in
+        &:hover, &.selected, &:focus
+            background-color: $dark-orange

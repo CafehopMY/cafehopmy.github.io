@@ -1,0 +1,365 @@
+@import 'constants'
+
+@mixin header-dimensions($logo-size)
+    div#header-wrapper
+        div 
+            // &:last-child
+            //     top: $logo-size/3
+            img#logo
+                width: $logo-size 
+    h1 
+        line-height: $logo-size
+
+// Everything Else
+body
+    background-color:  $light-beige
+    color: $red
+    font-family: $body-font
+    font-size: 1.4em
+    position: relative
+    z-index: -100 //make sure body is behind all elements, doesn't overlap
+
+header
+    @include header-dimensions($logo-size)
+    width: 100%
+    background-color: $orange
+    margin-top: 0
+    padding-top: $space/2
+    padding-bottom: $space/2
+    div#header-wrapper
+        max-width: $wrapper-width
+        width: 100%
+        margin: 0 auto
+        // border-spacing: $space/ 2
+        display: table
+        position: relative
+        div 
+            white-space: no-wrap
+            display: table-cell
+            vertical-align: middle
+            width: 45%
+            &:last-child
+                text-align: right
+                // position: absolute
+                // right: 0
+                width: 55%
+
+            img#logo
+                display: block
+                float: left
+    h1 
+        @include non-text-link-style
+        @include text-shadow($dark-orange)
+        @include clear-spacing
+        font-size: 3em
+        text-align: left
+        display: inline-block
+        a
+            margin: 
+                top: $space
+                bottom: $space
+                left: $space
+            color: $beige
+        a:hover 
+            background-color: $orange //no bg-color change on hover 
+nav 
+    ul
+        display: block
+        @include clear-spacing
+        li
+            @include non-text-link-style
+            display: inline-block
+            margin: 0 $space/2 
+            a
+                padding: $space/2
+                background-color: $orange
+            img 
+                display: inline-block
+                vertical-align: middle
+        li.soc-media-links
+            @include clear-spacing
+            a 
+                padding: 0
+                margin-right: $space/2
+
+            a:hover, a:focus
+                background-color: $orange //no color change when hover over soc media icons
+    img#menu-icon
+        display: none
+        margin-right: $space* 2
+
+
+div#wrapper
+    @include wrapper-style
+    max-width: $wrapper-width
+    margin: 0 auto
+
+div.clear-both
+    clear: both
+
+h1, h2, h3, h4 
+    font-family: $header-font
+    margin: $space
+    text-transform: uppercase
+    font-weight: bold
+    text-align: center
+    margin-bottom: 0
+
+h1
+    color: $red
+    font-size: 4em
+
+h2
+    color: $red
+    font-size: 2.8em
+
+h3 
+    color: $bright-orange 
+    font-size: 2.4em
+    margin-bottom: 0
+a 
+    color: $dark-orange
+    font-weight: bold
+    &:hover, &:focus
+        color: $dark-orange
+
+p
+    margin-top: 0
+    font-size: 1em
+    text-align: center
+    &.desc
+        text-align: center
+
+
+footer
+    clear: both
+    background-color: $red
+    padding: $space
+    margin-top: $space * 4
+    h3
+        display: block
+    div#footer-wrapper
+        max-width: $wrapper-width
+        margin: 0 auto
+        div#sponsors 
+            float: right
+            width: 80%
+        div#social-media-share
+            float: left
+            width: 20%
+            ul 
+                @include clear-spacing
+                list-style: none 
+                a.share-button
+                    margin-bottom: $space/2
+                    display: inline-block
+                    background-color: #3B5998
+                    padding: $space/2
+                    color: white
+                    font-size: medium
+                    text-shadow: none
+                    @include rounded-corners($space/4)
+                    img
+                        width: 18px
+                        margin-right: $space/4
+                        display: inline-block
+                    span    
+                        line-height: 18px
+    ul#sponsor_list
+        @include clear-spacing
+        width: 100%
+        display: table
+        text-align: center
+
+        li 
+            display: inline-block
+            vertical-align: middle
+            max-width: $sponsor_width
+            clear: both
+            img
+                margin: 0 auto
+                margin-bottom: $space
+                max-width: $sponsor_width
+                display: block
+            span 
+                display: block
+                font-size: $small-font
+
+    h1, h2, h3, p, a 
+        color: $orange
+        @include text-shadow($brown)
+    a 
+        text-decoration: none 
+        font-weight: bold
+
+    p 
+        @include insignificant-text
+        text-align: center
+
+
+@media screen and (max-width: 500px)
+    nav ul
+        float: none
+        display: block
+
+
+//Placeholder text color
+::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder 
+    color: $orange
+
+//Override mCustomScrollbar css
+.mCSB_scrollTools .mCSB_draggerRail
+    background-color: $scroller-rail-color !important
+
+.mCSB_scrollTools .mCSB_draggerRail
+    background-color: $scroller-rail-color  !important
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+    background: $dark-orange !important
+
+div.heading-img
+    @include rounded-corners($heading-icon-size/2 + $space * 2)
+    @include small-shadow($brown)
+    display: block
+    margin:
+        top: $space * 3
+        bottom: $space
+        left: auto
+        right: auto
+    background-color: $red 
+    padding: $space * 2
+    width: $heading-icon-size
+    img
+        width: $heading-icon-size - $space * 2
+        padding: $space
+
+.subtitle
+    font-family: $bold-font
+    @include clear-spacing
+    margiin-top: -$space * 2
+    font-size: 1.3em
+    font-weight: bold
+    color: $bright-orange
+    @include small-text-shadow($light-brown)
+
+div.mouseover-text
+    background-color: white     
+    position: absolute
+    z-index: 10000
+    font-size: 0.8em
+    padding: $space/4
+    @include rounded-corners(4px)
+
+div.cafe-types
+    margin: $space/2 0
+    img 
+        margin-right: $space/4
+
+//RESPONSIVE STUFF
+$icons-mobile-size: 80px 
+$logo-size-small: $logo-size * 0.8
+@mixin collapsed-nav($header-height)
+    header div#header-wrapper
+        div 
+            width: 90%
+        div:last-child
+            position: static
+            max-width: 10%
+    nav
+        position: relative
+        ul
+            @include box-sizing
+            width: 250px
+            overflow: hidden
+            background-color: $orange
+            position: absolute
+            right: 0
+            z-index: 1000
+            // top: $header-height - $menu-icon-size/3
+            margin-top: $menu-icon-size + $space - 1px
+            clear: both
+            display: none
+            &.open
+                display: block
+            li 
+                @include clear-spacing
+                @include box-sizing
+                text-align: left
+                display: block    
+                line-height: normal
+                white-space: nowrap
+                font-size: 1.5em
+                border-top: 1px solid $dark-orange
+                a, img
+                    padding: $space
+                a 
+                    @include rounded-corners(0)
+                    display: block
+                    width: 100%
+            li.soc-media-links
+                width: 100%
+                display: inline-block
+                img, a 
+                    padding-right: 0
+                    display: inline
+
+        img#menu-icon
+            width: $menu-icon-size
+            display: block
+            float: right
+
+@mixin smaller-imgs
+    div.heading-img
+        padding: $space
+        width: $heading-icon-size * 0.6
+        img
+            width: ($heading-icon-size - $space * 2) * 0.6
+            padding: $space/2
+
+@media only screen and (max-width : 650px)
+    @include collapsed-nav($logo-size)
+    header    
+        @include header-dimensions($logo-size-small)
+        padding: 0
+    @include smaller-imgs
+    body
+        font-size: 1em
+    // h1
+    //     font-size: 2.5em
+    // h2, h3
+    //     font-size: 1.5em
+
+@media only screen and (max-width : 480px)
+    @include collapsed-nav($logo-size-small)
+    header    
+        @include header-dimensions($logo-size-small)
+        padding: 0
+    h1
+        font-size: 2.2em
+    h2, h3, h4
+        font-size: 2em
+
+
+    footer 
+        padding: $space/2
+        div#footer-wrapper
+            div#social-media-share, div#sponsors
+                float: none
+                width: 100%
+                display: block
+                ul#share-button
+                    width: 100%
+                    display: table
+                    li 
+                        display: table-cell
+                        vertical-align: top
+        ul#sponsor_list
+            display: block
+            li
+                display: inline-block
+                span 
+                    display: none
+                img 
+                    width: $icons-mobile-size
+
+            

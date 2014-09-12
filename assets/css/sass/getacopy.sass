@@ -1,0 +1,28 @@
+@import 'constants'
+
+$logo-size: 80px
+$logo-wrapper-size: 100px
+ul#participating-cafes-list
+    @include clear-spacing
+    @include center-element
+    li 
+        display: inline-block
+        padding: $space/2 $space
+        div.cafe
+            @include rounded-corners($space/2)
+            display: table
+            background-color: $light-orange
+            width: $logo-wrapper-size
+            height:  $logo-wrapper-size
+            padding: $space / 2
+            div.logo 
+                display: table-cell
+                text-align: center
+                vertical-align: middle
+                img 
+                    @include center-element
+                    width: $logo-size
+
+
+img.pin-sample
+    vertical-align: bottom

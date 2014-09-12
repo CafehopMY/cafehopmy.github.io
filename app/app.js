@@ -5,5 +5,8 @@ invoice.config(['$routeProvider', function($routeProvider){
 	$routeProvider
 		.when('/', {
 			templateUrl: 'app/home/views/home.html',
-		});
+		})
+		.when('/about', {
+			templateUrl: 'app/about/views/about.html',
+		})
 }]);

@@ -3,20 +3,17 @@
   src: url("./fonts/Matchbook.eot");
   src: url("./fonts/Matchbook.eot?#iefix") format("embedded-opentype"), url("./fonts/Matchbook.ttf");
   font-weight: normal; }
-
 @font-face {
   font-family: "Champagne";
   src: url("./fonts/Champagne_&_Limousines.eot");
   src: url("./fonts/Champagne_&_Limousines.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines.ttf");
   font-weight: normal; }
-
 @font-face {
   font-family: "Champagne Bold";
   src: url("./fonts/Champagne_&_Limousines_Bold.eot");
   src: url("./fonts/Champagne_&_Limousines_Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines_Bold.ttf");
   font-weight: bold;
   font-style: normal; }
-
 body {
   background-color: #ffe9c6;
   color: #90120e;
@@ -33,7 +30,7 @@ header {
   padding-bottom: 6px; }
   header div#header-wrapper div img#logo {
     width: 80px; }
-  header h1 a {
+  header h1 {
     line-height: 80px; }
   header div#header-wrapper {
     max-width: 1000px;
@@ -43,19 +40,15 @@ header {
     position: relative; }
     header div#header-wrapper div {
       white-space: no-wrap;
-      display: table-cell !important;
+      display: table-cell;
       vertical-align: middle;
-      width: auto; }
+      width: 45%; }
       header div#header-wrapper div:last-child {
-        text-align: right; }
+        text-align: right;
+        width: 55%; }
       header div#header-wrapper div img#logo {
         display: block;
         float: left; }
-	  header div#header-wrapper div.addthis_horizontal_follow_toolbox {
-	    position: relative;
-		top: -19px; }
-	  header div#header-wrapper li.soc-media-links {
-	    height: 20px; }
   header h1 {
     text-shadow: #c53d13 1px 2px 0;
     margin: 0;
@@ -163,6 +156,8 @@ h3 {
 a {
   color: #c53d13;
   font-weight: bold; }
+  a:hover, a:focus {
+    color: #c53d13; }
 
 p {
   margin-top: 0;
@@ -177,27 +172,24 @@ footer {
   padding: 12px;
   margin-top: 48px; }
   footer h3 {
-    display: block;
-    font-size: 2em; }
+    display: block; }
   footer div#footer-wrapper {
     max-width: 1000px;
     margin: 0 auto; }
     footer div#footer-wrapper div#sponsors {
       float: right;
-      width: 70%; }
+      width: 80%; }
     footer div#footer-wrapper div#social-media-share {
       float: left;
-      width: 30%; }
+      width: 20%; }
       footer div#footer-wrapper div#social-media-share ul {
         margin: 0;
         padding: 0;
         list-style: none; }
-        footer div#footer-wrapper div#social-media-share ul li {
-          margin: 6px; }
         footer div#footer-wrapper div#social-media-share ul a.share-button {
           margin-bottom: 6px;
           display: inline-block;
-          background-color: #3b5998;
+          background-color: #3B5998;
           padding: 6px;
           color: white;
           font-size: medium;
@@ -212,13 +204,6 @@ footer {
             display: inline-block; }
           footer div#footer-wrapper div#social-media-share ul a.share-button span {
             line-height: 18px; }
-		footer div#share-button a {
-		  height: 38px;
-		  clear: both;
-		  display: block;
-		  margin-left: 35% }
-		  footer div#share-button a.addthis_button_facebook_like {
-			height: 27px; }
   footer ul#sponsor_list {
     margin: 0;
     padding: 0;
@@ -229,8 +214,7 @@ footer {
       display: inline-block;
       vertical-align: middle;
       max-width: 100px;
-      clear: both;
-      margin-left: 12px; }
+      clear: both; }
       footer ul#sponsor_list li img {
         margin: 0 auto;
         margin-bottom: 12px;
@@ -316,11 +300,7 @@ div.cafe-types {
   header div#header-wrapper div:last-child {
     position: static;
     max-width: 10%; }
-  header div#header-wrapper li.soc-media-links {
-	height: auto;
-	padding: 0 0 18px 12px;	}
-    header div#header-wrapper li.soc-media-links a {
-	  width: auto; }
+
   nav {
     position: relative; }
     nav ul {
@@ -374,7 +354,7 @@ div.cafe-types {
     padding: 0; }
     header div#header-wrapper div img#logo {
       width: 64px; }
-    header h1 a {
+    header h1 {
       line-height: 64px; }
 
   div.heading-img {
@@ -446,7 +426,7 @@ div.cafe-types {
     padding: 0; }
     header div#header-wrapper div img#logo {
       width: 64px; }
-    header h1 a {
+    header h1 {
       line-height: 64px; }
 
   h1 {
@@ -463,7 +443,6 @@ div.cafe-types {
       display: block; }
       footer div#footer-wrapper div#social-media-share ul#share-button, footer div#footer-wrapper div#sponsors ul#share-button {
         width: 100%;
-        text-align: center;
         display: table; }
         footer div#footer-wrapper div#social-media-share ul#share-button li, footer div#footer-wrapper div#sponsors ul#share-button li {
           display: table-cell;
@@ -476,3 +455,5 @@ div.cafe-types {
           display: none; }
         footer ul#sponsor_list li img {
           width: 80px; } }
+
+/*# sourceMappingURL=style.css.map */

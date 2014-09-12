@@ -1,0 +1,33 @@
+@import 'constants'
+
+$button-height: $space * 4
+$button-image-size: 150px
+div#links-to-parts-of-site
+    @include center-element
+    text-align: center
+    padding: $space * 2
+    padding-top: 0
+    
+    @include non-text-link-style
+    a
+        padding: $space * 2
+        margin: $space 
+        display: inline-block
+        span 
+            display: block
+            font-size: 1.2em
+            &.small-btn-title
+                font-size: 0.8em
+        img
+            width: $button-image-size
+            margin: $space
+
+@media only screen and (max-width : 650px)
+    div#links-to-parts-of-site
+        padding: $space/4
+        a 
+            span 
+                font-size: 1em
+            img 
+                width: $mobile-icon-size    
+@media only screen and (max-width : 480px)
