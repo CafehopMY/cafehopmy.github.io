@@ -34,16 +34,14 @@ ul#team li {
     display: block;
     text-align: left; }
   ul#team li img {
-    width: 100px;
+    width: 150px;
     float: left;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -khtml-border-radius: 50px;
-    border-radius: 50px;
+    -moz-border-radius: 75px;
+    -webkit-border-radius: 75px;
+    -khtml-border-radius: 75px;
+    border-radius: 75px;
     margin-right: 12px; }
   ul#team li p {
     margin: 0;
     padding: 0;
     margin-bottom: 12px; }
-
-/*# sourceMappingURL=about.css.map */

@@ -15,7 +15,7 @@ body
     background-color:  $light-beige
     color: $red
     font-family: $body-font
-    font-size: 1.4em
+    font-size: 1.2em
     position: relative
     z-index: -100 //make sure body is behind all elements, doesn't overlap
 
@@ -103,10 +103,8 @@ div.clear-both
 
 h1, h2, h3, h4 
     font-family: $header-font
-    margin: $space
     text-transform: uppercase
     font-weight: bold
-    text-align: center
     margin-bottom: 0
 
 h1
@@ -130,7 +128,6 @@ a
 p
     margin-top: 0
     font-size: 1em
-    text-align: center
     &.desc
         text-align: center
 
@@ -222,7 +219,7 @@ footer
     background: $dark-orange !important
 
 div.heading-img
-    @include rounded-corners($heading-icon-size/2 + $space * 2)
+    @include rounded-corners($heading-icon-size/2)
     @include small-shadow($brown)
     display: block
     margin:
@@ -231,11 +228,11 @@ div.heading-img
         left: auto
         right: auto
     background-color: $red 
-    padding: $space * 2
     width: $heading-icon-size
+    height: $heading-icon-size
+    padding: $space
     img
         width: $heading-icon-size - $space * 2
-        padding: $space
 
 .subtitle
     font-family: $bold-font
