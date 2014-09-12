@@ -40,15 +40,24 @@
             ga('send', 'pageview');
         </script>
     </head>
-    <body>
+    <body ng-app="cafehopApp">
+        <div ng-include="'app/partials/header.html'"></div>
+
         <div id="wrapper" ng-view></div>
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="assets/vendor/jquery/jquery-1.8.3.min.js"><\/script>')</script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9EG2XGeh9UYfYK7jqX_SQ0W03QYHYD_4&sensor=false"></script>
+        <div ng-include="'app/partials/footer.html'"></div>
+
+        <script src="assets/vendor/jquery/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" 
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9EG2XGeh9UYfYK7jqX_SQ0W03QYHYD_4&sensor=false"></script>
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/constants.js"></script>
         <script src="assets/js/main.js"></script>
+
+        <script src="assets/vendor/angular/angular.js"></script>
+        <script src="assets/vendor/angular/angular-route.min.js"></script>
+        <script src="app/app.js"></script>
+
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53b22d7042d08cc4"></script>
     </body>
 </html>
