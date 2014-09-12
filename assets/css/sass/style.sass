@@ -1,15 +1,4 @@
 @import 'constants'
-
-@mixin header-dimensions($logo-size)
-    div#header-wrapper
-        div 
-            // &:last-child
-            //     top: $logo-size/3
-            img#logo
-                width: $logo-size 
-    h1 
-        line-height: $logo-size
-
 // Everything Else
 body
     background-color:  $light-beige
@@ -20,10 +9,10 @@ body
     z-index: -100 //make sure body is behind all elements, doesn't overlap
 
 header
-    @include header-dimensions($logo-size)
     width: 100%
     height: $header-height
     background-color: $orange
+
 nav 
     ul
         display: block
@@ -52,7 +41,8 @@ nav
     img#menu-icon
         display: none
         margin-right: $space* 2
-
+.navbar-header 
+    background-color: $orange
 .navbar-toggle
     margin: ($header-height - 34px)/2
     .icon-bar
@@ -60,6 +50,17 @@ nav
         height: 3px
         border-radius: 3px 
         width: 30px
+.navbar-collapse
+    max-height: 310px
+    background-color: $orange
+    &.collapse.in 
+        li 
+            padding-bottom: $space * 2
+            display: block
+            a 
+                background-color: transparent
+.nav
+    opacity: 1
 .navbar-brand
     height: $header-height
     padding: $space 0
@@ -79,7 +80,6 @@ nav
         text-align: left
         display: inline-block
 .nav 
-    height: $header-height
     li 
         height: 30px
         padding: $header-height - 60px 0
@@ -255,7 +255,6 @@ $logo-size-small: $logo-size * 0.8
 
 @media only screen and (max-width : 650px)
     header    
-        @include header-dimensions($logo-size-small)
         padding: 0
     @include smaller-imgs
     body
@@ -267,7 +266,6 @@ $logo-size-small: $logo-size * 0.8
 
 @media only screen and (max-width : 480px)
     header    
-        @include header-dimensions($logo-size-small)
         padding: 0
     h1
         font-size: 2.2em

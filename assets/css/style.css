@@ -26,10 +26,6 @@ header {
   width: 100%;
   height: 100px;
   background-color: #ec6338; }
-  header div#header-wrapper div img#logo {
-    width: 76px; }
-  header h1 {
-    line-height: 76px; }
 
 nav ul {
   display: block;
@@ -76,6 +72,9 @@ nav img#menu-icon {
   display: none;
   margin-right: 24px; }
 
+.navbar-header {
+  background-color: #ec6338; }
+
 .navbar-toggle {
   margin: 33px; }
   .navbar-toggle .icon-bar {
@@ -83,6 +82,18 @@ nav img#menu-icon {
     height: 3px;
     border-radius: 3px;
     width: 30px; }
+
+.navbar-collapse {
+  max-height: 310px;
+  background-color: #ec6338; }
+  .navbar-collapse.collapse.in li {
+    padding-bottom: 24px;
+    display: block; }
+    .navbar-collapse.collapse.in li a {
+      background-color: transparent; }
+
+.nav {
+  opacity: 1; }
 
 .navbar-brand {
   height: 100px;
@@ -120,11 +131,9 @@ nav img#menu-icon {
       .navbar-brand .h1 a:hover, .navbar-brand .h1 a.selected, .navbar-brand .h1 a:focus {
         background-color: #c53d13; }
 
-.nav {
-  height: 100px; }
-  .nav li {
-    height: 30px;
-    padding: 40px 0; }
+.nav li {
+  height: 30px;
+  padding: 40px 0; }
 
 div.clear-both {
   clear: both; }
@@ -291,10 +300,6 @@ div.cafe-types {
 @media only screen and (max-width: 650px) {
   header {
     padding: 0; }
-    header div#header-wrapper div img#logo {
-      width: 60.8px; }
-    header h1 {
-      line-height: 60.8px; }
 
   div.heading-img {
     padding: 12px;
@@ -308,10 +313,6 @@ div.cafe-types {
 @media only screen and (max-width: 480px) {
   header {
     padding: 0; }
-    header div#header-wrapper div img#logo {
-      width: 60.8px; }
-    header h1 {
-      line-height: 60.8px; }
 
   h1 {
     font-size: 2.2em; }
