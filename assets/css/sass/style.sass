@@ -30,13 +30,13 @@ nav
         @include clear-spacing
         li
             @include non-text-link-style
-            display: inline-block
-            margin: 0 $space/2 
+            margin-left: $space
             a
-                padding: $space/2
+                display: inline !important
                 &:hover, &:focus
                     color: $beige
                     text-decoration: none
+                    background-color: $dark-orange !important
             img 
                 display: inline-block
                 vertical-align: middle
@@ -53,9 +53,13 @@ nav
         display: none
         margin-right: $space* 2
 
-    .navbar-toggle
-        .icon-bar
-            background-color: $light-beige
+.navbar-toggle
+    margin: ($header-height - 34px)/2
+    .icon-bar
+        background-color: $beige
+        height: 3px
+        border-radius: 3px 
+        width: 30px
 .navbar-brand
     height: $header-height
     padding: $space 0
@@ -74,11 +78,11 @@ nav
         font-size: 3em
         text-align: left
         display: inline-block
-
-div#wrapper
-    @include wrapper-style
-    max-width: $wrapper-width
-    margin: 0 auto
+.nav 
+    height: $header-height
+    li 
+        height: 30px
+        padding: $header-height - 60px 0
 
 div.clear-both
     clear: both
@@ -112,7 +116,6 @@ p
     font-size: 1em
     &.desc
         text-align: center
-
 
 footer
     clear: both
@@ -241,55 +244,6 @@ div.cafe-types
 //RESPONSIVE STUFF
 $icons-mobile-size: 80px 
 $logo-size-small: $logo-size * 0.8
-@mixin collapsed-nav($header-height)
-    header div#header-wrapper
-        div 
-            width: 90%
-        div:last-child
-            position: static
-            max-width: 10%
-    nav
-        position: relative
-        ul
-            @include box-sizing
-            width: 250px
-            overflow: hidden
-            background-color: $orange
-            position: absolute
-            right: 0
-            z-index: 1000
-            // top: $header-height - $menu-icon-size/3
-            margin-top: $menu-icon-size + $space - 1px
-            clear: both
-            display: none
-            &.open
-                display: block
-            li 
-                @include clear-spacing
-                @include box-sizing
-                text-align: left
-                display: block    
-                line-height: normal
-                white-space: nowrap
-                font-size: 1.5em
-                border-top: 1px solid $dark-orange
-                a, img
-                    padding: $space
-                a 
-                    @include rounded-corners(0)
-                    display: block
-                    width: 100%
-            li.soc-media-links
-                width: 100%
-                display: inline-block
-                img, a 
-                    padding-right: 0
-                    display: inline
-
-        img#menu-icon
-            width: $menu-icon-size
-            display: block
-            float: right
 
 @mixin smaller-imgs
     div.heading-img
@@ -300,7 +254,6 @@ $logo-size-small: $logo-size * 0.8
             padding: $space/2
 
 @media only screen and (max-width : 650px)
-    @include collapsed-nav($logo-size)
     header    
         @include header-dimensions($logo-size-small)
         padding: 0
@@ -313,7 +266,6 @@ $logo-size-small: $logo-size * 0.8
     //     font-size: 1.5em
 
 @media only screen and (max-width : 480px)
-    @include collapsed-nav($logo-size-small)
     header    
         @include header-dimensions($logo-size-small)
         padding: 0
