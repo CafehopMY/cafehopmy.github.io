@@ -195,13 +195,13 @@ footer {
     margin: 0;
     padding: 0;
     width: 100%;
-    display: table;
-    text-align: center; }
+    display: table; }
     footer ul#sponsor_list li {
       display: inline-block;
       vertical-align: middle;
       max-width: 100px;
-      clear: both; }
+      clear: both;
+      margin-right: 12px; }
       footer ul#sponsor_list li img {
         margin: 0 auto;
         margin-bottom: 12px;
