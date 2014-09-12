@@ -22,46 +22,8 @@ body
 header
     @include header-dimensions($logo-size)
     width: 100%
+    height: $header-height
     background-color: $orange
-    margin-top: 0
-    padding-top: $space/2
-    padding-bottom: $space/2
-    div#header-wrapper
-        max-width: $wrapper-width
-        width: 100%
-        margin: 0 auto
-        // border-spacing: $space/ 2
-        display: table
-        position: relative
-        div 
-            white-space: no-wrap
-            display: table-cell
-            vertical-align: middle
-            width: 45%
-            &:last-child
-                text-align: right
-                // position: absolute
-                // right: 0
-                width: 55%
-
-            img#logo
-                display: block
-                float: left
-    h1 
-        @include non-text-link-style
-        @include text-shadow($dark-orange)
-        @include clear-spacing
-        font-size: 3em
-        text-align: left
-        display: inline-block
-        a
-            margin: 
-                top: $space
-                bottom: $space
-                left: $space
-            color: $beige
-        a:hover 
-            background-color: $orange //no bg-color change on hover 
 nav 
     ul
         display: block
@@ -72,7 +34,6 @@ nav
             margin: 0 $space/2 
             a
                 padding: $space/2
-                background-color: $orange
                 &:hover, &:focus
                     color: $beige
                     text-decoration: none
@@ -92,6 +53,27 @@ nav
         display: none
         margin-right: $space* 2
 
+    .navbar-toggle
+        .icon-bar
+            background-color: $light-beige
+.navbar-brand
+    height: $header-height
+    padding: $space 0
+    color: $beige
+    &:hover 
+        color: $beige
+    .logo 
+        width: $logo-size 
+        display: inline-block
+        vertical-align: top
+    .h1 
+        @include non-text-link-style
+        @include text-shadow($dark-orange)
+        @include clear-spacing
+        margin: $space
+        font-size: 3em
+        text-align: left
+        display: inline-block
 
 div#wrapper
     @include wrapper-style
@@ -101,7 +83,7 @@ div#wrapper
 div.clear-both
     clear: both
 
-h1, h2, h3, h4 
+h1, h2, h3, h4, .h1
     font-family: $header-font
     text-transform: uppercase
     font-weight: bold

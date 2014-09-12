@@ -2,8 +2,6 @@
 $(document).ready(function(){
     //################################################ INITIALIZERS ###################################################
     function templateInitializerCallback(){
-        initializeResponsiveNav()
-
         setSocialMedia()
     }
 
@@ -21,22 +19,6 @@ $(document).ready(function(){
         })
     }
 
-    function initializeResponsiveNav(){
-        var navIconSelector = "#collapsed-nav-icon"
-        $(navIconSelector).click(function(){
-            var navList = $("nav ul")
-            var speed = 'fast'
-            if($(navList).hasClass('selected')){
-                $(navList).hide(speed, function(){
-                    $(this).removeClass('selected')
-                })
-            }
-            else{
-                $(navList).addClass('selected')
-                $(navList).show(speed)
-            }
-        })
-    }
     //###################################################### RUN CODE #####################################################
     templateInitializerCallback();
 

@@ -24,62 +24,12 @@ body {
 
 header {
   width: 100%;
-  background-color: #ec6338;
-  margin-top: 0;
-  padding-top: 6px;
-  padding-bottom: 6px; }
+  height: 100px;
+  background-color: #ec6338; }
   header div#header-wrapper div img#logo {
-    width: 80px; }
+    width: 76px; }
   header h1 {
-    line-height: 80px; }
-  header div#header-wrapper {
-    max-width: 1000px;
-    width: 100%;
-    margin: 0 auto;
-    display: table;
-    position: relative; }
-    header div#header-wrapper div {
-      white-space: no-wrap;
-      display: table-cell;
-      vertical-align: middle;
-      width: 45%; }
-      header div#header-wrapper div:last-child {
-        text-align: right;
-        width: 55%; }
-      header div#header-wrapper div img#logo {
-        display: block;
-        float: left; }
-  header h1 {
-    text-shadow: #c53d13 1px 2px 0;
-    margin: 0;
-    padding: 0;
-    font-size: 3em;
-    text-align: left;
-    display: inline-block; }
-    header h1 a {
-      -moz-border-radius: 6px;
-      -webkit-border-radius: 6px;
-      -khtml-border-radius: 6px;
-      border-radius: 6px;
-      text-shadow: #c53d13 1px 2px 0;
-      background-color: #ec6338;
-      color: #f9c36f;
-      text-decoration: none;
-      font-weight: bold;
-      -o-transition: 0.5s;
-      -ms-transition: 0.5s;
-      -moz-transition: 0.5s;
-      -webkit-transition: 0.5s;
-      transition: 0.5s; }
-      header h1 a:hover, header h1 a.selected, header h1 a:focus {
-        background-color: #c53d13; }
-    header h1 a {
-      margin-top: 12px;
-      margin-bottom: 12px;
-      margin-left: 12px;
-      color: #f9c36f; }
-    header h1 a:hover {
-      background-color: #ec6338; }
+    line-height: 76px; }
 
 nav ul {
   display: block;
@@ -106,8 +56,7 @@ nav ul {
       nav ul li a:hover, nav ul li a.selected, nav ul li a:focus {
         background-color: #c53d13; }
     nav ul li a {
-      padding: 6px;
-      background-color: #ec6338; }
+      padding: 6px; }
       nav ul li a:hover, nav ul li a:focus {
         color: #f9c36f;
         text-decoration: none; }
@@ -126,6 +75,44 @@ nav ul {
 nav img#menu-icon {
   display: none;
   margin-right: 24px; }
+nav .navbar-toggle .icon-bar {
+  background-color: #ffe9c6; }
+
+.navbar-brand {
+  height: 100px;
+  padding: 12px 0;
+  color: #f9c36f; }
+  .navbar-brand:hover {
+    color: #f9c36f; }
+  .navbar-brand .logo {
+    width: 76px;
+    display: inline-block;
+    vertical-align: top; }
+  .navbar-brand .h1 {
+    text-shadow: #c53d13 1px 2px 0;
+    margin: 0;
+    padding: 0;
+    margin: 12px;
+    font-size: 3em;
+    text-align: left;
+    display: inline-block; }
+    .navbar-brand .h1 a {
+      -moz-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -khtml-border-radius: 6px;
+      border-radius: 6px;
+      text-shadow: #c53d13 1px 2px 0;
+      background-color: #ec6338;
+      color: #f9c36f;
+      text-decoration: none;
+      font-weight: bold;
+      -o-transition: 0.5s;
+      -ms-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -webkit-transition: 0.5s;
+      transition: 0.5s; }
+      .navbar-brand .h1 a:hover, .navbar-brand .h1 a.selected, .navbar-brand .h1 a:focus {
+        background-color: #c53d13; }
 
 div#wrapper {
   width: 95%;
@@ -136,7 +123,7 @@ div#wrapper {
 div.clear-both {
   clear: both; }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, .h1 {
   font-family: "Matchbook", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
@@ -354,9 +341,9 @@ div.cafe-types {
   header {
     padding: 0; }
     header div#header-wrapper div img#logo {
-      width: 64px; }
+      width: 60.8px; }
     header h1 {
-      line-height: 64px; }
+      line-height: 60.8px; }
 
   div.heading-img {
     padding: 12px;
@@ -426,9 +413,9 @@ div.cafe-types {
   header {
     padding: 0; }
     header div#header-wrapper div img#logo {
-      width: 64px; }
+      width: 60.8px; }
     header h1 {
-      line-height: 64px; }
+      line-height: 60.8px; }
 
   h1 {
     font-size: 2.2em; }
