@@ -108,6 +108,9 @@ nav ul {
     nav ul li a {
       padding: 6px;
       background-color: #ec6338; }
+      nav ul li a:hover, nav ul li a:focus {
+        color: #f9c36f;
+        text-decoration: none; }
     nav ul li img {
       display: inline-block;
       vertical-align: middle; }
@@ -118,7 +121,8 @@ nav ul {
       padding: 0;
       margin-right: 6px; }
     nav ul li.soc-media-links a:hover, nav ul li.soc-media-links a:focus {
-      background-color: #ec6338; }
+      background-color: #ec6338;
+      color: #f07e2d; }
 nav img#menu-icon {
   display: none;
   margin-right: 24px; }
@@ -455,5 +459,3 @@ div.cafe-types {
           display: none; }
         footer ul#sponsor_list li img {
           width: 80px; } }
-
-/*# sourceMappingURL=style.css.map */
