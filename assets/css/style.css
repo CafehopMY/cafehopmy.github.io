@@ -154,6 +154,8 @@ p {
     text-align: center; }
 
 footer {
+  position: relative;
+  bottom: 0;
   clear: both;
   background-color: #90120e;
   padding: 12px;
