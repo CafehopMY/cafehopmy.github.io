@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "Matchbook";
+  src: url("./fonts/Matchbook.eot");
+  src: url("./fonts/Matchbook.eot?#iefix") format("embedded-opentype"), url("./fonts/Matchbook.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: "Champagne";
+  src: url("./fonts/Champagne_&_Limousines.eot");
+  src: url("./fonts/Champagne_&_Limousines.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: "Champagne Bold";
+  src: url("./fonts/Champagne_&_Limousines_Bold.eot");
+  src: url("./fonts/Champagne_&_Limousines_Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines_Bold.ttf");
+  font-weight: bold;
+  font-style: normal; }
+
+ul#participating-cafes-list {
+  margin: 0;
+  padding: 0;
+  margin: 0 auto; }
+  ul#participating-cafes-list li {
+    display: inline-block;
+    padding: 6px 12px; }
+    ul#participating-cafes-list li div.cafe {
+      -moz-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -khtml-border-radius: 6px;
+      border-radius: 6px;
+      display: table;
+      background-color: #f8b582;
+      width: 100px;
+      height: 100px;
+      padding: 6px; }
+      ul#participating-cafes-list li div.cafe div.logo {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle; }
+        ul#participating-cafes-list li div.cafe div.logo img {
+          margin: 0 auto;
+          width: 80px; }
+
+img.pin-sample {
+  vertical-align: bottom; }
