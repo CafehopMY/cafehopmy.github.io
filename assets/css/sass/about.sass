@@ -1,24 +1,22 @@
 @import 'constants'
 
 $about-logo-size: 200px
-ul#team
-    @include clear-spacing
-    list-style: none 
-    li 
-        margin-bottom: $space*2
 span.name
     font-weight: bold
 
 h2, h3
     clear: both
 
-ul#team
+.team
+    display: table
+    border-spacing: $space
     li 
-        display: table
+        display: table-row
         vertical-align: top
-        img, p
-            display: block
+        .team-image, .team-text
+            display: table-cell
             text-align: left
+            vertical-align: top
         img
             width: 150px
             float: left

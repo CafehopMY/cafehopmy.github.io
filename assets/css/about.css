@@ -17,34 +17,31 @@
   font-weight: bold;
   font-style: normal; }
 
-ul#team {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-  ul#team li {
-    margin-bottom: 24px; }
-
 span.name {
   font-weight: bold; }
 
 h2, h3 {
   clear: both; }
 
-ul#team li {
+.team {
   display: table;
-  vertical-align: top; }
-  ul#team li img, ul#team li p {
-    display: block;
-    text-align: left; }
-  ul#team li img {
-    width: 150px;
-    float: left;
-    -moz-border-radius: 75px;
-    -webkit-border-radius: 75px;
-    -khtml-border-radius: 75px;
-    border-radius: 75px;
-    margin-right: 24px; }
-  ul#team li p {
-    margin: 0;
-    padding: 0;
-    margin-bottom: 12px; }
+  border-spacing: 12px; }
+  .team li {
+    display: table-row;
+    vertical-align: top; }
+    .team li .team-image, .team li .team-text {
+      display: table-cell;
+      text-align: left;
+      vertical-align: top; }
+    .team li img {
+      width: 150px;
+      float: left;
+      -moz-border-radius: 75px;
+      -webkit-border-radius: 75px;
+      -khtml-border-radius: 75px;
+      border-radius: 75px;
+      margin-right: 24px; }
+    .team li p {
+      margin: 0;
+      padding: 0;
+      margin-bottom: 12px; }

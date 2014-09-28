@@ -9,6 +9,7 @@ cafehop.config(['$routeProvider', function($routeProvider){
 		})
 		.when('/about', {
 			templateUrl: 'app/about/views/about.html',
+			controller: 'AboutController'
 		})
 		.when('/contact', {
 			templateUrl: 'app/contact/views/contact.html',
