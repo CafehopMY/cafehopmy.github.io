@@ -13,16 +13,30 @@ h2, h3
     li 
         display: table-row
         vertical-align: top
-        .team-image, .team-text
-            display: table-cell
-            text-align: left
-            vertical-align: top
-        img
-            width: 150px
-            float: left
-            @include rounded-corners(75px)
-            margin-right: $space*2
+    .team-image, .team-text
+        display: table-cell
+        text-align: left
+        vertical-align: top
+    img
+        width: 150px
+        @include rounded-corners(75px)
+        margin-right: $space*2
 
-        p
-            @include clear-spacing
+    p
+        @include clear-spacing
+        margin-bottom: $space
+
+@media (max-width : 768px)
+    .team 
+        .team-image, .team-text
+            width: 100%
+            display: block
+        .team-text .name    
+            width: 100%
+            display: block
+            text-align: center
+        .team-image 
+            text-align: center
+            img 
+                margin: 0
             margin-bottom: $space

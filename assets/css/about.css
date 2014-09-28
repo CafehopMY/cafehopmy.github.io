@@ -29,19 +29,32 @@ h2, h3 {
   .team li {
     display: table-row;
     vertical-align: top; }
-    .team li .team-image, .team li .team-text {
-      display: table-cell;
-      text-align: left;
-      vertical-align: top; }
-    .team li img {
-      width: 150px;
-      float: left;
-      -moz-border-radius: 75px;
-      -webkit-border-radius: 75px;
-      -khtml-border-radius: 75px;
-      border-radius: 75px;
-      margin-right: 24px; }
-    .team li p {
-      margin: 0;
-      padding: 0;
-      margin-bottom: 12px; }
+  .team .team-image, .team .team-text {
+    display: table-cell;
+    text-align: left;
+    vertical-align: top; }
+  .team img {
+    width: 150px;
+    -moz-border-radius: 75px;
+    -webkit-border-radius: 75px;
+    -khtml-border-radius: 75px;
+    border-radius: 75px;
+    margin-right: 24px; }
+  .team p {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 12px; }
+
+@media (max-width: 768px) {
+  .team .team-image, .team .team-text {
+    width: 100%;
+    display: block; }
+  .team .team-text .name {
+    width: 100%;
+    display: block;
+    text-align: center; }
+  .team .team-image {
+    text-align: center;
+    margin-bottom: 12px; }
+    .team .team-image img {
+      margin: 0; } }
