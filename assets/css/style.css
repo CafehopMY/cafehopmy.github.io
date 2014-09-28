@@ -24,6 +24,12 @@ body {
   font-size: 1.2em;
   position: relative; }
 
+.container {
+  max-width: 900px; }
+
+.content {
+  padding-bottom: 24px; }
+
 header {
   width: 100%; }
 

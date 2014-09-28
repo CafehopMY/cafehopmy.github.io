@@ -17,6 +17,9 @@
   font-weight: bold;
   font-style: normal; }
 
+.content {
+  padding-bottom: 0px; }
+
 #map-canvas, .angular-google-map-container {
   border-bottom: 1px solid #c53d13;
   width: 100%;

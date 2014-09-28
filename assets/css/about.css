@@ -22,7 +22,7 @@ ul#team {
   padding: 0;
   list-style: none; }
   ul#team li {
-    margin-bottom: 12px; }
+    margin-bottom: 24px; }
 
 span.name {
   font-weight: bold; }
@@ -43,7 +43,7 @@ ul#team li {
     -webkit-border-radius: 75px;
     -khtml-border-radius: 75px;
     border-radius: 75px;
-    margin-right: 12px; }
+    margin-right: 24px; }
   ul#team li p {
     margin: 0;
     padding: 0;
