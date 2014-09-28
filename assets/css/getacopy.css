@@ -3,17 +3,20 @@
   src: url("./fonts/Matchbook.eot");
   src: url("./fonts/Matchbook.eot?#iefix") format("embedded-opentype"), url("./fonts/Matchbook.ttf");
   font-weight: normal; }
+
 @font-face {
   font-family: "Champagne";
   src: url("./fonts/Champagne_&_Limousines.eot");
   src: url("./fonts/Champagne_&_Limousines.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines.ttf");
   font-weight: normal; }
+
 @font-face {
   font-family: "Champagne Bold";
   src: url("./fonts/Champagne_&_Limousines_Bold.eot");
   src: url("./fonts/Champagne_&_Limousines_Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines_Bold.ttf");
   font-weight: bold;
   font-style: normal; }
+
 ul#participating-cafes-list {
   margin: 0;
   padding: 0;

@@ -3,17 +3,20 @@
   src: url("./fonts/Matchbook.eot");
   src: url("./fonts/Matchbook.eot?#iefix") format("embedded-opentype"), url("./fonts/Matchbook.ttf");
   font-weight: normal; }
+
 @font-face {
   font-family: "Champagne";
   src: url("./fonts/Champagne_&_Limousines.eot");
   src: url("./fonts/Champagne_&_Limousines.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines.ttf");
   font-weight: normal; }
+
 @font-face {
   font-family: "Champagne Bold";
   src: url("./fonts/Champagne_&_Limousines_Bold.eot");
   src: url("./fonts/Champagne_&_Limousines_Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines_Bold.ttf");
   font-weight: bold;
   font-style: normal; }
+
 body {
   background-color: #ffe9c6;
   color: #90120e;
@@ -142,7 +145,7 @@ footer {
   width: 100%;
   background-color: #90120e;
   padding: 12px;
-  margin-top: 48px; }
+  margin-top: 0px; }
   footer h3 {
     display: block; }
   footer div#footer-wrapper {
@@ -161,7 +164,7 @@ footer {
         footer div#footer-wrapper div#social-media-share ul a.share-button {
           margin-bottom: 6px;
           display: inline-block;
-          background-color: #3B5998;
+          background-color: #3b5998;
           padding: 6px;
           color: white;
           font-size: medium;
