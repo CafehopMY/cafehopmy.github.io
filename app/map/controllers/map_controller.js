@@ -61,8 +61,8 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
     }
 
     // When current location marker is moved
-    $scope.currentMarkerDragEnd = function(){
-
+    $scope.currentMarkerDragEnd = function(marker){
+        $scope.instance.panTo(marker.getPosition())
     }
 
     $scope.placeDefaultUser = function(marker){
@@ -82,7 +82,9 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
             $scope.userMarker = {
                 idKey: $scope.markers.length,
                 icon: $scope.icons.current,
-                draggable: true,
+                options:{
+                    draggable: true
+                },
                 events: {
                     dragend: $scope.currentMarkerDragEnd
                 }
@@ -94,12 +96,8 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
             if(navigator.geolocation){
                 navigator.geolocation.getCurrentPosition(function(pos){
                     $scope.userMarker.coords = pos.coords;
-                    $scope.markers.push($scope.userMarker);
-
                     var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                     $scope.instance.panTo(latlng);
-               }, function(){
-                $scope.placeDefaultUser($scope.userMarker)
                });
             }
 
