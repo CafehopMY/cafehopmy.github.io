@@ -15,7 +15,7 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
             bounds.extend(new google.maps.LatLng(coords.latitude, coords.longitude));
         });
 
-        $scope.instance.fitBounds(bounds);
+        $scope.instance.panToBounds(bounds);
     }
 
     $scope.getCafes = function(){
@@ -45,13 +45,10 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
                         latitude: cafe.venue.location.lat,
                         longitude: cafe.venue.location.lng
                     },
-                    icon: $scope.icons.cafe
+                    icon: $scope.icons.cafe,
+
                 })
             });
-           
-            // Fit bounds
-            $scope.fitMarkerBounds();
-
         }).error(function(){
             console.error($scope.api_url + " cannot be accessed.");
         });
@@ -75,12 +72,11 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
                     icon: $scope.icons.current
                 });
 
-                $scope.fitMarkerBounds();
                });
             }
 
-            // Get cafes
             $scope.getCafes();
+            $scope.fitMarkerBounds();
 
             $scope.initialized = true;
         });
@@ -94,6 +90,9 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
         zoom: 11,
         events: {
             tilesloaded: $scope.ready
+        },
+        options: {
+            scrollwheel: false
         }
     };
 }]);
