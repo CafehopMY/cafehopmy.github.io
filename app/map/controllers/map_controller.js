@@ -1,6 +1,4 @@
-var controllers = angular.module('cafehopApp.controllers', []);
-
-controllers.controller('MapController', ['$scope', '$http', function($scope, $http){
+angular.module('cafehopApp.controllers').controller('MapController', ['$scope', '$http', function($scope, $http){
     $scope.map = {
         center: {
             latitude: 45,

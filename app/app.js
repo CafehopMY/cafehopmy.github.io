@@ -1,10 +1,11 @@
 'use strict';
 
-var invoice = angular.module('cafehopApp', ['cafehopApp.controllers', 'ngRoute', 'google-maps']);	
-invoice.config(['$routeProvider', function($routeProvider){
+var controllers = angular.module('cafehopApp.controllers', ['google-maps']);
+var cafehop = angular.module('cafehopApp', ['cafehopApp.controllers', 'ngRoute']);	
+cafehop.config(['$routeProvider', function($routeProvider){
 	$routeProvider
 		.when('/', {
-			templateUrl: 'app/home/views/home.html',
+			templateUrl: 'app/map/views/map.html',
 		})
 		.when('/about', {
 			templateUrl: 'app/about/views/about.html',
@@ -21,3 +22,4 @@ invoice.config(['$routeProvider', function($routeProvider){
 			controller: 'MapController'
 		})
 }]);
+
