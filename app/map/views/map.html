@@ -1,6 +1,9 @@
 <div ng-controller="MapController">
     <link rel="stylesheet" href="assets/css/map.css">
     <google-map center="map.center" zoom="map.zoom" events="map.events" id="map-canvas">Loading map...
-        <marker ng-repeat="marker in markers" idKey="marker.idKey" coords="marker.coords"></marker>
+        <marker ng-repeat="marker in markers" 
+            idKey="marker.idKey" 
+            coords="marker.coords"
+            icon="marker.icon"></marker>
     </google-map>
 </div>

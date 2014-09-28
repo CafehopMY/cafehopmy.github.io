@@ -1,6 +1,10 @@
 angular.module('cafehopApp.controllers').controller('MapController', ['$scope', '$http', function($scope, $http){
     $scope.markers = [];
 
+    $scope.icons = {
+        current: "assets/images/map-icons/chkl-pin-me.png",
+    }
+
     $scope.ready = function(map){
         $scope.instance = map;
         $scope.$apply(function(){
@@ -11,7 +15,8 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
                 $scope.instance.panTo(latlng);
                 $scope.markers.push({
                     idKey: $scope.markers.length,
-                    coords: pos.coords
+                    coords: pos.coords,
+                    icon: $scope.icons.current
                 });
                });
             }
