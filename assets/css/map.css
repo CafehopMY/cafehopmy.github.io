@@ -23,7 +23,7 @@
 #map-canvas, .angular-google-map-container {
   border-bottom: 1px solid #c53d13;
   width: 100%;
-  min-height: 500px;
+  min-height: 550px;
   height: 100%;
   background-color: #412218;
   color: #412218;

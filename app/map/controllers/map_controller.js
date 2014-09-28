@@ -1,6 +1,12 @@
 angular.module('cafehopApp.controllers').controller('MapController', ['$scope', '$http', function($scope, $http){
     $scope.markers = [];
     $scope.initialized = false;
+    $scope.mapDefaults = {
+        center: {
+            latitude: 3.136402,
+            longitude: 101.66394
+        },
+    }
 
     $scope.icons = {
         current: "assets/images/map-icons/chkl-pin-me.png",
@@ -54,6 +60,18 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
         });
     }
 
+    // When current location marker is moved
+    $scope.currentMarkerDragEnd = function(){
+
+    }
+
+    $scope.placeDefaultUser = function(marker){
+        marker.coords = $scope.mapDefaults.center;
+        $scope.markers.push(marker);
+        var latlng = new google.maps.LatLng($scope.mapDefaults.center.latitude, $scope.mapDefaults.center.longitude);
+        $scope.instance.panTo(latlng);
+    }
+
     $scope.ready = function(map){
         if($scope.initialized){
             return;
@@ -61,32 +79,38 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
 
         $scope.instance = map;
         $scope.$apply(function(){
+            $scope.userMarker = {
+                idKey: $scope.markers.length,
+                icon: $scope.icons.current,
+                draggable: true,
+                events: {
+                    dragend: $scope.currentMarkerDragEnd
+                }
+            };
+            // Set KL as center if no user's location
+            $scope.placeDefaultUser($scope.userMarker)
+
             // Get current user location
             if(navigator.geolocation){
-               navigator.geolocation.getCurrentPosition(function(pos){
-                var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-                $scope.instance.panTo(latlng);
-                $scope.markers.push({
-                    idKey: $scope.markers.length,
-                    coords: pos.coords,
-                    icon: $scope.icons.current
-                });
+                navigator.geolocation.getCurrentPosition(function(pos){
+                    $scope.userMarker.coords = pos.coords;
+                    $scope.markers.push($scope.userMarker);
 
+                    var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+                    $scope.instance.panTo(latlng);
+               }, function(){
+                $scope.placeDefaultUser($scope.userMarker)
                });
             }
 
             $scope.getCafes();
             $scope.fitMarkerBounds();
-
             $scope.initialized = true;
         });
     }
 
     $scope.map = {
-        center: {
-            latitude: 3.136402,
-            longitude: 101.66394
-        },
+        center: angular.copy($scope.mapDefaults.center),
         zoom: 11,
         events: {
             tilesloaded: $scope.ready
