@@ -1,6 +1,6 @@
 'use strict';
 
-var invoice = angular.module('cafehopApp', ['ngRoute']);	
+var invoice = angular.module('cafehopApp', ['cafehopApp.controllers', 'ngRoute', 'google-maps']);	
 invoice.config(['$routeProvider', function($routeProvider){
 	$routeProvider
 		.when('/', {
@@ -18,5 +18,6 @@ invoice.config(['$routeProvider', function($routeProvider){
 		})
 		.when('/map', {
 			templateUrl: 'app/map/views/map.html',
+			controller: 'MapController'
 		})
 }]);

@@ -1,30 +1,29 @@
 @import 'constants'
 //Google Map styling
-div 
-    &#map-canvas
-        border-bottom: 1px solid $dark-orange
-        margin-bottom: $space
-        width: 100%
-        height: $map-height
-        background-color: $brown
-        color: $brown
-        font-family: $body-font
-        div.iw-holder
-            min-width: 150px
-            overflow: auto
+#map-canvas, .angular-google-map-container
+    border-bottom: 1px solid $dark-orange
+    margin-bottom: $space
+    width: 100%
+    height: $map-height
+    background-color: $brown
+    color: $brown
+    font-family: $body-font
+    div.iw-holder
+        min-width: 150px
+        overflow: auto
 
-        h3
-            text-shadow: none
-            font-size: 1.2em
-            font-family: $body-font
-            color: $red
-            padding: 0
-            margin: 0
-            display: block
-        a 
-            display: inline-block
-            clear: both
-            margin-right: $space/2
+    h3
+        text-shadow: none
+        font-size: 1.2em
+        font-family: $body-font
+        color: $red
+        padding: 0
+        margin: 0
+        display: block
+    a 
+        display: inline-block
+        clear: both
+        margin-right: $space/2
 
 //Overrule gmaps infowindow style
 div#locations-list-wrapper

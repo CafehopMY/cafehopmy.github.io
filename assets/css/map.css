@@ -3,18 +3,21 @@
   src: url("./fonts/Matchbook.eot");
   src: url("./fonts/Matchbook.eot?#iefix") format("embedded-opentype"), url("./fonts/Matchbook.ttf");
   font-weight: normal; }
+
 @font-face {
   font-family: "Champagne";
   src: url("./fonts/Champagne_&_Limousines.eot");
   src: url("./fonts/Champagne_&_Limousines.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines.ttf");
   font-weight: normal; }
+
 @font-face {
   font-family: "Champagne Bold";
   src: url("./fonts/Champagne_&_Limousines_Bold.eot");
   src: url("./fonts/Champagne_&_Limousines_Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines_Bold.ttf");
   font-weight: bold;
   font-style: normal; }
-div#map-canvas {
+
+#map-canvas, .angular-google-map-container {
   border-bottom: 1px solid #c53d13;
   margin-bottom: 12px;
   width: 100%;
@@ -22,10 +25,10 @@ div#map-canvas {
   background-color: #412218;
   color: #412218;
   font-family: "Champagne", Helvetica, Arial, sans-serif; }
-  div#map-canvas div.iw-holder {
+  #map-canvas div.iw-holder, .angular-google-map-container div.iw-holder {
     min-width: 150px;
     overflow: auto; }
-  div#map-canvas h3 {
+  #map-canvas h3, .angular-google-map-container h3 {
     text-shadow: none;
     font-size: 1.2em;
     font-family: "Champagne", Helvetica, Arial, sans-serif;
@@ -33,7 +36,7 @@ div#map-canvas {
     padding: 0;
     margin: 0;
     display: block; }
-  div#map-canvas a {
+  #map-canvas a, .angular-google-map-container a {
     display: inline-block;
     clear: both;
     margin-right: 6px; }
