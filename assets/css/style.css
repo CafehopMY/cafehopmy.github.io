@@ -231,7 +231,7 @@ footer {
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
   background: #c53d13 !important; }
 
-div.heading-img {
+.heading-img {
   -moz-border-radius: 120px;
   -webkit-border-radius: 120px;
   -khtml-border-radius: 120px;
@@ -246,7 +246,7 @@ div.heading-img {
   width: 240px;
   height: 240px;
   padding: 12px; }
-  div.heading-img img {
+  .heading-img img {
     width: 216px; }
 
 .subtitle {
@@ -287,6 +287,12 @@ div.cafe-types {
 
   h1, h2, h3, h4 {
     text-align: center; }
+
+  .heading-img {
+    width: 50%;
+    height: 50%; }
+    .heading-img img {
+      width: 100%; }
 
   footer {
     padding: 12px 0; }

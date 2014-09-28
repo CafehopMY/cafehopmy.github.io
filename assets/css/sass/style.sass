@@ -178,7 +178,7 @@ footer
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
     background: $dark-orange !important
 
-div.heading-img
+.heading-img
     @include rounded-corners($heading-icon-size/2)
     @include small-shadow($brown)
     display: block
@@ -221,7 +221,7 @@ $icons-mobile-size: 80px
 $logo-size-small: $logo-size * 0.8
 
 @mixin smaller-imgs
-    div.heading-img
+    .heading-img
         padding: $space
         width: $heading-icon-size * 0.6
         img
@@ -239,6 +239,11 @@ $logo-size-small: $logo-size * 0.8
         font-size: 2em
     h1, h2, h3, h4
         text-align: center
+    .heading-img 
+        width: 50%
+        height: 50%
+        img 
+            width: 100%
     footer 
         padding: $space 0
         div#footer-wrapper
