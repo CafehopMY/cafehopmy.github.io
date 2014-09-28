@@ -30,7 +30,7 @@
             <ul ng-repeat="person in team" class="team list-unstyled">
                 <li>
                     <div class="team-image">
-                        <img src="{{person.img_url}}"/>
+                        <img ng-src="{{person.img_url}}"/>
                     </div>
                     <div class="team-text">
                         <span class="name">{{person.name}}</span>
