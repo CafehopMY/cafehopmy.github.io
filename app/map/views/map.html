@@ -1,5 +1,13 @@
-<div ng-controller="MapController">
+<div ng-controller="MapController" class="map">
+
     <link rel="stylesheet" href="assets/css/map.css">
+    
+    <div class="legend">
+        <ul class="legend-list list-unstyled list-inline">
+            <li ng-repeat="item in legend" class="legend-item"><img class="legend-img" ng-src="{{item.img}}"/> <span class="legend-text">{{item.text}}</span></li>
+        </ul>
+    </div>
+
     <google-map 
         center="map.center" 
         zoom="map.zoom" 

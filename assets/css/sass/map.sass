@@ -1,7 +1,9 @@
 @import 'constants'
 .content
     padding-bottom: 0px //override default
-//Google Map styling
+.map
+    position: relative
+
 #map-canvas, .angular-google-map-container
     border-bottom: 1px solid $dark-orange
     width: 100%
@@ -29,28 +31,33 @@
         clear: both
         margin-right: $space/2
 
-div#legend
-    width: 100%
-    background-color: $brown
-    color: $light-beige
-    ul#map-legend
-        @include clear-spacing
-        @include center-element
-        max-width: $wrapper-width
-        li 
-            list-style: none
-            display: inline-block
-            font-size: $small-font
-            margin-right: $space
-            padding: $space/2
-
-            img
-                margin-right: $space/ 2
-                width: 20px
+.legend 
+    position: absolute
+    z-index: 9
+    top: $space*2
+    right: $space*2
+    background-color: rgba($dark-red, 1)
+    padding: $space
+    max-width: 300px
+    .legend-list 
+        padding: 0px
+        margin: 0px
+        color: $light-beige
+        .legend-item
+            width: auto
+        .legend-text
+            font-size: 14px
+        .legend-img 
+            max-height: 30px
+@media only screen and (max-width : 768px)
+    .legend 
+        right: $space
+        top: $space
 
 div#zones 
     width: 100%
     background-color: $dark-orange
+
     //text-align: center
     ul#zones-list
         @include clear-spacing
@@ -76,18 +83,6 @@ div#zones
                     background-color: $beige
                     color: $dark-orange
 
-@media only screen and (min-width : 650px)
-    div#map-canvas
-        position: relative
-        float: left
-        height: 600px
-
-    div#wrapper
-        @include box-sizing
-        background-color: $light-beige
-        max-width: 30%
-        height: 600px
-        width: 30%!important
-        position: absolute
-        right: 0
-        padding: $space
+@media only screen and (max-width : 768px)
+    #map-canvas, .angular-google-map-container
+        min-height: 500px

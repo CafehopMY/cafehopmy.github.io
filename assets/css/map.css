@@ -17,6 +17,9 @@
 .content {
   padding-bottom: 0px; }
 
+.map {
+  position: relative; }
+
 #map-canvas, .angular-google-map-container {
   border-bottom: 1px solid #c53d13;
   width: 100%;
@@ -44,25 +47,29 @@
     clear: both;
     margin-right: 6px; }
 
-div#legend {
-  width: 100%;
-  background-color: #412218;
-  color: #ffe9c6; }
-  div#legend ul#map-legend {
-    margin: 0;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 1000px; }
-    div#legend ul#map-legend li {
-      list-style: none;
-      display: inline-block;
-      font-size: 0.8em;
-      margin-right: 12px;
-      padding: 6px; }
-      div#legend ul#map-legend li img {
-        margin-right: 6px;
-        width: 20px; }
+.legend {
+  position: absolute;
+  z-index: 9;
+  top: 24px;
+  right: 24px;
+  background-color: #90110d;
+  padding: 12px;
+  max-width: 300px; }
+  .legend .legend-list {
+    padding: 0px;
+    margin: 0px;
+    color: #ffe9c6; }
+    .legend .legend-list .legend-item {
+      width: auto; }
+    .legend .legend-list .legend-text {
+      font-size: 14px; }
+    .legend .legend-list .legend-img {
+      max-height: 30px; }
 
+@media only screen and (max-width: 768px) {
+  .legend {
+    right: 12px;
+    top: 12px; } }
 div#zones {
   width: 100%;
   background-color: #c53d13; }
@@ -94,22 +101,8 @@ div#zones {
           background-color: #f9c36f;
           color: #c53d13; }
 
-@media only screen and (min-width: 650px) {
-  div#map-canvas {
-    position: relative;
-    float: left;
-    height: 600px; }
-
-  div#wrapper {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background-color: #ffe9c6;
-    max-width: 30%;
-    height: 600px;
-    width: 30% !important;
-    position: absolute;
-    right: 0;
-    padding: 12px; } }
+@media only screen and (max-width: 768px) {
+  #map-canvas, .angular-google-map-container {
+    min-height: 500px; } }
 
 /*# sourceMappingURL=map.css.map */

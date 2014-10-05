@@ -15,6 +15,16 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
         }
     }
 
+    $scope.legend = [
+    {
+        img: "assets/images/map-icons/chkl-pin-03.png",
+        text: "Open"
+    }, {
+        img: "assets/images/map-icons/chkl-pin-01.png",
+        text: "Closed"
+    }
+    ];
+
     $scope.icons = {
         current: "assets/images/map-icons/chkl-pin-me.png",
         cafe: "assets/images/map-icons/chkl-pin-03.png",
@@ -62,7 +72,7 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
                     },
                     icon: cafe.venue.hours.isOpen? $scope.icons.cafe : $scope.icons.cafeClosed,
                     options:{
-                        title: cafe.venue.name
+                        title: cafe.venue.name,
                     },
                     cafe: cafe.venue,
                     click: function(){
@@ -135,7 +145,8 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
             tilesloaded: $scope.ready
         },
         options: {
-            scrollwheel: false
+            scrollwheel: false,
+            mapTypeControl: false
         }
     };
 
