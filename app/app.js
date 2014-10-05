@@ -2,7 +2,7 @@
 
 var controllers = angular.module('cafehopApp.controllers', ['google-maps']);
 var services = angular.module('cafehopApp.services', []);
-var cafehop = angular.module('cafehopApp', ['cafehopApp.controllers', 'cafehopApp.services', 'ngRoute']);	
+var cafehop = angular.module('cafehopApp', ['cafehopApp.controllers', 'cafehopApp.services', 'ngRoute', 'ngSanitize']);	
 cafehop.config(['$routeProvider', function($routeProvider){
 	$routeProvider
 		.when('/', {

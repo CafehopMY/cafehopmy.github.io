@@ -6,7 +6,7 @@
         },
         {
             "question": "Are you guys like an organisation of hipster cafes?",
-            "answer": "Um, we’re not. Cafe Hop is a project registered under Mindful Wanderers LLP (LLP0002651-LGN). There is an association for Malaysia Speciality Coffee (https://www.facebook.com/MalaysiaSpecialtyCoffeeAssociation) but if there is help you need with, you can always drop us a line at cafehopkl[at]gmail.com."
+            "answer": "Um, we’re not. Cafe Hop is a project registered under Mindful Wanderers LLP (LLP0002651-LGN). There is an association for <a href='https://www.facebook.com/MalaysiaSpecialtyCoffeeAssociation'>Malaysia Speciality Coffee</a> but if there is help you need with, you can always drop us a line at <a>cafehopkl [at] gmail.com</a>."
         },
         {
             "question": "How do you guys pick cafes into the map?",
@@ -14,7 +14,7 @@
         },
         {
             "question": "I own a cafe. Pick me! How do I get into your map?",
-            "answer": "We will find you or you can try your luck and drop us an email at cafehopkl[at]gmail.com. We try to be anonymous about our visits and don’t expect to be treated any special. We just want more choice of good coffee/food/ambience/service for everyone. :) "
+            "answer": "We will find you or you can try your luck and drop us an email at <a>cafehopkl [at] gmail.com</a>. We try to be anonymous about our visits and don’t expect to be treated any special. We just want more choice of good coffee/food/ambience/service for everyone. :) "
         },
         {
             "question": "How often do you update your map?",
@@ -30,7 +30,7 @@
         },
         {
             "question": "Do you guys do coffee pop-ups, coffee catering, coffee sharing and appreciation classes?",
-            "answer": "No but our sister project : Spacebar Coffee might. Look us up here: spacebarcoffee.wordpress.com."
+            "answer": "No but our sister project : Spacebar Coffee might. Look us up at <a href='http://spacebarcoffee.wordpress.com'>spacebarcoffee.wordpress.com</a>."
         }
     ]
 }
