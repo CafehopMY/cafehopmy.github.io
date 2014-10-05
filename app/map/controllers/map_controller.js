@@ -1,4 +1,4 @@
-angular.module('cafehopApp.controllers').controller('MapController', ['$scope', '$http', function($scope, $http){
+angular.module('cafehopApp.controllers').controller('MapController', ['$scope', '$http', 'CafeService', function($scope, $http, CafeService){
     $scope.markers = [];
     $scope.initialized = false;
     $scope.mapDefaults = {
@@ -138,4 +138,10 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
             scrollwheel: false
         }
     };
+
+    $scope.goToCafe = function(cafe){
+        console.log('yo')
+        CafeService.setCafe(cafe);
+        $location.path('/cafe')
+    }
 }]);
