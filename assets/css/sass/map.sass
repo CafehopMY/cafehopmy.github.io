@@ -36,23 +36,25 @@
     z-index: 9
     top: $space*2
     right: $space*2
-    background-color: rgba($dark-red, 1)
+    background-color: rgba($dark-red, 0.9)
     padding: $space
     max-width: 300px
     .legend-list 
         padding: 0px
         margin: 0px
-        color: $light-beige
+        color: $light-orange
         .legend-item
             width: auto
         .legend-text
             font-size: 14px
+            text-transform: uppercase
         .legend-img 
             max-height: 30px
 @media only screen and (max-width : 768px)
     .legend 
         right: $space
-        top: $space
+        bottom: $space
+        top: auto
 
 div#zones 
     width: 100%
@@ -85,4 +87,4 @@ div#zones
 
 @media only screen and (max-width : 768px)
     #map-canvas, .angular-google-map-container
-        min-height: 500px
+        min-height: 450px
