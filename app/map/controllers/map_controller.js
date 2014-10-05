@@ -33,10 +33,10 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
     }
 
     $scope.getCafes = function(){
-        // $scope.api_url = "https://api.cafehop.my/v2/browse/stores";
-        $scope.api_url = "app/map/models/cafes.json";
-        var id = "";
-        var secret = "";
+        $scope.api_url  = "https://api.cafehop.my/v2/browse/stores";
+        var id          = "";
+        var secret      = "";
+        $scope.api_url  = "app/map/models/cafes.json";
         // Get cafes 
         $http({
             url: $scope.api_url,
