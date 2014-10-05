@@ -14,6 +14,7 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
     $scope.icons = {
         current: "assets/images/map-icons/chkl-pin-me.png",
         cafe: "assets/images/map-icons/chkl-pin-02.png",
+        cafeClosed: "assets/images/map-icons/chkl-pin-01.png",
     }
 
     $scope.fitMarkerBounds = function(){
@@ -55,7 +56,7 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
                         latitude: cafe.venue.location.lat,
                         longitude: cafe.venue.location.lng
                     },
-                    icon: $scope.icons.cafe,
+                    icon: cafe.venue.hours.isOpen? $scope.icons.cafe : $scope.icons.cafeClosed,
                     cafe: cafe.venue,
                     click: function(){
 

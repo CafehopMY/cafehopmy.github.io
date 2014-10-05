@@ -10,13 +10,14 @@
     background-color: $brown
     color: $brown
     font-family: $body-font
-    div.iw-holder
-        min-width: 150px
-        overflow: auto
-
+    .gm-style-iw 
+        height: auto !important
+        div
+            max-height: 500px 
+            height: auto !important
     h3
         text-shadow: none
-        font-size: 1.2em
+        font-size: 1.4em
         font-family: $body-font
         color: $red
         padding: 0
@@ -26,61 +27,6 @@
         display: inline-block
         clear: both
         margin-right: $space/2
-
-//Overrule gmaps infowindow style
-div#locations-list-wrapper
-    width: 100%
-    div#locations-list
-        ul#locations
-            list-style: none
-            padding: 0
-            margin: 0
-            width: 100%
-            overflow: visible
-            li 
-                border-bottom: solid 1px $light-orange
-                padding: $space 
-                
-                .title
-                    font-weight: bold
-                font-size: 0.8em
-                span 
-                    display: block
-                    &.loc-desc
-                        display: block
-                        a
-                            display: inline
-                            // &.directions-link
-                                // float: right
-                        span.address
-                            margin:
-                                bottom: $space/2
-                &.selected
-                    background-color: $scroller-rail-color
-    //List search input
-    div#search-bar-wrapper
-        @include rounded-corners($space/2)
-        @include box-sizing
-        padding: $space/2
-        width: 100%
-        margin: 0 auto $space/2 auto
-        background-color: $search-box-color
-        -webkit-box-sizing: border-box
-        -moz-box-sizing: border-box
-        box-sizing: border-box
-        input
-            &#search-bar
-                width: 100%
-                border: none
-                margin: 0 auto
-                background-color: $search-box-color
-                color: $red
-                font-family: $body-font
-                font-weight: bold
-
-            &:hover, &:focus
-                box-shadow: none
-                border: none
 
 div#legend
     width: 100%

@@ -18,11 +18,11 @@
                 options="marker.window.options">
                 <div>
                     <h3><span>{{marker.cafe.name}}</span></h3>
-                    <p>{{marker.cafe.location.address}}</p>
+                    <span>{{marker.cafe.location.address}}</span>
                     <ul class="list-unstyled list-inline">
                         <li><a href="{{marker.cafe.url}}"><i class="glyphicon glyphicon-link"></i></a></li>
-                        <li ng-class="{'text-success': marker.cafe.isOpen, 'text-danger': !marker.cafe.isOpen}"><i class="glyphicon glyphicon-time"></i></li>
                     </ul>
+
                 </div>
             </window>
         </marker>
