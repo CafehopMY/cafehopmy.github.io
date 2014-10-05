@@ -6,6 +6,9 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
             latitude: 3.136402,
             longitude: 101.66394
         },
+        marker: {
+            windowOffsetY: -20
+        }
     }
 
     $scope.icons = {
@@ -27,14 +30,15 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
     $scope.getCafes = function(){
         // $scope.api_url = "https://api.cafehop.my/v2/browse/stores";
         $scope.api_url = "app/map/models/cafes.json";
-
-        // Get cafes
+        var id = "";
+        var secret = "";
+        // Get cafes 
         $http({
             url: $scope.api_url,
             method: 'GET',
             params:{
-                client_id: "",
-                client_secret: "",
+                client_id: id,
+                client_secret: secret,
                 ll: $scope.map.center.latitude + "," + $scope.map.center.longitude,
                 radius: 1000,
                 offset: 0,
@@ -52,6 +56,19 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
                         longitude: cafe.venue.location.lng
                     },
                     icon: $scope.icons.cafe,
+                    cafe: cafe.venue,
+                    click: function(){
+
+                    },
+                    window: {
+                        iconVisible: true,
+                        closeClick: true,
+                        options: {
+                            maxWidth: 250,
+                            maxHeight: 500,
+                            pixelOffset: new google.maps.Size(0, $scope.mapDefaults.marker.windowOffsetY)
+                        }
+                    }
 
                 })
             });

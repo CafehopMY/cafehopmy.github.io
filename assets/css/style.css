@@ -285,7 +285,7 @@ div.cafe-types {
   h2, h3, h4 {
     font-size: 2em; }
 
-  h1, h2, h3, h4 {
+  .content h1, .content h2, .content h3, .content h4 {
     text-align: center; }
 
   .heading-img {

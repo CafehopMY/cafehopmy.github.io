@@ -12,6 +12,19 @@
             coords="marker.coords"
             icon="marker.icon"
             options="marker.options"
-            events="marker.events"></marker>
+            events="marker.events">
+            <window isIconVisibleOnClick="marker.window.iconVisible"
+                closeClick="marker.window.closeClick"
+                options="marker.window.options">
+                <div>
+                    <h3><span>{{marker.cafe.name}}</span></h3>
+                    <p>{{marker.cafe.location.address}}</p>
+                    <ul class="list-unstyled list-inline">
+                        <li><a href="{{marker.cafe.url}}"><i class="glyphicon glyphicon-link"></i></a></li>
+                        <li ng-class="{'text-success': marker.cafe.isOpen, 'text-danger': !marker.cafe.isOpen}"><i class="glyphicon glyphicon-time"></i></li>
+                    </ul>
+                </div>
+            </window>
+        </marker>
     </google-map>
 </div>
