@@ -7,13 +7,17 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
             longitude: 101.66394
         },
         marker: {
-            windowOffsetY: -20
+            windowOptions: {
+                maxWidth: 250,
+                maxHeight: 500,
+                pixelOffset: new google.maps.Size(0, -20)
+            }
         }
     }
 
     $scope.icons = {
         current: "assets/images/map-icons/chkl-pin-me.png",
-        cafe: "assets/images/map-icons/chkl-pin-02.png",
+        cafe: "assets/images/map-icons/chkl-pin-03.png",
         cafeClosed: "assets/images/map-icons/chkl-pin-01.png",
     }
 
@@ -57,6 +61,9 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
                         longitude: cafe.venue.location.lng
                     },
                     icon: cafe.venue.hours.isOpen? $scope.icons.cafe : $scope.icons.cafeClosed,
+                    options:{
+                        title: cafe.venue.name
+                    },
                     cafe: cafe.venue,
                     click: function(){
 
@@ -64,11 +71,7 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
                     window: {
                         iconVisible: true,
                         closeClick: true,
-                        options: {
-                            maxWidth: 250,
-                            maxHeight: 500,
-                            pixelOffset: new google.maps.Size(0, $scope.mapDefaults.marker.windowOffsetY)
-                        }
+                        options: $scope.mapDefaults.marker.windowOptions
                     }
 
                 })

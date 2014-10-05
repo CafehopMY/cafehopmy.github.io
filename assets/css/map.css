@@ -26,7 +26,8 @@
   color: #412218;
   font-family: "Champagne", Helvetica, Arial, sans-serif; }
   #map-canvas .gm-style-iw, .angular-google-map-container .gm-style-iw {
-    height: auto !important; }
+    height: auto !important;
+    min-width: 200px; }
     #map-canvas .gm-style-iw div, .angular-google-map-container .gm-style-iw div {
       max-height: 500px;
       height: auto !important; }
