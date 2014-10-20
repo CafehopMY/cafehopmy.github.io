@@ -1,12 +1,12 @@
-angular.module('cafehopApp.services', []).service('CafeService', function () {
-        var cafe = null;
+angular.module('cafehopApp.services').service('CafeService', function () {
+    var cafe = null;
 
-        return {
-            getCafe: function () {
-                return cafe;
-            },
-            setProperty: function(value) {
-                cafe = value;
-            }
-        };
-    });
+    return {
+        getCafe: function () {
+            return cafe;
+        },
+        setCafe: function(value) {
+            cafe = value;
+        }
+    };
+});
