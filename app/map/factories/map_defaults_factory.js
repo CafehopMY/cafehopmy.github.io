@@ -10,7 +10,16 @@ angular.module('cafehopApp.factories').factory('MapDefaults', function() {
                 maxHeight: 500,
                 pixelOffset: new google.maps.Size(0, -20)
             }
-        }
+        },
+        legend: [
+            {
+                img: "assets/images/map-icons/chkl-pin-03.png",
+                text: "Open"
+            }, {
+                img: "assets/images/map-icons/chkl-pin-01.png",
+                text: "Closed"
+            }
+        ]
     };
 
     return defaults;

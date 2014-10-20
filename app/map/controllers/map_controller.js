@@ -3,19 +3,11 @@ angular.module('cafehopApp.controllers').controller('MapController',
     function($scope, $http, CafeService, MapCafes, MapDefaults){
     
     $scope.markers = [];
-    $scope.initialized = false;
-    $scope.mapDefaults = MapDefaults;
     $scope.cafes = [];
-
-    $scope.legend = [
-    {
-        img: "assets/images/map-icons/chkl-pin-03.png",
-        text: "Open"
-    }, {
-        img: "assets/images/map-icons/chkl-pin-01.png",
-        text: "Closed"
-    }
-    ];
+    $scope.initialized = false;
+    $scope.windowShowing = 0;
+    $scope.mapDefaults = MapDefaults;
+    $scope.legend = MapDefaults.legend;
 
     $scope.icons = {
         current: "assets/images/map-icons/chkl-pin-me.png",
@@ -65,7 +57,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
                     draggable: true
                 },
                 events: {
-                    dragend: $scope.currentMarkerDragEnd
+                    dragend: $scope.currentMarkerDragEnd,
                 }
             };
             // Set KL as center if no user's location
@@ -77,6 +69,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
                     $scope.userMarker.coords = pos.coords;
                     var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                     $scope.instance.panTo(latlng);
+                    $scope.windowShowing = $scope.userMarker.idKey;
                });
             }
 
@@ -101,31 +94,31 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.addMarkers = function(cafes){
         // Create markers for each cafe
         angular.forEach(cafes, function(cafe, index){
-            $scope.markers.push({
+            var m = {
                 idKey: $scope.markers.length,
+                icon: cafe.venue.hours.isOpen? $scope.icons.cafe : $scope.icons.cafeClosed,
                 coords: {
                     latitude: cafe.venue.location.lat,
                     longitude: cafe.venue.location.lng
                 },
-                icon: cafe.venue.hours.isOpen? $scope.icons.cafe : $scope.icons.cafeClosed,
-                options:{
-                    title: cafe.venue.name,
-                },
                 cafe: cafe.venue,
-                click: function(){
-
-                },
                 window: {
                     iconVisible: true,
                     closeClick: true,
                     options: $scope.mapDefaults.marker.windowOptions
+                },
+                options:{
+                    title: cafe.venue.name,
+                },
+                click: function(){
                 }
-
-            })
+            }
+            $scope.markers.push(m)
         });
     };
 
     $scope.goToCafe = function(cafe){
         $location.path('/cafe')
     }
+
 }]);
