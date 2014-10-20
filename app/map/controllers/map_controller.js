@@ -42,23 +42,27 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
         $scope.instance.panToBounds(bounds);
     }
 
-    $scope.getCafes = function(){
-        $scope.api_url  = "https://api.cafehop.my/v2/browse/stores";
+    $scope.getCafes = function(options){
+        options = options || {};
+        options.radius = options.radius || 10000;
+
+        $scope.api_url  = "http://cafehopkl.com/api/browse.php";
         var id          = "";
         var secret      = "";
-        $scope.api_url  = "app/map/models/cafes.json";
+        var params = {
+            client_id: id,
+            client_secret: secret,
+            ll: options.ll || $scope.map.center.latitude + "," + $scope.map.center.longitude,
+            radius: options.radius,
+            offset: 0,
+            limit: 50
+        }
+
         // Get cafes 
         $http({
             url: $scope.api_url,
             method: 'GET',
-            params:{
-                client_id: id,
-                client_secret: secret,
-                ll: $scope.map.center.latitude + "," + $scope.map.center.longitude,
-                radius: 1000,
-                offset: 0,
-                limit: 50
-            }
+            params: params,
         }).success(function(data){
             $scope.cafes = data.response.groups[0].items;
 
@@ -93,7 +97,9 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
 
     // When current location marker is moved
     $scope.currentMarkerDragEnd = function(marker){
-        $scope.instance.panTo(marker.getPosition())
+        var latlng = marker.getPosition();
+        $scope.instance.panTo(latlng);
+        $scope.getCafes({ll: latlng.lat() + "," + latlng.lng()})
     }
 
     $scope.placeDefaultUser = function(marker){
@@ -140,7 +146,7 @@ angular.module('cafehopApp.controllers').controller('MapController', ['$scope', 
 
     $scope.map = {
         center: angular.copy($scope.mapDefaults.center),
-        zoom: 11,
+        zoom: 13,
         events: {
             tilesloaded: $scope.ready
         },
