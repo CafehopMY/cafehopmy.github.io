@@ -1,0 +1,29 @@
+{
+  "name": "CafehopMY",
+  "version": "0.1.0",
+  "homepage": "https://github.com/CafehopMY/cafehopmy.github.io",
+  "authors": [
+    "Sher Minn Chong <sherminn.chong@gmail.com>"
+  ],
+  "description": "Map of cafes around Malaysia",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "cafe",
+    "cafehopkl",
+    "cafehopmy",
+    "cafehop",
+    "map",
+    "angular",
+    "google-map"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
