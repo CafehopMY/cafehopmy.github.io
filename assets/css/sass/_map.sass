@@ -3,7 +3,7 @@
     padding-bottom: 0px //override default
 .map
     position: relative
-    height: $map-height
+    min-height: $map-height
 
 #map-canvas, .angular-google-map-container
     border-bottom: 1px solid $dark-orange
@@ -87,3 +87,9 @@ div#zones
 @media only screen and (max-width : 768px)
     #map-canvas, .angular-google-map-container
         min-height: 450px
+
+.cafe-list
+    padding: $space
+.cafes 
+    max-height: 200px
+    overflow-y: scroll

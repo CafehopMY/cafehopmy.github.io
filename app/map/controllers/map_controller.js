@@ -3,7 +3,8 @@ angular.module('cafehopApp.controllers').controller('MapController',
     function($scope, $http, CafeService, MapCafes, MapDefaults){
     
     $scope.markers = [];
-    $scope.cafes = [];
+    $scope.mapCafes = MapCafes;
+    $scope.cafes = $scope.mapCafes.cafes;
     $scope.initialized = false;
     $scope.mapDefaults = MapDefaults;
     $scope.legend = MapDefaults.legend;
@@ -43,7 +44,8 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
         var latlng = marker.getPosition();
         $scope.instance.panTo(latlng);
-        $scope.cafes = MapCafes.getCafes({
+        
+        $scope.mapCafes.getCafes({
             ll: latlng.lat() + "," + latlng.lng(),
             success: $scope.addMarkers,
         });
@@ -99,7 +101,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
             $scope.markers.push($scope.userMarker);
             $scope.setWindowMarker($scope.userMarker);
 
-            $scope.cafes = MapCafes.getCafes({success: $scope.addMarkers});
+            $scope.mapCafes.getCafes({success: $scope.addMarkers});
             $scope.fitMarkerBounds();
             $scope.initialized = true;
         });

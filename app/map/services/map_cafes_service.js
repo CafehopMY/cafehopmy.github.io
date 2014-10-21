@@ -1,13 +1,13 @@
 angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults', function($http, MapDefaults) {
-    var cafes = [];
     var defaults = MapDefaults;
     var api_url  = "http://cafehopkl.com/api/browse.php";
-    return {
+    var self = {
+        cafes: [],
         getCafes: function(options){
             options = options || {};
-            options.radius = options.radius || 10000;
+            options.radius = options.radius || 5000;
             options.offset = options.offset || 0;
-            options.limit = options.limit || 50;
+            options.limit = options.limit || 100;
 
             var id          = "";
             var secret      = "";
@@ -26,18 +26,23 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
                 method: 'GET',
                 params: params,
             }).success(function(data){
-                cafes = data.response.groups[0].items;
-                options.success(cafes);
+                var cafes = data.response.groups[0].items;
+                // Empty array
+                while(self.cafes.length > 0) {
+                    self.cafes.pop();
+                }
+                self.cafes.push.apply(self.cafes, cafes)
+                options.success(self.cafes);
                 
             }).error(function(){
                 console.error(api_url + " cannot be accessed.");
             });
-
-            return cafes;
         },
 
         setCafe: function(value) {
             cafe = value;
         }
-    };
+    }
+
+    return self;
 }]);

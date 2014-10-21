@@ -506,7 +506,7 @@ div#links-to-parts-of-site {
 /* line 4, sass/_map.sass */
 .map {
   position: relative;
-  height: 550px; }
+  min-height: 550px; }
 
 /* line 8, sass/_map.sass */
 #map-canvas, .angular-google-map-container {
@@ -610,3 +610,11 @@ div#zones {
   /* line 88, sass/_map.sass */
   #map-canvas, .angular-google-map-container {
     min-height: 450px; } }
+/* line 91, sass/_map.sass */
+.cafe-list {
+  padding: 12px; }
+
+/* line 93, sass/_map.sass */
+.cafes {
+  max-height: 200px;
+  overflow-y: scroll; }
