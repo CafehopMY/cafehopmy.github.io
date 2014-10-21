@@ -54787,7 +54787,7 @@ Original idea from: http://stackoverflow.com/questions/22758950/google-map-drawi
           var mapScope, markerCtrl, markerScope;
           mapScope = ctrls[0].getScope();
           markerCtrl = ctrls.length > 1 && (ctrls[1] != null) ? ctrls[1] : void 0;
-          markerScope = markerCtrl ? markerCtrl.getScope() : void 0;
+          markerScope = markerCtrl != null ? markerCtrl.getScope() : void 0;
           return mapScope.deferred.promise.then((function(_this) {
             return function(mapCtrl) {
               var isIconVisibleOnClick;
