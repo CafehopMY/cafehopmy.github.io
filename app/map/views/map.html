@@ -29,23 +29,16 @@
         </ui-gmap-markers>
 
         <ui-gmap-window 
-            ng-if="markers.length >= 1"
-            isIconVisibleOnClick="windowMarker.window.iconVisible"
-            options="windowMarker.window.options"
-            coords="windowMarker.coords"
-            show="windowMarker.show">
+            isIconVisibleOnClick="infoWindow.model.window.iconVisible"
+            options="infoWindow.model.window.options"
+            coords="infoWindow.model.coords"
+            show="infoWindow.show">
             <div>
-                <div ng-show="{{windowMarker.cafe}}">
-                    <h3>{{windowMarker.cafe.name}}</h3>
-                    <span>{{windowMarker.cafe.location.address}}</span>
-                    <ul class="list-unstyled list-inline">
-                        <li>
-                            <a ng-href="#cafe/{{windowMarker.cafe.id}}"> <i class="glyphicon glyphicon-link"></i>
-                            </a>
-                        </li>
-                    </ul>
+                <div ng-show="{{infoWindow.model.cafe}}">
+                    <h3><a ng-href="#cafe/{{infoWindow.model.cafe.id}}"> {{infoWindow.model.cafe.name}}</a></h3>
+                    <span>{{infoWindow.model.cafe.location.address}}</span>
                 </div>
-                <div ng-show="{{!windowMarker.cafe}}">
+                <div ng-show="{{!infoWindow.model.cafe}}">
                     <h3>You are here!</h3>
                     <p>Drag me to seach for cafes in other areas.</p>
                 </div>

@@ -5,9 +5,17 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.markers = [];
     $scope.cafes = [];
     $scope.initialized = false;
-    $scope.windowShowing = 0;
     $scope.mapDefaults = MapDefaults;
     $scope.legend = MapDefaults.legend;
+
+    $scope.idKeyCounter = 0;
+
+    $scope.infoWindow = {
+        show: false,
+        marker: null,
+        model: null,
+        coords: {}
+    }
 
     $scope.icons = {
         current: "assets/images/map-icons/chkl-pin-me.png",
@@ -27,10 +35,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
     }
 
     $scope.currentMarkerDragStart = function(marker, e, model){
-        // Close infowindow
-        if($scope.windowMarker && $scope.windowMarker.idKey == model.idKey){
-            $scope.windowMarker.show = false;
-        }
+        $scope.hideWindowMarker();
     }
 
     // When current location marker is moved
@@ -42,7 +47,19 @@ angular.module('cafehopApp.controllers').controller('MapController',
             ll: latlng.lat() + "," + latlng.lng(),
             success: $scope.addMarkers,
         });
+
+        model.coords = {
+            latitude: marker.getPosition().lat(),
+            longitude: marker.getPosition().lng(),
+        }
+        $scope.setWindowMarker(model);
+        $scope.hideWindowMarker();
     }
+
+    $scope.onMarkerClick = function(marker, event, model){
+        $scope.setWindowMarker(model);
+    }
+
 
     $scope.placeDefaultUser = function(marker){
         marker.coords = $scope.mapDefaults.center;
@@ -58,7 +75,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.instance = map;
         $scope.$apply(function(){
             $scope.userMarker = {
-                idKey: $scope.markers.length, 
+                idKey: $scope.idKeyCounter++, 
                 icon: $scope.icons.current,
                 options:{
                     draggable: true
@@ -77,14 +94,15 @@ angular.module('cafehopApp.controllers').controller('MapController',
                     $scope.userMarker.coords = pos.coords;
                     var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                     $scope.instance.panTo(latlng);
-                    $scope.windowShowing = $scope.userMarker.idKey;
+                    // $scope.setWindowMarker($scope.userMarker);
                });
             }
 
+            // $scope.setWindowMarker($scope.userMarker);
             $scope.markers.push($scope.userMarker);
+
             $scope.cafes = MapCafes.getCafes({success: $scope.addMarkers});
             $scope.fitMarkerBounds();
-            $scope.setWindowMarker($scope.userMarker);
             $scope.initialized = true;
         });
     }
@@ -108,10 +126,12 @@ angular.module('cafehopApp.controllers').controller('MapController',
     }
 
     $scope.addMarkers = function(cafes){
+        $scope.markers = [];
+        $scope.markers.push($scope.userMarker);
         // Create markers for each cafe
         angular.forEach(cafes, function(cafe, index){
             var m = {
-                idKey: $scope.markers.length,
+                idKey: $scope.idKeyCounter++,
                 icon: cafe.venue.hours.isOpen? $scope.icons.cafe : $scope.icons.cafeClosed,
                 coords: {
                     latitude: cafe.venue.location.lat,
@@ -136,13 +156,13 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $location.path('/cafe')
     }
 
-    $scope.setWindowMarker = function(marker){
-        $scope.windowMarker = marker;
-        $scope.windowMarker.show = true;
+    $scope.setWindowMarker = function(model){
+        $scope.infoWindow.model = model;
+        $scope.infoWindow.show = true;
+        $scope.infoWindow.coords = model.coords;
     }
-    
-    $scope.onMarkerClick = function(marker, event, model){
-        $scope.setWindowMarker(model);
-    }
+    $scope.hideWindowMarker = function(){
+        $scope.infoWindow.show = false;
 
+    }
 }]);
