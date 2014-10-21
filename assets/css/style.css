@@ -40,7 +40,7 @@ header, .navbar-header {
 /* line 19, sass/style.sass */
 nav ul li {
   margin-left: 12px; }
-  /* line 92, sass/_constants.sass */
+  /* line 93, sass/_constants.sass */
   nav ul li a {
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -56,7 +56,7 @@ nav ul li {
     -moz-transition: 0.5s;
     -webkit-transition: 0.5s;
     transition: 0.5s; }
-    /* line 100, sass/_constants.sass */
+    /* line 101, sass/_constants.sass */
     nav ul li a:hover, nav ul li a.selected, nav ul li a:focus {
       background-color: #c53d13; }
   /* line 23, sass/style.sass */
@@ -110,7 +110,7 @@ nav ul li.soc-media-links {
     font-size: 3em;
     text-align: left;
     display: inline-block; }
-    /* line 92, sass/_constants.sass */
+    /* line 93, sass/_constants.sass */
     .navbar-brand .h1 a {
       -moz-border-radius: 6px;
       -webkit-border-radius: 6px;
@@ -126,7 +126,7 @@ nav ul li.soc-media-links {
       -moz-transition: 0.5s;
       -webkit-transition: 0.5s;
       transition: 0.5s; }
-      /* line 100, sass/_constants.sass */
+      /* line 101, sass/_constants.sass */
       .navbar-brand .h1 a:hover, .navbar-brand .h1 a.selected, .navbar-brand .h1 a:focus {
         background-color: #c53d13; }
 

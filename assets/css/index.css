@@ -19,7 +19,7 @@ div#links-to-parts-of-site {
   text-align: center;
   padding: 24px;
   padding-top: 0; }
-  /* line 92, sass/_constants.sass */
+  /* line 93, sass/_constants.sass */
   div#links-to-parts-of-site a {
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -35,7 +35,7 @@ div#links-to-parts-of-site {
     -moz-transition: 0.5s;
     -webkit-transition: 0.5s;
     transition: 0.5s; }
-    /* line 100, sass/_constants.sass */
+    /* line 101, sass/_constants.sass */
     div#links-to-parts-of-site a:hover, div#links-to-parts-of-site a.selected, div#links-to-parts-of-site a:focus {
       background-color: #c53d13; }
   /* line 12, sass/index.sass */
