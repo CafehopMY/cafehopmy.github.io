@@ -25,12 +25,11 @@ nav
                     text-decoration: none
                     background-color: $dark-orange !important
         li.soc-media-links
-            a 
-                padding: 0
+            margin-left: $space*2
+            a, .a 
                 margin-right: $space/2
             a:hover, a:focus
-                background-color: $orange //no color change when hover over soc media icons
-                color: $bright-orange
+                background-color: transparent !important
 .navbar-toggle
     margin: ($header-height - 34px)/2 $space
     .icon-bar
@@ -204,7 +203,7 @@ footer
     @include small-text-shadow($light-brown)
 
 div.mouseover-text
-    background-color: white     
+    background-color: white      
     position: absolute
     z-index: 99
     font-size: 0.8em
@@ -254,6 +253,8 @@ $logo-size-small: $logo-size * 0.8
                 float: none
                 width: 100%
                 display: block
+            #social-media-share
+                margin-bottom: $space
         #share-button
             width: 150px
         ul#sponsor_list

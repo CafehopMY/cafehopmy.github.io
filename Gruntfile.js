@@ -11,34 +11,38 @@ module.exports = function(grunt) {
                     'bower_components/angular/angular.js',
                     'bower_components/angular-google-maps/dist/angular-google-maps.js',
                 ],
-                dest: 'assets/js/dependencies.js'
+                dest: 'assets/js/dist/dependencies.js'
             },
             css: {
                 src: [
                     'assets/css/*.css'
                 ],
-                dest: 'assets/css/concat.css'
+                dest: 'assets/css/dist/concat.css'
             }
         },
         uglify: {
             js: {
                 files: {
-                    'assets/js/dependencies.min.js': ['assets/js/dependencies.js']
+                    'assets/js/dist/dependencies.min.js': ['assets/js/dist/dependencies.js']
                 }
             },
         },
         cssmin: {
             combine: {
                 files: {
-                  'assets/css/concat.min.css': ['assets/css/concat.css']
+                  'assets/css/dist/concat.min.css': ['assets/css/dist/concat.css']
                 }
             }
-        }
+        },
+        watch: {
+            files: ['assets/js/*', 'assets/css/*'],
+            tasks: ['concat', 'cssmin', 'uglify']
+        },
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.registerTask('default', ['concat', 'uglify']);
+    grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
     grunt.registerTask('css', ['concat:css', 'cssmin']);
 }

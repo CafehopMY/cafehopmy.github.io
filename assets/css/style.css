@@ -56,12 +56,12 @@ nav ul li {
     color: #f9c36f;
     text-decoration: none;
     background-color: #c53d13 !important; }
-nav ul li.soc-media-links a {
-  padding: 0;
-  margin-right: 6px; }
-nav ul li.soc-media-links a:hover, nav ul li.soc-media-links a:focus {
-  background-color: #ec6338;
-  color: #f07e2d; }
+nav ul li.soc-media-links {
+  margin-left: 24px; }
+  nav ul li.soc-media-links a, nav ul li.soc-media-links .a {
+    margin-right: 6px; }
+  nav ul li.soc-media-links a:hover, nav ul li.soc-media-links a:focus {
+    background-color: transparent !important; }
 
 .navbar-toggle {
   margin: 33px 12px; }
@@ -297,6 +297,8 @@ div.cafe-types {
       float: none;
       width: 100%;
       display: block; }
+    footer div#footer-wrapper #social-media-share {
+      margin-bottom: 12px; }
     footer #share-button {
       width: 150px; }
     footer ul#sponsor_list {
