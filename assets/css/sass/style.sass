@@ -266,10 +266,18 @@ $logo-size-small: $logo-size * 0.8
                     width: $icons-mobile-size
 .addthis_native_toolbox
     width: 200px
+    display: table-row
     a 
-        height: 38px
+        height: 30px
+        margin-right: $space
         &.addthis_button_facebook_like 
-            height: 27px
+            // height: 27px
+            margin-top: -3px
+        display: table-cell
+
+        div 
+            span 
+                vertical-align: top !important
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak 
     display: none !important

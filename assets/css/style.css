@@ -308,11 +308,16 @@ div.cafe-types {
         footer ul#sponsor_list li img {
           width: 80px; } }
 .addthis_native_toolbox {
-  width: 200px; }
+  width: 200px;
+  display: table-row; }
   .addthis_native_toolbox a {
-    height: 38px; }
+    height: 30px;
+    margin-right: 12px;
+    display: table-cell; }
     .addthis_native_toolbox a.addthis_button_facebook_like {
-      height: 27px; }
+      margin-top: -3px; }
+    .addthis_native_toolbox a div span {
+      vertical-align: top !important; }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }
