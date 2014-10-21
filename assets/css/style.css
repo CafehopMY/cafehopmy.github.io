@@ -3,20 +3,17 @@
   src: url("./fonts/Matchbook.eot");
   src: url("./fonts/Matchbook.eot?#iefix") format("embedded-opentype"), url("./fonts/Matchbook.ttf");
   font-weight: normal; }
-
 @font-face {
   font-family: "Champagne";
   src: url("./fonts/Champagne_&_Limousines.eot");
   src: url("./fonts/Champagne_&_Limousines.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines.ttf");
   font-weight: normal; }
-
 @font-face {
   font-family: "Champagne Bold";
   src: url("./fonts/Champagne_&_Limousines_Bold.eot");
   src: url("./fonts/Champagne_&_Limousines_Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines_Bold.ttf");
   font-weight: bold;
   font-style: normal; }
-
 body {
   background-color: #ffe9c6;
   color: #90120e;
@@ -159,10 +156,10 @@ footer {
     margin: 0 auto; }
     footer div#footer-wrapper div#sponsors {
       float: right;
-      width: 80%; }
+      width: 70%; }
     footer div#footer-wrapper div#social-media-share {
       float: left;
-      width: 20%; }
+      width: 30%; }
       footer div#footer-wrapper div#social-media-share ul {
         margin: 0;
         padding: 0;
@@ -170,7 +167,7 @@ footer {
         footer div#footer-wrapper div#social-media-share ul a.share-button {
           margin-bottom: 6px;
           display: inline-block;
-          background-color: #3b5998;
+          background-color: #3B5998;
           padding: 6px;
           color: white;
           font-size: medium;
@@ -300,12 +297,8 @@ div.cafe-types {
       float: none;
       width: 100%;
       display: block; }
-      footer div#footer-wrapper div#social-media-share ul#share-button, footer div#footer-wrapper div#sponsors ul#share-button {
-        width: 100%;
-        display: table; }
-        footer div#footer-wrapper div#social-media-share ul#share-button li, footer div#footer-wrapper div#sponsors ul#share-button li {
-          display: table-cell;
-          vertical-align: top; }
+    footer #share-button {
+      width: 150px; }
     footer ul#sponsor_list {
       display: block; }
       footer ul#sponsor_list li {
@@ -314,5 +307,14 @@ div.cafe-types {
           display: none; }
         footer ul#sponsor_list li img {
           width: 80px; } }
+.addthis_native_toolbox {
+  width: 200px; }
+  .addthis_native_toolbox a {
+    height: 38px; }
+    .addthis_native_toolbox a.addthis_button_facebook_like {
+      height: 27px; }
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }
+
+/*# sourceMappingURL=style.css.map */
