@@ -17,7 +17,7 @@
 
 <div>
     <ul ng-repeat="faq in faqs" class="list-unstyled">
-        <dt ng-bind-html="faq.question"></dt>
+        <dt><strong ng-bind-html="faq.question"></strong></dt>
         <dd ng-bind-html="faq.answer"></dd>
     </ul>
 </div>
