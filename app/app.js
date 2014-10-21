@@ -1,6 +1,6 @@
 'use strict';
 
-var controllers = angular.module('cafehopApp.controllers', ['google-maps']);
+var controllers = angular.module('cafehopApp.controllers', ["google-maps".ns()]);
 var services = angular.module('cafehopApp.services', []);
 var factories = angular.module('cafehopApp.factories', []);
 var cafehop = angular.module('cafehopApp', 
