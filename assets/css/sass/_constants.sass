@@ -1,5 +1,5 @@
+@import 'fonts'
 // Static variables
-
 //Colors
 $space: 12px
 $white: #fff
@@ -41,29 +41,6 @@ $body-font: 'Champagne', Helvetica, Arial, sans-serif
 $bold-font: 'Champagne Bold', Helvetica, Arial, sans-serif
 
 
-// Custom Fonts
-@font-face
-    font-family: 'Matchbook'
-    src: url('./fonts/Matchbook.eot')
-    src: url('./fonts/Matchbook.eot?#iefix') format('embedded-opentype'), url('./fonts/Matchbook.ttf')
-    // src: local("Matchbook"), url('./fonts/Matchbook.ttf') format("truetype")
-    font-weight: normal
-
-@font-face
-    font-family: 'Champagne'
-    src: url('./fonts/Champagne_&_Limousines.eot')
-    src: url('./fonts/Champagne_&_Limousines.eot?#iefix') format('embedded-opentype'), url('./fonts/Champagne_&_Limousines.ttf')
-    // src: local("Champagne & Limousines"), url('./fonts/Champagne_&_Limousines.ttf') format("truetype")
-    font-weight: normal
-
-@font-face
-    font-family: 'Champagne Bold'
-    src: url('./fonts/Champagne_&_Limousines_Bold.eot')
-    src: url('./fonts/Champagne_&_Limousines_Bold.eot?#iefix') format('embedded-opentype'), url('./fonts/Champagne_&_Limousines_Bold.ttf')
-    // src: local("Champagne & Limousines Bold"), url('./fonts/Champagne_&_Limousines_Bold.ttf') format("truetype")
-    font-weight: bold
-    font-style: normal
-
 @mixin wrapper-style
     width: 95%
     margin: 0 auto 
@@ -89,7 +66,7 @@ $bold-font: 'Champagne Bold', Helvetica, Arial, sans-serif
 @mixin small-text-shadow($color)
     text-shadow: $color 1px 1px 0
 
-@mixin text-shadow($color)
+@mixin text-pop($color)
     text-shadow: $color 1px 2px 0
 
 @mixin box-sizing
@@ -114,7 +91,7 @@ $bold-font: 'Champagne Bold', Helvetica, Arial, sans-serif
 @mixin non-text-link-style
     a 
         @include rounded-corners($space/2)
-        @include text-shadow($dark-orange)
+        @include text-pop($dark-orange)
         background-color: $orange
         color: $beige
         text-decoration: none    

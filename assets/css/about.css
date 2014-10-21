@@ -1,38 +1,40 @@
 @font-face {
   font-family: "Matchbook";
-  src: url("./fonts/Matchbook.eot");
-  src: url("./fonts/Matchbook.eot?#iefix") format("embedded-opentype"), url("./fonts/Matchbook.ttf");
+  src: url('fonts/Matchbook.eot?1413816914');
+  src: url('fonts/Matchbook.eot?&1413816914#iefix') format('embedded-opentype'), url('fonts/Matchbook.eot?1413816914') format('embedded-opentype'), url('fonts/Matchbook.ttf?1413816914') format('truetype');
   font-weight: normal; }
-
 @font-face {
   font-family: "Champagne";
-  src: url("./fonts/Champagne_&_Limousines.eot");
-  src: url("./fonts/Champagne_&_Limousines.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines.ttf");
+  src: url('fonts/Champagne_&_Limousines.eot?1413816914');
+  src: url('fonts/Champagne_&_Limousines.eot?&1413816914#iefix') format('embedded-opentype'), url('fonts/Champagne_&_Limousines.eot?1413816914') format('embedded-opentype'), url('fonts/Champagne_&_Limousines.ttf?1413816914') format('truetype');
   font-weight: normal; }
-
 @font-face {
   font-family: "Champagne Bold";
-  src: url("./fonts/Champagne_&_Limousines_Bold.eot");
-  src: url("./fonts/Champagne_&_Limousines_Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines_Bold.ttf");
-  font-weight: bold;
-  font-style: normal; }
-
+  src: url('fonts/Champagne_&_Limousines_Bold.eot?1413816914');
+  src: url('fonts/Champagne_&_Limousines_Bold.eot?&1413816914#iefix') format('embedded-opentype'), url('fonts/Champagne_&_Limousines_Bold.eot?1413816914') format('embedded-opentype'), url('fonts/Champagne_&_Limousines_Bold.ttf?1413816914') format('truetype');
+  font-weight: bold; }
+/* line 4, sass/about.sass */
 span.name {
   font-weight: bold; }
 
+/* line 7, sass/about.sass */
 h2, h3 {
   clear: both; }
 
+/* line 10, sass/about.sass */
 .team {
   display: table;
   border-spacing: 12px; }
+  /* line 13, sass/about.sass */
   .team li {
     display: table-row;
     vertical-align: top; }
+  /* line 16, sass/about.sass */
   .team .team-image, .team .team-text {
     display: table-cell;
     text-align: left;
     vertical-align: top; }
+  /* line 20, sass/about.sass */
   .team img {
     width: 150px;
     -moz-border-radius: 75px;
@@ -40,21 +42,26 @@ h2, h3 {
     -khtml-border-radius: 75px;
     border-radius: 75px;
     margin-right: 24px; }
+  /* line 25, sass/about.sass */
   .team p {
     margin: 0;
     padding: 0;
     margin-bottom: 12px; }
 
 @media (max-width: 768px) {
+  /* line 31, sass/about.sass */
   .team .team-image, .team .team-text {
     width: 100%;
     display: block; }
+  /* line 34, sass/about.sass */
   .team .team-text .name {
     width: 100%;
     display: block;
     text-align: center; }
+  /* line 38, sass/about.sass */
   .team .team-image {
     text-align: center;
     margin-bottom: 12px; }
+    /* line 40, sass/about.sass */
     .team .team-image img {
       margin: 0; } }

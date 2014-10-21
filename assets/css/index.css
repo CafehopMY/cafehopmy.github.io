@@ -1,27 +1,25 @@
 @font-face {
   font-family: "Matchbook";
-  src: url("./fonts/Matchbook.eot");
-  src: url("./fonts/Matchbook.eot?#iefix") format("embedded-opentype"), url("./fonts/Matchbook.ttf");
+  src: url('fonts/Matchbook.eot?1413816914');
+  src: url('fonts/Matchbook.eot?&1413816914#iefix') format('embedded-opentype'), url('fonts/Matchbook.eot?1413816914') format('embedded-opentype'), url('fonts/Matchbook.ttf?1413816914') format('truetype');
   font-weight: normal; }
-
 @font-face {
   font-family: "Champagne";
-  src: url("./fonts/Champagne_&_Limousines.eot");
-  src: url("./fonts/Champagne_&_Limousines.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines.ttf");
+  src: url('fonts/Champagne_&_Limousines.eot?1413816914');
+  src: url('fonts/Champagne_&_Limousines.eot?&1413816914#iefix') format('embedded-opentype'), url('fonts/Champagne_&_Limousines.eot?1413816914') format('embedded-opentype'), url('fonts/Champagne_&_Limousines.ttf?1413816914') format('truetype');
   font-weight: normal; }
-
 @font-face {
   font-family: "Champagne Bold";
-  src: url("./fonts/Champagne_&_Limousines_Bold.eot");
-  src: url("./fonts/Champagne_&_Limousines_Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Champagne_&_Limousines_Bold.ttf");
-  font-weight: bold;
-  font-style: normal; }
-
+  src: url('fonts/Champagne_&_Limousines_Bold.eot?1413816914');
+  src: url('fonts/Champagne_&_Limousines_Bold.eot?&1413816914#iefix') format('embedded-opentype'), url('fonts/Champagne_&_Limousines_Bold.eot?1413816914') format('embedded-opentype'), url('fonts/Champagne_&_Limousines_Bold.ttf?1413816914') format('truetype');
+  font-weight: bold; }
+/* line 5, sass/index.sass */
 div#links-to-parts-of-site {
   margin: 0 auto;
   text-align: center;
   padding: 24px;
   padding-top: 0; }
+  /* line 92, sass/_constants.sass */
   div#links-to-parts-of-site a {
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -37,25 +35,33 @@ div#links-to-parts-of-site {
     -moz-transition: 0.5s;
     -webkit-transition: 0.5s;
     transition: 0.5s; }
+    /* line 100, sass/_constants.sass */
     div#links-to-parts-of-site a:hover, div#links-to-parts-of-site a.selected, div#links-to-parts-of-site a:focus {
       background-color: #c53d13; }
+  /* line 12, sass/index.sass */
   div#links-to-parts-of-site a {
     padding: 24px;
     margin: 12px;
     display: inline-block; }
+    /* line 16, sass/index.sass */
     div#links-to-parts-of-site a span {
       display: block;
       font-size: 1.2em; }
+      /* line 19, sass/index.sass */
       div#links-to-parts-of-site a span.small-btn-title {
         font-size: 0.8em; }
+    /* line 21, sass/index.sass */
     div#links-to-parts-of-site a img {
       width: 150px;
       margin: 12px; }
 
 @media only screen and (max-width: 650px) {
+  /* line 26, sass/index.sass */
   div#links-to-parts-of-site {
     padding: 3px; }
+    /* line 29, sass/index.sass */
     div#links-to-parts-of-site a span {
       font-size: 1em; }
+    /* line 31, sass/index.sass */
     div#links-to-parts-of-site a img {
       width: 80px; } }
