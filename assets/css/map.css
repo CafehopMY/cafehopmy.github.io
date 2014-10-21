@@ -18,7 +18,8 @@
   padding-bottom: 0px; }
 
 .map {
-  position: relative; }
+  position: relative;
+  height: 550px; }
 
 #map-canvas, .angular-google-map-container {
   border-bottom: 1px solid #c53d13;
