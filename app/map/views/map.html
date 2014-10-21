@@ -1,10 +1,13 @@
 <div ng-controller="MapController" class="map">
 
     <link rel="stylesheet" href="assets/css/map.css">
-    
+
     <div class="legend">
         <ul class="legend-list list-unstyled list-inline">
-            <li ng-repeat="item in legend" class="legend-item"><img class="legend-img" ng-src="{{item.img}}"/> <span class="legend-text">{{item.text}}</span></li>
+            <li ng-repeat="item in legend" class="legend-item">
+                <img class="legend-img" ng-src="{{item.img}}"/>
+                <span class="legend-text">{{item.text}}</span>
+            </li>
         </ul>
     </div>
 
@@ -14,34 +17,39 @@
         events="map.events" 
         options="map.options"
         id="map-canvas">
-            Loading map...
-        <ui-gmap-marker ng-repeat="marker in markers" 
-            idKey="marker.idKey" 
-            coords="marker.coords"
-            icon="marker.icon"
-            options="marker.options"
-            events="marker.events"
-            click="marker.click">
-            <ui-gmap-window ng-if="marker.cafe" isIconVisibleOnClick="marker.window.iconVisible"
-                closeClick="marker.window.closeClick"
-                options="marker.window.options">
-                <div>
-                    <h3>{{marker.cafe.name}}</h3>
-                    <span>{{marker.cafe.location.address}}</span>
-                    <ul class="list-unstyled list-inline">
-                        <li><a ng-href="#cafe/{{marker.cafe.id}}"><i class="glyphicon glyphicon-link"></i></a></li>
-                    </ul>
+        Loading map...
+        <ui-gmap-markers 
+            models="markers"
+            idkey="'idKey'" 
+            coords="'coords'"
+            icon="'icon'"
+            options="'options'"
+            events="markerEvents"
+            click="onMarkerClick">
+        </ui-gmap-markers>
 
+        <ui-gmap-window 
+            ng-if="markers.length >= 1"
+            isIconVisibleOnClick="windowMarker.window.iconVisible"
+            options="windowMarker.window.options"
+            coords="windowMarker.coords"
+            show="windowMarker.show">
+            <div>
+                <div ng-show="{{windowMarker.cafe}}">
+                    <h3>{{windowMarker.cafe.name}}</h3>
+                    <span>{{windowMarker.cafe.location.address}}</span>
+                    <ul class="list-unstyled list-inline">
+                        <li>
+                            <a ng-href="#cafe/{{windowMarker.cafe.id}}"> <i class="glyphicon glyphicon-link"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </ui-gmap-window>
-            <ui-gmap-window ng-if="!marker.cafe"
-                options="mapDefaults.marker.windowOptions"
-                show="true">
-                <div>
+                <div ng-show="{{!windowMarker.cafe}}">
                     <h3>You are here!</h3>
                     <p>Drag me to seach for cafes in other areas.</p>
                 </div>
-            </ui-gmap-window>
-        </ui-gmap-marker>
+            </div>
+        </ui-gmap-window>
     </ui-gmap-google-map>
 </div>
