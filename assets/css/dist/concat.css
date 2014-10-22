@@ -1907,9 +1907,15 @@ div#zones {
       position: absolute;
       width: 100%; }
       /* line 116, sass/_map.sass */
-      .map .cafes .cafe-list ul li {
-        padding: 6px 0; }
+      .map .cafes .cafe-list ul li a {
+        display: block;
+        padding: 6px;
+        border-radius: 3px;
+        text-decoration: none; }
+        /* line 121, sass/_map.sass */
+        .map .cafes .cafe-list ul li a:hover {
+          background-color: #f8b582; }
 
-/* line 120, sass/_map.sass */
+/* line 126, sass/_map.sass */
 .cafe .closed a {
   color: rgba(144, 18, 14, 0.4); }

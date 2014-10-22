@@ -8,7 +8,7 @@ angular.module('cafehopApp.factories').factory('MapDefaults', function() {
             windowOptions: {
                 maxWidth: 150,
                 maxHeight: 500,
-                pixelOffset: new google.maps.Size(0, -20)
+                pixelOffset: new google.maps.Size(0, -32)
             }
         },
         legend: [

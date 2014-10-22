@@ -23,6 +23,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         current: "assets/images/map-icons/chkl-pin-me.png",
         cafe: "assets/images/map-icons/chkl-pin-03.png",
         cafeClosed: "assets/images/map-icons/chkl-pin-01.png",
+        active: "assets/images/map-icons/chkl-pin-02.png",
     }
 
     $scope.fitMarkerBounds = function(){
@@ -54,6 +55,21 @@ angular.module('cafehopApp.controllers').controller('MapController',
         model.coords = {
             latitude: marker.getPosition().lat(),
             longitude: marker.getPosition().lng(),
+        }
+    }
+
+    $scope.onMarkerMouseover = function(marker, event, model){
+        if(model.isNotUser()){
+            marker.setIcon($scope.icons.active);
+            marker.setZIndex(google.maps.Marker.MAX_ZINDEX);
+        }
+
+        $scope.setWindowMarker(model)
+    }
+
+    $scope.onMarkerMouseout = function(marker, event, model){
+        if(model.isNotUser()){
+            marker.setIcon(model.icon);
         }
     }
 
@@ -112,7 +128,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
             $scope.mapCafes.getCafes({
                 success: $scope.addMarkers});
-            $scope.fitMarkerBounds();
             $scope.initialized = true;
         });
     }
@@ -133,6 +148,8 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.markerEvents = {
         dragend: $scope.currentMarkerDragEnd,
         dragstart: $scope.currentMarkerDragStart,
+        mouseover: $scope.onMarkerMouseover,
+        mouseout: $scope.onMarkerMouseout
 
     }
 
@@ -158,6 +175,9 @@ angular.module('cafehopApp.controllers').controller('MapController',
                     title: cafe.venue.name,
                     draggable: false
                 },
+                isNotUser: function(){
+                    return this.idKey != $scope.userMarker.idKey
+                }
             }
             $scope.markers.push(m)
         });

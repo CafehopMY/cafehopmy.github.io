@@ -113,8 +113,14 @@ div#zones
             margin-top: 0
             position: absolute
             width: 100%
-            li 
-                padding: $space/2 0 
+            li a
+                display: block
+                padding: $space/2 
+                border-radius: $space/4
+                text-decoration: none
+                &:hover 
+                    background-color: $light-orange
+
 
 .cafe 
     .closed a
