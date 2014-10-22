@@ -1268,18 +1268,18 @@ table {
 
 @font-face {
   font-family: "Matchbook";
-  src: url('fonts/Matchbook.eot');
-  src: url('fonts/Matchbook.eot?#iefix') format('embedded-opentype'), url('fonts/Matchbook.eot') format('embedded-opentype'), url('fonts/Matchbook.ttf') format('truetype');
+  src: url('fonts/Matchbook.eot?1413816914');
+  src: url('fonts/Matchbook.eot?&1413816914#iefix') format('embedded-opentype'), url('fonts/Matchbook.eot?1413816914') format('embedded-opentype'), url('fonts/Matchbook.ttf?1413816914') format('truetype');
   font-weight: normal; }
 @font-face {
   font-family: "Champagne";
-  src: url('fonts/Champagne_&_Limousines.eot');
-  src: url('fonts/Champagne_&_Limousines.eot?#iefix') format('embedded-opentype'), url('fonts/Champagne_&_Limousines.eot') format('embedded-opentype'), url('fonts/Champagne_&_Limousines.ttf') format('truetype');
+  src: url('fonts/Champagne_&_Limousines.eot?1413816914');
+  src: url('fonts/Champagne_&_Limousines.eot?&1413816914#iefix') format('embedded-opentype'), url('fonts/Champagne_&_Limousines.eot?1413816914') format('embedded-opentype'), url('fonts/Champagne_&_Limousines.ttf?1413816914') format('truetype');
   font-weight: normal; }
 @font-face {
   font-family: "Champagne Bold";
-  src: url('fonts/Champagne_&_Limousines_Bold.eot');
-  src: url('fonts/Champagne_&_Limousines_Bold.eot?#iefix') format('embedded-opentype'), url('fonts/Champagne_&_Limousines_Bold.eot') format('embedded-opentype'), url('fonts/Champagne_&_Limousines_Bold.ttf') format('truetype');
+  src: url('fonts/Champagne_&_Limousines_Bold.eot?1413816914');
+  src: url('fonts/Champagne_&_Limousines_Bold.eot?&1413816914#iefix') format('embedded-opentype'), url('fonts/Champagne_&_Limousines_Bold.eot?1413816914') format('embedded-opentype'), url('fonts/Champagne_&_Limousines_Bold.ttf?1413816914') format('truetype');
   font-weight: bold; }
 /* line 3, sass/_style.sass */
 body {
@@ -1778,20 +1778,19 @@ div#links-to-parts-of-site {
 
 /* line 8, sass/_map.sass */
 #map-canvas, .angular-google-map-container {
-  border-bottom: 1px solid #c53d13;
   width: 100%;
   height: 550px;
   background-color: #412218;
   color: #412218;
   font-family: "Champagne", Helvetica, Arial, sans-serif; }
-  /* line 15, sass/_map.sass */
+  /* line 14, sass/_map.sass */
   #map-canvas .gm-style-iw, .angular-google-map-container .gm-style-iw {
     height: auto !important; }
-    /* line 17, sass/_map.sass */
+    /* line 16, sass/_map.sass */
     #map-canvas .gm-style-iw div, .angular-google-map-container .gm-style-iw div {
       max-height: 500px;
       height: auto !important; }
-  /* line 20, sass/_map.sass */
+  /* line 19, sass/_map.sass */
   #map-canvas h3, .angular-google-map-container h3 {
     text-shadow: none;
     font-size: 1.4em;
@@ -1800,13 +1799,13 @@ div#links-to-parts-of-site {
     padding: 0;
     margin: 0;
     display: block; }
-  /* line 28, sass/_map.sass */
+  /* line 27, sass/_map.sass */
   #map-canvas a, .angular-google-map-container a {
     display: inline-block;
     clear: both;
     margin-right: 6px; }
 
-/* line 33, sass/_map.sass */
+/* line 32, sass/_map.sass */
 .legend {
   position: absolute;
   z-index: 9;
@@ -1815,40 +1814,40 @@ div#links-to-parts-of-site {
   background-color: rgba(144, 17, 13, 0.9);
   padding: 12px;
   max-width: 300px; }
-  /* line 41, sass/_map.sass */
+  /* line 40, sass/_map.sass */
   .legend .legend-list {
     padding: 0px;
     margin: 0px;
     color: #f8b582; }
-    /* line 45, sass/_map.sass */
+    /* line 44, sass/_map.sass */
     .legend .legend-list .legend-item {
       width: auto; }
-    /* line 47, sass/_map.sass */
+    /* line 46, sass/_map.sass */
     .legend .legend-list .legend-text {
       font-size: 14px;
       text-transform: uppercase; }
-    /* line 50, sass/_map.sass */
+    /* line 49, sass/_map.sass */
     .legend .legend-list .legend-img {
       max-height: 30px; }
 
 @media only screen and (max-width: 768px) {
-  /* line 53, sass/_map.sass */
+  /* line 52, sass/_map.sass */
   .legend {
     right: 12px;
     bottom: 12px;
     top: auto; } }
-/* line 58, sass/_map.sass */
+/* line 57, sass/_map.sass */
 div#zones {
   width: 100%;
   background-color: #c53d13; }
-  /* line 63, sass/_map.sass */
+  /* line 62, sass/_map.sass */
   div#zones ul#zones-list {
     margin: 0;
     padding: 0;
     margin: 0 auto;
     max-width: 1000px;
     list-style: none; }
-    /* line 68, sass/_map.sass */
+    /* line 67, sass/_map.sass */
     div#zones ul#zones-list li {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -1856,7 +1855,7 @@ div#zones {
       margin: 0;
       padding: 0;
       display: inline-block; }
-      /* line 72, sass/_map.sass */
+      /* line 71, sass/_map.sass */
       div#zones ul#zones-list li a {
         padding: 6px 12px;
         display: block;
@@ -1865,24 +1864,49 @@ div#zones {
         color: #f9c36f;
         text-shadow: none;
         font-size: 0.8em; }
-        /* line 80, sass/_map.sass */
+        /* line 79, sass/_map.sass */
         div#zones ul#zones-list li a:hover {
           color: #f8b582;
           background-color: #c53d13; }
-        /* line 83, sass/_map.sass */
+        /* line 82, sass/_map.sass */
         div#zones ul#zones-list li a.selected {
           background-color: #f9c36f;
           color: #c53d13; }
 
 @media only screen and (max-width: 768px) {
-  /* line 88, sass/_map.sass */
+  /* line 87, sass/_map.sass */
   #map-canvas, .angular-google-map-container {
     min-height: 450px; } }
 /* line 91, sass/_map.sass */
-.cafe-list {
-  padding: 12px; }
+.map > div {
+  max-height: 550px;
+  padding-left: 0;
+  padding-right: 0; }
 
-/* line 93, sass/_map.sass */
-.cafes {
-  max-height: 200px;
-  overflow-y: scroll; }
+/* line 96, sass/_map.sass */
+.map .cafes {
+  position: relative;
+  padding: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  height: 550px; }
+  /* line 103, sass/_map.sass */
+  .map .cafes .cafe-numbers {
+    height: 24px;
+    font-weight: bold; }
+  /* line 106, sass/_map.sass */
+  .map .cafes .cafe-list {
+    position: relative;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    height: 490px;
+    overflow-y: scroll; }
+    /* line 112, sass/_map.sass */
+    .map .cafes .cafe-list ul {
+      margin-top: 0;
+      position: absolute;
+      width: 100%; }
+      /* line 116, sass/_map.sass */
+      .map .cafes .cafe-list ul li {
+        padding: 6px 0;
+        border-bottom: 1px solid #ec6338; }

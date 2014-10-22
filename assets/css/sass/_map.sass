@@ -6,7 +6,6 @@
     min-height: $map-height
 
 #map-canvas, .angular-google-map-container
-    border-bottom: 1px solid $dark-orange
     width: 100%
     height: $map-height
     background-color: $brown
@@ -88,8 +87,32 @@ div#zones
     #map-canvas, .angular-google-map-container
         min-height: 450px
 
-.cafe-list
+.map
+    > div 
+        max-height: $map-height
+        padding-left: 0
+        padding-right: 0
+
+.map .cafes
+    position: relative
     padding: $space
-.cafes 
-    max-height: 200px
-    overflow-y: scroll
+    padding-left: $space
+    padding-right: $space
+    height: $map-height
+    $cafe-numbers-height: $space * 2
+    .cafe-numbers
+        height: $cafe-numbers-height
+        font-weight: bold
+    .cafe-list
+        position: relative
+        margin-top: $space
+        margin-bottom: $space
+        height: $map-height - $cafe-numbers-height - $space * 3
+        overflow-y: scroll
+        ul 
+            margin-top: 0
+            position: absolute
+            width: 100%
+            li 
+                padding: $space/2 0 
+                border-bottom: 1px solid $orange
