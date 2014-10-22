@@ -45,7 +45,6 @@
             width: auto
         .legend-text
             font-size: 14px
-            text-transform: uppercase
         .legend-img 
             max-height: 30px
 @media only screen and (max-width : 768px)
@@ -113,15 +112,31 @@ div#zones
             margin-top: 0
             position: absolute
             width: 100%
-            li a
-                display: block
-                padding: $space/2 
-                border-radius: $space/4
-                text-decoration: none
-                &:hover, &.hover
-                    background-color: $light-orange
+            li 
+                div
+                    display: block
+                    padding: $space/2 
+                    border-radius: $space/4
+                    text-decoration: none
+                    clear: both
+                    &:after, &:before
+                        clear: both
+                        content: " "
+                        display: block
+                    &:hover, &.hover
+                        background-color: $light-orange
+                .cafe-name
+                    width: 90%
+                    text-overflow: ellipsis
+                    overflow: hidden
+                    white-space: nowrap
+                    float: left
+                .cafe-link
+                    width: 10%
+                    float: right
 
 
 .cafe 
-    .closed a
-        color: rgba($red, 0.4)
+    &.closed
+        a,.a 
+            color: rgba($red, 0.4)

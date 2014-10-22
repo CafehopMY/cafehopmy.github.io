@@ -16,7 +16,8 @@ module.exports = function(grunt) {
             css: {
                 src: [
                     'assets/css/vendor/*.css',
-                    'assets/css/*.css'
+                    'assets/css/*.css',
+                    'bower_components/fontawesome/css/font-awesome.min.css'
                 ],
                 dest: 'assets/css/dist/concat.css'
             }

@@ -205,9 +205,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.infoWindow.coords = model.coords;
     }
     $scope.hideWindowMarker = function(){
-        $scope.$apply(function(){
-            $scope.map.showWindow = false;
-        })
+        $scope.map.showWindow = false;
     }
 
     $scope.mouseoutMarker = function(idKey){

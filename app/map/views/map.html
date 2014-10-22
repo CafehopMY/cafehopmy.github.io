@@ -1,6 +1,6 @@
 <div ng-controller="MapController" class="map">
 
-    <div class="col-xs-8 col-sm-8">
+    <div class="col-xs-7 col-sm-8">
         <div class="legend">
             <ul class="legend-list list-unstyled list-inline">
                 <li ng-repeat="item in legend" class="legend-item">
@@ -42,26 +42,27 @@
                     </div>
                     <div ng-show="{{!infoWindow.model.cafe}}">
                         <h3>You are here!</h3>
-                        <p>Drag me to seach for cafes in other areas.</p>
+                        <p>Drag to search for cafes.</p>
                     </div>
                 </div>
             </ui-gmap-window>
         </ui-gmap-google-map>
     </div>
 
-    <div class="col-xs-4 col-sm-4 cafes">
+    <div class="col-xs-5 col-sm-4 cafes">
         <div class="cafe-numbers">
             <span ng-bind="cafes.length"></span>
-            Cafes around you
-
-            <small ng-show="loadingCafes">Loading &hellip;</small>
+            Cafes
+            &nbsp; <i ng-show="loadingCafes" class="fa fa-spinner fa-spin"></i>
         </div>
         <div class="cafe-list">
             <ul class="list-unstyled">
-                <li ng-mouseover="mouseoverMarker(cafe.idKey)" ng-mouseleave="mouseoutMarker(cafe.idKey)"  ng-class="{cafe: true}" ng-repeat="cafe in cafes">
-                    <span ng-class="{closed: cafe.venue.hours && !cafe.venue.hours.isOpen}">
-                        <a ng-class="{hover: cafe.idKey == currMarkerHover}" ng-href="#cafe/{{cafe.venue.id}}">{{cafe.venue.name}}</a>
-                    </span>
+                <li ng-mouseover="mouseoverMarker(cafe.idKey)" ng-mouseleave="mouseoutMarker(cafe.idKey)"  ng-class="{cafe: true, closed: cafe.venue.hours && !cafe.venue.hours.isOpen}" ng-repeat="cafe in cafes">
+                    <div>
+                        <span class="a cafe-name">{{cafe.venue.name}}</span>
+                        <a ng-class="{'cafe-link': true, hover: cafe.idKey == currMarkerHover}" ng-href="#cafe/{{cafe.venue.id}}"> <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
 
                 </li>
             </ul>
