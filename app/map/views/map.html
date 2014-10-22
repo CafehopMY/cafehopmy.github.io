@@ -24,7 +24,8 @@
             icon="'icon'"
             options="'options'"
             events="markerEvents"
-            click="onMarkerClick"></ui-gmap-markers>
+            click="onMarkerClick"
+            control="markersControl"></ui-gmap-markers>
 
             <ui-gmap-window 
             show="map.showWindow"
@@ -55,9 +56,9 @@
         </div>
         <div class="cafe-list">
             <ul class="list-unstyled">
-                <li class="cafe" ng-repeat="cafe in cafes">
+                <li ng-mouseover="mouseoverMarker(cafe.idKey)" ng-mouseleave="mouseoutMarker(cafe.idKey)"  ng-class="{cafe: true}" ng-repeat="cafe in cafes">
                     <span ng-class="{closed: cafe.venue.hours && !cafe.venue.hours.isOpen}">
-                    <a ng-href="#cafe/{{cafe.venue.id}}">{{cafe.venue.name}}</a>
+                        <a ng-class="{hover: cafe.idKey == currMarkerHover}" ng-href="#cafe/{{cafe.venue.id}}">{{cafe.venue.name}}</a>
                     </span>
 
                 </li>

@@ -645,7 +645,7 @@ div#zones {
         border-radius: 3px;
         text-decoration: none; }
         /* line 121, sass/_map.sass */
-        .map .cafes .cafe-list ul li a:hover {
+        .map .cafes .cafe-list ul li a:hover, .map .cafes .cafe-list ul li a.hover {
           background-color: #f8b582; }
 
 /* line 126, sass/_map.sass */

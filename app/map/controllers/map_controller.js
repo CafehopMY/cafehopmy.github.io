@@ -3,12 +3,13 @@ angular.module('cafehopApp.controllers').controller('MapController',
     function($scope, $http, CafeService, MapCafes, MapDefaults){
     
     $scope.markers = [];
+    $scope.markersControl = {};
     $scope.mapCafes = MapCafes;
     $scope.cafes = $scope.mapCafes.cafes;
     $scope.initialized = false;
     $scope.mapDefaults = MapDefaults;
     $scope.legend = MapDefaults.legend;
-
+    $scope.currMarkerHover = -1;
     $scope.idKeyCounter = 0;
 
     $scope.infoWindow = {
@@ -63,6 +64,8 @@ angular.module('cafehopApp.controllers').controller('MapController',
             marker.setIcon($scope.icons.active);
             marker.setZIndex(google.maps.Marker.MAX_ZINDEX);
         }
+
+        $scope.currMarkerHover = model.idKey;
 
         $scope.setWindowMarker(model)
     }
@@ -179,6 +182,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
                     return this.idKey != $scope.userMarker.idKey
                 }
             }
+            cafe.idKey = m.idKey;
             $scope.markers.push(m)
         });
         $scope.fitMarkerBounds();
@@ -198,5 +202,32 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.$apply(function(){
             $scope.map.showWindow = false;
         })
+    }
+
+    $scope.mouseoutMarker = function(idKey){
+        var m = $scope.findMarker(idKey);
+        if(m){
+            google.maps.event.trigger(m, 'mouseout')
+        }
+        
+    }
+
+    $scope.mouseoverMarker = function(idKey){
+        var m = $scope.findMarker(idKey);
+        if(m){
+            google.maps.event.trigger(m, 'mouseover')
+        }
+    }
+
+    $scope.findMarker = function(idKey){
+        var markers =  $scope.markersControl.getGMarkers();
+        var m;
+
+        for(var i in markers){
+            if(markers[i].key == idKey){
+                m = markers[i];
+            }
+        }
+        return m;
     }
 }]);
