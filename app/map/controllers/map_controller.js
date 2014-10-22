@@ -12,11 +12,12 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.idKeyCounter = 0;
 
     $scope.infoWindow = {
-        show: false,
         marker: null,
         model: null,
-        coords: {}
+        coords: {},
+        options: $scope.mapDefaults.marker.windowOptions
     }
+
 
     $scope.icons = {
         current: "assets/images/map-icons/chkl-pin-me.png",
@@ -32,7 +33,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
             bounds.extend(new google.maps.LatLng(coords.latitude, coords.longitude));
         });
 
-        $scope.instance.panToBounds(bounds);
+        $scope.instance.fitBounds(bounds);
     }
 
     $scope.currentMarkerDragStart = function(marker, e, model){
@@ -57,6 +58,11 @@ angular.module('cafehopApp.controllers').controller('MapController',
     }
 
     $scope.onMarkerClick = function(marker, event, model){
+        // If already opened
+        if(model.idKey == $scope.userMarker.idKey){
+            $scope.hideWindowMarker();
+            return;
+        }
         $scope.setWindowMarker(model);
     }
 
@@ -120,7 +126,8 @@ angular.module('cafehopApp.controllers').controller('MapController',
         options: {
             scrollwheel: false,
             mapTypeControl: false
-        }
+        },
+        showWindow: false
     };
 
     $scope.markerEvents = {
@@ -136,7 +143,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         angular.forEach(cafes, function(cafe, index){
             var m = {
                 idKey: $scope.idKeyCounter++,
-                icon: cafe.venue.hours.isOpen? $scope.icons.cafe : $scope.icons.cafeClosed,
+                icon: cafe.venue.hours && cafe.venue.hours.isOpen? $scope.icons.cafe : $scope.icons.cafeClosed,
                 coords: {
                     latitude: cafe.venue.location.lat,
                     longitude: cafe.venue.location.lng
@@ -154,6 +161,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
             }
             $scope.markers.push(m)
         });
+        $scope.fitMarkerBounds();
     };
 
     $scope.goToCafe = function(cafe){
@@ -163,11 +171,12 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.setWindowMarker = function(model){
         $scope.infoWindow.model = model;
 
-        $scope.infoWindow.show = true;
+        $scope.map.showWindow = true;
         $scope.infoWindow.coords = model.coords;
     }
     $scope.hideWindowMarker = function(){
-        $scope.infoWindow.show = false;
-
+        $scope.$apply(function(){
+            $scope.map.showWindow = false;
+        })
     }
 }]);

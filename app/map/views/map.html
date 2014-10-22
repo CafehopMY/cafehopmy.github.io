@@ -27,11 +27,12 @@
             click="onMarkerClick"></ui-gmap-markers>
 
             <ui-gmap-window 
+            show="map.showWindow"
             isIconVisibleOnClick="infoWindow.model.window.iconVisible"
-            options="infoWindow.model.window.options"
-            coords="infoWindow.model.coords"
-            show="infoWindow.show">
+            options="infoWindow.options"
+            coords="infoWindow.model.coords">
                 <div>
+                    <span ng-bind="map.showWindow"></span>
                     <div ng-show="{{infoWindow.model.cafe}}">
                         <h3>
                             <a ng-href="#cafe/{{infoWindow.model.cafe.id}}">{{infoWindow.model.cafe.name}}</a>
