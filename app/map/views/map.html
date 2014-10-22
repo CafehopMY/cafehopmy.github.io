@@ -53,6 +53,8 @@
         <div class="cafe-numbers">
             <span ng-bind="cafes.length"></span>
             Cafes around you
+
+            <small ng-show="loadingCafes">Loading &hellip;</small>
         </div>
         <div class="cafe-list">
             <ul class="list-unstyled">

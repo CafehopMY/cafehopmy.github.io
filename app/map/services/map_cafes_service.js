@@ -4,6 +4,7 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
     var self = {
         cafes: [],
         getCafes: function(options){
+            options.before();
             options = options || {};
             options.radius = options.radius || 1000;
             options.offset = options.offset || 0;

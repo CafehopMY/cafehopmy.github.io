@@ -48,10 +48,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         var latlng = marker.getPosition();
         $scope.instance.panTo(latlng);
         
-        $scope.mapCafes.getCafes({
-            ll: latlng.lat() + "," + latlng.lng(),
-            success: $scope.addMarkers,
-        });
+        $scope.getCafes(latlng.lat() + "," + latlng.lng());
 
         model.coords = {
             latitude: marker.getPosition().lat(),
@@ -119,9 +116,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
                     $scope.userMarker.coords = pos.coords;
                     var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                     $scope.instance.panTo(latlng);
-                    $scope.mapCafes.getCafes({
-                    ll: latlng.lat() + "," + latlng.lng(),
-                    success: $scope.addMarkers});
+                    $scope.getCafes(latlng.lat() + "," + latlng.lng());
                });
             }
 
@@ -129,10 +124,20 @@ angular.module('cafehopApp.controllers').controller('MapController',
             $scope.markers.push($scope.userMarker);
             $scope.setWindowMarker($scope.userMarker);
 
-            $scope.mapCafes.getCafes({
-                success: $scope.addMarkers});
+            $scope.getCafes();
             $scope.initialized = true;
         });
+    }
+
+
+    $scope.getCafes = function(ll){
+        $scope.mapCafes.getCafes({
+            before: function(){
+                $scope.loadingCafes = true;
+            },
+            success: $scope.addMarkers,
+            ll: ll
+        })
     }
 
     $scope.map = {
@@ -186,6 +191,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
             $scope.markers.push(m)
         });
         $scope.fitMarkerBounds();
+        $scope.loadingCafes = false;
     };
 
     $scope.goToCafe = function(cafe){
