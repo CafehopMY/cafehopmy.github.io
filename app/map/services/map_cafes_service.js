@@ -5,9 +5,9 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
         cafes: [],
         getCafes: function(options){
             options = options || {};
-            options.radius = options.radius || 5000;
+            options.radius = options.radius || 1000;
             options.offset = options.offset || 0;
-            options.limit = options.limit || 100;
+            options.limit = options.limit || 30;
 
             var id          = "";
             var secret      = "";

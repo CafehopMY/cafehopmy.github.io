@@ -54,7 +54,12 @@
         </div>
         <div class="cafe-list">
             <ul class="list-unstyled">
-                <li ng-repeat="cafe in cafes">{{cafe.venue.name}}</li>
+                <li class="cafe" ng-repeat="cafe in cafes">
+                    <span ng-class="{closed: cafe.venue.hours && !cafe.venue.hours.isOpen}">
+                    <a ng-href="#cafe/{{cafe.venue.id}}">{{cafe.venue.name}}</a>
+                    </span>
+
+                </li>
             </ul>
         </div>
     </div>

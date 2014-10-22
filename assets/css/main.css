@@ -640,5 +640,8 @@ div#zones {
       width: 100%; }
       /* line 116, sass/_map.sass */
       .map .cafes .cafe-list ul li {
-        padding: 6px 0;
-        border-bottom: 1px solid #ec6338; }
+        padding: 6px 0; }
+
+/* line 120, sass/_map.sass */
+.cafe .closed a {
+  color: rgba(144, 18, 14, 0.4); }
