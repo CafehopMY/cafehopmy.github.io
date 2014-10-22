@@ -1911,29 +1911,30 @@ div#zones {
         padding: 6px;
         border-radius: 3px;
         text-decoration: none;
-        clear: both;
-        overflow: auto; }
-        /* line 123, sass/_map.sass */
+        clear: both; }
+        /* line 122, sass/_map.sass */
         .map .cafes .cafe-list ul li div:after, .map .cafes .cafe-list ul li div:before {
           clear: both;
           content: " ";
           display: block; }
-        /* line 127, sass/_map.sass */
+        /* line 126, sass/_map.sass */
         .map .cafes .cafe-list ul li div:hover, .map .cafes .cafe-list ul li div.hover {
           background-color: #f8b582; }
-      /* line 129, sass/_map.sass */
+      /* line 128, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-name {
         width: 90%;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
         float: left; }
-      /* line 135, sass/_map.sass */
+      /* line 134, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-link {
         width: 10%;
-        float: right; }
+        float: right;
+        text-align: right;
+        padding-right: 6px; }
 
-/* line 142, sass/_map.sass */
+/* line 143, sass/_map.sass */
 .cafe.closed a, .cafe.closed .a {
   color: rgba(144, 18, 14, 0.4); }
 
