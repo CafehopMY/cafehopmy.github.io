@@ -58,9 +58,9 @@
         <div class="cafe-list">
             <ul class="list-unstyled">
                 <li ng-mouseover="mouseoverMarker(cafe.idKey)" ng-mouseleave="mouseoutMarker(cafe.idKey)"  ng-class="{cafe: true, closed: cafe.venue.hours && !cafe.venue.hours.isOpen}" ng-repeat="cafe in cafes">
-                    <div>
+                    <div ng-class="{hover: cafe.idKey == currMarkerHover}">
                         <span class="a cafe-name">{{cafe.venue.name}}</span>
-                        <a ng-class="{'cafe-link': true, hover: cafe.idKey == currMarkerHover}" ng-href="#cafe/{{cafe.venue.id}}"> <i class="fa fa-angle-right"></i>
+                        <a ng-class="{'cafe-link': true}" ng-href="#cafe/{{cafe.venue.id}}"> <i class="fa fa-angle-right"></i>
                         </a>
                     </div>
 

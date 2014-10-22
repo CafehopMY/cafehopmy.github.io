@@ -57,18 +57,16 @@ angular.module('cafehopApp.controllers').controller('MapController',
     }
 
     $scope.onMarkerMouseover = function(marker, event, model){
-        if(model.isNotUser()){
+        if(model && model.isNotUser()){
             marker.setIcon($scope.icons.active);
-            marker.setZIndex(google.maps.Marker.MAX_ZINDEX);
+            marker.setZIndex(google.maps.Marker.MAX_ZINDEX + 1);
+            $scope.currMarkerHover = model.idKey;
+            $scope.setWindowMarker(model)
         }
-
-        $scope.currMarkerHover = model.idKey;
-
-        $scope.setWindowMarker(model)
     }
 
     $scope.onMarkerMouseout = function(marker, event, model){
-        if(model.isNotUser()){
+        if(model && model.isNotUser()){
             marker.setIcon(model.icon);
         }
     }
