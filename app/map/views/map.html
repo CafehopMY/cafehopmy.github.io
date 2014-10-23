@@ -51,8 +51,9 @@
 
     <div class="col-xs-5 col-sm-4 cafes">
         <div class="cafe-numbers">
-            <span ng-bind="cafes.length"></span>
-            Cafes
+            <span ng-show="!loadingCafes" ng-bind="cafes.length"></span>
+            <span ng-show="loadingCafes">Loading</span>
+            Cafes Nearby
             &nbsp; <i ng-show="loadingCafes" class="fa fa-spinner fa-spin"></i>
         </div>
         <div class="cafe-list">

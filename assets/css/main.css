@@ -1,17 +1,17 @@
 @font-face {
   font-family: "Matchbook";
-  src: url('fonts/Matchbook.eot?1413988642');
-  src: url('fonts/Matchbook.eot?&1413988642#iefix') format('embedded-opentype'), url('fonts/Matchbook.eot?1413988642') format('embedded-opentype'), url('fonts/Matchbook.ttf?1413988642') format('truetype');
+  src: url('fonts/Matchbook.eot?1410503935');
+  src: url('fonts/Matchbook.eot?&1410503935#iefix') format('embedded-opentype'), url('fonts/Matchbook.eot?1410503935') format('embedded-opentype'), url('fonts/Matchbook.ttf?1410503935') format('truetype');
   font-weight: normal; }
 @font-face {
   font-family: "Champagne";
-  src: url('fonts/Champagne_&_Limousines.eot?1413988642');
-  src: url('fonts/Champagne_&_Limousines.eot?&1413988642#iefix') format('embedded-opentype'), url('fonts/Champagne_&_Limousines.eot?1413988642') format('embedded-opentype'), url('fonts/Champagne_&_Limousines.ttf?1413988642') format('truetype');
+  src: url('fonts/Champagne_&_Limousines.eot?1410503935');
+  src: url('fonts/Champagne_&_Limousines.eot?&1410503935#iefix') format('embedded-opentype'), url('fonts/Champagne_&_Limousines.eot?1410503935') format('embedded-opentype'), url('fonts/Champagne_&_Limousines.ttf?1410503935') format('truetype');
   font-weight: normal; }
 @font-face {
   font-family: "Champagne Bold";
-  src: url('fonts/Champagne_&_Limousines_Bold.eot?1413988642');
-  src: url('fonts/Champagne_&_Limousines_Bold.eot?&1413988642#iefix') format('embedded-opentype'), url('fonts/Champagne_&_Limousines_Bold.eot?1413988642') format('embedded-opentype'), url('fonts/Champagne_&_Limousines_Bold.ttf?1413988642') format('truetype');
+  src: url('fonts/Champagne_&_Limousines_Bold.eot?1410503935');
+  src: url('fonts/Champagne_&_Limousines_Bold.eot?&1410503935#iefix') format('embedded-opentype'), url('fonts/Champagne_&_Limousines_Bold.eot?1410503935') format('embedded-opentype'), url('fonts/Champagne_&_Limousines_Bold.ttf?1410503935') format('truetype');
   font-weight: bold; }
 /* line 3, sass/_style.sass */
 body {
@@ -136,7 +136,7 @@ div.clear-both {
 
 /* line 65, sass/_style.sass */
 h1, h2, h3, h4, .h1 {
-  font-family: "Matchbook", Helvetica, Arial, sans-serif;
+  font-family: "Matchbook", Impact, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 0; }
@@ -641,30 +641,30 @@ div#zones {
       .map .cafes .cafe-list ul li div {
         display: block;
         padding: 6px;
+        margin-right: 6px;
         border-radius: 3px;
         text-decoration: none;
         clear: both; }
-        /* line 122, sass/_map.sass */
+        /* line 123, sass/_map.sass */
         .map .cafes .cafe-list ul li div:after, .map .cafes .cafe-list ul li div:before {
           clear: both;
           content: " ";
           display: block; }
-        /* line 126, sass/_map.sass */
+        /* line 127, sass/_map.sass */
         .map .cafes .cafe-list ul li div:hover, .map .cafes .cafe-list ul li div.hover {
           background-color: #f8b582; }
-      /* line 128, sass/_map.sass */
+      /* line 129, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-name {
         width: 90%;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
         float: left; }
-      /* line 134, sass/_map.sass */
+      /* line 135, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-link {
         width: 10%;
         float: right;
-        text-align: right;
-        padding-right: 6px; }
+        text-align: right; }
 
 /* line 143, sass/_map.sass */
 .cafe.closed a, .cafe.closed .a {
