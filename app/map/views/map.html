@@ -3,9 +3,8 @@
     <div class="col-xs-7 col-sm-8">
         <div class="legend">
             <ul class="legend-list list-unstyled list-inline">
-                <li ng-repeat="item in legend" class="legend-item">
-                    <img class="legend-img" ng-src="{{item.img}}"/>
-                    <span class="legend-text">{{item.text}}</span>
+                <li>
+                    <a href ng-click="panToUser()"><i class="fa fa-crosshairs"></i></a>
                 </li>
             </ul>
         </div>

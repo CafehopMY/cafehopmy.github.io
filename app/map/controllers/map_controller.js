@@ -27,6 +27,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         active: "assets/images/map-icons/chkl-pin-02.png",
     }
 
+    // PAN AND FIT 
     $scope.fitMarkerBounds = function(){
         
         if(!$scope.instance){
@@ -45,9 +46,16 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.instance.fitBounds(bounds);
     }
 
+    $scope.panToUser = function(){
+        var ll = $scope.findMarker($scope.userMarker.idKey).getPosition();
+        $scope.instance.panTo(ll);
+    }
+
+    // MARKER CALLBACKS
     $scope.currentMarkerDragStart = function(marker, e, model){
         $scope.hideWindowMarker();
     }
+
 
     // When current location marker is moved
     $scope.currentMarkerDragEnd = function(marker, e, model){
@@ -87,7 +95,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.setWindowMarker(model);
     }
 
-
+    // Place marker in default center
     $scope.placeDefaultUser = function(marker){
         marker.coords = $scope.mapDefaults.center;
         var latlng = new google.maps.LatLng($scope.mapDefaults.center.latitude, $scope.mapDefaults.center.longitude);
