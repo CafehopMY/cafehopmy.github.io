@@ -2,7 +2,12 @@ angular.module('cafehopApp.controllers').controller('MapController',
     ['$scope', '$http', '$rootScope', 'CafeService', 'MapCafes', 'MapDefaults', 
     function($scope, $http, $rootScope, CafeService, MapCafes, MapDefaults){
     
+    // Only hide footer for map view
     $rootScope.hideFooter = true;
+    $rootScope.$on('$locationChangeStart', function(e, next, curr){
+        $rootScope.hideFooter = false;
+    });
+
     $scope.markers = [];
     $scope.markersControl = {};
     $scope.mapCafes = MapCafes;
@@ -212,6 +217,15 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.fitMarkerBounds();
         $scope.loadingCafes = false;
     };
+
+    $scope.getPhotoUrl = function(cafe){
+        if(cafe.venue.photos.groups[0]){
+            var c = cafe.venue.photos.groups[0].items[0];
+            return c.prefix + '100x100' + c.suffix;
+        }
+
+        return 'http://placehold.it/100x100';
+    }
 
     $scope.goToCafe = function(cafe){
         $location.path('/cafe')

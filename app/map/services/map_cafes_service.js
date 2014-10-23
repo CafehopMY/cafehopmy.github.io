@@ -2,8 +2,6 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
     var defaults = MapDefaults;
     var api_url  = "http://cafehop.my/api/sherminn/browse.php";
 
-    
-    
     var self = {
         getCount: 0, // getCafes() counter
         cafes: [],

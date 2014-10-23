@@ -1902,37 +1902,56 @@ div#zones {
       padding-bottom: 12px;
       width: 100%; }
       /* line 112, sass/_map.sass */
-      .map .cafes .cafe-list ul li div {
+      .map .cafes .cafe-list ul li > div {
         display: block;
-        padding: 6px;
+        padding: 12px 6px;
         margin-right: 6px;
         border-radius: 3px;
         text-decoration: none;
         clear: both; }
         /* line 119, sass/_map.sass */
-        .map .cafes .cafe-list ul li div:after, .map .cafes .cafe-list ul li div:before {
+        .map .cafes .cafe-list ul li > div:after, .map .cafes .cafe-list ul li > div:before {
           clear: both;
           content: " ";
           display: block; }
         /* line 123, sass/_map.sass */
-        .map .cafes .cafe-list ul li div:hover, .map .cafes .cafe-list ul li div.hover {
+        .map .cafes .cafe-list ul li > div:hover, .map .cafes .cafe-list ul li > div.hover {
           background-color: #f8b582; }
       /* line 125, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-name {
-        width: 90%;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
         float: left; }
-      /* line 131, sass/_map.sass */
+      /* line 130, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-link {
         width: 10%;
         float: right;
         text-align: right; }
 
-/* line 139, sass/_map.sass */
+/* line 138, sass/_map.sass */
 .cafe.closed a, .cafe.closed .a {
   color: rgba(144, 18, 14, 0.4); }
+/* line 140, sass/_map.sass */
+.cafe .cafe-container {
+  display: table-row; }
+  /* line 142, sass/_map.sass */
+  .cafe .cafe-container > div {
+    display: table-cell;
+    vertical-align: middle; }
+    /* line 145, sass/_map.sass */
+    .cafe .cafe-container > div:first-child {
+      padding-right: 12px;
+      padding-left: 6px; }
+      /* line 148, sass/_map.sass */
+      .cafe .cafe-container > div:first-child img {
+        width: 100px;
+        border-radius: 12px; }
+    /* line 152, sass/_map.sass */
+    .cafe .cafe-container > div:nth-child(2) {
+      padding-top: 12px;
+      vertical-align: top;
+      width: 100%; }
 
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome

@@ -109,9 +109,9 @@ div#zones
             padding-bottom: $space
             width: 100%
             li 
-                div
+                > div
                     display: block
-                    padding: $space/2 
+                    padding: $space $space/2 
                     margin-right: $space/2
                     border-radius: $space/4
                     text-decoration: none
@@ -123,7 +123,6 @@ div#zones
                     &:hover, &.hover
                         background-color: $light-orange
                 .cafe-name
-                    width: 90%
                     text-overflow: ellipsis
                     overflow: hidden
                     white-space: nowrap
@@ -138,3 +137,19 @@ div#zones
     &.closed
         a,.a 
             color: rgba($red, 0.4)
+    .cafe-container
+        display: table-row 
+        > div 
+            display: table-cell
+            vertical-align: middle
+            &:first-child
+                padding-right: $space
+                padding-left: $space/2
+                img 
+                    $cafe-img-size: 100px
+                    width: $cafe-img-size
+                    border-radius: $space
+            &:nth-child(2)
+                padding-top: $space
+                vertical-align: top
+                width: 100%
