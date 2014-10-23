@@ -17,6 +17,12 @@ h2, h3
         display: table-cell
         text-align: left
         vertical-align: top
+        img 
+            @include fade-in
+        a 
+            display: block
+        &:hover img
+            opacity: 0.7
     img
         width: 150px
         @include rounded-corners(75px)
@@ -37,6 +43,6 @@ h2, h3
             text-align: center
         .team-image 
             text-align: center
+            margin-bottom: $space
             img 
                 margin: 0
-            margin-bottom: $space

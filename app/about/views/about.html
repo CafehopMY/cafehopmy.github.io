@@ -31,10 +31,12 @@
                 <ul ng-repeat="person in team" class="team list-unstyled">
                     <li>
                         <div class="team-image">
-                            <img ng-src="{{person.img_url}}"/>
+                            <a target="_blank" ng-href="{{person.url}}">
+                                <img ng-src="{{person.img_url}}"/>
+                            </a>
                         </div>
                         <div class="team-text">
-                            <a ng-href="{{person.url}}">
+                            <a target="_blank" ng-href="{{person.url}}">
                                 <span class="name">{{person.name}}</span>
                             </a>
                             <p ng-bind-html="person.desc"></p>
