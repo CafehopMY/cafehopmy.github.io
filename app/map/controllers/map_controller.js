@@ -111,6 +111,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
             // Get current user location
             if(navigator.geolocation){
                 navigator.geolocation.getCurrentPosition(function(pos){
+                    $scope.loadingCafes = true;
                     $scope.userMarker.coords = pos.coords;
                     var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                     $scope.instance.panTo(latlng);
@@ -121,8 +122,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
             // $scope.setWindowMarker($scope.userMarker);
             $scope.markers.push($scope.userMarker);
             $scope.setWindowMarker($scope.userMarker);
-
-            $scope.getCafes();
             $scope.initialized = true;
         });
     }
@@ -232,4 +231,10 @@ angular.module('cafehopApp.controllers').controller('MapController',
         }
         return m;
     }
+
+    $scope.init = function(){
+        $scope.getCafes();
+    }
+
+    $scope.init();
 }]);
