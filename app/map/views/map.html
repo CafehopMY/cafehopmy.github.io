@@ -60,7 +60,10 @@
                 <li ng-mouseover="mouseoverMarker(cafe.idKey)" ng-mouseleave="mouseoutMarker(cafe.idKey)"  ng-class="{cafe: true, closed: cafe.venue.hours && !cafe.venue.hours.isOpen}" ng-repeat="cafe in cafes">
                     <div ng-class="{'cafe-container': true, hover: cafe.idKey == currMarkerHover}">
                         <div class="hidden-xs">
-                            <img ng-src="{{getPhotoUrl(cafe)}}">
+                            <img ng-show="getPhotoUrl(cafe)" ng-src="{{getPhotoUrl(cafe)}}">
+                            <div ng-show="!getPhotoUrl(cafe)" class="img">
+                                <i class="fa fa-camera"></i>
+                            </div>
                         </div>
                         <div>
                            <a ng-href="#cafe/{{cafe.venue.id}}"><div class="a cafe-name">{{cafe.venue.name}}</div></a><br/>

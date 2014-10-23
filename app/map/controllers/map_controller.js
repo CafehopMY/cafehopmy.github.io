@@ -224,7 +224,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
             return c.prefix + '100x100' + c.suffix;
         }
 
-        return 'http://placehold.it/100x100';
+        return;
     }
 
     $scope.goToCafe = function(cafe){
