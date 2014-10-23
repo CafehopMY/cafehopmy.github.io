@@ -56,6 +56,9 @@
             &nbsp; <i ng-show="loadingCafes" class="fa fa-spinner fa-spin"></i>
         </div>
         <div class="cafe-list">
+            <div ng-show="cafes.length < 1 && !loadingCafes">
+                Sorry, we couldn't find any cafes. Try another location perhaps?
+            </div>
             <ul class="list-unstyled">
                 <li ng-mouseover="mouseoverMarker(cafe.idKey)" ng-mouseleave="mouseoutMarker(cafe.idKey)"  ng-class="{cafe: true, closed: cafe.venue.hours && !cafe.venue.hours.isOpen}" ng-repeat="cafe in cafes">
                     <div ng-class="{'cafe-container': true, hover: cafe.idKey == currMarkerHover}">
