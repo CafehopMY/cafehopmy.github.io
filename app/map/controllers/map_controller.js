@@ -108,6 +108,9 @@ angular.module('cafehopApp.controllers').controller('MapController',
                 },
                 window: {
                     options: $scope.mapDefaults.marker.windowOptions,
+                },
+                isNotUser: function(){
+                    return false;
                 }
             };
 
