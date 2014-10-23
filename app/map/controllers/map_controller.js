@@ -41,6 +41,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
             bounds.extend(new google.maps.LatLng(coords.latitude, coords.longitude));
         });
 
+        $scope.instance.panToBounds(bounds);
         $scope.instance.fitBounds(bounds);
     }
 
