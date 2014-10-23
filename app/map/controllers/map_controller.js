@@ -18,6 +18,8 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.currMarkerHover = -1;
     $scope.idKeyCounter = 0;
 
+    $scope.allowMouseover = true;
+
     $scope.infoWindow = {
         marker: null,
         model: null,
@@ -59,6 +61,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
     // MARKER CALLBACKS
     $scope.currentMarkerDragStart = function(marker, e, model){
+        $scope.disableMouseover()
         $scope.hideWindowMarker();
     }
 
@@ -75,9 +78,14 @@ angular.module('cafehopApp.controllers').controller('MapController',
             latitude: marker.getPosition().lat(),
             longitude: marker.getPosition().lng(),
         }
+
+        $scope.enableMouseover();
     }
 
     $scope.onMarkerMouseover = function(marker, event, model){
+        if(!$scope.allowMouseover){
+            return;
+        }
         if(model && model.isNotUser()){
             marker.setIcon($scope.icons.active);
             marker.setZIndex(google.maps.Marker.MAX_ZINDEX + 1);
@@ -87,6 +95,9 @@ angular.module('cafehopApp.controllers').controller('MapController',
     }
 
     $scope.onMarkerMouseout = function(marker, event, model){
+        if(!$scope.allowMouseover){
+            return;
+        }
         if(model && model.isNotUser()){
             marker.setIcon(model.icon);
         }
@@ -99,6 +110,14 @@ angular.module('cafehopApp.controllers').controller('MapController',
             return;
         }
         $scope.setWindowMarker(model);
+    }
+
+    $scope.disableMouseover = function(){
+        this.allowMouseover = false;
+    }
+
+    $scope.enableMouseover = function(){
+        this.allowMouseover = true;
     }
 
     // Place marker in default center

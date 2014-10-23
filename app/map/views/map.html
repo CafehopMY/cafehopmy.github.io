@@ -67,7 +67,7 @@
                         </div>
                         <div>
                            <a ng-href="#cafe/{{cafe.venue.id}}"><div class="a cafe-name">{{cafe.venue.name}}</div></a><br/>
-                            <small>{{cafe.venue.location.address}}</small><small ng-if="cafe.venue.hours.status">, {{cafe.venue.hours.status}}</small>
+                            <small>{{cafe.venue.location.address || cafe.venue.location.formattedAddress[0]}}</small><small ng-if="cafe.venue.hours.status">, {{cafe.venue.hours.status}}</small>
                         </div>
                     </div>
 
