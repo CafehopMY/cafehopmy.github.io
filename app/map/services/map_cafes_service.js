@@ -31,7 +31,10 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
                     self.cafes.pop();
                 }
                 self.cafes.push.apply(self.cafes, cafes)
-                options.success(self.cafes);
+
+                if(options.success){
+                    options.success(self.cafes);
+                }
                 
             }).error(function(){
                 console.error(api_url + " cannot be accessed.");

@@ -28,8 +28,14 @@ angular.module('cafehopApp.controllers').controller('MapController',
     }
 
     $scope.fitMarkerBounds = function(){
+        
+        if(!$scope.instance){
+            return;
+        }
+
         var bounds = new google.maps.LatLngBounds();
 
+        // Fit all markers
         angular.forEach($scope.markers, function(marker, index){
             var coords = marker.coords;
             bounds.extend(new google.maps.LatLng(coords.latitude, coords.longitude));
@@ -119,10 +125,13 @@ angular.module('cafehopApp.controllers').controller('MapController',
                });
             }
 
-            // $scope.setWindowMarker($scope.userMarker);
             $scope.markers.push($scope.userMarker);
             $scope.setWindowMarker($scope.userMarker);
             $scope.initialized = true;
+
+            if($scope.markers.length <= 1){
+                $scope.addMarkers($scope.cafes);
+            }
         });
     }
 
@@ -132,7 +141,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
             before: function(){
                 $scope.loadingCafes = true;
             },
-            success: $scope.addMarkers,
+            success: $scope.initialized ? $scope.addMarkers: null,
             ll: ll
         })
     }
