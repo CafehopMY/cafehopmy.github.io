@@ -60,7 +60,7 @@
                 Sorry, we couldn't find any cafes. Try another location perhaps?
             </div>
             <ul class="list-unstyled">
-                <li ng-mouseover="mouseoverMarker(cafe.idKey)" ng-mouseleave="mouseoutMarker(cafe.idKey)"  ng-class="{cafe: true, closed: cafe.venue.hours && !cafe.venue.hours.isOpen}" ng-repeat="cafe in cafes">
+                <li ng-mouseover="mouseoverMarker(cafe.idKey)" ng-mouseleave="mouseoutMarker(cafe.idKey)"  ng-class="{cafe: true, closed: cafe.venue.hours && !cafe.venue.hours.isOpen}" ng-repeat="cafe in cafes" id="{{cafe.idKey}}">
                     <div ng-class="{'cafe-container': true, hover: cafe.idKey == currMarkerHover}">
                         <div class="hidden-xs">
                             <img ng-show="getPhotoUrl(cafe)" ng-src="{{getPhotoUrl(cafe)}}">

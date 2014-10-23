@@ -110,6 +110,10 @@ angular.module('cafehopApp.controllers').controller('MapController',
             return;
         }
         $scope.setWindowMarker(model);
+
+        // Scroll cafe into view
+        var cafeTop = $('#'+model.idKey, ".cafe-list").position().top;
+        $(".cafe-list").animate({scrollTop: cafeTop});
     }
 
     $scope.disableMouseover = function(){
