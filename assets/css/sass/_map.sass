@@ -110,6 +110,7 @@ div#zones
             width: 100%
             li 
                 > div
+                    @include fade-in
                     display: block
                     padding: $space $space/2 
                     margin-right: $space/2
@@ -136,7 +137,7 @@ div#zones
 .cafe 
     &.closed
         a,.a 
-            color: rgba($red, 0.4)
+            // color: rgba($red, 0.4)
     .cafe-container
         display: table-row 
         > div 

@@ -1903,47 +1903,49 @@ div#zones {
       width: 100%; }
       /* line 112, sass/_map.sass */
       .map .cafes .cafe-list ul li > div {
+        -o-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
         display: block;
         padding: 12px 6px;
         margin-right: 6px;
         border-radius: 3px;
         text-decoration: none;
         clear: both; }
-        /* line 119, sass/_map.sass */
+        /* line 120, sass/_map.sass */
         .map .cafes .cafe-list ul li > div:after, .map .cafes .cafe-list ul li > div:before {
           clear: both;
           content: " ";
           display: block; }
-        /* line 123, sass/_map.sass */
+        /* line 124, sass/_map.sass */
         .map .cafes .cafe-list ul li > div:hover, .map .cafes .cafe-list ul li > div.hover {
           background-color: #f8b582; }
-      /* line 125, sass/_map.sass */
+      /* line 126, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-name {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
         float: left; }
-      /* line 130, sass/_map.sass */
+      /* line 131, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-link {
         width: 10%;
         float: right;
         text-align: right; }
 
-/* line 138, sass/_map.sass */
-.cafe.closed a, .cafe.closed .a {
-  color: rgba(144, 18, 14, 0.4); }
-/* line 140, sass/_map.sass */
+/* line 141, sass/_map.sass */
 .cafe .cafe-container {
   display: table-row; }
-  /* line 142, sass/_map.sass */
+  /* line 143, sass/_map.sass */
   .cafe .cafe-container > div {
     display: table-cell;
     vertical-align: middle; }
-    /* line 145, sass/_map.sass */
+    /* line 146, sass/_map.sass */
     .cafe .cafe-container > div:first-child {
       padding-right: 12px;
       padding-left: 6px; }
-      /* line 148, sass/_map.sass */
+      /* line 149, sass/_map.sass */
       .cafe .cafe-container > div:first-child img, .cafe .cafe-container > div:first-child .img {
         width: 100px;
         height: 100px;
@@ -1951,12 +1953,12 @@ div#zones {
         background-color: #c53d13;
         color: #ec6338;
         text-align: center; }
-        /* line 156, sass/_map.sass */
+        /* line 157, sass/_map.sass */
         .cafe .cafe-container > div:first-child img i, .cafe .cafe-container > div:first-child .img i {
           font-size: 50px;
           line-height: 50px;
           margin: 25px; }
-    /* line 161, sass/_map.sass */
+    /* line 162, sass/_map.sass */
     .cafe .cafe-container > div:nth-child(2) {
       padding-top: 12px;
       vertical-align: top;
