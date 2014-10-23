@@ -1,6 +1,6 @@
 angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults', function($http, MapDefaults) {
     var defaults = MapDefaults;
-    var api_url  = "http://cafehopkl.com/api/browse.php";
+    var api_url  = "http://cafehop.my/api/sherminn/browse.php";
     var self = {
         cafes: [],
         getCafes: function(options){
@@ -13,8 +13,6 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
             var id          = "";
             var secret      = "";
             var params = {
-                client_id: id,
-                client_secret: secret,
                 ll: options.ll || defaults.center.latitude + "," + defaults.center.longitude,
                 radius: options.radius,
                 offset: options.offset,

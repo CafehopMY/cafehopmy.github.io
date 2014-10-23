@@ -5,7 +5,7 @@ var services = angular.module('cafehopApp.services', []);
 var factories = angular.module('cafehopApp.factories', []);
 var cafehop = angular.module('cafehopApp', 
 	['cafehopApp.controllers', 'cafehopApp.services', 'cafehopApp.factories', 'ngRoute', 'ngSanitize']);	
-cafehop.config(['$routeProvider', function($routeProvider){
+cafehop.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider){
 	$routeProvider
 		.when('/', {
 			templateUrl: 'app/map/views/map.html',
@@ -28,6 +28,10 @@ cafehop.config(['$routeProvider', function($routeProvider){
 		.when('/cafe/:cafe_id', {
 			templateUrl: 'app/cafe/views/cafe.html',
 			controller: 'CafeController'
-		})
+		});
+
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
+
 
