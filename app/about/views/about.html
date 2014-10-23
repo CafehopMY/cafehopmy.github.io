@@ -1,41 +1,47 @@
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="heading-img">
-                    <img id="about-logo" src="assets/images/cafehopkl_logo_dark.png"/>
-                </div>
-            </div>
-
-            <div class="col-md-8">
-                <h1>About Us</h1>
-                <div>
-                Back in September 2013, we produced over 5000 physical maps with 28 cafes and 4 sponsors and without them, we would not be here today. (<a target="_blank" href="http://cafehopkl.com/getacopy.html">See here</a>).
+<div>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="heading-img">
+                        <img id="about-logo" src="assets/images/cafehopkl_logo_dark.png"/>
+                    </div>
                 </div>
 
-                <div>
-                    Our objective is to connect cafe/coffee lovers, cafes and coffee together around Malaysia. We do this with our digital map, an annual project, a soon-to-come app and everything else in between.
+                <div class="col-md-8">
+                    <h1>About Us</h1>
+                    <div>
+                        Back in September 2013, we produced over 5000 physical maps with 28 cafes and 4 sponsors and without them, we would not be here today. (
+                        <a target="_blank" href="http://cafehopkl.com/getacopy.html">See here</a>
+                        ).
+                    </div>
+
+                    <div>
+                        Our objective is to connect cafe/coffee lovers, cafes and coffee together around Malaysia. We do this with our digital map, an annual project, a soon-to-come app and everything else in between.
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section>
-    <div class="container">
-        <h3>The Team</h3>
-        <div>
-            <ul ng-repeat="person in team" class="team list-unstyled">
-                <li>
-                    <div class="team-image">
-                        <img ng-src="{{person.img_url}}"/>
-                    </div>
-                    <div class="team-text">
-                    <a ng-href="{{person.url}}"><span class="name">{{person.name}}</span></a>
-                        <p ng-bind-html="person.desc"></p>
-                    </div>
-                </li>
-            </ul>
+    <section>
+        <div class="container">
+            <h3>The Team</h3>
+            <div>
+                <ul ng-repeat="person in team" class="team list-unstyled">
+                    <li>
+                        <div class="team-image">
+                            <img ng-src="{{person.img_url}}"/>
+                        </div>
+                        <div class="team-text">
+                            <a ng-href="{{person.url}}">
+                                <span class="name">{{person.name}}</span>
+                            </a>
+                            <p ng-bind-html="person.desc"></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
