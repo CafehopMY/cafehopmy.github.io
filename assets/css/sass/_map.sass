@@ -14,7 +14,6 @@
     .gm-style-iw 
         height: auto !important
         div
-            max-height: 500px 
             height: auto !important
     h3
         text-shadow: none
@@ -88,7 +87,6 @@ div#zones
 
 .map
     > div 
-        max-height: $map-height
         padding-left: 0
         padding-right: 0
 
@@ -97,20 +95,23 @@ div#zones
     padding: $space
     padding-left: $space
     padding-right: $space
-    height: $map-height
+    overflow: hidden
+    height: 100%
     $cafe-numbers-height: $space * 2
     .cafe-numbers
         height: $cafe-numbers-height
         font-weight: bold
     .cafe-list
+        margin-right: -$space*2
         position: relative
         margin-top: $space
-        margin-bottom: $space
-        height: $map-height - $cafe-numbers-height - $space * 3
+        padding-bottom: $space * 2
+        height: 100%
         overflow-y: scroll
         ul 
             margin-top: 0
             position: absolute
+            padding-bottom: $space
             width: 100%
             li 
                 div

@@ -1,7 +1,8 @@
 angular.module('cafehopApp.controllers').controller('MapController', 
-    ['$scope', '$http', 'CafeService', 'MapCafes', 'MapDefaults', 
-    function($scope, $http, CafeService, MapCafes, MapDefaults){
+    ['$scope', '$http', '$rootScope', 'CafeService', 'MapCafes', 'MapDefaults', 
+    function($scope, $http, $rootScope, CafeService, MapCafes, MapDefaults){
     
+    $rootScope.hideFooter = true;
     $scope.markers = [];
     $scope.markersControl = {};
     $scope.mapCafes = MapCafes;
