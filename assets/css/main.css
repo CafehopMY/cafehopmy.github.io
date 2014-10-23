@@ -51,11 +51,11 @@ nav ul li {
     color: #f9c36f;
     text-decoration: none;
     font-weight: bold;
-    -o-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -webkit-transition: 0.5s;
-    transition: 0.5s; }
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s; }
     /* line 101, sass/_constants.sass */
     nav ul li a:hover, nav ul li a.selected, nav ul li a:focus {
       background-color: #c53d13; }
@@ -121,11 +121,11 @@ nav ul li.soc-media-links {
       color: #f9c36f;
       text-decoration: none;
       font-weight: bold;
-      -o-transition: 0.5s;
-      -ms-transition: 0.5s;
-      -moz-transition: 0.5s;
-      -webkit-transition: 0.5s;
-      transition: 0.5s; }
+      -o-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s; }
       /* line 101, sass/_constants.sass */
       .navbar-brand .h1 a:hover, .navbar-brand .h1 a.selected, .navbar-brand .h1 a:focus {
         background-color: #c53d13; }
@@ -464,11 +464,11 @@ div#links-to-parts-of-site {
     color: #f9c36f;
     text-decoration: none;
     font-weight: bold;
-    -o-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -webkit-transition: 0.5s;
-    transition: 0.5s; }
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s; }
     /* line 101, sass/_constants.sass */
     div#links-to-parts-of-site a:hover, div#links-to-parts-of-site a.selected, div#links-to-parts-of-site a:focus {
       background-color: #c53d13; }
@@ -635,11 +635,11 @@ div#zones {
       width: 100%; }
       /* line 112, sass/_map.sass */
       .map .cafes .cafe-list ul li > div {
-        -o-transition: 0.5s;
-        -ms-transition: 0.5s;
-        -moz-transition: 0.5s;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
+        -o-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
         display: block;
         padding: 12px 6px;
         margin-right: 6px;
