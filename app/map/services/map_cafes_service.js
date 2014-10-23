@@ -1,9 +1,15 @@
 angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults', function($http, MapDefaults) {
     var defaults = MapDefaults;
     var api_url  = "http://cafehop.my/api/sherminn/browse.php";
+
+    
+    
     var self = {
+        getCount: 0, // getCafes() counter
         cafes: [],
         getCafes: function(options){
+            var currCount = ++this.getCount;
+
             options.before();
             options = options || {};
             options.radius = options.radius || 1000;
@@ -24,19 +30,25 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
                 url: api_url,
                 method: 'GET',
                 params: params,
-            }).success(function(data){
-                var cafes = data.response.groups[0].items;
-                // Empty array
-                while(self.cafes.length > 0) {
-                    self.cafes.pop();
-                }
-                self.cafes.push.apply(self.cafes, cafes)
+            }).success((function(currCount){
+                return function(data){
+                    // Only do success for latest call
+                    if(currCount != self.getCount){
+                        return;
+                    }
 
-                if(options.success){
-                    options.success(self.cafes);
+                    var cafes = data.response.groups[0].items;
+                    // Empty array
+                    while(self.cafes.length > 0) {
+                        self.cafes.pop();
+                    }
+                    self.cafes.push.apply(self.cafes, cafes)
+
+                    if(options.success){
+                        options.success(self.cafes);
+                    }
                 }
-                
-            }).error(function(){
+            })(currCount)).error(function(){
                 console.error(api_url + " cannot be accessed.");
             });
         },
