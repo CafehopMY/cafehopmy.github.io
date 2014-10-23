@@ -506,7 +506,7 @@ div#links-to-parts-of-site {
 /* line 4, sass/_map.sass */
 .map {
   position: relative;
-  min-height: 550px; }
+  height: 550px; }
 
 /* line 8, sass/_map.sass */
 #map-canvas, .angular-google-map-container {
@@ -603,16 +603,12 @@ div#zones {
           background-color: #f9c36f;
           color: #c53d13; }
 
-@media only screen and (max-width: 768px) {
-  /* line 85, sass/_map.sass */
-  #map-canvas, .angular-google-map-container {
-    min-height: 450px; } }
-/* line 89, sass/_map.sass */
+/* line 85, sass/_map.sass */
 .map > div {
   padding-left: 0;
   padding-right: 0; }
 
-/* line 93, sass/_map.sass */
+/* line 89, sass/_map.sass */
 .map .cafes {
   position: relative;
   padding: 12px;
@@ -620,25 +616,24 @@ div#zones {
   padding-right: 12px;
   overflow: hidden;
   height: 100%; }
-  /* line 101, sass/_map.sass */
+  /* line 97, sass/_map.sass */
   .map .cafes .cafe-numbers {
     height: 24px;
     font-weight: bold; }
-  /* line 104, sass/_map.sass */
+  /* line 100, sass/_map.sass */
   .map .cafes .cafe-list {
-    margin-right: -24px;
     position: relative;
     margin-top: 12px;
     padding-bottom: 24px;
     height: 100%;
     overflow-y: scroll; }
-    /* line 111, sass/_map.sass */
+    /* line 106, sass/_map.sass */
     .map .cafes .cafe-list ul {
       margin-top: 0;
       position: absolute;
       padding-bottom: 12px;
       width: 100%; }
-      /* line 117, sass/_map.sass */
+      /* line 112, sass/_map.sass */
       .map .cafes .cafe-list ul li div {
         display: block;
         padding: 6px;
@@ -646,27 +641,27 @@ div#zones {
         border-radius: 3px;
         text-decoration: none;
         clear: both; }
-        /* line 124, sass/_map.sass */
+        /* line 119, sass/_map.sass */
         .map .cafes .cafe-list ul li div:after, .map .cafes .cafe-list ul li div:before {
           clear: both;
           content: " ";
           display: block; }
-        /* line 128, sass/_map.sass */
+        /* line 123, sass/_map.sass */
         .map .cafes .cafe-list ul li div:hover, .map .cafes .cafe-list ul li div.hover {
           background-color: #f8b582; }
-      /* line 130, sass/_map.sass */
+      /* line 125, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-name {
         width: 90%;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
         float: left; }
-      /* line 136, sass/_map.sass */
+      /* line 131, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-link {
         width: 10%;
         float: right;
         text-align: right; }
 
-/* line 144, sass/_map.sass */
+/* line 139, sass/_map.sass */
 .cafe.closed a, .cafe.closed .a {
   color: rgba(144, 18, 14, 0.4); }

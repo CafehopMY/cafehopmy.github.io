@@ -3,7 +3,7 @@
     padding-bottom: 0px //override default
 .map
     position: relative
-    min-height: $map-height
+    height: $map-height
 
 #map-canvas, .angular-google-map-container
     width: 100%
@@ -81,10 +81,6 @@ div#zones
                     background-color: $beige
                     color: $dark-orange
 
-@media only screen and (max-width : 768px)
-    #map-canvas, .angular-google-map-container
-        min-height: 450px
-
 .map
     > div 
         padding-left: 0
@@ -102,7 +98,6 @@ div#zones
         height: $cafe-numbers-height
         font-weight: bold
     .cafe-list
-        margin-right: -$space*2
         position: relative
         margin-top: $space
         padding-bottom: $space * 2
