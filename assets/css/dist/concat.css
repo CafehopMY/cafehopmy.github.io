@@ -1899,16 +1899,15 @@ div#zones {
   z-index: 2;
   margin-left: -12px;
   margin-right: -12px;
-  margin-bottom: -12px;
-  background-color: #ec6338;
-  color: #f9c36f;
-  font-weight: bold; }
-  /* line 99, sass/_map.sass */
+  margin-bottom: -12px; }
+  /* line 96, sass/_map.sass */
+  .map .ad-space .title {
+    font-weight: bold; }
+  /* line 98, sass/_map.sass */
   .map .ad-space a {
-    font-weight: normal;
-    color: #f9c36f; }
+    font-size: 16px; }
 
-/* line 103, sass/_map.sass */
+/* line 101, sass/_map.sass */
 .map .cafes {
   display: -webkit-flex;
   display: flex;
@@ -1920,7 +1919,7 @@ div#zones {
   padding-right: 12px;
   overflow: hidden;
   height: 100%; }
-  /* line 113, sass/_map.sass */
+  /* line 111, sass/_map.sass */
   .map .cafes .cafe-list-container {
     display: -webkit-flex;
     display: flex;
@@ -1928,24 +1927,24 @@ div#zones {
     flex-direction: column;
     -webkit-flex: 1;
     flex: 1; }
-  /* line 117, sass/_map.sass */
+  /* line 115, sass/_map.sass */
   .map .cafes .cafe-numbers {
     font-weight: bold; }
-  /* line 119, sass/_map.sass */
+  /* line 117, sass/_map.sass */
   .map .cafes .cafe-list {
     -webkit-flex: 1;
     flex: 1;
     margin-top: 12px;
     overflow-y: scroll;
     min-height: 100px; }
-    /* line 124, sass/_map.sass */
+    /* line 122, sass/_map.sass */
     .map .cafes .cafe-list::-webkit-scrollbar {
       display: none; }
-    /* line 126, sass/_map.sass */
+    /* line 124, sass/_map.sass */
     .map .cafes .cafe-list ul {
       margin-top: 0;
       width: 100%; }
-      /* line 130, sass/_map.sass */
+      /* line 128, sass/_map.sass */
       .map .cafes .cafe-list ul li > div {
         -o-transition: all 0.5s;
         -ms-transition: all 0.5s;
@@ -1957,38 +1956,38 @@ div#zones {
         border-radius: 3px;
         text-decoration: none;
         clear: both; }
-        /* line 137, sass/_map.sass */
+        /* line 135, sass/_map.sass */
         .map .cafes .cafe-list ul li > div:after, .map .cafes .cafe-list ul li > div:before {
           clear: both;
           content: " ";
           display: block; }
-        /* line 141, sass/_map.sass */
+        /* line 139, sass/_map.sass */
         .map .cafes .cafe-list ul li > div:hover, .map .cafes .cafe-list ul li > div.hover {
           background-color: #f8b582; }
-      /* line 143, sass/_map.sass */
+      /* line 141, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-name {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
         float: left; }
-      /* line 148, sass/_map.sass */
+      /* line 146, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-link {
         width: 10%;
         float: right;
         text-align: right; }
 
-/* line 159, sass/_map.sass */
+/* line 157, sass/_map.sass */
 .cafe .cafe-container {
   display: table-row; }
-  /* line 161, sass/_map.sass */
+  /* line 159, sass/_map.sass */
   .cafe .cafe-container > div {
     display: table-cell;
     vertical-align: middle; }
-    /* line 164, sass/_map.sass */
+    /* line 162, sass/_map.sass */
     .cafe .cafe-container > div:first-child {
       padding-right: 12px;
       padding-left: 6px; }
-      /* line 167, sass/_map.sass */
+      /* line 165, sass/_map.sass */
       .cafe .cafe-container > div:first-child img, .cafe .cafe-container > div:first-child .img {
         width: 100px;
         height: 100px;
@@ -1996,21 +1995,21 @@ div#zones {
         background-color: #c53d13;
         color: #ec6338;
         text-align: center; }
-        /* line 175, sass/_map.sass */
+        /* line 173, sass/_map.sass */
         .cafe .cafe-container > div:first-child img i, .cafe .cafe-container > div:first-child .img i {
           font-size: 50px;
           line-height: 50px;
           margin: 25px; }
-    /* line 180, sass/_map.sass */
+    /* line 178, sass/_map.sass */
     .cafe .cafe-container > div:nth-child(2) {
       vertical-align: top;
       width: 100%; }
 
-/* line 184, sass/_map.sass */
+/* line 182, sass/_map.sass */
 .sponsors {
   margin: 12px 0;
   margin-top: 0; }
-  /* line 187, sass/_map.sass */
+  /* line 185, sass/_map.sass */
   .sponsors li {
     padding-left: 0; }
 
