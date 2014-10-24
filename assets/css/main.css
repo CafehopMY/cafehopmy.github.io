@@ -573,18 +573,23 @@ div#links-to-parts-of-site {
     .legend .legend-list .legend-img, .legend a .legend-img {
       max-height: 30px; }
 
-/* line 50, sass/_map.sass */
+@media only screen and (max-width: 768px) {
+  /* line 50, sass/_map.sass */
+  .legend {
+    right: 12px;
+    top: 12px; } }
+/* line 55, sass/_map.sass */
 div#zones {
   width: 100%;
   background-color: #c53d13; }
-  /* line 55, sass/_map.sass */
+  /* line 60, sass/_map.sass */
   div#zones ul#zones-list {
     margin: 0;
     padding: 0;
     margin: 0 auto;
     max-width: 1000px;
     list-style: none; }
-    /* line 60, sass/_map.sass */
+    /* line 65, sass/_map.sass */
     div#zones ul#zones-list li {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -592,7 +597,7 @@ div#zones {
       margin: 0;
       padding: 0;
       display: inline-block; }
-      /* line 64, sass/_map.sass */
+      /* line 69, sass/_map.sass */
       div#zones ul#zones-list li a {
         padding: 6px 12px;
         display: block;
@@ -601,33 +606,34 @@ div#zones {
         color: #f9c36f;
         text-shadow: none;
         font-size: 0.8em; }
-        /* line 72, sass/_map.sass */
+        /* line 77, sass/_map.sass */
         div#zones ul#zones-list li a:hover {
           color: #f8b582;
           background-color: #c53d13; }
-        /* line 75, sass/_map.sass */
+        /* line 80, sass/_map.sass */
         div#zones ul#zones-list li a.selected {
           background-color: #f9c36f;
           color: #c53d13; }
 
-/* line 80, sass/_map.sass */
+/* line 85, sass/_map.sass */
 .map > div {
   padding-left: 0;
   padding-right: 0; }
-/* line 84, sass/_map.sass */
+/* line 89, sass/_map.sass */
 .map .ad-space {
-  position: absolute;
   padding: 12px;
   height: 100px;
   z-index: 2;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  margin-left: -12px;
+  margin-right: -12px;
+  margin-bottom: -12px;
   background-color: #ffe9c6; }
 
-/* line 94, sass/_map.sass */
+/* line 98, sass/_map.sass */
 .map .cafes {
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
   position: relative;
   padding: 12px;
@@ -635,29 +641,32 @@ div#zones {
   padding-right: 12px;
   overflow: hidden;
   height: 100%; }
-  /* line 104, sass/_map.sass */
+  /* line 108, sass/_map.sass */
   .map .cafes .cafe-list-container {
-    height: 100%; }
-  /* line 106, sass/_map.sass */
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    flex: 1; }
+  /* line 112, sass/_map.sass */
   .map .cafes .cafe-numbers {
     font-weight: bold; }
-  /* line 109, sass/_map.sass */
+  /* line 114, sass/_map.sass */
   .map .cafes .cafe-list {
-    flex-grow: 10;
+    flex: 1;
     margin-top: 12px;
     padding-bottom: 24px;
-    height: 100%;
-    overflow-y: scroll; }
-    /* line 115, sass/_map.sass */
+    overflow-y: scroll;
+    min-height: 100px; }
+    /* line 120, sass/_map.sass */
     .map .cafes .cafe-list::-webkit-scrollbar {
       display: none; }
-    /* line 117, sass/_map.sass */
+    /* line 122, sass/_map.sass */
     .map .cafes .cafe-list ul {
       margin-top: 0;
-      position: absolute;
       padding-bottom: 12px;
       width: 100%; }
-      /* line 123, sass/_map.sass */
+      /* line 127, sass/_map.sass */
       .map .cafes .cafe-list ul li > div {
         -o-transition: all 0.5s;
         -ms-transition: all 0.5s;
@@ -669,38 +678,38 @@ div#zones {
         border-radius: 3px;
         text-decoration: none;
         clear: both; }
-        /* line 130, sass/_map.sass */
+        /* line 134, sass/_map.sass */
         .map .cafes .cafe-list ul li > div:after, .map .cafes .cafe-list ul li > div:before {
           clear: both;
           content: " ";
           display: block; }
-        /* line 134, sass/_map.sass */
+        /* line 138, sass/_map.sass */
         .map .cafes .cafe-list ul li > div:hover, .map .cafes .cafe-list ul li > div.hover {
           background-color: #f8b582; }
-      /* line 136, sass/_map.sass */
+      /* line 140, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-name {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
         float: left; }
-      /* line 141, sass/_map.sass */
+      /* line 145, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-link {
         width: 10%;
         float: right;
         text-align: right; }
 
-/* line 152, sass/_map.sass */
+/* line 156, sass/_map.sass */
 .cafe .cafe-container {
   display: table-row; }
-  /* line 154, sass/_map.sass */
+  /* line 158, sass/_map.sass */
   .cafe .cafe-container > div {
     display: table-cell;
     vertical-align: middle; }
-    /* line 157, sass/_map.sass */
+    /* line 161, sass/_map.sass */
     .cafe .cafe-container > div:first-child {
       padding-right: 12px;
       padding-left: 6px; }
-      /* line 160, sass/_map.sass */
+      /* line 164, sass/_map.sass */
       .cafe .cafe-container > div:first-child img, .cafe .cafe-container > div:first-child .img {
         width: 100px;
         height: 100px;
@@ -708,12 +717,20 @@ div#zones {
         background-color: #c53d13;
         color: #ec6338;
         text-align: center; }
-        /* line 168, sass/_map.sass */
+        /* line 172, sass/_map.sass */
         .cafe .cafe-container > div:first-child img i, .cafe .cafe-container > div:first-child .img i {
           font-size: 50px;
           line-height: 50px;
           margin: 25px; }
-    /* line 173, sass/_map.sass */
+    /* line 177, sass/_map.sass */
     .cafe .cafe-container > div:nth-child(2) {
       vertical-align: top;
       width: 100%; }
+
+/* line 181, sass/_map.sass */
+.sponsors {
+  margin: 12px 0;
+  margin-top: 0; }
+  /* line 184, sass/_map.sass */
+  .sponsors li {
+    padding-left: 0; }

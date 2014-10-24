@@ -46,6 +46,11 @@
             font-size: 14px
         .legend-img 
             max-height: 30px
+@media only screen and (max-width : 768px)
+    .legend 
+        right: $space 
+        top: $space 
+
 
 div#zones 
     width: 100%
@@ -82,18 +87,17 @@ div#zones
         padding-right: 0
 
     .ad-space
-        position: absolute
         padding: $space
         height: 100px
         z-index: 2
-        bottom: 0
-        right: 0
-        left: 0
+        margin-left: -$space
+        margin-right: -$space
+        margin-bottom: -$space
         background-color: $light-beige
 
 .map .cafes 
-    display: flex
-    flex-direction: column
+    @include display-flex
+    @include flex-direction(column)
     position: relative
     padding: $space
     padding-left: $space
@@ -102,21 +106,21 @@ div#zones
     height: 100%
     $cafe-numbers-height: $space * 2
     .cafe-list-container
-        height: 100%
+        @include display-flex
+        @include flex-direction(column)
+        flex: 1
     .cafe-numbers
-        // height: $cafe-numbers-height
         font-weight: bold
     .cafe-list
-        flex-grow: 10
+        flex: 1
         margin-top: $space
         padding-bottom: $space * 2
-        height: 100%
         overflow-y: scroll
+        min-height: 100px
         &::-webkit-scrollbar
             display: none
         ul 
             margin-top: 0
-            position: absolute
             padding-bottom: $space
             width: 100%
             li 
@@ -173,3 +177,9 @@ div#zones
             &:nth-child(2)
                 vertical-align: top
                 width: 100%
+
+.sponsors
+    margin: $space 0
+    margin-top: 0
+    li
+        padding-left: 0

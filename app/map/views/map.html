@@ -4,7 +4,8 @@
         <div class="legend">
             <ul class="legend-list list-unstyled list-inline">
                 <li>
-                    <a href ng-click="panToUser()"><i class="fa fa-crosshairs"></i></a>
+                    <a href ng-click="panToUser()"> <i class="fa fa-crosshairs"></i>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -69,8 +70,14 @@
                                 </div>
                             </div>
                             <div>
-                               <a ng-href="#cafe/{{cafe.venue.id}}"><div class="a cafe-name">{{cafe.venue.name}}</div></a><br/>
-                                <small>{{cafe.venue.location.address || cafe.venue.location.formattedAddress[0]}}</small><small ng-if="cafe.venue.hours.status">, {{cafe.venue.hours.status}}</small>
+                                <a ng-href="#cafe/{{cafe.venue.id}}">
+                                    <div class="a cafe-name">{{cafe.venue.name}}</div>
+                                </a>
+                                <br/>
+                                <small>
+                                    {{cafe.venue.location.address || cafe.venue.location.formattedAddress[0]}}
+                                </small>
+                                <small ng-if="cafe.venue.hours.status">, {{cafe.venue.hours.status}}</small>
                             </div>
                         </div>
 
@@ -79,8 +86,14 @@
             </div>
         </div>
 
-        <div class="ad-space">
-            Proudly sponsored by
+        <div class="ad-space hidden-xs">
+            <span>Proudly sponsored by:</span>
+            <ul class="sponsors list-unstyled list-inline">
+                <li ng-repeat="sponsor in sponsors">
+                    <a href="{{sponsor.url}}">{{sponsor.name}}</a>
+                    <span ng-if="!$last">|</span>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

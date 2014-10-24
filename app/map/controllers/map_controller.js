@@ -25,6 +25,15 @@ angular.module('cafehopApp.controllers').controller('MapController',
         options: $scope.mapDefaults.marker.windowOptions
     }
 
+    $scope.sponsors = {
+        0 : {
+            name: 'Sponsor A'
+        },
+        1 : {
+            name: 'Sponsor B'
+        }
+    }
+
     // PAN AND FIT 
     $scope.fitMarkerBounds = function(){
         
