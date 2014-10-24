@@ -108,11 +108,11 @@ div#zones
     .cafe-list-container
         @include display-flex
         @include flex-direction(column)
-        flex: 1
+        @include flex(1)
     .cafe-numbers
         font-weight: bold
     .cafe-list
-        flex: 1
+        @include flex(1)
         margin-top: $space
         overflow-y: scroll
         min-height: 100px

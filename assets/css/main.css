@@ -647,12 +647,14 @@ div#zones {
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
+    -webkit-flex: 1;
     flex: 1; }
   /* line 112, sass/_map.sass */
   .map .cafes .cafe-numbers {
     font-weight: bold; }
   /* line 114, sass/_map.sass */
   .map .cafes .cafe-list {
+    -webkit-flex: 1;
     flex: 1;
     margin-top: 12px;
     overflow-y: scroll;
