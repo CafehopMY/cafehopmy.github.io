@@ -58,12 +58,26 @@ angular.module('cafehopApp.factories').factory('MarkerCallbacks', ['MapDefaults'
             }
         },
 
+        onMarkerClick: function(marker, event, model){
+            // If already opened
+            if(model.idKey == this.userMarker.idKey){
+                return;
+            }
+
+            this.showWindow(model);
+
+            // Scroll cafe into view
+            var cafeTop = $('#'+model.idKey, ".cafe-list").position().top;
+            $(".cafe-list").animate({scrollTop: cafeTop});
+        },
+
         getEvents: function(){
             return {
                 dragend: this.currentMarkerDragEnd.bind(callbacks),
                 dragstart: this.currentMarkerDragStart.bind(callbacks),
                 mouseover: this.onMarkerMouseover.bind(callbacks),
-                mouseout: this.onMarkerMouseout.bind(callbacks)
+                mouseout: this.onMarkerMouseout.bind(callbacks),
+                click: this.onMarkerClick.bind(callbacks)
             }
         },
 
@@ -71,6 +85,7 @@ angular.module('cafehopApp.factories').factory('MarkerCallbacks', ['MapDefaults'
             this.map = o.map;
             this.latLngChangeCallback = o.llCallback;
             this.showWindow = o.showWindow;
+            this.userMarker = o.userMarker;
             return this;
         }
     }

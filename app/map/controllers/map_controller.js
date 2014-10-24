@@ -49,19 +49,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.instance.panTo(ll);
     }
 
-    $scope.onMarkerClick = function(marker, event, model){
-        // If already opened
-        if(model.idKey == $scope.userMarker.idKey){
-            $scope.markerCallbacks.hideWindowMarker();
-            return;
-        }
-        $scope.setWindowMarker(model);
-
-        // Scroll cafe into view
-        var cafeTop = $('#'+model.idKey, ".cafe-list").position().top;
-        $(".cafe-list").animate({scrollTop: cafeTop});
-    }
-
     // Place marker in default center
     $scope.placeDefaultUser = function(marker){
         marker.coords = $scope.mapDefaults.center;
@@ -77,14 +64,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
         $scope.instance = map;
         $scope.$apply(function(){
-            // Initialize marker callbacks
-            $scope.markerCallbacks = MarkerCallbacks.init({
-                map: $scope.instance,
-                llCallback: $scope.getCafes,
-                showWindow: $scope.setWindowMarker
-            }); 
-            $scope.markerEvents = $scope.markerCallbacks.getEvents();
-
+            // Create user marker
             $scope.userMarker = {
                 idKey: $scope.idKeyCounter++, 
                 icon: MapDefaults.icons.current,
@@ -119,6 +99,16 @@ angular.module('cafehopApp.controllers').controller('MapController',
             if($scope.markers.length <= 1){
                 $scope.addMarkers($scope.cafes);
             }
+
+            // Initialize marker callbacks and events
+            $scope.markerCallbacks = MarkerCallbacks.init({
+                map: $scope.instance,
+                llCallback: $scope.getCafes,
+                showWindow: $scope.setWindowMarker,
+                userMarker: $scope.userMarker
+            }); 
+            $scope.markerEvents = $scope.markerCallbacks.getEvents();
+
         });
     }
 
