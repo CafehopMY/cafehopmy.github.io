@@ -1,6 +1,6 @@
 angular.module('cafehopApp.controllers').controller('MapController', 
-    ['$scope', '$http', '$rootScope', 'CafeService', 'MapCafes', 'MapDefaults', 
-    function($scope, $http, $rootScope, CafeService, MapCafes, MapDefaults){
+    ['$scope', '$http', '$rootScope', 'CafeService', 'MapCafes', 'MapDefaults', 'MarkerCallbacks', 
+    function($scope, $http, $rootScope, CafeService, MapCafes, MapDefaults, MarkerCallbacks){
     
     // Only hide footer for map view
     $rootScope.hideFooter = true;
@@ -11,28 +11,18 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.markers = [];
     $scope.markersControl = {};
     $scope.mapCafes = MapCafes;
-    $scope.cafes = $scope.mapCafes.cafes;
-    $scope.initialized = false;
     $scope.mapDefaults = MapDefaults;
-    $scope.legend = MapDefaults.legend;
-    $scope.currMarkerHover = -1;
+    $scope.initialized = false;
     $scope.idKeyCounter = 0;
 
-    $scope.allowMouseover = true;
+    $scope.cafes = $scope.mapCafes.cafes;
+    $scope.legend = MapDefaults.legend;
 
     $scope.infoWindow = {
         marker: null,
         model: null,
         coords: {},
         options: $scope.mapDefaults.marker.windowOptions
-    }
-
-
-    $scope.icons = {
-        current: "assets/images/map-icons/chkl-pin-me.png",
-        cafe: "assets/images/map-icons/chkl-pin-03.png",
-        cafeClosed: "assets/images/map-icons/chkl-pin-01.png",
-        active: "assets/images/map-icons/chkl-pin-02.png",
     }
 
     // PAN AND FIT 
@@ -59,54 +49,10 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.instance.panTo(ll);
     }
 
-    // MARKER CALLBACKS
-    $scope.currentMarkerDragStart = function(marker, e, model){
-        $scope.disableMouseover()
-        $scope.hideWindowMarker();
-    }
-
-
-    // When current location marker is moved
-    $scope.currentMarkerDragEnd = function(marker, e, model){
-
-        var latlng = marker.getPosition();
-        $scope.instance.panTo(latlng);
-        
-        $scope.getCafes(latlng.lat() + "," + latlng.lng());
-
-        model.coords = {
-            latitude: marker.getPosition().lat(),
-            longitude: marker.getPosition().lng(),
-        }
-
-        $scope.enableMouseover();
-    }
-
-    $scope.onMarkerMouseover = function(marker, event, model){
-        if(!$scope.allowMouseover){
-            return;
-        }
-        if(model && model.isNotUser()){
-            marker.setIcon($scope.icons.active);
-            marker.setZIndex(google.maps.Marker.MAX_ZINDEX + 1);
-            $scope.currMarkerHover = model.idKey;
-            $scope.setWindowMarker(model)
-        }
-    }
-
-    $scope.onMarkerMouseout = function(marker, event, model){
-        if(!$scope.allowMouseover){
-            return;
-        }
-        if(model && model.isNotUser()){
-            marker.setIcon(model.icon);
-        }
-    }
-
     $scope.onMarkerClick = function(marker, event, model){
         // If already opened
         if(model.idKey == $scope.userMarker.idKey){
-            $scope.hideWindowMarker();
+            $scope.markerCallbacks.hideWindowMarker();
             return;
         }
         $scope.setWindowMarker(model);
@@ -114,14 +60,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
         // Scroll cafe into view
         var cafeTop = $('#'+model.idKey, ".cafe-list").position().top;
         $(".cafe-list").animate({scrollTop: cafeTop});
-    }
-
-    $scope.disableMouseover = function(){
-        this.allowMouseover = false;
-    }
-
-    $scope.enableMouseover = function(){
-        this.allowMouseover = true;
     }
 
     // Place marker in default center
@@ -139,14 +77,22 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
         $scope.instance = map;
         $scope.$apply(function(){
+            // Initialize marker callbacks
+            $scope.markerCallbacks = MarkerCallbacks.init({
+                map: $scope.instance,
+                llCallback: $scope.getCafes,
+                showWindow: $scope.setWindowMarker
+            }); 
+            $scope.markerEvents = $scope.markerCallbacks.getEvents();
+
             $scope.userMarker = {
                 idKey: $scope.idKeyCounter++, 
-                icon: $scope.icons.current,
+                icon: MapDefaults.icons.current,
                 options:{
                     draggable: true
                 },
                 window: {
-                    options: $scope.mapDefaults.marker.windowOptions,
+                    options: MapDefaults.marker.windowOptions,
                 },
                 isNotUser: function(){
                     return false;
@@ -163,7 +109,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
                     $scope.userMarker.coords = pos.coords;
                     var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                     $scope.instance.panTo(latlng);
-                    $scope.getCafes(latlng.lat() + "," + latlng.lng());
+                    $scope.getCafes(latlng);
                });
             }
 
@@ -177,12 +123,18 @@ angular.module('cafehopApp.controllers').controller('MapController',
     }
 
     $scope.getCafes = function(ll){
+        var llString;
+
+        if(ll){
+            llString = ll.lat() + "," + ll.lng();
+        }
+
         $scope.mapCafes.getCafes({
             before: function(){
                 $scope.loadingCafes = true;
             },
             success: $scope.addMarkers,
-            ll: ll
+            ll: llString
         })
     }
 
@@ -199,14 +151,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
         showWindow: false
     };
 
-    $scope.markerEvents = {
-        dragend: $scope.currentMarkerDragEnd,
-        dragstart: $scope.currentMarkerDragStart,
-        mouseover: $scope.onMarkerMouseover,
-        mouseout: $scope.onMarkerMouseout
-
-    }
-
     $scope.addMarkers = function(cafes){
         if(cafes.length < 1){
             return
@@ -218,7 +162,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         angular.forEach(cafes, function(cafe, index){
             var m = {
                 idKey: $scope.idKeyCounter++,
-                icon: cafe.venue.hours && cafe.venue.hours.isOpen? $scope.icons.cafe : $scope.icons.cafeClosed,
+                icon: cafe.venue.hours && cafe.venue.hours.isOpen? MapDefaults.icons.cafe : MapDefaults.icons.cafeClosed,
                 coords: {
                     latitude: cafe.venue.location.lat,
                     longitude: cafe.venue.location.lng
@@ -260,16 +204,11 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
     $scope.setWindowMarker = function(model){
         $scope.infoWindow.model = model;
-
         $scope.map.showWindow = true;
         $scope.infoWindow.coords = model.coords;
     }
 
-    $scope.hideWindowMarker = function(){
-        $scope.map.showWindow = false;
-    }
-
-    $scope.mouseoutMarker = function(idKey){
+    $scope.triggerMarkerMouseout = function(idKey){
         var m = $scope.findMarker(idKey);
         if(m){
             google.maps.event.trigger(m, 'mouseout')
@@ -277,7 +216,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         
     }
 
-    $scope.mouseoverMarker = function(idKey){
+    $scope.triggerMarkerMouseover = function(idKey){
         var m = $scope.findMarker(idKey);
         if(m){
             google.maps.event.trigger(m, 'mouseover')

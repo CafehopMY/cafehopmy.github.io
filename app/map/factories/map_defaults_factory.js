@@ -19,7 +19,13 @@ angular.module('cafehopApp.factories').factory('MapDefaults', function() {
                 img: "assets/images/map-icons/chkl-pin-01.png",
                 text: "Closed"
             }
-        ]
+        ],
+        icons:  {
+            current: "assets/images/map-icons/chkl-pin-me.png",
+            cafe: "assets/images/map-icons/chkl-pin-03.png",
+            cafeClosed: "assets/images/map-icons/chkl-pin-01.png",
+            active: "assets/images/map-icons/chkl-pin-02.png",
+        }
     };
 
     return defaults;
