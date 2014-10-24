@@ -65,6 +65,18 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.instance.panTo(latlng);
     }
 
+    $scope.getUserLocation = function(){
+         if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(function(pos){
+                $scope.loadingCafes = true;
+                $scope.userMarker.coords = pos.coords;
+                var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+                $scope.instance.panTo(latlng);
+                $scope.getCafes(latlng);
+           });
+        }
+    }
+
     $scope.ready = function(map){
         if($scope.initialized){
             return;
@@ -92,18 +104,9 @@ angular.module('cafehopApp.controllers').controller('MapController',
             $scope.placeDefaultUser($scope.userMarker)
             
             // Get current user location
-            if(navigator.geolocation){
-                navigator.geolocation.getCurrentPosition(function(pos){
-                    $scope.loadingCafes = true;
-                    $scope.userMarker.coords = pos.coords;
-                    var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-                    $scope.instance.panTo(latlng);
-                    $scope.getCafes(latlng);
-               });
-            }
+            $scope.getUserLocation();
 
             $scope.markers.push($scope.userMarker);
-
             $scope.setWindowMarker($scope.userMarker);
 
             if($scope.markers.length <= 1){
