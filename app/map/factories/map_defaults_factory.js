@@ -6,7 +6,7 @@ angular.module('cafehopApp.factories').factory('MapDefaults', function() {
         },
         marker: {
             windowOptions: {
-                maxWidth: 150,
+                maxWidth: 160,
                 maxHeight: 500,
                 pixelOffset: new google.maps.Size(0, -32)
             }
