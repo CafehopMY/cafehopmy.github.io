@@ -81,7 +81,19 @@ div#zones
         padding-left: 0
         padding-right: 0
 
-.map .cafes
+    .ad-space
+        position: absolute
+        padding: $space
+        height: 100px
+        z-index: 2
+        bottom: 0
+        right: 0
+        left: 0
+        background-color: $light-beige
+
+.map .cafes 
+    display: flex
+    flex-direction: column
     position: relative
     padding: $space
     padding-left: $space
@@ -89,11 +101,13 @@ div#zones
     overflow: hidden
     height: 100%
     $cafe-numbers-height: $space * 2
+    .cafe-list-container
+        height: 100%
     .cafe-numbers
-        height: $cafe-numbers-height
+        // height: $cafe-numbers-height
         font-weight: bold
     .cafe-list
-        position: relative
+        flex-grow: 10
         margin-top: $space
         padding-bottom: $space * 2
         height: 100%
@@ -128,6 +142,7 @@ div#zones
                     width: 10%
                     float: right
                     text-align: right
+
 
 
 .cafe 
