@@ -46,11 +46,6 @@
             font-size: 14px
         .legend-img 
             max-height: 30px
-@media only screen and (max-width : 768px)
-    .legend 
-        right: $space
-        bottom: $space
-        top: auto
 
 div#zones 
     width: 100%
@@ -103,6 +98,8 @@ div#zones
         padding-bottom: $space * 2
         height: 100%
         overflow-y: scroll
+        &::-webkit-scrollbar
+            display: none
         ul 
             margin-top: 0
             position: absolute
@@ -113,7 +110,6 @@ div#zones
                     @include fade-in
                     display: block
                     padding: $space $space/2 
-                    margin-right: $space/2
                     border-radius: $space/4
                     text-decoration: none
                     clear: both

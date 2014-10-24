@@ -176,7 +176,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
         });
     }
 
-
     $scope.getCafes = function(ll){
         $scope.mapCafes.getCafes({
             before: function(){
@@ -212,7 +211,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         if(cafes.length < 1){
             return
         }
-        
+
         $scope.markers = [];
         $scope.markers.push($scope.userMarker);
         // Create markers for each cafe
@@ -265,6 +264,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.map.showWindow = true;
         $scope.infoWindow.coords = model.coords;
     }
+
     $scope.hideWindowMarker = function(){
         $scope.map.showWindow = false;
     }
