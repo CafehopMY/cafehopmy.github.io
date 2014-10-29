@@ -15,10 +15,28 @@ module.exports = function(grunt) {
                 ],
                 dest: 'assets/js/dist/dependencies.js'
             },
-            mainjs: {
+            app: {
                 src: [  
+                    "app/app.js",
+
+                    // Controllers
+                    "app/about/controllers/about_controller.js",
+                    "app/map/controllers/map_controller.js",
+                    "app/faq/controllers/faq_controller.js",
+                    "app/cafe/controllers/cafe_controller.js",
+
+                    // Services
+                    "app/cafe/services/cafe_service.js",
+                    "app/map/services/map_cafes_service.js",
+
+                    // Factories
+                    "app/map/factories/map_defaults_factory.js",
+                    "app/map/factories/marker_callbacks_factory.js",
+
+                    // Directive
+                    "app/directives/resize_directive.js",
                 ],
-                dest: 'assets/js/dist/main.js'
+                dest: 'assets/js/dist/app.js'
             },
             css: {
                 src: [
@@ -32,7 +50,8 @@ module.exports = function(grunt) {
         uglify: {
             js: {
                 files: {
-                    'assets/js/dist/dependencies.min.js': ['assets/js/dist/dependencies.js']
+                    'assets/js/dist/dependencies.min.js': ['assets/js/dist/dependencies.js'],
+                    'assets/js/dist/app.min.js': ['assets/js/dist/app.js']
                 }
             },
         },
@@ -44,7 +63,7 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            files: ['assets/js/*', 'assets/css/*'],
+            files: ['assets/css/*', 'app/**'],
             tasks: ['concat', 'cssmin'],
             options: {
                 livereload: true
@@ -70,6 +89,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['concat', 'uglify', 'cssmin', 'copy']);
     grunt.registerTask('css', ['concat:css', 'cssmin', 'copy']);
 }

@@ -7,7 +7,8 @@ var directives = angular.module('cafehopApp.directives', []);
 
 var cafehop = angular.module('cafehopApp', 
 	['cafehopApp.controllers', 'cafehopApp.services', 'cafehopApp.factories', 'cafehopApp.directives', 'ngRoute', 'ngSanitize']);	
-cafehop.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider){
+
+angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider){
 	$routeProvider
 		.when('/', {
 			templateUrl: 'app/map/views/map.html',
