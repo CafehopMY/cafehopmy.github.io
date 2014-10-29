@@ -196,10 +196,10 @@ angular.module('cafehopApp.controllers').controller('MapController',
     };
 
     $scope.getPhotoUrl = function(cafe){
-        var photos = cafe.photos.items;
+        var photos = cafe.photos;
         if(photos.count > 0){
-            var c = photos[0];
-            return c.prefix + '100x100' + c.suffix;
+            var c = photos.items[0];
+            return c.url;
         }
 
         return;
