@@ -1993,23 +1993,25 @@ div#zones {
         height: 100px;
         border-radius: 12px;
         background-color: #c53d13;
+        background-size: cover;
+        background-position: center;
         color: #ec6338;
         text-align: center; }
-        /* line 173, sass/_map.sass */
+        /* line 175, sass/_map.sass */
         .cafe .cafe-container > div:first-child img i, .cafe .cafe-container > div:first-child .img i {
           font-size: 50px;
           line-height: 50px;
           margin: 25px; }
-    /* line 178, sass/_map.sass */
+    /* line 180, sass/_map.sass */
     .cafe .cafe-container > div:nth-child(2) {
       vertical-align: top;
       width: 100%; }
 
-/* line 182, sass/_map.sass */
+/* line 184, sass/_map.sass */
 .sponsors {
   margin: 12px 0;
   margin-top: 0; }
-  /* line 185, sass/_map.sass */
+  /* line 187, sass/_map.sass */
   .sponsors li {
     padding-left: 0; }
 

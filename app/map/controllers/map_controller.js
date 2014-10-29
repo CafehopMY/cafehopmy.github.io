@@ -205,6 +205,12 @@ angular.module('cafehopApp.controllers').controller('MapController',
         return;
     }
 
+    $scope.getPhotoStyle = function(cafe){
+        return {
+            'background-image' : 'url(' + $scope.getPhotoUrl(cafe) + ')'
+        }
+    }
+
     $scope.goToCafe = function(cafe){
         $location.path('/cafe')
     }
