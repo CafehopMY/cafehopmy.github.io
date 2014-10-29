@@ -751,18 +751,19 @@ div#zones {
 .cafe .ad-space {
   width: 150px;
   height: 400px;
-  float: right;
-  background-color: #ec6338; }
-/* line 7, sass/_cafe.sass */
+  border: 1px solid #ec6338;
+  border-radius: 6px;
+  float: right; }
+/* line 8, sass/_cafe.sass */
 .cafe section {
   padding-top: 50px; }
-/* line 10, sass/_cafe.sass */
+/* line 11, sass/_cafe.sass */
 .cafe h1 {
   margin-top: 0; }
-  /* line 12, sass/_cafe.sass */
+  /* line 13, sass/_cafe.sass */
   .cafe h1 a {
     color: #90120e; }
-/* line 15, sass/_cafe.sass */
+/* line 16, sass/_cafe.sass */
 .cafe .fa-external-link, .cafe .fa-spinner {
   font-size: 1.2em;
   color: #90120e;
