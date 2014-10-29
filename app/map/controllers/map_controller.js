@@ -168,19 +168,19 @@ angular.module('cafehopApp.controllers').controller('MapController',
         angular.forEach(cafes, function(cafe, index){
             var m = {
                 idKey: $scope.idKeyCounter++,
-                icon: cafe.venue.hours && cafe.venue.hours.isOpen? MapDefaults.icons.cafe : MapDefaults.icons.cafeClosed,
+                icon:  MapDefaults.icons.cafe,
                 coords: {
-                    latitude: cafe.venue.location.lat,
-                    longitude: cafe.venue.location.lng
+                    latitude: cafe.lat,
+                    longitude: cafe.lng
                 },
-                cafe: cafe.venue,
+                cafe: cafe,
                 window: {
                     iconVisible: true,
                     closeClick: true,
                     options: $scope.mapDefaults.marker.windowOptions
                 },
                 options:{
-                    title: cafe.venue.name,
+                    title: cafe.name,
                     draggable: false
                 },
                 isNotUser: function(){
@@ -196,8 +196,9 @@ angular.module('cafehopApp.controllers').controller('MapController',
     };
 
     $scope.getPhotoUrl = function(cafe){
-        if(cafe.venue.photos.groups[0]){
-            var c = cafe.venue.photos.groups[0].items[0];
+        var photos = cafe.photos.items;
+        if(photos.count > 0){
+            var c = photos[0];
             return c.prefix + '100x100' + c.suffix;
         }
 

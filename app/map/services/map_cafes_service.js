@@ -1,6 +1,6 @@
 angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults', function($http, MapDefaults) {
     var defaults = MapDefaults;
-    var api_url  = "http://cafehop.my/api/sherminn/browse.php";
+    var api_url  = "http://cafehop.my/api/sherminn/featured.php";
 
     var self = {
         getCount: 0, // getCafes() counter
@@ -10,7 +10,7 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
 
             options.before();
             options = options || {};
-            options.radius = options.radius || 1000;
+            options.radius = options.radius || 10000;
             options.offset = options.offset || 0;
             options.limit = options.limit || 30;
 
@@ -35,7 +35,7 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
                         return;
                     }
 
-                    var cafes = data.response.groups[0].items;
+                    var cafes = data.response.venues;
                     // Empty array
                     while(self.cafes.length > 0) {
                         self.cafes.pop();

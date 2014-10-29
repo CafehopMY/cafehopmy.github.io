@@ -1,5 +1,5 @@
+<h1 class="hidden">Cafehop Map</h1>
 <div ng-controller="MapController" class="map" resize ng-style="style()">
-
     <div class="col-xs-7 col-sm-6">
         <div class="legend">
             <ul class="legend-list list-unstyled list-inline">
@@ -37,7 +37,7 @@
                         <h3>
                             <a ng-href="#cafe/{{infoWindow.model.cafe.id}}">{{infoWindow.model.cafe.name}}</a>
                         </h3>
-                        <div>{{infoWindow.model.cafe.location.address}}</div>
+                        <div>{{infoWindow.model.cafe.address1}}</div>
                     </div>
                     <div ng-show="{{!infoWindow.model.cafe}}">
                         <h3>You are here!</h3>
@@ -70,14 +70,13 @@
                                 </div>
                             </div>
                             <div>
-                                <a ng-href="#cafe/{{cafe.venue.id}}">
-                                    <div class="a cafe-name">{{cafe.venue.name}}</div>
+                                <a ng-href="#cafe/{{cafe.id}}">
+                                    <div class="a cafe-name">{{cafe.name}}</div>
                                 </a>
                                 <br/>
                                 <small>
-                                    {{cafe.venue.location.address || cafe.venue.location.formattedAddress[0]}}
+                                    {{cafe.address1}}
                                 </small>
-                                <small ng-if="cafe.venue.hours.status">, {{cafe.venue.hours.status}}</small>
                             </div>
                         </div>
 
