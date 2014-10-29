@@ -10,8 +10,15 @@ module.exports = function(grunt) {
                     'bower_components/lodash/dist/lodash.js',
                     'bower_components/angular/angular.js',
                     'bower_components/angular-google-maps/dist/angular-google-maps.js',
+                    'bower_components/angular-sanitize/angular-sanitize.min.js',
+                    'bower_components/angular-route/angular-route.min.js',
                 ],
                 dest: 'assets/js/dist/dependencies.js'
+            },
+            mainjs: {
+                src: [  
+                ],
+                dest: 'assets/js/dist/main.js'
             },
             css: {
                 src: [
@@ -43,11 +50,26 @@ module.exports = function(grunt) {
                 livereload: true
             }
         },
+        clean: {
+            js: ['assets/js/dist/*'],
+            copy: ['assets/css/dist/fonts']
+        },
+        copy: {
+            main: {
+                files: [
+                    // includes files within path
+                      {expand: true, cwd: 'assets/css/fonts/', src:['**'], dest: 'assets/css/dist/fonts'},
+                  ]
+            }
+        }
+
     });
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
-    grunt.registerTask('css', ['concat:css', 'cssmin']);
+    grunt.registerTask('css', ['concat:css', 'cssmin', 'copy']);
 }
