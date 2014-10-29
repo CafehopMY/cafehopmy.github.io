@@ -2013,6 +2013,27 @@ div#zones {
   .sponsors li {
     padding-left: 0; }
 
+/* line 2, sass/_cafe.sass */
+.cafe .ad-space {
+  width: 150px;
+  height: 400px;
+  float: right;
+  background-color: #ec6338; }
+/* line 7, sass/_cafe.sass */
+.cafe section {
+  padding-top: 50px; }
+/* line 10, sass/_cafe.sass */
+.cafe h1 {
+  margin-top: 0; }
+  /* line 12, sass/_cafe.sass */
+  .cafe h1 a {
+    color: #90120e; }
+/* line 15, sass/_cafe.sass */
+.cafe .fa-external-link {
+  font-size: 1.2em;
+  color: #90120e;
+  margin-left: 12px; }
+
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

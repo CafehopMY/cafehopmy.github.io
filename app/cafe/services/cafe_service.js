@@ -1,25 +1,32 @@
-angular.module('cafehopApp.services').service('CafeService', function () {
+angular.module('cafehopApp.services').service('CafeService', ['$http', function ($http) {
     var cafe = {};
 
-    return {
-        getCafe: function () {
+    var service = {
+        cafe: {},
+        getCafe: function (options) {
             // Get cafes 
-            var url = "";
+            var url = "http://cafehop.my/api/sherminn/cafe.php";
             $http({
                 url: url,
                 method: 'GET',
-                params: params,
+                params: {
+                    id: options.id,
+                },
             }).success(function(data){
-                cafes = data.response.groups[0].items;
-                options.success(cafes);
-                
+                service.cafe = data.response.store;
+                if(options.success){
+                    options.success(data);
+                }
             }).error(function(){
-                console.error(api_url + " cannot be accessed.");
+                console.error(url + " cannot be accessed.");
             });
             return cafe;
         },
+
         setCafe: function(value) {
             cafe = value;
         }
     };
-});
+
+    return service;
+}]);

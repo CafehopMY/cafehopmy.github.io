@@ -1,11 +1,12 @@
-angular.module('cafehopApp.controllers').controller('CafeController', ['$scope', '$http', 'CafeService', function($scope, $http, CafeService){
-    $scope.cafe = CafeService.getCafe();
+angular.module('cafehopApp.controllers').controller('CafeController', ['$scope', '$http', '$routeParams', 'CafeService',
+    function($scope, $http, $routeParams, CafeService){
+    var cafeId = $routeParams.cafe_id;
+    $scope.cafe = CafeService.cafe,
 
-    $scope.cafe.name = "Example Cafe";
-    $scope.cafe.description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    CafeService.getCafe({
+        id: cafeId,
+        success: function(data){
+            $scope.cafe = CafeService.cafe;
+        }
+    });
 }]);
