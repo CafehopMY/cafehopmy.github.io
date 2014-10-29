@@ -16,9 +16,13 @@
                     <p>
                         <span>{{cafe.address1}}</span>
                         <br/>
-                        <span>{{cafe.address2}}</span>
-                        <br/>
+                        <span ng-show="{{cafe.address2}}">{{cafe.address2}}
+                            <br/>
+                        </span>
                         <span>{{cafe.city}}</span>
+                    </p>
+                    <p>
+                        <strong><a target="_blank" ng-href="{{cafe.directions}}">View on Google Maps</a></strong>
                     </p>
                 </div>
 
