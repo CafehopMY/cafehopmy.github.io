@@ -10,7 +10,7 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
 
             options.before();
             options = options || {};
-            options.radius = options.radius || 10000;
+            options.radius = options.radius || 3000;
             options.offset = options.offset || 0;
             options.limit = options.limit || 30;
 
