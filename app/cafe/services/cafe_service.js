@@ -22,7 +22,10 @@ angular.module('cafehopApp.services').service('CafeService', ['$http', function 
 
     var service = {
         cafe: {},
-        getCafe: function (options) {
+        init: function(){
+            this.cafe = {};
+        },
+        getCafe: function(options) {
             // Get cafes 
             var url = "http://cafehop.my/api/sherminn/cafe.php";
             $http({

@@ -211,8 +211,8 @@ angular.module('cafehopApp.controllers').controller('MapController',
         }
     }
 
-    $scope.goToCafe = function(cafe){
-        $location.path('/cafe')
+    $scope.getCafeUrl = function(cafe){
+        return "#cafe/" + cafe.id + "/" + encodeURIComponent(cafe.name)
     }
 
     $scope.setWindowMarker = function(model){

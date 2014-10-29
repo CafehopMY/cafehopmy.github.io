@@ -9,7 +9,8 @@
                                 {{cafe.name}}
                             </a>
                         </h1>
-                        <a ng-href="{{cafe.url}}" target="_blank"> 
+                        <i ng-show="loading" class="fa fa-spinner fa-spin"></i>
+                        <a ng-show="cafe.url" ng-href="{{cafe.url}}" target="_blank"> 
                             <i class="fa fa-external-link"></i>
                         </a>
                     </div>
@@ -22,7 +23,7 @@
                         <span>{{cafe.city}}</span>
                     </p>
                     <p>
-                        <strong><a target="_blank" ng-href="{{cafe.directions}}">View on Google Maps</a></strong>
+                        <strong><a ng-show="cafe.directions" target="_blank" ng-href="{{cafe.directions}}">View on Google Maps</a></strong>
                     </p>
                 </div>
 
