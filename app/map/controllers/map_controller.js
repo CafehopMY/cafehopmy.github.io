@@ -54,8 +54,11 @@ angular.module('cafehopApp.controllers').controller('MapController',
     }
 
     $scope.panToUser = function(){
-        var ll = $scope.findMarker($scope.userMarker.idKey).getPosition();
-        $scope.instance.panTo(ll);
+        var user =  $scope.findMarker($scope.userMarker.idKey);
+        if(user){
+            var ll = user.getPosition();
+            $scope.instance.panTo(ll);
+        }
     }
 
     // Place marker in default center
@@ -66,7 +69,9 @@ angular.module('cafehopApp.controllers').controller('MapController',
     }
 
     $scope.getUserLocation = function(){
-         if(navigator.geolocation){
+        $scope.panToUser();
+
+        if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(function(pos){
                 $scope.loadingCafes = true;
                 $scope.userMarker.coords = pos.coords;
@@ -135,7 +140,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
         var successCallback = function(cafes){
             $scope.loadingCafes = false;
-            $scope.addMarkers;
+            $scope.addMarkers(cafes);
         }
 
         $scope.mapCafes.getCafes({
