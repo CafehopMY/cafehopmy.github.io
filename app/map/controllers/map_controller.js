@@ -133,7 +133,10 @@ angular.module('cafehopApp.controllers').controller('MapController',
             llString = ll.lat() + "," + ll.lng();
         }
 
-        var successCallback = $scope.addMarkers;
+        var successCallback = function(cafes){
+            $scope.loadingCafes = false;
+            $scope.addMarkers;
+        }
 
         $scope.mapCafes.getCafes({
             before: function(){
@@ -192,7 +195,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
         });
 
         $scope.fitMarkerBounds();
-        $scope.loadingCafes = false;
     };
 
     $scope.getPhotoUrl = function(cafe){
