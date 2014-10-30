@@ -13,6 +13,10 @@ body
         @include flex(1)
 .container 
     max-width: 900px
+.container-full 
+    width: 100% 
+    max-width: 100% !important
+
 .content
     > div, > section
         padding-bottom: $space * 4
@@ -51,7 +55,7 @@ nav
             padding: 0
 
 .navbar-toggle
-    margin: ($header-height - 34px)/2 $space
+    margin: ($header-height - 34px)/2 - 2 $space
     .icon-bar
         background-color: $beige
         height: 3px
@@ -66,6 +70,8 @@ nav
     height: $header-height
     padding: $space 0
     color: $beige
+    @media (max-width : #{$sm-width})
+        margin-left: $space
     &:hover 
         color: $beige
     .logo 

@@ -53,10 +53,12 @@ angular.module('cafehopApp.controllers').controller('MapController',
     ['$scope', '$http', '$rootScope', 'CafeService', 'MapCafes', 'MapDefaults', 'MarkerCallbacks', 
     function($scope, $http, $rootScope, CafeService, MapCafes, MapDefaults, MarkerCallbacks){
     
-    // Only hide footer for map view
+    // Only hide footer and span header for map view
     $rootScope.hideFooter = true;
+    $rootScope.fullContainer = true;
     $rootScope.$on('$locationChangeStart', function(e, next, curr){
         $rootScope.hideFooter = false;
+        $rootScope.fullContainer = false;
     });
 
     $scope.markers = [];
