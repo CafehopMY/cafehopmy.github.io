@@ -2039,7 +2039,25 @@ div#links-to-parts-of-site {
   margin-left: 12px; }
 /* line 19, sass/_cafe.sass */
 .cafe .cafe-map {
-  max-width: 100%; }
+  max-width: 100%;
+  float: right; }
+  @media (max-width: 768px) {
+    /* line 19, sass/_cafe.sass */
+    .cafe .cafe-map {
+      float: none; } }
+/* line 25, sass/_cafe.sass */
+.cafe .cafe-details li {
+  margin-bottom: 12px; }
+  /* line 27, sass/_cafe.sass */
+  .cafe .cafe-details li > div {
+    display: inline-block; }
+    /* line 29, sass/_cafe.sass */
+    .cafe .cafe-details li > div:first-child {
+      text-align: center;
+      width: 24px;
+      height: 24px;
+      vertical-align: top;
+      margin-right: 9px; }
 
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome

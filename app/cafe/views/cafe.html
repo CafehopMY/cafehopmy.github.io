@@ -15,16 +15,30 @@
                         </a>
                     </div>
                     <p>
-                        <span>{{cafe.address1}}</span>
-                        <br/>
-                        <span ng-show="cafe.address2">{{cafe.address2}}
-                            <br/>
-                        </span>
-                        <span>{{cafe.city}}</span>
-                    </p>
+                        <ul class="list-unstyled cafe-details">
+                            <li>
+                                <div><i class="fa fa-clock-o"></i></div>
+                                <div>10:00am - 11:00pm daily</div>
+                            </li>
+                            <li>
+                                <div><i class="fa fa-map-marker"></i></div>
+                                <div>
+                                    <span>{{cafe.address1}}</span>
+                                    <br/>
+                                    <span ng-show="cafe.address2">{{cafe.address2}}
+                                        <br/>
+                                    </span>
+                                    <span>{{cafe.city}}</span>
+                                </div>
+                            </li>
+                           <li>
+                            <div><i class="fa fa-car"></i></div>
+                                <div>
+                                    <strong><a ng-show="cafe.directions" target="_blank" ng-href="{{cafe.directions}}">Directions</a></strong>
+                                </div>
+                            </li>
+                        </ul>
                     <p>
-                        <strong><a ng-show="cafe.directions" target="_blank" ng-href="{{cafe.directions}}">Directions</a></strong>
-                    </p>
                 </div>
 
                 <div class="col-sm-4 col-md-6">
