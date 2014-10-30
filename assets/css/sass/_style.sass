@@ -22,21 +22,29 @@ header
 header, .navbar-header
     background-color: $orange
 nav 
-    ul
-        li
+    .navbar-nav
+        > li
             @include non-text-link-style
             margin-left: $space
-            a
+            > a
                 &:hover, &:focus
                     color: $beige
                     text-decoration: none
                     background-color: $dark-orange !important
-        li.soc-media-links
-            margin-left: $space*2
+                @media only screen and (max-width : 768px)
+                    padding-left: $space
+        .soc-media-links
             a, .a 
+                display: inline-block
+                padding-right: $space/2
+                padding-left: 0
                 margin-right: $space/2
-            a:hover, a:focus
-                background-color: transparent !important
+                &:hover, &:focus
+                    background-color: transparent !important
+            
+            @media only screen and (max-width : 768px)
+                padding-left : $space
+
 .navbar-toggle
     margin: ($header-height - 34px)/2 $space
     .icon-bar
