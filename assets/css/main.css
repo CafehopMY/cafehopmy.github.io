@@ -790,3 +790,6 @@ div#links-to-parts-of-site {
       height: 24px;
       vertical-align: top;
       margin-right: 9px; }
+    /* line 35, sass/_cafe.sass */
+    .cafe .cafe-details li > div:nth-child(2) {
+      max-width: 300px; }

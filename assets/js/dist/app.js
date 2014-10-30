@@ -359,9 +359,12 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
     });
 
     $scope.getEmbedMapSrc = function(cafe){
+        var clean = cafe.name+','+cafe.address1+','+cafe.city
+        clean = encodeURIComponent(clean);
+        console.log(clean)
         return "https://www.google.com/maps/embed/v1/search"
             + '?key=' + GMapCredentials.apiKey
-            + '&q=' + encodeURI(cafe.name+','+cafe.address1+','+cafe.city)
+            + '&q=' + clean
     }
 }]);
 angular.module('cafehopApp.services').service('CafeService', ['$http', function ($http) {
