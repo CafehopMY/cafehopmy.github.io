@@ -1,8 +1,9 @@
 @import 'constants'
 .map
     position: relative
-    height: $map-height
-.content > .map
+    min-height: $map-height
+    height: 100%
+.content > .map-wrapper
     padding-bottom: 0px 
 
 #map-canvas, .angular-google-map-container
@@ -51,52 +52,15 @@
         right: $space 
         top: $space 
 
-
-div#zones 
-    width: 100%
-    background-color: $dark-orange
-
-    //text-align: center
-    ul#zones-list
-        @include clear-spacing
-        @include center-element
-        max-width: $wrapper-width
-        list-style: none 
-        li
-            @include box-sizing
-            @include clear-spacing
-            display: inline-block
-            a
-                padding: $space / 2 $space 
-                display: block
-                background-color: transparent
-                text-decoration: none
-                color: $beige
-                text-shadow: none
-                font-size: $small-font
-                &:hover
-                    color: $light-orange
-                    background-color: $dark-orange
-                &.selected
-                    background-color: $beige
-                    color: $dark-orange
-
+.map-wrapper
+    @include display-flex
+    @include flex-direction(row)
+    .map 
+        @include flex(1)
 .map
     > div 
         padding-left: 0
         padding-right: 0
-
-    .ad-space
-        padding: $space
-        height: 100px
-        z-index: 2
-        margin-left: -$space
-        margin-right: -$space
-        margin-bottom: -$space
-        .title
-            font-weight: bold 
-        a 
-            font-size: 16px
 
 .map .cafes 
     @include display-flex
@@ -148,8 +112,6 @@ div#zones
                     float: right
                     text-align: right
 
-
-
 .cafe 
     &.closed
         a,.a 
@@ -186,3 +148,13 @@ div#zones
     margin-top: 0
     li
         padding-left: 0
+
+.ad 
+    width: 160px
+    min-height: 600px
+    // background-color: $dark-orange
+    border: 1px solid $orange
+    color: $orange
+    margin: $space
+    margin-left: 0
+    padding: $space
