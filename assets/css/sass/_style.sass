@@ -6,11 +6,17 @@ body
     font-family: $body-font
     font-size: 1.2em
     position: relative
+    @include display-flex
+    @include flex-direction(column)
+    min-height: 100vh
+    > .content
+        @include flex(1)
 .container 
     max-width: 900px
 .content
     > div, > section
-        padding-bottom: $space * 3
+        padding-bottom: $space * 4
+
 header
     width: 100%
 header, .navbar-header
@@ -264,11 +270,12 @@ $logo-size-small: $logo-size * 0.8
                 display: inline-block
                 span 
                     display: none
-                img 
+                img
                     width: $icons-mobile-size
 .addthis_native_toolbox
     width: 200px
-    display: table-row
+    display: block
+    overflow: hidden
     a 
         height: 30px
         margin-right: $space
