@@ -28,7 +28,7 @@ angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function
 			templateUrl: 'app/map/views/map.html',
 			controller: 'MapController'
 		})
-		.when('/cafe/:cafe_id/:cafe_name', {
+		.when('/cafe/:cafe_id/:cafe_name?', {
 			templateUrl: 'app/cafe/views/cafe.html',
 			controller: 'CafeController'
 		});
