@@ -17,18 +17,23 @@
                     <p>
                         <span>{{cafe.address1}}</span>
                         <br/>
-                        <span ng-show="{{cafe.address2}}">{{cafe.address2}}
+                        <span ng-show="cafe.address2">{{cafe.address2}}
                             <br/>
                         </span>
                         <span>{{cafe.city}}</span>
                     </p>
                     <p>
-                        <strong><a ng-show="cafe.directions" target="_blank" ng-href="{{cafe.directions}}">View on Google Maps</a></strong>
+                        <strong><a ng-show="cafe.directions" target="_blank" ng-href="{{cafe.directions}}">Directions</a></strong>
                     </p>
                 </div>
 
                 <div class="col-sm-4">
-                    <div class="ad-space"></div>
+                   <iframe
+                      width="300"
+                      height="300"
+                      frameborder="0" style="border:0"
+                      ng-src="{{cafe.src}}">
+                    </iframe>
                 </div>
             </div>
         </div>

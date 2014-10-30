@@ -1,5 +1,5 @@
-angular.module('cafehopApp.controllers').controller('CafeController', ['$scope', '$http', '$routeParams', 'CafeService',
-    function($scope, $http, $routeParams, CafeService){
+angular.module('cafehopApp.controllers').controller('CafeController', ['$scope', '$http', '$routeParams', '$sce', 'CafeService', 'GMapCredentials',
+    function($scope, $http, $routeParams, $sce, CafeService, GMapCredentials){
     
     CafeService.init();
 
@@ -20,6 +20,13 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
             $scope.cafe = CafeService.cafe;
             $scope.loading = false;
             window.document.title = $scope.cafe.name + " | Cafehop KL";
+            $scope.cafe.src = $sce.trustAsResourceUrl($scope.getEmbedMapSrc($scope.cafe));
         }
     });
+
+    $scope.getEmbedMapSrc = function(cafe){
+        return "https://www.google.com/maps/embed/v1/search"
+            + '?key=' + GMapCredentials.apiKey
+            + '&q=' + encodeURI(cafe.name+','+cafe.address1+','+cafe.city)
+    }
 }]);

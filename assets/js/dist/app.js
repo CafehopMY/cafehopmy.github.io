@@ -330,8 +330,8 @@ angular.module('cafehopApp.controllers').controller('FaqController', ['$scope', 
             console.error(filename + ' not found.')
         })
 }]);
-angular.module('cafehopApp.controllers').controller('CafeController', ['$scope', '$http', '$routeParams', 'CafeService',
-    function($scope, $http, $routeParams, CafeService){
+angular.module('cafehopApp.controllers').controller('CafeController', ['$scope', '$http', '$routeParams', '$sce', 'CafeService', 'GMapCredentials',
+    function($scope, $http, $routeParams, $sce, CafeService, GMapCredentials){
     
     CafeService.init();
 
@@ -352,8 +352,15 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
             $scope.cafe = CafeService.cafe;
             $scope.loading = false;
             window.document.title = $scope.cafe.name + " | Cafehop KL";
+            $scope.cafe.src = $sce.trustAsResourceUrl($scope.getEmbedMapSrc($scope.cafe));
         }
     });
+
+    $scope.getEmbedMapSrc = function(cafe){
+        return "https://www.google.com/maps/embed/v1/search"
+            + '?key=' + GMapCredentials.apiKey
+            + '&q=' + encodeURI(cafe.name+','+cafe.address1+','+cafe.city)
+    }
 }]);
 angular.module('cafehopApp.services').service('CafeService', ['$http', function ($http) {
     var cafe = {};
@@ -368,12 +375,11 @@ angular.module('cafehopApp.services').service('CafeService', ['$http', function 
         
         ll = encodeURIComponent(ll);
         desc = encodeURIComponent(desc)
-        var linkToLoc = "http://maps.google.com/maps?f=q"
+        var linkToLoc = "http://maps.google.com/maps?f=d"
             + "&near=" + city
             + "&ll=" + ll
-            + "&q=" + desc 
+            + "&daddr=" + desc 
             + "&iwloc=addr&iwd=1" 
-        console.log(linkToLoc);
         return linkToLoc;
     }
 
@@ -604,6 +610,11 @@ angular.module('cafehopApp.factories').factory('MarkerCallbacks', ['MapDefaults'
     }
     return callbacks;
 }]);
+angular.module('cafehopApp.factories').factory('GMapCredentials', function() {
+    return {
+        apiKey: 'AIzaSyCWxCU3sy8rPbxrFZf74O80GB5MH8PIFBI'
+    }
+}); 
 angular.module('cafehopApp.directives').directive('resize', ['$window', function($window){
     return function(scope, element){
         var w = angular.element($window);

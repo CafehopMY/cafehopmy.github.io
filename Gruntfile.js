@@ -32,6 +32,7 @@ module.exports = function(grunt) {
                     // Factories
                     "app/map/factories/map_defaults_factory.js",
                     "app/map/factories/marker_callbacks_factory.js",
+                    "app/map/factories/gmap_credentials_factory.js",
 
                     // Directive
                     "app/directives/resize_directive.js",

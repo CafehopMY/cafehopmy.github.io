@@ -11,12 +11,11 @@ angular.module('cafehopApp.services').service('CafeService', ['$http', function 
         
         ll = encodeURIComponent(ll);
         desc = encodeURIComponent(desc)
-        var linkToLoc = "http://maps.google.com/maps?f=q"
+        var linkToLoc = "http://maps.google.com/maps?f=d"
             + "&near=" + city
             + "&ll=" + ll
-            + "&q=" + desc 
+            + "&daddr=" + desc 
             + "&iwloc=addr&iwd=1" 
-        console.log(linkToLoc);
         return linkToLoc;
     }
 
