@@ -1,11 +1,8 @@
 .cafe 
-    .ad-space 
-        width: 300px
-        height: 250px
-        border: 1px solid $orange
-        border-radius: $space/2
     section
         padding-top: $space * 4
+        @media (max-width: #{$sm-width})
+            padding-top: $space * 2
 
     h1 
         margin-top: 0
@@ -19,4 +16,5 @@
         color: $red 
         margin-left: $space
 
-    
+    .cafe-map 
+        max-width: 100%
