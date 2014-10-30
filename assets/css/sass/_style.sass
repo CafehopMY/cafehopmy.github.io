@@ -27,6 +27,8 @@ nav
             @include non-text-link-style
             margin-left: $space
             > a
+                font-size: 18px
+                line-height: 18px
                 &:hover, &:focus
                     color: $beige
                     text-decoration: none
@@ -74,8 +76,9 @@ nav
         @include non-text-link-style
         @include text-pop($dark-orange)
         @include clear-spacing
-        margin: $space
-        font-size: 3em
+        line-height: $header-height - $space
+        font-size: $header-height - $space*2
+        margin-left: $space*1.5
         text-align: left
         display: inline-block
 
@@ -105,7 +108,7 @@ a, .a
     font-weight: bold
     &:focus, &:hover 
         text-decoration: underline
-        
+
 p
     margin-top: 0
     font-size: 1em
