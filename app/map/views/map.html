@@ -64,10 +64,12 @@
                     <li ng-mouseover="triggerMarkerMouseover(cafe.idKey)" ng-mouseleave="triggerMarkerMouseout(cafe.idKey)"  ng-class="{cafe: true, closed: cafe.venue.hours && !cafe.venue.hours.isOpen}" ng-repeat="cafe in cafes" id="{{cafe.idKey}}">
                         <div ng-class="{'cafe-container': true, hover: cafe.idKey == markerCallbacks.currMouseoverId}">
                             <div class="hidden-xs">
-                                <img ng-show="getPhotoUrl(cafe)" ng-style="getPhotoStyle(cafe)">
-                                <div ng-show="!getPhotoUrl(cafe)" class="img">
-                                    <i class="fa fa-camera"></i>
-                                </div>
+                                <a ng-href="{{getCafeUrl(cafe)}}">
+                                    <img ng-show="getPhotoUrl(cafe)" ng-style="getPhotoStyle(cafe)">
+                                    <div ng-show="!getPhotoUrl(cafe)" class="img">
+                                        <i class="fa fa-camera"></i>
+                                    </div>
+                                </a>
                             </div>
                             <div>
                                 <a ng-href="{{getCafeUrl(cafe)}}">

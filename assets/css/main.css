@@ -772,7 +772,10 @@ div#zones {
   /* line 12, sass/_cafe.sass */
   .cafe h1 a {
     color: #90120e; }
-/* line 15, sass/_cafe.sass */
+    /* line 14, sass/_cafe.sass */
+    .cafe h1 a:hover, .cafe h1 a:focus {
+      text-decoration: none; }
+/* line 17, sass/_cafe.sass */
 .cafe .fa-external-link, .cafe .fa-spinner {
   font-size: 1.2em;
   color: #90120e;

@@ -220,7 +220,9 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
     $scope.getCafeUrl = function(cafe){
         if(cafe){
-            return "#cafe/" + cafe.id + "/" + encodeURIComponent(cafe.name);
+            // Remove slashes from cafe name, browser address bars ignore encode %2F
+            var clean = cafe.name.replace('/', '');
+            return "#cafe/" + cafe.id + "/" + encodeURIComponent(clean);
         }
         return '#';
     }
