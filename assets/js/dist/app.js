@@ -12,29 +12,45 @@ angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function
 	$routeProvider
 		.when('/', {
 			templateUrl: 'app/map/views/map.html',
+			title: 'Cafehop KL - Mapping unique cafes around Malaysia',
 		})
 		.when('/about', {
 			templateUrl: 'app/about/views/about.html',
-			controller: 'AboutController'
+			controller: 'AboutController',
+			title: 'About',
 		})
 		.when('/contact', {
 			templateUrl: 'app/contact/views/contact.html',
+			title: 'Contact',
 		})
 		.when('/faq', {
 			templateUrl: 'app/faq/views/faq.html',
-			controller: 'FaqController'
+			controller: 'FaqController',
+			title: 'FAQ',
 		})
 		.when('/map', {
 			templateUrl: 'app/map/views/map.html',
-			controller: 'MapController'
+			controller: 'MapController',
+			title: 'Map',
 		})
 		.when('/cafe/:cafe_id/:cafe_name?', {
 			templateUrl: 'app/cafe/views/cafe.html',
-			controller: 'CafeController'
+			controller: 'CafeController',
+			title: 'Cafe',
 		});
 
+		// Enable CORS
         $httpProvider.defaults.useXDomain = true;
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+}]);
+
+angular.module('cafehopApp').run(['$rootScope', function($rootScope){
+    // Set title based on route
+    $rootScope.$on("$routeChangeSuccess", function(event, currentRoute, previousRoute) {
+ 		window.document.title = currentRoute.title + ' | Cafehop KL';
+ 		console.log(currentRoute.title)
+ 	});
 }]);
 
 
@@ -345,7 +361,7 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
 
 
     // Set title
-    window.document.title = $routeParams.cafe_name;
+    window.document.title = $routeParams.cafe_name + " | Cafehop KL";;
 
 
     CafeService.getCafe({

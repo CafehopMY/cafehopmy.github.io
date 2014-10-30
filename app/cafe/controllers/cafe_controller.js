@@ -11,7 +11,7 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
 
 
     // Set title
-    window.document.title = $routeParams.cafe_name;
+    window.document.title = $routeParams.cafe_name + " | Cafehop KL";;
 
 
     CafeService.getCafe({
