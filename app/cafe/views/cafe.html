@@ -16,10 +16,23 @@
                     </div>
                     <p>
                         <ul class="list-unstyled cafe-details">
+                            <!-- Hours-->
                             <li>
                                 <div><i class="fa fa-clock-o"></i></div>
-                                <div>10:00am - 11:00pm daily</div>
+                                <div>
+                                    {{cafe.hours}}<span ng-show="!cafe.hours">Not listed</span>
+                                </div>
                             </li>
+                            
+                            <!-- Phone-->
+                            <li>
+                                <div><i class="fa fa-phone"></i></div>
+                                <div>
+                                    {{cafe.phone}}<span ng-show="!cafe.phone">Not listed</span>
+                                </div>
+                            </li>
+
+                            <!-- Address-->
                             <li>
                                 <div><i class="fa fa-map-marker"></i></div>
                                 <div>
@@ -31,6 +44,8 @@
                                     <span>{{cafe.city}}</span>
                                 </div>
                             </li>
+
+                            <!-- Link to gmap directions -->
                            <li>
                             <div><i class="fa fa-car"></i></div>
                                 <div>
