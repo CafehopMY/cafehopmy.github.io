@@ -352,7 +352,8 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
     function($scope, $http, $routeParams, $sce, CafeService, GMapCredentials){
     
     CafeService.init();
-
+    
+    window.scrollTo(0, 0);
     $scope.loading = true;
 
     var cafeId = $routeParams.cafe_id;
