@@ -83,7 +83,6 @@
         a.location 
             text-decoration: underline
         .fa-search
-            padding: $space/2
             padding-right: 0
         > .location-display
             display: table
@@ -157,11 +156,11 @@
                     $cafe-img-size: 100px
                     width: $cafe-img-size
                     height: $cafe-img-size
-                    border-radius: $space
-                    background-color: $dark-orange
+                    // border-radius: $space
+                    color: $light-orange
+                    background-color: rgba($light-orange, 0.5)
                     background-size: cover
                     background-position: center
-                    color: $orange
                     text-align: center
                     i 
                         font-size: $cafe-img-size/2
@@ -180,9 +179,10 @@
     > div 
         width: 250px
         height: 200px
-        border: 1px solid $orange
+        // border: 1px solid $orange
         padding: $space
         margin-bottom: $space
+        background-color: rgba($light-orange, 0.5)
     color: $orange
     margin: $space
     margin-left: 0

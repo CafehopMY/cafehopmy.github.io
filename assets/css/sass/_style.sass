@@ -26,6 +26,11 @@ header
 header, .navbar-header
     background-color: $orange
 nav 
+    ul
+        @media screen and (max-width: 500px)
+            float: none
+            display: block
+
     .navbar-nav
         > li
             @include non-text-link-style
@@ -189,12 +194,17 @@ footer
         @include insignificant-text
         text-align: center
 
-
-@media screen and (max-width: 500px)
-    nav ul
-        float: none
-        display: block
-
+// Buttons
+.btn 
+    @include fade-in
+.btn-primary
+    background-color: $orange
+    border: 1px solid darken($orange, 5%)
+    color: $beige
+    &:hover, &:focus 
+        background-color: $dark-orange
+        border: 1px solid darken($dark-orange, 5%)
+        color: $beige
 
 //Placeholder text color
 ::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder 
