@@ -1922,7 +1922,7 @@ div#links-to-parts-of-site {
   position: relative;
   padding: 12px;
   padding-left: 12px;
-  padding-right: 12px;
+  padding-right: 24px;
   height: 100%; }
   /* line 78, sass/_map.sass */
   .map .cafes .cafe-list-container {
@@ -2043,15 +2043,22 @@ div#links-to-parts-of-site {
       vertical-align: top;
       width: 100%; }
 
-/* line 175, sass/_map.sass */
+/* line 176, sass/_map.sass */
+.user-marker-window h3, .user-marker-window p {
+  text-align: center; }
+
+/* line 179, sass/_map.sass */
 .ad {
-  width: 300px;
-  min-height: 250px;
-  border: 1px solid #ec6338;
   color: #ec6338;
   margin: 12px;
-  margin-left: 0;
-  padding: 12px; }
+  margin-left: 0; }
+  /* line 180, sass/_map.sass */
+  .ad > div {
+    width: 250px;
+    height: 200px;
+    border: 1px solid #ec6338;
+    padding: 12px;
+    margin-bottom: 12px; }
 
 /* line 2, sass/_cafe.sass */
 .cafe section {
