@@ -26,9 +26,7 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
     });
 
     $scope.getEmbedMapSrc = function(cafe){
-        var clean = cafe.name+','+cafe.address1+','+cafe.city
-        clean = encodeURIComponent(clean);
-        console.log(clean)
+        var clean = encodeURIComponent(CafeService.getCafeNameAddress($scope.cafe));
         return "https://www.google.com/maps/embed/v1/search"
             + '?key=' + GMapCredentials.apiKey
             + '&q=' + clean

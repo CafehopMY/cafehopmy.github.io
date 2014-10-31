@@ -49,7 +49,6 @@ angular.module('cafehopApp').run(['$rootScope', function($rootScope){
     // Set title based on route
     $rootScope.$on("$routeChangeSuccess", function(event, currentRoute, previousRoute) {
  		window.document.title = currentRoute.title + ' | Cafehop KL';
- 		console.log(currentRoute.title)
  	});
 }]);
 
