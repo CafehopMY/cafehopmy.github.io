@@ -96,7 +96,10 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.user = {
         location: {
             name: "Kuala Lumpur",
-            details: {}
+            details: {},
+
+            //set true if want to update on geolocation success 
+            updateMarkerOnGeolocation: true, 
         },
     }
 
@@ -116,13 +119,19 @@ angular.module('cafehopApp.controllers').controller('MapController',
         }
     }
 
-    $scope.$watch('user.location', function(newValue, oldValue){
+    $scope.$watch('user.location.details', function(newValue, oldValue){
         // If user selects new location,
         if($scope.user.location.details.geometry){
             var ll =  $scope.user.location.details.geometry.location;
-            $scope.userMarker.coords = {
-                latitude: ll.lat(),
-                longitude: ll.lng()
+
+            if($scope.user.location.updateMarkerOnGeolocation){
+                $scope.userMarker.coords = {
+                    latitude: ll.lat(),
+                    longitude: ll.lng()
+                }
+            }
+            else{
+                $scope.user.location.updateMarkerOnGeolocation = true;
             }
             $scope.onUserMarkerPlaced(ll);
         }
@@ -253,6 +262,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
             $scope.markerCallbacks = MarkerCallbacks.init({
                 map: $scope.instance,
                 llCallback: function(ll){
+                    $scope.user.location.updateMarkerOnGeolocation = false;
                     $scope.geolocateUser(ll);
                     $scope.getCafes(ll);
                 },
