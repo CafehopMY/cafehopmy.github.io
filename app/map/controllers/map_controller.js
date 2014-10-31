@@ -45,6 +45,9 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
     $scope.userLocationInput = {
         live: false,
+        options: {
+            watchEnter: true,
+        }
     }
 
     $scope.$watch('user.location', function(newValue, oldValue){

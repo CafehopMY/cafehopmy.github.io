@@ -62,7 +62,7 @@
                     
                     <!-- Location input -->
                     <div ng-show="userLocationInput.live">
-                        <input ng-model="user.location.name" details="user.location.details" type="text" ng-autocomplete />
+                        <input ng-model="user.location.name" details="user.location.details" type="text" ng-autocomplete options="userLocationInput.options" />
                         <a ng-click="hideUserLocationInput()" href="" ><i class="fa fa-times"></i></a>
                     </div>
                 </div>
