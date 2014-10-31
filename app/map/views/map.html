@@ -1,126 +1,135 @@
 <h1 class="hidden">Cafehop Map</h1>
-<div ng-controller="MapController" class="map-wrapper" resize ng-style="style()">
-    <!-- Map and list -->
-    <div class="map">
-        <!-- Map -->
-        <div class="col-xs-7 col-sm-7">
-            <div class="legend">
-                <a class="btn btn-primary" href="" ng-click="getUserLocation()"> 
-                    <i class="fa fa-location-arrow"></i>
-                </a>
-            </div>
-
-            <ui-gmap-google-map 
-            center="map.center" 
-            zoom="map.zoom" 
-            events="map.events" 
-            options="map.options"
-            id="map-canvas">
-                Loading map...
-                <ui-gmap-markers 
-                models="markers"
-                idkey="'idKey'" 
-                coords="'coords'"
-                icon="'icon'"
-                options="'options'"
-                events="markerEvents"
-                control="markersControl"></ui-gmap-markers>
-
-                <ui-gmap-window 
-                show="map.showWindow"
-                isIconVisibleOnClick="false"
-                options="infoWindow.options"
-                coords="infoWindow.model.coords">
-                    <div>
-                        <span ng-bind="map.showWindow"></span>
-                        <div ng-show="{{infoWindow.model.cafe}}">
-                            <h3>
-                                <a ng-href="{{getCafeUrl(infoWindow.model.cafe)}}">{{infoWindow.model.cafe.name}}</a>
-                            </h3>
-                            <div>{{infoWindow.model.cafe.address1}}</div>
-                        </div>
-                        <div ng-class="user-marker-window" ng-show="{{!infoWindow.model.cafe}}">
-                            <h3>You are here</h3>
-                            <p>Drag to search for cafes.</p>
-                        </div>
-                    </div>
-                </ui-gmap-window>
-            </ui-gmap-google-map>
-        </div>
-
-        <!-- List -->
-        <div class="col-xs-5 col-sm-5 cafes">
-            <div class="cafe-list-container">
-                <div class="cafe-numbers">
-                    <!-- Location display -->
-                    <div class="location-display">
-                        <div>
-                            <span ng-show="!loadingCafes" ng-bind="cafes.length"></span>
-                            <span ng-show="loadingCafes">Loading</span>
-                            cafes around
-                            <a class="location" ng-click="showUserLocationInput()" href="" >
-                                <span ng-bind="user.location.name"></span>
-                            </a>
-                        </div> 
-
-                        <div>
-                            <a  ng-show="!loadingCafes" ng-click="showUserLocationInput()" class="btn btn-primary margin-l" href="" >
-                                <i class="fa fa-search"></i>
-                            </a>
-                            <i ng-show="loadingCafes" class="fa fa-spinner fa-spin"></i>
-                        </div> 
-                    </div>
-
-                    <!-- Location input -->
-                    <div class="location-input" ng-show="userLocationInput.live">
-                        <input id="search-location" ng-model="user.location.name" details="user.location.details" type="text" ng-autocomplete options="userLocationInput.options" />
-                        <a ng-click="hideUserLocationInput()" href="" >
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="cafe-list">
-                    <div ng-show="cafes.length < 1 && !loadingCafes || cannotFindUser">
-                        Sorry, we couldn't find any cafes or your location. Try another location perhaps?
-                    </div>
-                    <ul class="list-unstyled">
-                        <li ng-mouseover="triggerMarkerMouseover(cafe.idKey)" ng-mouseleave="triggerMarkerMouseout(cafe.idKey)"  ng-class="{cafe: true, closed: cafe.venue.hours && !cafe.venue.hours.isOpen}" ng-repeat="cafe in cafes" id="{{cafe.idKey}}">
-                            <div ng-class="{'cafe-container': true, hover: cafe.idKey == markerCallbacks.currMouseoverId}">
-                                <div class="hidden-xs">
-                                    <a target="_blank" ng-href="{{getCafeUrl(cafe)}}">
-                                        <img ng-show="getPhotoUrl(cafe)" ng-style="getPhotoStyle(cafe)">
-                                        <div ng-show="!getPhotoUrl(cafe)" class="img">
-                                            <i class="fa fa-camera"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a target="_blank" ng-href="{{getCafeUrl(cafe)}}">
-                                        <div class="a cafe-name">{{cafe.name}}</div>
-                                    </a>
-                                    <br/>
-                                    <small><strong>{{cafe.distance / 1000 | number:1}} km away</strong></small><br/>
-                                    <small>{{cafe.address1}}</small><br/>
-                                </div>
-                            </div>
-
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<div ng-controller="MapController" resize ng-style="style()">
+    <div class="mode-toggle hidden-md hidden-lg">
+        <ul class="list-unstyled list-inline">
+            <li><a href="">Map</a></li>
+            <li><a href="">List</a></li>
+        </ul>
     </div>
 
-    <!-- Ad -->
-    <div class="ad hidden-xs">
-        <div>
-            Advertise with us?
+    <div class="map-wrapper">
+        <!-- Map and list -->
+        <div class="map">
+            <!-- Map -->
+            <div class="col-xs-7 col-sm-6 col-md-7">
+                <div class="legend">
+                    <a class="btn btn-primary" href="" ng-click="getUserLocation()"> 
+                        <i class="fa fa-location-arrow"></i>
+                    </a>
+                </div>
+
+                <ui-gmap-google-map 
+                center="map.center" 
+                zoom="map.zoom" 
+                events="map.events" 
+                options="map.options"
+                id="map-canvas">
+                    Loading map...
+                    <ui-gmap-markers 
+                    models="markers"
+                    idkey="'idKey'" 
+                    coords="'coords'"
+                    icon="'icon'"
+                    options="'options'"
+                    events="markerEvents"
+                    control="markersControl"></ui-gmap-markers>
+
+                    <ui-gmap-window 
+                    show="map.showWindow"
+                    isIconVisibleOnClick="false"
+                    options="infoWindow.options"
+                    coords="infoWindow.model.coords">
+                        <div>
+                            <span ng-bind="map.showWindow"></span>
+                            <div ng-show="{{infoWindow.model.cafe}}">
+                                <h3>
+                                    <a ng-href="{{getCafeUrl(infoWindow.model.cafe)}}">{{infoWindow.model.cafe.name}}</a>
+                                </h3>
+                                <div>{{infoWindow.model.cafe.address1}}</div>
+                            </div>
+                            <div ng-class="user-marker-window" ng-show="{{!infoWindow.model.cafe}}">
+                                <h3>You are here</h3>
+                                <p>Drag to search for cafes.</p>
+                            </div>
+                        </div>
+                    </ui-gmap-window>
+                </ui-gmap-google-map>
+            </div>
+
+            <!-- List -->
+            <div class="col-xs-5 col-sm-6 col-md-5 cafes">
+                <div class="cafe-list-container">
+                    <div class="cafe-numbers">
+                        <!-- Location display -->
+                        <div class="location-display">
+                            <div>
+                                <span ng-show="!loadingCafes" ng-bind="cafes.length"></span>
+                                <span ng-show="loadingCafes">Loading</span>
+                                cafes around
+                                <a class="location" ng-click="showUserLocationInput()" href="" >
+                                    <span ng-bind="user.location.name"></span>
+                                </a>
+                            </div> 
+
+                            <div>
+                                <a  ng-show="!loadingCafes" ng-click="showUserLocationInput()" class="btn btn-primary margin-l" href="" >
+                                    <i class="fa fa-search"></i>
+                                </a>
+                                <i ng-show="loadingCafes" class="fa fa-spinner fa-spin"></i>
+                            </div> 
+                        </div>
+
+                        <!-- Location input -->
+                        <div class="location-input" ng-show="userLocationInput.live">
+                            <input id="search-location" ng-model="user.location.name" details="user.location.details" type="text" ng-autocomplete options="userLocationInput.options" />
+                            <a ng-click="hideUserLocationInput()" href="" >
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cafe-list">
+                        <div ng-show="cafes.length < 1 && !loadingCafes || cannotFindUser">
+                            Sorry, we couldn't find any cafes or your location. Try another location perhaps?
+                        </div>
+                        <ul class="list-unstyled">
+                            <li ng-mouseover="triggerMarkerMouseover(cafe.idKey)" ng-mouseleave="triggerMarkerMouseout(cafe.idKey)"  ng-class="{cafe: true, closed: cafe.venue.hours && !cafe.venue.hours.isOpen}" ng-repeat="cafe in cafes" id="{{cafe.idKey}}">
+                                <div ng-class="{'cafe-container': true, hover: cafe.idKey == markerCallbacks.currMouseoverId}">
+                                    <div class="hidden-xs">
+                                        <a target="_blank" ng-href="{{getCafeUrl(cafe)}}">
+                                            <img ng-show="getPhotoUrl(cafe)" ng-style="getPhotoStyle(cafe)">
+                                            <div ng-show="!getPhotoUrl(cafe)" class="img">
+                                                <i class="fa fa-camera"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a target="_blank" ng-href="{{getCafeUrl(cafe)}}">
+                                            <div class="a cafe-name">{{cafe.name}}</div>
+                                        </a>
+                                        <br/>
+                                        <small><strong>{{cafe.distance / 1000 | number:1}} km away</strong></small><br/>
+                                        <small>{{cafe.address1}}</small><br/>
+                                    </div>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            Advertise with us?
-        </div>
-        <div>
-            Advertise with us?
+
+        <!-- Ad -->
+        <div class="ad hidden-xs">
+            <div>
+                Advertise with us?
+            </div>
+            <div>
+                Advertise with us?
+            </div>
+            <div>
+                Advertise with us?
+            </div>
         </div>
     </div>
 </div>
