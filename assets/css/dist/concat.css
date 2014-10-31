@@ -1598,23 +1598,23 @@ footer {
 /* line 201, sass/_style.sass */
 .btn-primary-dark {
   background-color: #c53d13;
-  border: 1px solid #ad3611;
+  border: 1px solid #b73911;
   color: #f9c36f; }
   /* line 109, sass/_constants.sass */
   .btn-primary-dark:hover, .btn-primary-dark:focus {
     background-color: #90120e;
-    border: 1px solid #790f0c;
+    border: 1px solid #82100d;
     color: #f9c36f; }
 
 /* line 203, sass/_style.sass */
 .btn-primary {
   background-color: #ec6338;
-  border: 1px solid #ea5121;
+  border: 1px solid #eb582a;
   color: #f9c36f; }
   /* line 109, sass/_constants.sass */
   .btn-primary:hover, .btn-primary:focus {
     background-color: #c53d13;
-    border: 1px solid #ad3611;
+    border: 1px solid #b73911;
     color: #f9c36f; }
 
 /* line 208, sass/_style.sass */
