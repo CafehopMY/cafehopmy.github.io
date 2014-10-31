@@ -18,11 +18,11 @@ body, .cafe-name {
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased; }
 
-/* line 106, sass/_constants.sass */
+/* line 115, sass/_constants.sass */
 .margin-l {
   margin-left: 12px; }
 
-/* line 108, sass/_constants.sass */
+/* line 117, sass/_constants.sass */
 .margin-r {
   margin-right: 12px; }
 
@@ -324,36 +324,48 @@ footer {
   -ms-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -webkit-transition: all 0.5s;
-  transition: all 0.5s; }
+  transition: all 0.5s;
+  color: #f9c36f; }
 
-/* line 200, sass/_style.sass */
+/* line 201, sass/_style.sass */
+.btn-primary-dark {
+  background-color: #c53d13;
+  border: 1px solid #ad3611;
+  color: #f9c36f; }
+  /* line 109, sass/_constants.sass */
+  .btn-primary-dark:hover, .btn-primary-dark:focus {
+    background-color: #90120e;
+    border: 1px solid #790f0c;
+    color: #f9c36f; }
+
+/* line 203, sass/_style.sass */
 .btn-primary {
   background-color: #ec6338;
   border: 1px solid #ea5121;
   color: #f9c36f; }
-  /* line 204, sass/_style.sass */
+  /* line 109, sass/_constants.sass */
   .btn-primary:hover, .btn-primary:focus {
     background-color: #c53d13;
     border: 1px solid #ad3611;
     color: #f9c36f; }
 
-/* line 210, sass/_style.sass */
+/* line 208, sass/_style.sass */
 ::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
   color: #ec6338; }
 
-/* line 214, sass/_style.sass */
+/* line 212, sass/_style.sass */
 .mCSB_scrollTools .mCSB_draggerRail {
   background-color: #f8b582 !important; }
 
-/* line 217, sass/_style.sass */
+/* line 215, sass/_style.sass */
 .mCSB_scrollTools .mCSB_draggerRail {
   background-color: #f8b582 !important; }
 
-/* line 220, sass/_style.sass */
+/* line 218, sass/_style.sass */
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
   background: #c53d13 !important; }
 
-/* line 223, sass/_style.sass */
+/* line 221, sass/_style.sass */
 .heading-img {
   -moz-border-radius: 120px;
   -webkit-border-radius: 120px;
@@ -369,11 +381,11 @@ footer {
   width: 240px;
   height: 240px;
   padding: 12px; }
-  /* line 236, sass/_style.sass */
+  /* line 234, sass/_style.sass */
   .heading-img img {
     width: 216px; }
 
-/* line 239, sass/_style.sass */
+/* line 237, sass/_style.sass */
 .subtitle {
   font-family: "Champagne Bold", Helvetica, Arial, sans-serif;
   margin: 0;
@@ -384,7 +396,7 @@ footer {
   color: #f07e2d;
   text-shadow: #b15c41 1px 1px 0; }
 
-/* line 248, sass/_style.sass */
+/* line 246, sass/_style.sass */
 div.mouseover-text {
   background-color: white;
   position: absolute;
@@ -396,75 +408,75 @@ div.mouseover-text {
   -khtml-border-radius: 4px;
   border-radius: 4px; }
 
-/* line 256, sass/_style.sass */
+/* line 254, sass/_style.sass */
 div.cafe-types {
   margin: 6px 0; }
-  /* line 258, sass/_style.sass */
+  /* line 256, sass/_style.sass */
   div.cafe-types img {
     margin-right: 3px; }
 
 @media only screen and (max-width: 650px) {
-  /* line 274, sass/_style.sass */
+  /* line 272, sass/_style.sass */
   body {
     font-size: 1em; } }
 @media only screen and (max-width: 768px) {
-  /* line 278, sass/_style.sass */
+  /* line 276, sass/_style.sass */
   h1, .h1 {
     font-size: 2.6em; }
 
-  /* line 280, sass/_style.sass */
+  /* line 278, sass/_style.sass */
   h2, h3, h4 {
     font-size: 2em; }
 
-  /* line 284, sass/_style.sass */
+  /* line 282, sass/_style.sass */
   .content h1, .content h2, .content h3, .content h4 {
     text-align: center; }
 
-  /* line 287, sass/_style.sass */
+  /* line 285, sass/_style.sass */
   .heading-img {
     width: 50%;
     height: 50%; }
-    /* line 290, sass/_style.sass */
+    /* line 288, sass/_style.sass */
     .heading-img img {
       width: 100%; }
 
-  /* line 294, sass/_style.sass */
+  /* line 292, sass/_style.sass */
   footer div#footer-wrapper div#social-media-share, footer div#footer-wrapper div#sponsors {
     float: none;
     width: 100%;
     display: block; }
-  /* line 298, sass/_style.sass */
+  /* line 296, sass/_style.sass */
   footer div#footer-wrapper #social-media-share {
     margin-bottom: 12px; }
-  /* line 300, sass/_style.sass */
+  /* line 298, sass/_style.sass */
   footer #share-button {
     width: 150px; }
-  /* line 302, sass/_style.sass */
+  /* line 300, sass/_style.sass */
   footer ul#sponsor_list {
     display: block; }
-    /* line 304, sass/_style.sass */
+    /* line 302, sass/_style.sass */
     footer ul#sponsor_list li {
       display: inline-block; }
-      /* line 306, sass/_style.sass */
+      /* line 304, sass/_style.sass */
       footer ul#sponsor_list li span {
         display: none; }
-      /* line 308, sass/_style.sass */
+      /* line 306, sass/_style.sass */
       footer ul#sponsor_list li img {
         width: 80px; } }
-/* line 310, sass/_style.sass */
+/* line 308, sass/_style.sass */
 .addthis_native_toolbox {
   width: 200px;
   display: block;
   overflow: hidden; }
-  /* line 314, sass/_style.sass */
+  /* line 312, sass/_style.sass */
   .addthis_native_toolbox a {
     height: 30px;
     margin-right: 12px;
     display: table-cell; }
-    /* line 317, sass/_style.sass */
+    /* line 315, sass/_style.sass */
     .addthis_native_toolbox a.addthis_button_facebook_like {
       margin-top: -3px; }
-    /* line 323, sass/_style.sass */
+    /* line 321, sass/_style.sass */
     .addthis_native_toolbox a div span {
       vertical-align: top !important; }
 
@@ -631,48 +643,31 @@ div#links-to-parts-of-site {
 .legend {
   position: absolute;
   z-index: 9;
-  top: 24px;
-  right: 24px;
-  background-color: rgba(197, 61, 19, 0.9);
-  padding: 6px;
-  max-width: 300px; }
-  /* line 44, sass/_map.sass */
-  .legend .legend-list, .legend a {
-    padding: 0px;
-    margin: 0px;
-    color: #f8b582; }
-    /* line 48, sass/_map.sass */
-    .legend .legend-list .legend-item, .legend a .legend-item {
-      width: auto; }
-    /* line 50, sass/_map.sass */
-    .legend .legend-list .legend-text, .legend a .legend-text {
-      font-size: 14px; }
-    /* line 52, sass/_map.sass */
-    .legend .legend-list .legend-img, .legend a .legend-img {
-      max-height: 30px; }
+  top: 12px;
+  right: 12px; }
   @media only screen and (max-width: 768px) {
     /* line 36, sass/_map.sass */
     .legend {
       right: 12px;
       top: 12px; } }
 
-/* line 59, sass/_map.sass */
+/* line 45, sass/_map.sass */
 .map-wrapper {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row; }
-  /* line 62, sass/_map.sass */
+  /* line 48, sass/_map.sass */
   .map-wrapper .map {
     -webkit-flex: 1;
     flex: 1; }
 
-/* line 65, sass/_map.sass */
+/* line 51, sass/_map.sass */
 .map > div {
   padding-left: 0;
   padding-right: 0; }
 
-/* line 69, sass/_map.sass */
+/* line 55, sass/_map.sass */
 .map .cafes {
   display: -webkit-flex;
   display: flex;
@@ -683,7 +678,7 @@ div#links-to-parts-of-site {
   padding-left: 12px;
   padding-right: 24px;
   height: 100%; }
-  /* line 78, sass/_map.sass */
+  /* line 64, sass/_map.sass */
   .map .cafes .cafe-list-container {
     display: -webkit-flex;
     display: flex;
@@ -691,27 +686,27 @@ div#links-to-parts-of-site {
     flex-direction: column;
     -webkit-flex: 1;
     flex: 1; }
-  /* line 83, sass/_map.sass */
+  /* line 69, sass/_map.sass */
   .map .cafes .cafe-numbers a.location {
     text-decoration: underline; }
-  /* line 85, sass/_map.sass */
+  /* line 71, sass/_map.sass */
   .map .cafes .cafe-numbers .fa-search {
     padding-right: 0; }
-  /* line 87, sass/_map.sass */
+  /* line 73, sass/_map.sass */
   .map .cafes .cafe-numbers > .location-display {
     display: table;
     width: 100%; }
-    /* line 90, sass/_map.sass */
+    /* line 76, sass/_map.sass */
     .map .cafes .cafe-numbers > .location-display > div {
       display: table-cell; }
-      /* line 92, sass/_map.sass */
+      /* line 78, sass/_map.sass */
       .map .cafes .cafe-numbers > .location-display > div:first-child {
         width: 100%; }
-  /* line 95, sass/_map.sass */
+  /* line 81, sass/_map.sass */
   .map .cafes .cafe-numbers > .location-input {
     display: table;
     width: 100%; }
-    /* line 98, sass/_map.sass */
+    /* line 84, sass/_map.sass */
     .map .cafes .cafe-numbers > .location-input input {
       width: 100%;
       display: table-cell;
@@ -719,26 +714,26 @@ div#links-to-parts-of-site {
       border: 1px solid #f9c36f;
       padding: 6px;
       margin-top: 12px; }
-    /* line 105, sass/_map.sass */
+    /* line 91, sass/_map.sass */
     .map .cafes .cafe-numbers > .location-input a {
       display: table-cell;
       color: #90120e;
       text-align: right; }
-  /* line 109, sass/_map.sass */
+  /* line 95, sass/_map.sass */
   .map .cafes .cafe-list {
     -webkit-flex: 1;
     flex: 1;
     margin-top: 12px;
     overflow-y: scroll;
     min-height: 100px; }
-    /* line 114, sass/_map.sass */
+    /* line 100, sass/_map.sass */
     .map .cafes .cafe-list::-webkit-scrollbar {
       display: none; }
-    /* line 116, sass/_map.sass */
+    /* line 102, sass/_map.sass */
     .map .cafes .cafe-list ul {
       margin-top: 0;
       width: 100%; }
-      /* line 120, sass/_map.sass */
+      /* line 106, sass/_map.sass */
       .map .cafes .cafe-list ul li > div {
         -o-transition: all 0.5s;
         -ms-transition: all 0.5s;
@@ -747,41 +742,41 @@ div#links-to-parts-of-site {
         transition: all 0.5s;
         display: block;
         padding: 12px 6px;
-        border-radius: 3px;
         text-decoration: none;
-        clear: both; }
-        /* line 127, sass/_map.sass */
+        clear: both;
+        border-left: 3px solid transparent; }
+        /* line 113, sass/_map.sass */
         .map .cafes .cafe-list ul li > div:after, .map .cafes .cafe-list ul li > div:before {
           clear: both;
           content: " ";
           display: block; }
-        /* line 131, sass/_map.sass */
+        /* line 117, sass/_map.sass */
         .map .cafes .cafe-list ul li > div:hover, .map .cafes .cafe-list ul li > div.hover {
-          background-color: rgba(248, 181, 130, 0.6); }
-      /* line 133, sass/_map.sass */
+          background-color: rgba(248, 181, 130, 0.3); }
+      /* line 119, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-name {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
         float: left; }
-      /* line 138, sass/_map.sass */
+      /* line 124, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-link {
         width: 10%;
         float: right;
         text-align: right; }
 
-/* line 147, sass/_map.sass */
+/* line 133, sass/_map.sass */
 .cafe .cafe-container {
   display: table-row; }
-  /* line 149, sass/_map.sass */
+  /* line 135, sass/_map.sass */
   .cafe .cafe-container > div {
     display: table-cell;
     vertical-align: middle; }
-    /* line 152, sass/_map.sass */
+    /* line 138, sass/_map.sass */
     .cafe .cafe-container > div:first-child {
       padding-right: 12px;
       padding-left: 6px; }
-      /* line 155, sass/_map.sass */
+      /* line 141, sass/_map.sass */
       .cafe .cafe-container > div:first-child img, .cafe .cafe-container > div:first-child .img {
         width: 100px;
         height: 100px;
@@ -790,26 +785,26 @@ div#links-to-parts-of-site {
         background-size: cover;
         background-position: center;
         text-align: center; }
-        /* line 165, sass/_map.sass */
+        /* line 151, sass/_map.sass */
         .cafe .cafe-container > div:first-child img i, .cafe .cafe-container > div:first-child .img i {
           font-size: 50px;
           line-height: 50px;
           margin: 25px; }
-    /* line 170, sass/_map.sass */
+    /* line 156, sass/_map.sass */
     .cafe .cafe-container > div:nth-child(2) {
       vertical-align: top;
       width: 100%; }
 
-/* line 175, sass/_map.sass */
+/* line 161, sass/_map.sass */
 .user-marker-window h3, .user-marker-window p {
   text-align: center; }
 
-/* line 178, sass/_map.sass */
+/* line 164, sass/_map.sass */
 .ad {
   color: #ec6338;
   margin: 12px;
   margin-left: 0; }
-  /* line 179, sass/_map.sass */
+  /* line 165, sass/_map.sass */
   .ad > div {
     width: 250px;
     height: 200px;

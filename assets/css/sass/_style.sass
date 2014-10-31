@@ -197,14 +197,12 @@ footer
 // Buttons
 .btn 
     @include fade-in
-.btn-primary
-    background-color: $orange
-    border: 1px solid darken($orange, 5%)
     color: $beige
-    &:hover, &:focus 
-        background-color: $dark-orange
-        border: 1px solid darken($dark-orange, 5%)
-        color: $beige
+.btn-primary-dark
+    @include btn-color($dark-orange, $red)
+.btn-primary
+    @include btn-color($orange, $dark-orange)
+
 
 //Placeholder text color
 ::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder 

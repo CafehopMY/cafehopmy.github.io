@@ -380,7 +380,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.triggerMarkerMouseout = function(idKey){
         var m = $scope.findMarker(idKey);
         if(m){
-            // google.maps.event.trigger(m, 'mouseout')
+            google.maps.event.trigger(m, 'mouseout')
         }
         
     }
@@ -388,7 +388,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.triggerMarkerMouseover = function(idKey){
         var m = $scope.findMarker(idKey);
         if(m){
-            // google.maps.event.trigger(m, 'mouseover')
+            google.maps.event.trigger(m, 'mouseover')
         }
     }
 

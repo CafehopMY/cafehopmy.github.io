@@ -36,22 +36,8 @@
 .legend 
     position: absolute
     z-index: 9
-    top: $space*2
-    right: $space*2
-    background-color: rgba($dark-orange, 0.9)
-    padding: $space/2
-    max-width: 300px
-    .legend-list, a
-        padding: 0px
-        margin: 0px
-        color: $light-orange
-        .legend-item
-            width: auto
-        .legend-text
-            font-size: 14px
-        .legend-img 
-            max-height: 30px
-
+    top: $space
+    right: $space
     @media only screen and (max-width : 768px)
         right: $space 
         top: $space 
@@ -121,15 +107,15 @@
                     @include fade-in
                     display: block
                     padding: $space $space/2 
-                    border-radius: $space/4
                     text-decoration: none
                     clear: both
+                    border-left: 3px solid transparent
                     &:after, &:before
                         clear: both
                         content: " "
                         display: block
                     &:hover, &.hover
-                        background-color: rgba($light-orange, 0.6)
+                        background-color: rgba($light-orange, 0.3)
                 .cafe-name
                     text-overflow: ellipsis
                     overflow: hidden

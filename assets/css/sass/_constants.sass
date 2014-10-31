@@ -102,6 +102,15 @@ $bold-font: 'Champagne Bold', Helvetica, Arial, sans-serif
         &:hover, &.selected, &:focus
             background-color: $dark-orange
 
+@mixin btn-color($base, $active, $text-color: $beige)
+    background-color: $base
+    border: 1px solid darken($base, 5%)
+    color: $text-color
+    &:hover, &:focus 
+        background-color: $active
+        border: 1px solid darken($active, 5%)
+        color: $text-color
+
 // Util classes
 .margin-l
     margin-left: $space
