@@ -55,7 +55,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
                 latitude: ll.lat(),
                 longitude: ll.lng()
             }
-            console.log($scope.userMarker.coords);
             $scope.onUserMarkerPlaced(ll);
         }
     }, true);
@@ -134,7 +133,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
                 $scope.cannotFindUser = false;
                 $scope.user.location.details = results[0];
                 $scope.user.location.name = results[0].name;
-                console.log(results[0])
             }
             else{
                 $scope.cannotFindUser = true;
