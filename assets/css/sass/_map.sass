@@ -80,6 +80,23 @@
         @include flex-direction(column)
         @include flex(1)
     .cafe-numbers
+        a.location 
+            text-decoration: underline
+        
+        > div
+            display: table
+            width: 100%
+            input 
+                width: 100%
+                display: table-cell
+                font-size: 14px
+                border: 1px solid $beige
+                padding: $space/2
+                margin-top: $space
+            a
+                display: table-cell
+                color: $red
+                text-align: right
     .cafe-list
         @include flex(1)
         margin-top: $space

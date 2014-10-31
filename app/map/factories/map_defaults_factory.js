@@ -1,8 +1,8 @@
 angular.module('cafehopApp.factories').factory('MapDefaults', function() {
     var defaults = {
         center: {
-            latitude: 3.1537569458852315, 
-            longitude: 101.71610355377197
+            latitude: 3.1521286313632837, 
+            longitude: 101.71000957489014
         },
         marker: {
             windowOptions: {

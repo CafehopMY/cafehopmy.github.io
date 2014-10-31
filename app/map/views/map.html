@@ -57,12 +57,21 @@
                 <div class="cafe-numbers">
                     <span ng-show="!loadingCafes" ng-bind="cafes.length"></span>
                     <span ng-show="loadingCafes">Loading</span>
-                    Cafes Nearby
-                    &nbsp; <i ng-show="loadingCafes" class="fa fa-spinner fa-spin"></i>
+                    cafes around <a class="location" ng-click="showUserLocationInput()" href="" ><span ng-bind="userLocation"></span></a>
+                    <i ng-show="loadingCafes" class="fa fa-spinner fa-spin"></i>
+                    
+                    <!-- Location input -->
+                    <div ng-show="userLocationInput.live">
+                        <input ng-model="userLocation" type="text" ng-autocomplete />
+                        <a ng-click="hideUserLocationInput()" href="" ><i class="fa fa-times"></i></a>
+                    </div>
                 </div>
                 <div class="cafe-list">
                     <div ng-show="cafes.length < 1 && !loadingCafes">
                         Sorry, we couldn't find any cafes. Try another location perhaps?
+                    </div>
+                    <div ng-show="cannotFindUser">
+                        Sorry, we couldn't your location. Try another location perhaps?
                     </div>
                     <ul class="list-unstyled">
                         <li ng-mouseover="triggerMarkerMouseover(cafe.idKey)" ng-mouseleave="triggerMarkerMouseout(cafe.idKey)"  ng-class="{cafe: true, closed: cafe.venue.hours && !cafe.venue.hours.isOpen}" ng-repeat="cafe in cafes" id="{{cafe.idKey}}">

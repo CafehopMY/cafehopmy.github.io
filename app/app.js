@@ -6,7 +6,7 @@ var factories = angular.module('cafehopApp.factories', []);
 var directives = angular.module('cafehopApp.directives', []);
 
 var cafehop = angular.module('cafehopApp', 
-	['cafehopApp.controllers', 'cafehopApp.services', 'cafehopApp.factories', 'cafehopApp.directives', 'ngRoute', 'ngSanitize']);	
+	['cafehopApp.controllers', 'cafehopApp.services', 'cafehopApp.factories', 'cafehopApp.directives', 'ngRoute', 'ngSanitize', 'ngAutocomplete']);	
 
 angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider){
 	$routeProvider

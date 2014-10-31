@@ -6,7 +6,7 @@ var factories = angular.module('cafehopApp.factories', []);
 var directives = angular.module('cafehopApp.directives', []);
 
 var cafehop = angular.module('cafehopApp', 
-	['cafehopApp.controllers', 'cafehopApp.services', 'cafehopApp.factories', 'cafehopApp.directives', 'ngRoute', 'ngSanitize']);	
+	['cafehopApp.controllers', 'cafehopApp.services', 'cafehopApp.factories', 'cafehopApp.directives', 'ngRoute', 'ngSanitize', 'ngAutocomplete']);	
 
 angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider){
 	$routeProvider
@@ -93,6 +93,8 @@ angular.module('cafehopApp.controllers').controller('MapController',
         options: $scope.mapDefaults.marker.windowOptions
     }
 
+    $scope.userLocation = "Kuala Lumpur";
+
     $scope.sponsors = {
         0 : {
             name: 'Sponsor A'
@@ -100,6 +102,19 @@ angular.module('cafehopApp.controllers').controller('MapController',
         1 : {
             name: 'Sponsor B'
         }
+    }
+
+    $scope.userLocationInput = {
+        live: false,
+    }
+
+    $scope.showUserLocationInput = function(){
+        $scope.userLocationInput.live = true;
+        return false;
+    }
+    $scope.hideUserLocationInput = function(){
+        $scope.userLocationInput.live = false;
+        return false;
     }
 
     // PAN AND FIT 
@@ -133,6 +148,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.placeDefaultUser = function(marker){
         marker.coords = $scope.mapDefaults.center;
         var latlng = new google.maps.LatLng($scope.mapDefaults.center.latitude, $scope.mapDefaults.center.longitude);
+        $scope.geolocateUser(latlng);
         $scope.instance.panTo(latlng);
     }
 
@@ -146,8 +162,29 @@ angular.module('cafehopApp.controllers').controller('MapController',
                 var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                 $scope.instance.panTo(latlng);
                 $scope.getCafes(latlng);
+                $scope.geolocateUser(latlng);
            });
         }
+
+    }
+
+    // Geolocate address using Places API
+    $scope.geolocateUser = function(ll){
+        console.log(ll);
+        var service = new google.maps.places.PlacesService($scope.instance);
+        service.nearbySearch({
+            location: ll,
+            radius: 1000
+        }, function(results, status){
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                $scope.cannotFindUser = false;
+                $scope.userLocation = results[0].name;
+                console.log($scope.userLocation);
+            }
+            else{
+                $scope.cannotFindUser = true;
+            }
+        });
     }
 
     $scope.ready = function(map){
@@ -189,7 +226,10 @@ angular.module('cafehopApp.controllers').controller('MapController',
             // Initialize marker callbacks and events
             $scope.markerCallbacks = MarkerCallbacks.init({
                 map: $scope.instance,
-                llCallback: $scope.getCafes,
+                llCallback: function(ll){
+                    $scope.geolocateUser(ll);
+                    $scope.getCafes(ll);
+                },
                 showWindow: $scope.setWindowMarker,
                 userMarker: $scope.userMarker
             }); 
@@ -522,8 +562,8 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
 angular.module('cafehopApp.factories').factory('MapDefaults', function() {
     var defaults = {
         center: {
-            latitude: 3.1537569458852315, 
-            longitude: 101.71610355377197
+            latitude: 3.1521286313632837, 
+            longitude: 101.71000957489014
         },
         marker: {
             windowOptions: {
