@@ -130,6 +130,10 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
     $scope.showUserLocationInput = function(){
         $scope.userLocationInput.live = true;
+
+        setTimeout(function(){
+            $('#search-location', '.location-input').focus();
+        }, 100)
         return false;
     }
     $scope.hideUserLocationInput = function(){

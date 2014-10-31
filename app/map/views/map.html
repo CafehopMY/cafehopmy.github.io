@@ -55,15 +55,31 @@
         <div class="col-xs-5 col-sm-5 cafes">
             <div class="cafe-list-container">
                 <div class="cafe-numbers">
-                    <span ng-show="!loadingCafes" ng-bind="cafes.length"></span>
-                    <span ng-show="loadingCafes">Loading</span>
-                    cafes around <a class="location" ng-click="showUserLocationInput()" href="" ><span ng-bind="user.location.name"></span></a>
-                    <i ng-show="loadingCafes" class="fa fa-spinner fa-spin"></i>
-                    
+                    <!-- Location display -->
+                    <div class="location-display">
+                        <div>
+                            <span ng-show="!loadingCafes" ng-bind="cafes.length"></span>
+                            <span ng-show="loadingCafes">Loading</span>
+                            cafes around
+                            <a class="location" ng-click="showUserLocationInput()" href="" >
+                                <span ng-bind="user.location.name"></span>
+                            </a>
+                        </div> 
+
+                        <div>
+                            <a ng-click="showUserLocationInput()" href="" >
+                                <i ng-show="!loadingCafes" class="fa fa-search"></i>
+                            </a>
+                            <i ng-show="loadingCafes" class="fa fa-spinner fa-spin"></i>
+                        </div> 
+                    </div>
+
                     <!-- Location input -->
-                    <div ng-show="userLocationInput.live">
-                        <input ng-model="user.location.name" details="user.location.details" type="text" ng-autocomplete options="userLocationInput.options" />
-                        <a ng-click="hideUserLocationInput()" href="" ><i class="fa fa-times"></i></a>
+                    <div class="location-input" ng-show="userLocationInput.live">
+                        <input id="search-location" ng-model="user.location.name" details="user.location.details" type="text" ng-autocomplete options="userLocationInput.options" />
+                        <a ng-click="hideUserLocationInput()" href="" >
+                            <i class="fa fa-times"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="cafe-list">

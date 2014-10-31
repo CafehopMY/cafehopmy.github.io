@@ -82,8 +82,18 @@
     .cafe-numbers
         a.location 
             text-decoration: underline
-        
-        > div
+        .fa-search
+            padding: $space/2
+            padding-right: 0
+        > .location-display
+            display: table
+            width: 100%
+            > div
+                display: table-cell
+                &:first-child 
+                    width: 100%
+
+        > .location-input
             display: table
             width: 100%
             input 
