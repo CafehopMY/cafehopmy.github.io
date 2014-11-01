@@ -1,7 +1,7 @@
 @import 'constants'
 .map
     position: relative
-    min-height: $map-height
+    min-height: 100px
     height: 100%
 .content > div
     padding-bottom: 0px 
@@ -188,9 +188,12 @@
     h3, p 
         text-align: center 
 
+.map-view, .list-view 
+    left: 0px
 .hide-view 
     @media (max-width: #{$sm-width})
-    display: none 
+        position: absolute !important
+        left: -1000px
 .ad 
     > div 
         width: 250px
