@@ -52,6 +52,16 @@
                                     <strong><a ng-show="cafe.directions" target="_blank" ng-href="{{cafe.directions}}">Directions</a></strong>
                                 </div>
                             </li>
+
+                            <!-- Foursquare -->
+                            <li ng-show="cafe.networks[0].networkProvider == 'foursquare'">
+                            <div><i class="fa fa-foursquare"></i></div>
+                                <div>
+                                    <strong>
+                                        <a target="_blank" ng-href="http://foursquare.com/v/{{cafe.networks[0].id}}">Foursquare</a>
+                                    </strong>
+                                </div>
+                            </li>
                         </ul>
                     <p>
                 </div>
