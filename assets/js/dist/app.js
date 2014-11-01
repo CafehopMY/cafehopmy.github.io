@@ -407,11 +407,15 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.activateMapView = function(){
         $('.map-view').removeClass('hide-view');
         $('.list-view').addClass('hide-view');
+        $('.list-view-btn').removeClass('active');
+        $('.map-view-btn').addClass('active');
     }
 
     $scope.activateListView = function(){
         $('.map-view').addClass('hide-view');
         $('.list-view').removeClass('hide-view');
+        $('.list-view-btn').addClass('active');
+        $('.map-view-btn').removeClass('active');
 
     }
 
