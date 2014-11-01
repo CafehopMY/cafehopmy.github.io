@@ -64,6 +64,52 @@ angular.module('cafehopApp.controllers').controller('AboutController', ['$scope'
             console.error(filename + ' not found.')
         })
 }]);
+angular.module('cafehopApp.controllers').controller('CafeController', ['$scope', '$http', '$routeParams', '$sce', 'CafeService', 'GMapCredentials',
+    function($scope, $http, $routeParams, $sce, CafeService, GMapCredentials){
+    
+    CafeService.init();
+    
+    window.scrollTo(0, 0);
+    $scope.loading = true;
+
+    var cafeId = $routeParams.cafe_id;
+    $scope.cafe = CafeService.cafe;
+    $scope.cafe.name = $routeParams.cafe_name;
+
+
+    // Set title
+    window.document.title = $routeParams.cafe_name + " | Cafehop KL";;
+
+
+    CafeService.getCafe({
+        id: cafeId,
+        success: function(data){
+            $scope.cafe = CafeService.cafe;
+            $scope.loading = false;
+            window.document.title = $scope.cafe.name + " | Cafehop KL";
+            $scope.cafe.src = $sce.trustAsResourceUrl($scope.getEmbedMapSrc($scope.cafe));
+        }
+    });
+
+    $scope.getEmbedMapSrc = function(cafe){
+        var clean = encodeURIComponent(CafeService.getCafeNameAddress($scope.cafe));
+        return "https://www.google.com/maps/embed/v1/search"
+            + '?key=' + GMapCredentials.apiKey
+            + '&q=' + clean
+    }
+}]);
+angular.module('cafehopApp.controllers').controller('FaqController', ['$scope', '$http', function($scope, $http){
+    var filename ='app/faq/models/faq.json';
+    $scope.faq = "Loading FAQ..."; 
+
+    $http.get(filename)
+        .success(function(data){
+            $scope.faqs = data.faqs;
+        })
+        .error(function(){
+            console.error(filename + ' not found.')
+        })
+}]);
 angular.module('cafehopApp.controllers').controller('MapController', 
     ['$scope', '$http', '$rootScope', 'CafeService', 'MapCafes', 'MapDefaults', 'MarkerCallbacks',
     function($scope, $http, $rootScope, CafeService, MapCafes, MapDefaults, MarkerCallbacks){
@@ -428,52 +474,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.init();
 }]);
 
-angular.module('cafehopApp.controllers').controller('FaqController', ['$scope', '$http', function($scope, $http){
-    var filename ='app/faq/models/faq.json';
-    $scope.faq = "Loading FAQ..."; 
-
-    $http.get(filename)
-        .success(function(data){
-            $scope.faqs = data.faqs;
-        })
-        .error(function(){
-            console.error(filename + ' not found.')
-        })
-}]);
-angular.module('cafehopApp.controllers').controller('CafeController', ['$scope', '$http', '$routeParams', '$sce', 'CafeService', 'GMapCredentials',
-    function($scope, $http, $routeParams, $sce, CafeService, GMapCredentials){
-    
-    CafeService.init();
-    
-    window.scrollTo(0, 0);
-    $scope.loading = true;
-
-    var cafeId = $routeParams.cafe_id;
-    $scope.cafe = CafeService.cafe;
-    $scope.cafe.name = $routeParams.cafe_name;
-
-
-    // Set title
-    window.document.title = $routeParams.cafe_name + " | Cafehop KL";;
-
-
-    CafeService.getCafe({
-        id: cafeId,
-        success: function(data){
-            $scope.cafe = CafeService.cafe;
-            $scope.loading = false;
-            window.document.title = $scope.cafe.name + " | Cafehop KL";
-            $scope.cafe.src = $sce.trustAsResourceUrl($scope.getEmbedMapSrc($scope.cafe));
-        }
-    });
-
-    $scope.getEmbedMapSrc = function(cafe){
-        var clean = encodeURIComponent(CafeService.getCafeNameAddress($scope.cafe));
-        return "https://www.google.com/maps/embed/v1/search"
-            + '?key=' + GMapCredentials.apiKey
-            + '&q=' + clean
-    }
-}]);
 angular.module('cafehopApp.services').service('CafeService', ['$http', function ($http) {
     var cafe = {};
 
@@ -612,6 +612,11 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
     return self;
 }]);
 
+angular.module('cafehopApp.factories').factory('GMapCredentials', function() {
+    return {
+        apiKey: 'AIzaSyCWxCU3sy8rPbxrFZf74O80GB5MH8PIFBI'
+    }
+}); 
 angular.module('cafehopApp.factories').factory('MapDefaults', function() {
     var defaults = {
         center: {
@@ -737,11 +742,13 @@ angular.module('cafehopApp.factories').factory('MarkerCallbacks', ['MapDefaults'
     }
     return callbacks;
 }]);
-angular.module('cafehopApp.factories').factory('GMapCredentials', function() {
-    return {
-        apiKey: 'AIzaSyCWxCU3sy8rPbxrFZf74O80GB5MH8PIFBI'
+angular.module('cafehopApp.directives').directive('advertisements',[function(){
+    return{
+        restrict: 'E',
+        templateUrl: 'app/templates/advertisements_template.html',
     }
-}); 
+}]);
+
 angular.module('cafehopApp.directives').directive('resize', ['$window', function($window){
     return function(scope, element){
         var w = angular.element($window);
@@ -764,13 +771,6 @@ angular.module('cafehopApp.directives').directive('resize', ['$window', function
                 }
             }
         }, true);
-    }
-}]);
-
-angular.module('cafehopApp.directives').directive('advertisements',[function(){
-    return{
-        restrict: 'E',
-        templateUrl: 'app/templates/advertisements_template.html',
     }
 }]);
 
