@@ -141,7 +141,9 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.userLocationInput.live = true;
 
         setTimeout(function(){
-            $('#search-location', '.location-input').focus();
+            var input = $('#search-location', '.location-input')
+            input.focus();
+            input.select();
         }, 100)
         return false;
     }
