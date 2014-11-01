@@ -2095,36 +2095,36 @@ div#links-to-parts-of-site {
         background-size: cover;
         background-position: center;
         text-align: center; }
-        /* line 178, sass/_map.sass */
+        /* line 177, sass/_map.sass */
         .cafe .cafe-container > div:first-child img i, .cafe .cafe-container > div:first-child .img i {
           font-size: 50px;
           line-height: 50px;
           margin: 25px; }
-    /* line 183, sass/_map.sass */
+    /* line 182, sass/_map.sass */
     .cafe .cafe-container > div:nth-child(2) {
       vertical-align: top;
       width: 100%; }
 
-/* line 188, sass/_map.sass */
+/* line 187, sass/_map.sass */
 .user-marker-window h3, .user-marker-window p {
   text-align: center; }
 
-/* line 191, sass/_map.sass */
+/* line 190, sass/_map.sass */
 .map-view, .list-view {
   left: 0px; }
 
 @media (max-width: 768px) {
-  /* line 193, sass/_map.sass */
+  /* line 192, sass/_map.sass */
   .hide-view {
     position: absolute !important;
     left: -1000px; } }
 
-/* line 197, sass/_map.sass */
+/* line 196, sass/_map.sass */
 .ad {
   color: #ec6338;
   margin: 12px;
   margin-left: 0; }
-  /* line 198, sass/_map.sass */
+  /* line 197, sass/_map.sass */
   .ad > div {
     width: 250px;
     height: 200px;
