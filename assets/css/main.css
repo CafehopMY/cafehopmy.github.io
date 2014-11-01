@@ -842,11 +842,15 @@ div#links-to-parts-of-site {
   text-align: center; }
 
 /* line 191, sass/_map.sass */
+.hide-view {
+  display: none; }
+
+/* line 194, sass/_map.sass */
 .ad {
   color: #ec6338;
   margin: 12px;
   margin-left: 0; }
-  /* line 192, sass/_map.sass */
+  /* line 195, sass/_map.sass */
   .ad > div {
     width: 250px;
     height: 200px;
