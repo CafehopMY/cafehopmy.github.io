@@ -51,16 +51,19 @@
         li 
             margin: 0
             padding: 0
+            width: 50%
             display: table-cell
             &:not(:last-child)
-                border-right: 1px solid $beige
-            // width: 50%
+                border-right: 1px solid darken($red, 10%)
             a
-                width: 100%
+                @include fade-in
                 display: block
                 background-color: $red
                 padding: $space 
                 color: $light-beige
+                &:hover, &:focus, &.active
+                    background-color: darken($red, 10%)
+                    text-decoration: none
 .map-wrapper
     @include display-flex
     @include flex-direction(row)
