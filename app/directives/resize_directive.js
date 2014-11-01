@@ -12,7 +12,9 @@ angular.module('cafehopApp.directives').directive('resize', ['$window', function
         scope.$watch(scope.getWindowSize, function(newV, oldV){
             scope.style = function(){
                 var headerHeight = $('header').height();
-                var h = (newV.h - headerHeight);
+                var mobileControls =  $('.mobile-controls');
+                var mobileControlsHeight = mobileControls.is(':visible')? mobileControls.height() : 0;
+                var h = (newV.h - headerHeight - mobileControlsHeight -1);
                 $('.angular-google-map-container').height(h);
                 return {
                     height: h + 'px',

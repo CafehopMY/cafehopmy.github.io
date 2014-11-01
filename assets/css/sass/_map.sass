@@ -38,27 +38,54 @@
     @media only screen and (max-width : 768px)
         right: $space 
         top: $space 
+
+.location-display
+    display: table
+    width: 100%
+    > div
+        display: table-cell
+        vertical-align: middle
+        &:first-child 
+            width: 100%
+
+.location-input
+    display: table
+    width: 100%
+    input 
+        width: 100%
+        display: table-cell
+        font-size: 14px
+        border: 1px solid $red
+        padding: $space/2
+        margin-top: $space
+    a
+        display: table-cell
+        color: $red
+        text-align: right
+
 .mobile-controls
     @include display-flex
+    border-bottom: 1px solid $orange
     .mobile-controls-search
         @include flex(1)
         padding: $space/2 $space
-        .location-display
-            @include display-flex
-            > div 
-                &:first-child
-                    @include flex(1)
-            .location 
-                text-overflow: ellipsis
+        .location-input
+            input 
+                margin: $space 0
+            a 
+                margin-left: $space
+                text-align: center
 
     .mode-toggle 
         display: table 
         margin: 0
         text-align: center
+        height: 100%
         li 
             margin: 0
             padding: 0
             width: 50%
+            height: 100%
             display: table-cell
             &:not(:last-child)
                 border-right: 1px solid darken($red, 10%)
@@ -68,6 +95,7 @@
                 background-color: $red
                 padding: $space 
                 color: $light-beige
+                height: 100%
                 &:hover, &:focus, &.active
                     background-color: darken($red, 10%)
                     text-decoration: none
@@ -93,6 +121,7 @@
     height: 100%
     @media (max-width : #{$md-width})
         padding-right: $space
+        padding-top: 0
     $cafe-numbers-height: $space * 2
     .cafe-list-container
         @include display-flex
@@ -103,33 +132,14 @@
             text-decoration: underline
         .fa-search
             padding-right: 0
-        > .location-display
-            display: table
-            width: 100%
-            > div
-                display: table-cell
-                &:first-child 
-                    width: 100%
 
-        > .location-input
-            display: table
-            width: 100%
-            input 
-                width: 100%
-                display: table-cell
-                font-size: 14px
-                border: 1px solid $beige
-                padding: $space/2
-                margin-top: $space
-            a
-                display: table-cell
-                color: $red
-                text-align: right
     .cafe-list
         @include flex(1)
         margin-top: $space
         overflow-y: scroll
         min-height: 100px
+        @media (max-width : #{$md-width})
+            margin-top: 0
         &::-webkit-scrollbar
             display: none
         ul 
