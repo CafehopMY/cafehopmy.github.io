@@ -62,28 +62,10 @@
             <!-- List -->
             <div class="col-xs-12 col-sm-6 col-md-5 cafes list-view hide-view">
                 <div class="cafe-list-container">
-                    <div class="cafe-numbers">
-                        <!-- Location display -->
-                        <div class="location-display">
-                            <div>
-                                <span ng-show="!loadingCafes" ng-bind="cafes.length"></span>
-                                <span ng-show="loadingCafes">Loading</span>
-                                cafes around
-                                <a class="location" ng-click="showUserLocationInput()" href="" >
-                                    <span ng-bind="user.location.name"></span>
-                                </a>
-                            </div>
-
-                            <div>
-                                <a  ng-show="!loadingCafes" ng-click="showUserLocationInput()" class="btn btn-primary margin-l" href="" > <i class="fa fa-search"></i>
-                                </a>
-                                <i ng-show="loadingCafes" class="fa fa-spinner fa-spin"></i>
-                            </div>
-                        </div>
-
-                        <!-- Location input -->
-                        <location-search ng-show="userLocationInput.live"></location-search>
-                    </div>
+                    <!-- Location display and input -->
+                    <location-search class="cafe-numbers"></location-search>
+                    
+                    <!-- Cafes -->
                     <div class="cafe-list">
                         <div ng-show="cafes.length < 1 && !loadingCafes || cannotFindUser">
                             Sorry, we couldn't find any cafes or your location. Try another location perhaps?
