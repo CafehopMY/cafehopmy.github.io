@@ -21,23 +21,16 @@ module.exports = function(grunt) {
                     "app/app.js",
 
                     // Controllers
-                    "app/about/controllers/about_controller.js",
-                    "app/map/controllers/map_controller.js",
-                    "app/faq/controllers/faq_controller.js",
-                    "app/cafe/controllers/cafe_controller.js",
+                    "app/**/controllers/**.js",
 
                     // Services
-                    "app/cafe/services/cafe_service.js",
-                    "app/map/services/map_cafes_service.js",
+                    "app/**/services/**.js",
 
                     // Factories
-                    "app/map/factories/map_defaults_factory.js",
-                    "app/map/factories/marker_callbacks_factory.js",
-                    "app/map/factories/gmap_credentials_factory.js",
+                    "app/map/factories/*.js",
 
                     // Directives
-                    "app/directives/resize_directive.js",
-                    "app/directives/advertisements_directive.js",
+                    "app/directives/*.js",
                     "app/map/directives/*.js",
                 ],
                 dest: 'assets/js/dist/app.js'
