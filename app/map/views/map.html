@@ -1,5 +1,6 @@
 <h1 class="hidden">Cafehop Map</h1>
 <div ng-controller="MapController" resize ng-style="style()">
+    <!-- Map and list view toggle -->
     <div class="mode-toggle hidden-sm hidden-md hidden-lg">
         <ul class="list-unstyled list-inline">
             <li>
@@ -12,14 +13,14 @@
     </div>
 
     <div class="map-wrapper">
-        <!-- Map and list -->
         <div class="map">
-            <!-- Map -->
+            <!-- Map View -->
             <div class="col-xs-12 col-sm-6 col-md-7 map-view">
+                <!-- Cafe map -->
                 <cafe-map></cafe-map>
             </div>
 
-            <!-- List -->
+            <!-- List View -->
             <div class="col-xs-12 col-sm-6 col-md-5 cafes list-view hide-view">
                 <div class="cafe-list-container">
                     <!-- Location display and input -->
