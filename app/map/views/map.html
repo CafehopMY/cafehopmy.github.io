@@ -82,12 +82,7 @@
                         </div>
 
                         <!-- Location input -->
-                        <div class="location-input" ng-show="userLocationInput.live">
-                            <input id="search-location" ng-model="user.location.name" details="user.location.details" type="text" ng-autocomplete options="userLocationInput.options" />
-                            <a ng-click="hideUserLocationInput()" href="" >
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
+                        <location-search ng-show="userLocationInput.live"></location-search>
                     </div>
                     <div class="cafe-list">
                         <div ng-show="cafes.length < 1 && !loadingCafes || cannotFindUser">

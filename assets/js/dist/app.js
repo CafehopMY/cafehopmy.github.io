@@ -65,7 +65,7 @@ angular.module('cafehopApp.controllers').controller('AboutController', ['$scope'
         })
 }]);
 angular.module('cafehopApp.controllers').controller('MapController', 
-    ['$scope', '$http', '$rootScope', 'CafeService', 'MapCafes', 'MapDefaults', 'MarkerCallbacks', 
+    ['$scope', '$http', '$rootScope', 'CafeService', 'MapCafes', 'MapDefaults', 'MarkerCallbacks',
     function($scope, $http, $rootScope, CafeService, MapCafes, MapDefaults, MarkerCallbacks){
     
     // Only hide footer and span header for map view
@@ -764,5 +764,12 @@ angular.module('cafehopApp.directives').directive('resize', ['$window', function
                 }
             }
         }, true);
+    }
+}]);
+
+angular.module('cafehopApp.directives').directive('locationSearch',[function(){
+    return{
+        restrict: 'E',
+        templateUrl: 'app/map/templates/location_search_template.html',
     }
 }]);

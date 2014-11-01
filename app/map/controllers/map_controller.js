@@ -1,5 +1,5 @@
 angular.module('cafehopApp.controllers').controller('MapController', 
-    ['$scope', '$http', '$rootScope', 'CafeService', 'MapCafes', 'MapDefaults', 'MarkerCallbacks', 
+    ['$scope', '$http', '$rootScope', 'CafeService', 'MapCafes', 'MapDefaults', 'MarkerCallbacks',
     function($scope, $http, $rootScope, CafeService, MapCafes, MapDefaults, MarkerCallbacks){
     
     // Only hide footer and span header for map view

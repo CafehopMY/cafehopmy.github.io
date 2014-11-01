@@ -35,8 +35,9 @@ module.exports = function(grunt) {
                     "app/map/factories/marker_callbacks_factory.js",
                     "app/map/factories/gmap_credentials_factory.js",
 
-                    // Directive
+                    // Directives
                     "app/directives/resize_directive.js",
+                    "app/map/directives/location_search_directive.js",
                 ],
                 dest: 'assets/js/dist/app.js'
             },
