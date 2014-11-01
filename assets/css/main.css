@@ -480,6 +480,10 @@ div.cafe-types {
     .addthis_native_toolbox a div span {
       vertical-align: top !important; }
 
+/* line 323, sass/_style.sass */
+#_atssh {
+  display: none; }
+
 /* line 4, sass/_about.sass */
 span.name {
   font-weight: bold; }
