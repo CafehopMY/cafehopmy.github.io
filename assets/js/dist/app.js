@@ -774,6 +774,20 @@ angular.module('cafehopApp.directives').directive('advertisements',[function(){
     }
 }]);
 
+angular.module('cafehopApp.directives').directive('cafeList',[function(){
+    return{
+        restrict: 'E',
+        templateUrl: 'app/map/templates/cafe_list_template.html',
+    }
+}]);
+
+angular.module('cafehopApp.directives').directive('cafeMap',[function(){
+    return{
+        restrict: 'E',
+        templateUrl: 'app/map/templates/cafe_map_template.html',
+    }
+}]);
+
 angular.module('cafehopApp.directives').directive('locationSearch',[function(){
     return{
         restrict: 'E',

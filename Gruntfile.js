@@ -38,7 +38,7 @@ module.exports = function(grunt) {
                     // Directives
                     "app/directives/resize_directive.js",
                     "app/directives/advertisements_directive.js",
-                    "app/map/directives/location_search_directive.js",
+                    "app/map/directives/*.js",
                 ],
                 dest: 'assets/js/dist/app.js'
             },

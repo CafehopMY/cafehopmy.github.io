@@ -1,0 +1,41 @@
+<div class="map-controls">
+    <a class="btn btn-primary" href="" ng-click="getUserLocation()"> <i class="fa fa-location-arrow"></i>
+    </a>
+</div>
+
+<ui-gmap-google-map 
+    center="map.center" 
+    zoom="map.zoom" 
+    events="map.events" 
+    options="map.options"
+    id="map-canvas">
+    Loading map...
+    <ui-gmap-markers 
+        models="markers"
+        idkey="'idKey'" 
+        coords="'coords'"
+        icon="'icon'"
+        options="'options'"
+        events="markerEvents"
+        control="markersControl"></ui-gmap-markers>
+
+    <ui-gmap-window 
+        show="map.showWindow"
+        isIconVisibleOnClick="false"
+        options="infoWindow.options"
+        coords="infoWindow.model.coords">
+        <div>
+            <span ng-bind="map.showWindow"></span>
+            <div ng-show="{{infoWindow.model.cafe}}">
+                <h3>
+                    <a ng-href="{{getCafeUrl(infoWindow.model.cafe)}}">{{infoWindow.model.cafe.name}}</a>
+                </h3>
+                <div>{{infoWindow.model.cafe.address1}}</div>
+            </div>
+            <div ng-class="user-marker-window" ng-show="{{!infoWindow.model.cafe}}">
+                <h3>You are here</h3>
+                <p>Drag to search for cafes.</p>
+            </div>
+        </div>
+    </ui-gmap-window>
+</ui-gmap-google-map>
