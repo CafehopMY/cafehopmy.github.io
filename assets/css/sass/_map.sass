@@ -38,28 +38,39 @@
     @media only screen and (max-width : 768px)
         right: $space 
         top: $space 
-.mode-toggle 
-    width: 100%
-    display: table 
-    width: 100%
-    margin: 0
-    text-align: center
-    li 
+.mobile-controls
+    @include display-flex
+    .mobile-controls-search
+        @include flex(1)
+        padding: $space/2 $space
+        .location-display
+            @include display-flex
+            > div 
+                &:first-child
+                    @include flex(1)
+            .location 
+                text-overflow: ellipsis
+
+    .mode-toggle 
+        display: table 
         margin: 0
-        padding: 0
-        width: 50%
-        display: table-cell
-        &:not(:last-child)
-            border-right: 1px solid darken($red, 10%)
-        a
-            @include fade-in
-            display: block
-            background-color: $red
-            padding: $space 
-            color: $light-beige
-            &:hover, &:focus, &.active
-                background-color: darken($red, 10%)
-                text-decoration: none
+        text-align: center
+        li 
+            margin: 0
+            padding: 0
+            width: 50%
+            display: table-cell
+            &:not(:last-child)
+                border-right: 1px solid darken($red, 10%)
+            a
+                @include fade-in
+                display: block
+                background-color: $red
+                padding: $space 
+                color: $light-beige
+                &:hover, &:focus, &.active
+                    background-color: darken($red, 10%)
+                    text-decoration: none
 .map-wrapper
     @include display-flex
     @include flex-direction(row)
