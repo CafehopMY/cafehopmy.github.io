@@ -18,18 +18,19 @@ body
     max-width: 100% !important
 
 .content
-    > div, > section
-        padding-bottom: $space * 4
+    > 
+        div, section
+            padding-bottom: $space * 4
+            @media (max-width: #{$sm-width})
+                padding-bottom: $space * 2
+        .no-padding
+            padding-bottom: 0
 
 header
     width: 100%
 header, .navbar-header
     background-color: $orange
 nav 
-    ul
-        @media screen and (max-width: 500px)
-            float: none
-            display: block
 
     .navbar-nav
         > li

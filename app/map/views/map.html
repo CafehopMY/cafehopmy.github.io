@@ -1,38 +1,40 @@
-<h1 class="hidden">Cafehop Map</h1>
-<div ng-controller="MapController" resize ng-style="style()">
-    <!-- Map and list view toggle -->
-    <div class="mode-toggle hidden-sm hidden-md hidden-lg">
-        <ul class="list-unstyled list-inline">
-            <li>
-                <a class="map-view-btn active" href="" ng-click="activateMapView()">Map</a>
-            </li>
-            <li>
-                <a class="list-view-btn" href="" ng-click="activateListView()">List</a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="map-wrapper">
-        <div class="map">
-            <!-- Map View -->
-            <div class="col-xs-12 col-sm-6 col-md-7 map-view">
-                <!-- Cafe map -->
-                <cafe-map></cafe-map>
-            </div>
-
-            <!-- List View -->
-            <div class="col-xs-12 col-sm-6 col-md-5 cafes list-view hide-view">
-                <div class="cafe-list-container">
-                    <!-- Location display and input -->
-                    <location-search class="cafe-numbers"></location-search>
-                    
-                    <!-- Cafe list -->
-                    <cafe-list class="cafe-list"></cafe-list>
-                </div>
-            </div>
+<div class="no-padding">
+    <h1 class="hidden">Cafehop Map</h1>
+    <div ng-controller="MapController" resize ng-style="style()">
+        <!-- Map and list view toggle -->
+        <div class="mode-toggle hidden-sm hidden-md hidden-lg">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    <a class="map-view-btn active" href="" ng-click="activateMapView()">Map</a>
+                </li>
+                <li>
+                    <a class="list-view-btn" href="" ng-click="activateListView()">List</a>
+                </li>
+            </ul>
         </div>
 
-        <!-- Ad -->
-        <advertisements class="ad hidden-xs hidden-sm"></advertisements>
+        <div class="map-wrapper">
+            <div class="map">
+                <!-- Map View -->
+                <div class="col-xs-12 col-sm-6 col-md-7 map-view">
+                    <!-- Cafe map -->
+                    <cafe-map></cafe-map>
+                </div>
+
+                <!-- List View -->
+                <div class="col-xs-12 col-sm-6 col-md-5 cafes list-view hide-view">
+                    <div class="cafe-list-container">
+                        <!-- Location display and input -->
+                        <location-search class="cafe-numbers"></location-search>
+
+                        <!-- Cafe list -->
+                        <cafe-list class="cafe-list"></cafe-list>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ad -->
+            <advertisements class="ad hidden-xs hidden-sm"></advertisements>
+        </div>
     </div>
 </div>

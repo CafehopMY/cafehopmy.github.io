@@ -2,80 +2,97 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-sm-8 col-md-6">
-                    <div class="clearfix">
+                <div class="col-xs-12">
+                    <div class="clearfix"> <i ng-show="loading" class="fa fa-spinner fa-spin"></i>
                         <h1 class="pull-left">
-                            <a ng-href="{{cafe.url}}" target="_blank"> 
-                                {{cafe.name}}
-                            </a>
+                            <a ng-href="{{cafe.url}}" target="_blank">{{cafe.name}}</a>
                         </h1>
-                        <i ng-show="loading" class="fa fa-spinner fa-spin"></i>
-                        <a ng-show="cafe.url" ng-href="{{cafe.url}}" target="_blank"> 
-                            <i class="fa fa-external-link"></i>
-                        </a>
                     </div>
-                    <p>
-                        <ul class="list-unstyled cafe-details">
-                            <!-- Hours-->
-                            <li>
-                                <div><i class="fa fa-clock-o"></i></div>
-                                <div>
-                                    {{cafe.hours}}<span ng-show="!cafe.hours">Not listed</span>
-                                </div>
-                            </li>
-                            
-                            <!-- Phone-->
-                            <li>
-                                <div><i class="fa fa-phone"></i></div>
-                                <div>
-                                    {{cafe.phone}}<span ng-show="!cafe.phone">Not listed</span>
-                                </div>
-                            </li>
-
-                            <!-- Address-->
-                            <li>
-                                <div><i class="fa fa-map-marker"></i></div>
-                                <div>
-                                    <span>{{cafe.address1}}</span>
-                                    <br/>
-                                    <span ng-show="cafe.address2">{{cafe.address2}}
-                                        <br/>
-                                    </span>
-                                    <span>{{cafe.city}}</span>
-                                </div>
-                            </li>
-
-                            <!-- Link to gmap directions -->
-                           <li>
-                            <div><i class="fa fa-car"></i></div>
-                                <div>
-                                    <strong><a ng-show="cafe.directions" target="_blank" ng-href="{{cafe.directions}}">Directions</a></strong>
-                                </div>
-                            </li>
-
-                            <!-- Foursquare -->
-                            <li ng-show="cafe.networks[0].networkProvider == 'foursquare'">
-                            <div><i class="fa fa-foursquare"></i></div>
-                                <div>
-                                    <strong>
-                                        <a target="_blank" ng-href="http://foursquare.com/v/{{cafe.networks[0].id}}">Foursquare</a>
-                                    </strong>
-                                </div>
-                            </li>
-                        </ul>
-                    <p>
                 </div>
+                <div class="col-sm-8 col-md-7">
+                    <p>
+                        <ul class="list-unstyled cafe-details row">
+                            <div class="col-sm-7">
+                                <!-- Hours-->
+                                <li>
+                                    <div>
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    <div>
+                                        {{cafe.hours}}
+                                        <span ng-show="!cafe.hours">Not listed</span>
+                                    </div>
+                                </li>
 
-                <div class="col-sm-4 col-md-6">
-                   <iframe
+
+                                <!-- Address-->
+                                <li>
+                                    <div>
+                                        <i class="fa fa-map-marker"></i>
+                                    </div>
+                                    <div>
+                                        <span>{{cafe.address1}}</span>
+                                        <br/>
+                                        <span ng-show="cafe.address2">
+                                            {{cafe.address2}}
+                                            <br/>
+                                        </span>
+                                        <span>{{cafe.city}}</span>
+                                    </div>
+                                </li>
+                                <!-- Link to gmap directions -->
+                                <li>
+                                    <div>
+                                        <i class="fa fa-car"></i>
+                                    </div>
+                                    <div> <strong><a ng-show="cafe.directions" target="_blank" ng-href="{{cafe.directions}}">Directions</a></strong> 
+                                    </div>
+                                </li>
+                            </div>
+
+                            <div class="col-sm-5">
+                                <!-- Phone-->
+                                <li>
+                                    <div>
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        {{cafe.phone}}
+                                        <span ng-show="!cafe.phone">Not listed</span>
+                                    </div>
+                                </li>
+
+                                <!-- Website-->
+                                <li ng-show="cafe.url">
+                                    <div>
+                                        <i class="fa fa-globe"></i>
+                                    </div>
+                                    <div>
+                                        <a ng-href="{{cafe.url}}" target="_blank">Website</a>
+                                    </div>
+                                </li>
+
+                                <!-- Foursquare -->
+                                <li ng-show="cafe.networks[0].networkProvider == 'foursquare'">
+                                    <div>
+                                        <i class="fa fa-foursquare"></i>
+                                    </div>
+                                    <div> <strong><a target="_blank" ng-href="http://foursquare.com/v/{{cafe.networks[0].id}}">Foursquare</a></strong> 
+                                    </div>
+                                </li>
+                            </div>
+                        </ul>
+                        <p></div>
+
+                        <div class="col-sm-4 col-md-5">
+                            <iframe
                       class="cafe-map"
                       width="300"
                       height="300"
                       frameborder="0" style="border:0"
-                      ng-src="{{cafe.src}}">
-                    </iframe>
+                      ng-src="{{cafe.src}}"></iframe>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
-    </section>
-</div>
