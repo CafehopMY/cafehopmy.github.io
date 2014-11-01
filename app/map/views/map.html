@@ -2,8 +2,12 @@
 <div ng-controller="MapController" resize ng-style="style()">
     <div class="mode-toggle hidden-sm hidden-md hidden-lg">
         <ul class="list-unstyled list-inline">
-            <li><a class="map-view-btn active" href="" ng-click="activateMapView()">Map</a></li>
-            <li><a class="list-view-btn" href="" ng-click="activateListView()">List</a></li>
+            <li>
+                <a class="map-view-btn active" href="" ng-click="activateMapView()">Map</a>
+            </li>
+            <li>
+                <a class="list-view-btn" href="" ng-click="activateListView()">List</a>
+            </li>
         </ul>
     </div>
 
@@ -12,9 +16,8 @@
         <div class="map">
             <!-- Map -->
             <div class="col-xs-12 col-sm-6 col-md-7 map-view">
-                <div class="legend">
-                    <a class="btn btn-primary" href="" ng-click="getUserLocation()"> 
-                        <i class="fa fa-location-arrow"></i>
+                <div class="map-controls">
+                    <a class="btn btn-primary" href="" ng-click="getUserLocation()"> <i class="fa fa-location-arrow"></i>
                     </a>
                 </div>
 
@@ -69,14 +72,13 @@
                                 <a class="location" ng-click="showUserLocationInput()" href="" >
                                     <span ng-bind="user.location.name"></span>
                                 </a>
-                            </div> 
+                            </div>
 
                             <div>
-                                <a  ng-show="!loadingCafes" ng-click="showUserLocationInput()" class="btn btn-primary margin-l" href="" >
-                                    <i class="fa fa-search"></i>
+                                <a  ng-show="!loadingCafes" ng-click="showUserLocationInput()" class="btn btn-primary margin-l" href="" > <i class="fa fa-search"></i>
                                 </a>
                                 <i ng-show="loadingCafes" class="fa fa-spinner fa-spin"></i>
-                            </div> 
+                            </div>
                         </div>
 
                         <!-- Location input -->
@@ -107,8 +109,11 @@
                                             <div class="a cafe-name">{{cafe.name}}</div>
                                         </a>
                                         <br/>
-                                        <small><strong>{{cafe.distance / 1000 | number:1}} km away</strong></small><br/>
-                                        <small>{{cafe.address1}}</small><br/>
+                                        <small> <strong>{{cafe.distance / 1000 | number:1}} km away</strong>
+                                        </small>
+                                        <br/>
+                                        <small>{{cafe.address1}}</small>
+                                        <br/>
                                     </div>
                                 </div>
 
@@ -121,15 +126,9 @@
 
         <!-- Ad -->
         <div class="ad hidden-xs hidden-sm">
-            <div>
-                Advertise with us?
-            </div>
-            <div>
-                Advertise with us?
-            </div>
-            <div>
-                Advertise with us?
-            </div>
+            <div>Advertise with us?</div>
+            <div>Advertise with us?</div>
+            <div>Advertise with us?</div>
         </div>
     </div>
 </div>

@@ -1908,14 +1908,14 @@ div#links-to-parts-of-site {
     margin-right: 6px; }
 
 /* line 36, sass/_map.sass */
-.legend {
+.map-controls {
   position: absolute;
   z-index: 9;
   top: 12px;
   right: 12px; }
   @media only screen and (max-width: 768px) {
     /* line 36, sass/_map.sass */
-    .legend {
+    .map-controls {
       right: 12px;
       top: 12px; } }
 
