@@ -40,27 +40,26 @@
         top: $space 
 .mode-toggle 
     width: 100%
-    > ul  
-        display: table 
-        width: 100%
+    display: table 
+    width: 100%
+    margin: 0
+    text-align: center
+    li 
         margin: 0
-        text-align: center
-        li 
-            margin: 0
-            padding: 0
-            width: 50%
-            display: table-cell
-            &:not(:last-child)
-                border-right: 1px solid darken($red, 10%)
-            a
-                @include fade-in
-                display: block
-                background-color: $red
-                padding: $space 
-                color: $light-beige
-                &:hover, &:focus, &.active
-                    background-color: darken($red, 10%)
-                    text-decoration: none
+        padding: 0
+        width: 50%
+        display: table-cell
+        &:not(:last-child)
+            border-right: 1px solid darken($red, 10%)
+        a
+            @include fade-in
+            display: block
+            background-color: $red
+            padding: $space 
+            color: $light-beige
+            &:hover, &:focus, &.active
+                background-color: darken($red, 10%)
+                text-decoration: none
 .map-wrapper
     @include display-flex
     @include flex-direction(row)

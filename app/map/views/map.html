@@ -2,8 +2,9 @@
     <h1 class="hidden">Cafehop Map</h1>
     <div ng-controller="MapController" resize ng-style="style()">
         <!-- Map and list view toggle -->
-        <div class="mode-toggle hidden-sm hidden-md hidden-lg">
-            <ul class="list-unstyled list-inline">
+        <div class="hidden-sm hidden-md hidden-lg">
+            <location-search class="cafe-numbers hidden-sm hidden-md hidden-lg"></location-search>
+            <ul class="mode-toggle list-unstyled list-inline">
                 <li>
                     <a class="map-view-btn active" href="" ng-click="activateMapView()">Map</a>
                 </li>
@@ -25,7 +26,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-5 cafes list-view hide-view">
                     <div class="cafe-list-container">
                         <!-- Location display and input -->
-                        <location-search class="cafe-numbers"></location-search>
+                        <location-search class="cafe-numbers hidden-xs"></location-search>
 
                         <!-- Cafe list -->
                         <cafe-list class="cafe-list"></cafe-list>
