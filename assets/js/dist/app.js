@@ -767,6 +767,13 @@ angular.module('cafehopApp.directives').directive('resize', ['$window', function
     }
 }]);
 
+angular.module('cafehopApp.directives').directive('advertisements',[function(){
+    return{
+        restrict: 'E',
+        templateUrl: 'app/templates/advertisements_template.html',
+    }
+}]);
+
 angular.module('cafehopApp.directives').directive('locationSearch',[function(){
     return{
         restrict: 'E',
