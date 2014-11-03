@@ -73,7 +73,7 @@
             input 
                 margin: $space 0
             a 
-                margin-left: $space
+                padding-left: $space
                 text-align: center
 
     .mode-toggle 
@@ -84,13 +84,13 @@
         li 
             margin: 0
             padding: 0
-            width: 50%
             height: 100%
             display: table-cell
             &:not(:last-child)
                 border-right: 1px solid darken($red, 10%)
             a
                 @include fade-in
+                min-width: 55px
                 display: block
                 background-color: $red
                 padding: $space 
@@ -99,6 +99,8 @@
                 &:hover, &:focus, &.active
                     background-color: darken($red, 10%)
                     text-decoration: none
+            &.active 
+                display: none
 .map-wrapper
     @include display-flex
     @include flex-direction(row)
