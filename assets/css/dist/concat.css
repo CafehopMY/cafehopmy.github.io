@@ -2141,7 +2141,7 @@ div#links-to-parts-of-site {
 .map-view, .list-view {
   left: 0px; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   /* line 211, sass/_map.sass */
   .hide-view {
     position: absolute !important;
