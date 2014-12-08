@@ -829,26 +829,25 @@ div#links-to-parts-of-site {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
-        float: left;
-        text-transform: uppercase; }
-      /* line 171, sass/_map.sass */
+        float: left; }
+      /* line 170, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-link {
         width: 10%;
         float: right;
         text-align: right; }
 
-/* line 180, sass/_map.sass */
+/* line 179, sass/_map.sass */
 .cafe .cafe-container {
   display: table-row; }
-  /* line 182, sass/_map.sass */
+  /* line 181, sass/_map.sass */
   .cafe .cafe-container > div {
     display: table-cell;
     vertical-align: middle; }
-    /* line 185, sass/_map.sass */
+    /* line 184, sass/_map.sass */
     .cafe .cafe-container > div:first-child {
       padding-right: 12px;
       padding-left: 6px; }
-      /* line 188, sass/_map.sass */
+      /* line 187, sass/_map.sass */
       .cafe .cafe-container > div:first-child img, .cafe .cafe-container > div:first-child .img {
         width: 100px;
         height: 100px;
@@ -857,26 +856,26 @@ div#links-to-parts-of-site {
         background-size: cover;
         background-position: center;
         text-align: center; }
-        /* line 197, sass/_map.sass */
+        /* line 196, sass/_map.sass */
         .cafe .cafe-container > div:first-child img i, .cafe .cafe-container > div:first-child .img i {
           font-size: 50px;
           line-height: 50px;
           margin: 25px; }
-    /* line 202, sass/_map.sass */
+    /* line 201, sass/_map.sass */
     .cafe .cafe-container > div:nth-child(2) {
       vertical-align: top;
       width: 100%; }
 
-/* line 207, sass/_map.sass */
+/* line 206, sass/_map.sass */
 .user-marker-window h3, .user-marker-window p {
   text-align: center; }
 
-/* line 210, sass/_map.sass */
+/* line 209, sass/_map.sass */
 .map-view, .list-view {
   left: 0px; }
 
 @media (max-width: 767px) {
-  /* line 212, sass/_map.sass */
+  /* line 211, sass/_map.sass */
   .hide-view {
     position: absolute !important;
     left: -1000px; } }

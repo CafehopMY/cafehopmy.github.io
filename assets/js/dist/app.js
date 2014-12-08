@@ -566,6 +566,7 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
             options.radius = options.radius || 3000;
             options.offset = options.offset || 0;
             options.limit = options.limit || 30;
+            options.photos = true;
 
             var id          = "";
             var secret      = "";
@@ -573,7 +574,8 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
                 ll: options.ll || defaults.center.latitude + "," + defaults.center.longitude,
                 radius: options.radius,
                 offset: options.offset,
-                limit: options.limit
+                limit: options.limit,
+                photos: options.photos
             }
 
             // Get cafes 
