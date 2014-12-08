@@ -25,11 +25,14 @@ body
                 padding-bottom: $space * 2
         .no-padding
             padding-bottom: 0
+section
+    padding: $space * 2 0
 
 header
     width: 100%
 header, .navbar-header
     background-color: $orange
+
 nav 
 
     .navbar-nav
@@ -93,7 +96,7 @@ nav
         @include non-text-link-style
         @include text-pop($dark-orange)
         @include clear-spacing
-        line-height: $header-height - $space
+        line-height: $header-height - $space*2
         font-size: $header-height - $space*2
         margin-left: $space*1.5
         text-align: left
@@ -210,7 +213,6 @@ footer
         background-color: rgba($light-orange, 0.5)
     color: $orange
     margin: $space
-    margin-left: 0
     .sponsors 
         background-color: transparent
         border: 1px solid $orange
