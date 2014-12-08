@@ -23,7 +23,8 @@
         show="map.showWindow"
         isIconVisibleOnClick="false"
         options="infoWindow.options"
-        coords="infoWindow.model.coords">
+        coords="infoWindow.model.coords"
+        ng-if="infoWindow.model.cafe">
         <div>
             <span ng-bind="map.showWindow"></span>
             <div ng-show="{{infoWindow.model.cafe}}">
@@ -31,10 +32,6 @@
                     <a target="_blank" ng-href="{{getCafeUrl(infoWindow.model.cafe)}}">{{infoWindow.model.cafe.name}}</a>
                 </h3>
                 <div>{{infoWindow.model.cafe.address1}}</div>
-            </div>
-            <div ng-class="user-marker-window" ng-show="{{!infoWindow.model.cafe}}">
-                <h3>You are here</h3>
-                <p>Drag to search for cafes.</p>
             </div>
         </div>
     </ui-gmap-window>
