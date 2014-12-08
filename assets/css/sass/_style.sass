@@ -1,11 +1,11 @@
 @import 'constants'
 // Everything Else
 body
+    position: relative
     background-color:  $light-beige
     color: $red
     font-family: $body-font
-    font-size: 1.2em
-    position: relative
+    font-size: 18px
     @include display-flex
     @include flex-direction(column)
     min-height: 100vh
@@ -88,6 +88,8 @@ nav
         display: inline-block
         vertical-align: top
     .h1 
+        font-family: 'Matchbook'
+        text-transform: uppercase
         @include non-text-link-style
         @include text-pop($dark-orange)
         @include clear-spacing
@@ -102,22 +104,17 @@ div.clear-both
 
 h1, h2, h3, h4, .h1
     font-family: $header-font
-    text-transform: uppercase
     font-weight: bold
-    margin-bottom: 0
 
 h1
     color: $red
-    font-size: 4em
 
 h2
     color: $red
-    font-size: 2.8em
 
 h3 
-    color: $bright-orange 
-    font-size: 2.4em
-    margin-bottom: 0
+    color: $red
+
 a, .a
     color: $red
     font-weight: bold
@@ -187,7 +184,6 @@ footer
 
     h1, h2, h3, p, a 
         color: $orange
-        @include text-pop($brown)
     a 
         font-weight: bold
 
@@ -253,9 +249,8 @@ footer
         width: $heading-icon-size - $space * 2
 
 .subtitle
-    font-family: $bold-font
     @include clear-spacing
-    margiin-top: -$space * 2
+    margin-top: -$space * 2
     font-size: 1.3em
     font-weight: bold
     color: $bright-orange

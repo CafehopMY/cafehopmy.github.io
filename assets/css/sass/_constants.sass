@@ -7,11 +7,11 @@ $white: #fff
 $red: #90120e
 $dark-red: #90110d
 $orange: #ec6338
-$light-orange: #f8b582
+$light-orange: #FFC496
 $bright-orange: #f07e2d
 $dark-orange: darken($orange, 15%)
 $beige: #f9c36f
-$light-beige:#ffe9c6
+$light-beige: #FFF5E6
 $brown: #412218
 $dark-brown: #160703
 $light-brown: lighten($brown, 30%)
@@ -39,15 +39,13 @@ $sm-width: 768px
 $md-width: 996px
 
 // Font families
-$header-font: 'Matchbook', Impact, Helvetica, Arial, sans-serif
-$body-font: 'Champagne', Helvetica, Arial, sans-serif
-$bold-font: 'Champagne Bold', Helvetica, Arial, sans-serif
-
+$font: 'Quicksand'
+$header-font: #{$font}, Helvetica, Arial, sans-serif
+$body-font: #{$font}, Helvetica, Arial, sans-serif
 
 @mixin wrapper-style
     width: 95%
     margin: 0 auto 
-
 
 //Mixins
 @mixin dark-shadow
