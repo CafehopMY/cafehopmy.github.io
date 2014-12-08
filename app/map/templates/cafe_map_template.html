@@ -28,7 +28,7 @@
             <span ng-bind="map.showWindow"></span>
             <div ng-show="{{infoWindow.model.cafe}}">
                 <h3>
-                    <a ng-href="{{getCafeUrl(infoWindow.model.cafe)}}">{{infoWindow.model.cafe.name}}</a>
+                    <a target="_blank" ng-href="{{getCafeUrl(infoWindow.model.cafe)}}">{{infoWindow.model.cafe.name}}</a>
                 </h3>
                 <div>{{infoWindow.model.cafe.address1}}</div>
             </div>
