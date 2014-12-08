@@ -693,7 +693,7 @@ div#links-to-parts-of-site {
 .mobile-controls {
   display: -webkit-flex;
   display: flex;
-  border-bottom: 1px solid #ec6338; }
+  border-bottom: 1px solid #90110d; }
   /* line 69, sass/_map.sass */
   .mobile-controls .mobile-controls-search {
     -webkit-flex: 1;
