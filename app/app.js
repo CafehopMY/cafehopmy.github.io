@@ -12,7 +12,7 @@ angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function
 	$routeProvider
 		.when('/', {
 			templateUrl: 'app/map/views/map.html',
-			title: 'Cafehop KL - Mapping unique cafes around Malaysia',
+			title: 'Cafehop MY - Mapping unique cafes around Malaysia',
 		})
 		.when('/about', {
 			templateUrl: 'app/about/views/about.html',
@@ -48,7 +48,7 @@ angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function
 angular.module('cafehopApp').run(['$rootScope', function($rootScope){
     // Set title based on route
     $rootScope.$on("$routeChangeSuccess", function(event, currentRoute, previousRoute) {
- 		window.document.title = (currentRoute.title || "") + ' | Cafehop KL';
+ 		window.document.title = (currentRoute.title || "") + ' | Cafehop MY';
  	});
 }]);
 

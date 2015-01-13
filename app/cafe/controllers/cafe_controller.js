@@ -12,7 +12,7 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
 
 
     // Set title
-    window.document.title = $routeParams.cafe_name + " | Cafehop KL";;
+    window.document.title = $routeParams.cafe_name + " | Cafehop MY";;
 
 
     CafeService.getCafe({
@@ -20,7 +20,7 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
         success: function(data){
             $scope.cafe = CafeService.cafe;
             $scope.loading = false;
-            window.document.title = $scope.cafe.name + " | Cafehop KL";
+            window.document.title = $scope.cafe.name + " | Cafehop MY";
             $scope.cafe.src = $sce.trustAsResourceUrl($scope.getEmbedMapSrc($scope.cafe));
         }
     });

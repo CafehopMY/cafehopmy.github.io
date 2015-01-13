@@ -12,7 +12,7 @@ angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function
 	$routeProvider
 		.when('/', {
 			templateUrl: 'app/map/views/map.html',
-			title: 'Cafehop KL - Mapping unique cafes around Malaysia',
+			title: 'Cafehop MY - Mapping unique cafes around Malaysia',
 		})
 		.when('/about', {
 			templateUrl: 'app/about/views/about.html',
@@ -48,7 +48,7 @@ angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function
 angular.module('cafehopApp').run(['$rootScope', function($rootScope){
     // Set title based on route
     $rootScope.$on("$routeChangeSuccess", function(event, currentRoute, previousRoute) {
- 		window.document.title = (currentRoute.title || "") + ' | Cafehop KL';
+ 		window.document.title = (currentRoute.title || "") + ' | Cafehop MY';
  	});
 }]);
 
@@ -78,7 +78,7 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
 
 
     // Set title
-    window.document.title = $routeParams.cafe_name + " | Cafehop KL";;
+    window.document.title = $routeParams.cafe_name + " | Cafehop MY";;
 
 
     CafeService.getCafe({
@@ -86,7 +86,7 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
         success: function(data){
             $scope.cafe = CafeService.cafe;
             $scope.loading = false;
-            window.document.title = $scope.cafe.name + " | Cafehop KL";
+            window.document.title = $scope.cafe.name + " | Cafehop MY";
             $scope.cafe.src = $sce.trustAsResourceUrl($scope.getEmbedMapSrc($scope.cafe));
         }
     });
@@ -141,7 +141,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
     $scope.user = {
         location: {
-            name: "Kuala Lumpur",
+            name: "Kuala Lumpur City Centre",
             details: {},
 
             //set true if want to update on geolocation success 

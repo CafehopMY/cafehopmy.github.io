@@ -29,7 +29,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
     $scope.user = {
         location: {
-            name: "Kuala Lumpur",
+            name: "Kuala Lumpur City Centre",
             details: {},
 
             //set true if want to update on geolocation success 
