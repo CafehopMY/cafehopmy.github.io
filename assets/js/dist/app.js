@@ -64,10 +64,12 @@ angular.module('cafehopApp.controllers').controller('AboutController', ['$scope'
             console.error(filename + ' not found.')
         })
 }]);
-angular.module('cafehopApp.controllers').controller('CafeController', ['$scope', '$http', '$routeParams', '$sce', 'CafeService', 'GMapCredentials',
-    function($scope, $http, $routeParams, $sce, CafeService, GMapCredentials){
+angular.module('cafehopApp.controllers').controller('CafeController', ['$scope', '$http', '$routeParams', '$sce', 'CafeService', 'GMapCredentials', 'CafeConstants',
+    function($scope, $http, $routeParams, $sce, CafeService, GMapCredentials, CafeConstants){
     
     CafeService.init();
+
+    $scope.constants = CafeConstants;
     
     window.scrollTo(0, 0);
     $scope.loading = true;
@@ -503,6 +505,7 @@ angular.module('cafehopApp.services').service('CafeService', ['$http', function 
                 method: 'GET',
                 params: {
                     id: options.id,
+                    opening_hours: true
                 },
             }).success(function(data){
                 service.cafe = data.response.store;
@@ -524,7 +527,6 @@ angular.module('cafehopApp.services').service('CafeService', ['$http', function 
             var city = cafe.city || "" ;
             
             nameAddr += addr1 + ", " + city;
-            console.log(nameAddr);
             return nameAddr
         },
 
@@ -605,6 +607,21 @@ angular.module('cafehopApp.services').service('MapCafes', ['$http', 'MapDefaults
     return self;
 }]);
 
+angular.module('cafehopApp.factories').factory('CafeConstants', function() {
+    var defaults = {
+        daysInWeek: {
+            '1': "Mon",
+            '2': "Tue",
+            '3': "Wed",
+            '4': "Thu",
+            '5': "Fri",
+            '6': "Sat",
+            '7': "Sun",
+        }
+    };
+
+    return defaults;
+});
 angular.module('cafehopApp.factories').factory('GMapCredentials', function() {
     return {
         apiKey: 'AIzaSyCWxCU3sy8rPbxrFZf74O80GB5MH8PIFBI'

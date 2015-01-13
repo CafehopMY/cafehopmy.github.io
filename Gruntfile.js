@@ -27,7 +27,7 @@ module.exports = function(grunt) {
                     "app/**/services/**.js",
 
                     // Factories
-                    "app/map/factories/*.js",
+                    "app/**/factories/*.js",
 
                     // Directives
                     "app/directives/*.js",

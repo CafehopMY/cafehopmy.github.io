@@ -30,8 +30,8 @@
         width: 100%
         li 
             margin-bottom: $space
+            display: flex
             > div
-                display: inline-block
                 &:first-child
                     text-align: center
                     width: $space * 2
@@ -40,3 +40,16 @@
                     margin-right: $space * 0.75
                 &:nth-child(2)
                     max-width: 300px
+                    flex: 1
+    .cafe-hours
+        list-style-type: none
+        padding: 0px
+        margin: 0px
+        li 
+            display: flex
+            span 
+                &:first-child
+                    font-weight: bold
+                    width: 35px
+                &:nth-child(2)
+                    flex: 1

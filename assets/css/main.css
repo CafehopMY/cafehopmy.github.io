@@ -934,17 +934,31 @@ div#links-to-parts-of-site {
   width: 100%; }
   /* line 31, sass/_cafe.sass */
   .cafe .cafe-details li {
-    margin-bottom: 12px; }
-    /* line 33, sass/_cafe.sass */
-    .cafe .cafe-details li > div {
-      display: inline-block; }
-      /* line 35, sass/_cafe.sass */
-      .cafe .cafe-details li > div:first-child {
-        text-align: center;
-        width: 24px;
-        height: 24px;
-        vertical-align: top;
-        margin-right: 9px; }
-      /* line 41, sass/_cafe.sass */
-      .cafe .cafe-details li > div:nth-child(2) {
-        max-width: 300px; }
+    margin-bottom: 12px;
+    display: flex; }
+    /* line 35, sass/_cafe.sass */
+    .cafe .cafe-details li > div:first-child {
+      text-align: center;
+      width: 24px;
+      height: 24px;
+      vertical-align: top;
+      margin-right: 9px; }
+    /* line 41, sass/_cafe.sass */
+    .cafe .cafe-details li > div:nth-child(2) {
+      max-width: 300px;
+      flex: 1; }
+/* line 44, sass/_cafe.sass */
+.cafe .cafe-hours {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px; }
+  /* line 48, sass/_cafe.sass */
+  .cafe .cafe-hours li {
+    display: flex; }
+    /* line 51, sass/_cafe.sass */
+    .cafe .cafe-hours li span:first-child {
+      font-weight: bold;
+      width: 35px; }
+    /* line 54, sass/_cafe.sass */
+    .cafe .cafe-hours li span:nth-child(2) {
+      flex: 1; }

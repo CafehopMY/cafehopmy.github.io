@@ -19,8 +19,16 @@
                                         <i class="fa fa-clock-o"></i>
                                     </div>
                                     <div>
-                                        {{cafe.hours}}
-                                        <span ng-show="!cafe.hours">Not listed</span>
+                                        <div ng-show="cafe.openingHours">
+                                        <ul class="cafe-hours">
+                                            <li ng-repeat="p in cafe.openingHours.periods">
+                                                <span>{{constants.daysInWeek[p.day]}}</span>
+                                                <span>{{p.time}}</span>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                        <span ng-show="!cafe.openingHours">
+                                        Not listed</span>
                                     </div>
                                 </li>
 

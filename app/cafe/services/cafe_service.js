@@ -36,6 +36,7 @@ angular.module('cafehopApp.services').service('CafeService', ['$http', function 
                 method: 'GET',
                 params: {
                     id: options.id,
+                    opening_hours: true
                 },
             }).success(function(data){
                 service.cafe = data.response.store;
@@ -57,7 +58,6 @@ angular.module('cafehopApp.services').service('CafeService', ['$http', function 
             var city = cafe.city || "" ;
             
             nameAddr += addr1 + ", " + city;
-            console.log(nameAddr);
             return nameAddr
         },
 

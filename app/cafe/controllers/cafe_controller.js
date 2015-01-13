@@ -1,7 +1,9 @@
-angular.module('cafehopApp.controllers').controller('CafeController', ['$scope', '$http', '$routeParams', '$sce', 'CafeService', 'GMapCredentials',
-    function($scope, $http, $routeParams, $sce, CafeService, GMapCredentials){
+angular.module('cafehopApp.controllers').controller('CafeController', ['$scope', '$http', '$routeParams', '$sce', 'CafeService', 'GMapCredentials', 'CafeConstants',
+    function($scope, $http, $routeParams, $sce, CafeService, GMapCredentials, CafeConstants){
     
     CafeService.init();
+
+    $scope.constants = CafeConstants;
     
     window.scrollTo(0, 0);
     $scope.loading = true;
