@@ -2226,10 +2226,10 @@ div#links-to-parts-of-site {
     /* line 51, sass/_cafe.sass */
     .cafe .cafe-hours li span:first-child {
       font-weight: bold;
-      width: 35px; }
+      flex: 1; }
     /* line 54, sass/_cafe.sass */
     .cafe .cafe-hours li span:nth-child(2) {
-      flex: 1; }
+      flex: 2; }
 
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
