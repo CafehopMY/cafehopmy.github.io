@@ -342,7 +342,7 @@ footer {
 
 /* line 207, sass/_style.sass */
 .ad {
-  color: #ec6338;
+  color: #90120e;
   margin: 12px; }
   /* line 208, sass/_style.sass */
   .ad > div {
@@ -355,7 +355,7 @@ footer {
   .ad .sponsors {
     height: 206px;
     background-color: transparent;
-    border: 1px solid #ec6338; }
+    border: 1px solid #90120e; }
     /* line 220, sass/_style.sass */
     .ad .sponsors .sponsor-list {
       padding: 0px;
@@ -363,7 +363,7 @@ footer {
       color: #90120e; }
       /* line 224, sass/_style.sass */
       .ad .sponsors .sponsor-list a {
-        color: #c53d13; }
+        color: #90120e; }
 
 /* line 228, sass/_style.sass */
 ::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
