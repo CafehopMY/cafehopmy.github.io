@@ -37,15 +37,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
         },
     }
 
-    $scope.sponsors = {
-        0 : {
-            name: 'Sponsor A'
-        },
-        1 : {
-            name: 'Sponsor B'
-        }
-    }
-
     $scope.userLocationInput = {
         live: false,
         options: {

@@ -149,15 +149,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
         },
     }
 
-    $scope.sponsors = {
-        0 : {
-            name: 'Sponsor A'
-        },
-        1 : {
-            name: 'Sponsor B'
-        }
-    }
-
     $scope.userLocationInput = {
         live: false,
         options: {
@@ -744,10 +735,21 @@ angular.module('cafehopApp.factories').factory('MarkerCallbacks', ['MapDefaults'
     }
     return callbacks;
 }]);
-angular.module('cafehopApp.directives').directive('advertisements',[function(){
+angular.module('cafehopApp.directives').directive('advertisements',['$http', function($http){
     return{
         restrict: 'E',
         templateUrl: 'app/templates/advertisements_template.html',
+        controller: function($scope, $element){
+          var filename ='app/about/models/sponsors.json';
+          $http.get(filename)
+            .success(function(data){
+                $scope.sponsors = data.sponsors;
+              console.log($scope.sponsors)
+            })
+            .error(function(){
+                console.error(filename + ' not found.')
+            });
+        }
     }
 }]);
 

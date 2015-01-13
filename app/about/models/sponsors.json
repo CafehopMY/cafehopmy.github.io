@@ -1,0 +1,44 @@
+{
+  "sponsors":
+  [
+    {
+      "name" : "A Coffee Company",
+      "url" : "http://example.com"
+    },
+    {
+      "name" : "Coffee 'n' Cakes",
+      "url" : "http://example.com"
+    },
+    {
+      "name" : "Your Coffee People",
+      "url" : "http://example.com"
+    },
+    {
+      "name" : "Kopitiam!",
+      "url" : "http://example.com"
+    },    {
+      "name" : "Local Kopi Place",
+      "url" : "http://example.com"
+    },
+    {
+      "name" : "Coffee 'n' Cakes",
+      "url" : "http://example.com"
+    },
+    {
+      "name" : "Espresso Central",
+      "url" : "http://example.com"
+    },
+    {
+      "name" : "Food + Stuff Cafe",
+      "url" : "http://example.com"
+    },
+    {
+      "name" : "Coffeetastic",
+      "url" : "http://example.com"
+    },
+    {
+      "name" : "Bittersweet",
+      "url" : "http://example.com"
+    }
+  ]
+}
