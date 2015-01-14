@@ -97,15 +97,23 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
             + '&q=' + clean
     }
 
+    $scope.hasHoursListed = function(cafe){
+        var periods = cafe.openingHours.periods;
+        return periods && periods.length > 0
+    }
+
     $scope.todaysDay = function(cafe){
         var date = new Date();
-        var today = date.getDay() + 1;
+        var today = date.getDay();
         return $scope.constants.daysInWeek[today];
     }
-    
+
     $scope.todaysHours = function(cafe){
         var date = new Date();
-        var today = date.getDay() + 1;
+        var today = date.getDay();
+        if(today == 0){
+            today = 7;
+        }
         var periods= cafe.openingHours.periods;
         for(var i = 0; i < periods.length; i++){
             var p = periods[i];
@@ -113,6 +121,7 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
                 return p.time;
             }
         }
+        return 'Closed';
     }
 
 
