@@ -61,6 +61,22 @@ angular.module('cafehopApp.services').service('CafeService', ['$http', function 
             return nameAddr
         },
 
+        getPhotoUrl: function(cafe){
+            var photos = cafe.photos;
+            if(photos && photos.count > 0){
+                var c = photos.items[0];
+                return c.url;
+            }
+
+            return;
+        },
+
+        getPhotoStyle: function(cafe){
+            return {
+                'background-image' : 'url(' + service.getPhotoUrl(cafe) + ')'
+            }
+        },
+
         setCafe: function(value) {
             cafe = value;
         },

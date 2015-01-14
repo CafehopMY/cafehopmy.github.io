@@ -20,7 +20,19 @@
                                     </div>
                                     <div>
                                         <div ng-show="cafe.openingHours">
-                                        <ul class="cafe-hours">
+                                        <div class="cafe-open" ng-show="cafe.openingHours.openNow">
+                                            Open now
+                                        </div>
+                                        <span ng-show="cafe.todaysHours">
+                                            <strong>Open today</strong><br/>
+                                            <span class="cafe-todays-hours">
+                                                <span>{{todaysDay();}}</span>
+                                                <span ng-bind="cafe.todaysHours"></span>
+                                                <a href="" ng-click="toggleShowHours()"><i class="fa cafe-hours-toggle" ng-class="{'fa-angle-down': !showHours, 'fa-angle-up': showHours}"></i>
+                                                </a>
+                                            </span>
+                                        </span>
+                                        <ul ng-show="showHours" class="cafe-hours">
                                             <li ng-repeat="p in cafe.openingHours.periods">
                                                 <span>{{constants.daysInWeek[p.day]}}</span>
                                                 <span>{{p.time}}</span>
@@ -93,12 +105,14 @@
                         <p></div>
 
                         <div class="col-sm-4 col-md-5">
-                            <iframe
+
+                        <img class="cafe-photo-featured" ng-style="getPhotoStyle(cafe)" ng-src="{{CafeService.getPhotoUrl(cafe)}}">
+<!--                             <iframe
                       class="cafe-map"
                       width="300"
                       height="300"
                       frameborder="0" style="border:0"
-                      ng-src="{{cafe.src}}"></iframe>
+                      ng-src="{{cafe.src}}"></iframe> -->
                         </div>
                     </div>
                 </div>

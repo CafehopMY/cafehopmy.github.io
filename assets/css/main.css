@@ -893,72 +893,93 @@ div#links-to-parts-of-site {
     position: absolute !important;
     left: -1000px; } }
 
-/* line 2, sass/_cafe.sass */
+/* line 3, sass/_cafe.sass */
 .cafe section {
   padding-top: 48px; }
   @media (max-width: 768px) {
-    /* line 2, sass/_cafe.sass */
+    /* line 3, sass/_cafe.sass */
     .cafe section {
       padding-top: 24px; } }
-/* line 7, sass/_cafe.sass */
+/* line 8, sass/_cafe.sass */
 .cafe h1 {
   margin-top: 0; }
-  /* line 9, sass/_cafe.sass */
+  /* line 10, sass/_cafe.sass */
   .cafe h1 a {
     color: #90120e; }
-    /* line 11, sass/_cafe.sass */
+    /* line 12, sass/_cafe.sass */
     .cafe h1 a:hover, .cafe h1 a:focus {
       text-decoration: none; }
-/* line 14, sass/_cafe.sass */
+/* line 15, sass/_cafe.sass */
 .cafe .fa-external-link, .cafe .fa-spinner {
   font-size: 1.2em;
   color: #90120e;
   margin-left: 12px; }
-/* line 19, sass/_cafe.sass */
+/* line 20, sass/_cafe.sass */
 .cafe .cafe-map, .cafe .cafe-details {
   margin-top: 24px; }
   @media (max-width: 768px) {
-    /* line 19, sass/_cafe.sass */
+    /* line 20, sass/_cafe.sass */
     .cafe .cafe-map, .cafe .cafe-details {
       margin-top: 12px; } }
-/* line 24, sass/_cafe.sass */
+/* line 25, sass/_cafe.sass */
 .cafe .cafe-map {
   max-width: 100%;
   float: right; }
   @media (max-width: 768px) {
-    /* line 24, sass/_cafe.sass */
+    /* line 25, sass/_cafe.sass */
     .cafe .cafe-map {
       float: none; } }
-/* line 29, sass/_cafe.sass */
+/* line 30, sass/_cafe.sass */
 .cafe .cafe-details {
   width: 100%; }
-  /* line 31, sass/_cafe.sass */
+  /* line 32, sass/_cafe.sass */
   .cafe .cafe-details li {
     margin-bottom: 12px;
     display: flex; }
-    /* line 35, sass/_cafe.sass */
+    /* line 36, sass/_cafe.sass */
     .cafe .cafe-details li > div:first-child {
       text-align: center;
       width: 24px;
       height: 24px;
       vertical-align: top;
       margin-right: 9px; }
-    /* line 41, sass/_cafe.sass */
+    /* line 42, sass/_cafe.sass */
     .cafe .cafe-details li > div:nth-child(2) {
       max-width: 300px;
       flex: 1; }
-/* line 44, sass/_cafe.sass */
+/* line 45, sass/_cafe.sass */
+.cafe .cafe-todays-hours {
+  font-weight: bold;
+  display: -webkit-flex;
+  display: flex; }
+  /* line 49, sass/_cafe.sass */
+  .cafe .cafe-todays-hours span:first-child {
+    -webkit-flex: 1;
+    flex: 1; }
+  /* line 51, sass/_cafe.sass */
+  .cafe .cafe-todays-hours span:nth-child(2) {
+    -webkit-flex: 2;
+    flex: 2; }
+/* line 54, sass/_cafe.sass */
+.cafe .cafe-hours-toggle {
+  font-weight: bold;
+  font-size: 18px; }
+/* line 58, sass/_cafe.sass */
+.cafe .cafe-photo-featured {
+  max-width: 100%; }
+/* line 60, sass/_cafe.sass */
 .cafe .cafe-hours {
   list-style-type: none;
   padding: 0px;
-  margin: 0px; }
-  /* line 48, sass/_cafe.sass */
+  margin: 0px;
+  margin-top: 12px; }
+  /* line 65, sass/_cafe.sass */
   .cafe .cafe-hours li {
     display: flex; }
-    /* line 51, sass/_cafe.sass */
+    /* line 68, sass/_cafe.sass */
     .cafe .cafe-hours li span:first-child {
       font-weight: bold;
       flex: 1; }
-    /* line 54, sass/_cafe.sass */
+    /* line 71, sass/_cafe.sass */
     .cafe .cafe-hours li span:nth-child(2) {
       flex: 2; }

@@ -6,8 +6,8 @@
         <div ng-class="{'cafe-container': true, hover: cafe.idKey == markerCallbacks.currMouseoverId}">
             <div>
                 <a target="_blank" ng-href="{{getCafeUrl(cafe)}}">
-                    <img ng-show="getPhotoUrl(cafe)" ng-style="getPhotoStyle(cafe)">
-                    <div ng-show="!getPhotoUrl(cafe)" class="img"> <i class="fa fa-camera"></i>
+                    <img ng-show="CafeService.getPhotoUrl(cafe)" ng-style="CafeService.getPhotoStyle(cafe)">
+                    <div ng-show="!CafeService.getPhotoUrl(cafe)" class="img"> <i class="fa fa-camera"></i>
                     </div>
                 </a>
             </div>

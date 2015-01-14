@@ -1,3 +1,4 @@
+@import 'compass/css3'
 .cafe 
     section
         padding-top: $space * 4
@@ -41,10 +42,26 @@
                 &:nth-child(2)
                     max-width: 300px
                     flex: 1
+    .cafe-todays-hours
+        font-weight: bold 
+        @include display-flex
+        span 
+            &:first-child
+                @include flex(1)
+            &:nth-child(2)
+                @include flex(2)
+
+    .cafe-hours-toggle 
+        font-weight: bold
+        font-size: 18px
+
+    .cafe-photo-featured
+        max-width: 100% 
     .cafe-hours
         list-style-type: none
         padding: 0px
         margin: 0px
+        margin-top: $space
         li 
             display: flex
             span 

@@ -69,6 +69,8 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
     
     CafeService.init();
 
+    $scope.CafeService = CafeService;
+
     $scope.constants = CafeConstants;
     
     window.scrollTo(0, 0);
@@ -82,6 +84,37 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
     // Set title
     window.document.title = $routeParams.cafe_name + " | Cafehop MY";;
 
+    $scope.showHours = false;
+
+    $scope.toggleShowHours = function(){
+        $scope.showHours = !$scope.showHours;
+    }
+
+    $scope.getEmbedMapSrc = function(cafe){
+        var clean = encodeURIComponent(CafeService.getCafeNameAddress($scope.cafe));
+        return "https://www.google.com/maps/embed/v1/search"
+            + '?key=' + GMapCredentials.apiKey
+            + '&q=' + clean
+    }
+
+    $scope.todaysDay = function(cafe){
+        var date = new Date();
+        var today = date.getDay() + 1;
+        return $scope.constants.daysInWeek[today];
+    }
+    
+    $scope.todaysHours = function(cafe){
+        var date = new Date();
+        var today = date.getDay() + 1;
+        var periods= cafe.openingHours.periods;
+        for(var i = 0; i < periods.length; i++){
+            var p = periods[i];
+            if(p.day == today){
+                return p.time;
+            }
+        }
+    }
+
 
     CafeService.getCafe({
         id: cafeId,
@@ -90,15 +123,10 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
             $scope.loading = false;
             window.document.title = $scope.cafe.name + " | Cafehop MY";
             $scope.cafe.src = $sce.trustAsResourceUrl($scope.getEmbedMapSrc($scope.cafe));
+            $scope.cafe.todaysHours = $scope.todaysHours($scope.cafe);
         }
     });
 
-    $scope.getEmbedMapSrc = function(cafe){
-        var clean = encodeURIComponent(CafeService.getCafeNameAddress($scope.cafe));
-        return "https://www.google.com/maps/embed/v1/search"
-            + '?key=' + GMapCredentials.apiKey
-            + '&q=' + clean
-    }
 }]);
 angular.module('cafehopApp.controllers').controller('FaqController', ['$scope', '$http', function($scope, $http){
     var filename ='app/faq/models/faq.json';
@@ -128,6 +156,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.markersControl = {};
     $scope.mapCafes = MapCafes;
     $scope.mapDefaults = MapDefaults;
+    $scope.CafeService = CafeService;
     $scope.initialized = false;
     $scope.idKeyCounter = 0;
 
@@ -387,22 +416,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.fitMarkerBounds();
     };
 
-    $scope.getPhotoUrl = function(cafe){
-        var photos = cafe.photos;
-        if(photos && photos.count > 0){
-            var c = photos.items[0];
-            return c.url;
-        }
-
-        return;
-    }
-
-    $scope.getPhotoStyle = function(cafe){
-        return {
-            'background-image' : 'url(' + $scope.getPhotoUrl(cafe) + ')'
-        }
-    }
-
     $scope.getCafeUrl = function(cafe){
         if(cafe){
             // Remove slashes from cafe name, browser address bars ignore encode %2F
@@ -528,6 +541,22 @@ angular.module('cafehopApp.services').service('CafeService', ['$http', function 
             
             nameAddr += addr1 + ", " + city;
             return nameAddr
+        },
+
+        getPhotoUrl: function(cafe){
+            var photos = cafe.photos;
+            if(photos && photos.count > 0){
+                var c = photos.items[0];
+                return c.url;
+            }
+
+            return;
+        },
+
+        getPhotoStyle: function(cafe){
+            return {
+                'background-image' : 'url(' + service.getPhotoUrl(cafe) + ')'
+            }
         },
 
         setCafe: function(value) {

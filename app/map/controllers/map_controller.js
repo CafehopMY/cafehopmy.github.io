@@ -14,6 +14,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.markersControl = {};
     $scope.mapCafes = MapCafes;
     $scope.mapDefaults = MapDefaults;
+    $scope.CafeService = CafeService;
     $scope.initialized = false;
     $scope.idKeyCounter = 0;
 
@@ -272,22 +273,6 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
         $scope.fitMarkerBounds();
     };
-
-    $scope.getPhotoUrl = function(cafe){
-        var photos = cafe.photos;
-        if(photos && photos.count > 0){
-            var c = photos.items[0];
-            return c.url;
-        }
-
-        return;
-    }
-
-    $scope.getPhotoStyle = function(cafe){
-        return {
-            'background-image' : 'url(' + $scope.getPhotoUrl(cafe) + ')'
-        }
-    }
 
     $scope.getCafeUrl = function(cafe){
         if(cafe){
