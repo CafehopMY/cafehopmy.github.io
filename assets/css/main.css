@@ -790,9 +790,8 @@ div#links-to-parts-of-site {
   @media (max-width: 768px) {
     /* line 116, sass/_map.sass */
     .map .cafes {
-      padding-right: 12px;
-      padding-top: 0; } }
-  /* line 126, sass/_map.sass */
+      padding: 0; } }
+  /* line 125, sass/_map.sass */
   .map .cafes .cafe-list-container {
     display: -webkit-flex;
     display: flex;
@@ -800,13 +799,13 @@ div#links-to-parts-of-site {
     flex-direction: column;
     -webkit-flex: 1;
     flex: 1; }
-  /* line 131, sass/_map.sass */
+  /* line 130, sass/_map.sass */
   .map .cafes .cafe-numbers a.location {
     text-decoration: underline; }
-  /* line 133, sass/_map.sass */
+  /* line 132, sass/_map.sass */
   .map .cafes .cafe-numbers .fa-search {
     padding-right: 0; }
-  /* line 136, sass/_map.sass */
+  /* line 135, sass/_map.sass */
   .map .cafes .cafe-list {
     -webkit-flex: 1;
     flex: 1;
@@ -814,20 +813,20 @@ div#links-to-parts-of-site {
     overflow-y: scroll;
     min-height: 100px; }
     @media (max-width: 996px) {
-      /* line 136, sass/_map.sass */
+      /* line 135, sass/_map.sass */
       .map .cafes .cafe-list {
         margin-top: 0; } }
-    /* line 143, sass/_map.sass */
+    /* line 142, sass/_map.sass */
     .map .cafes .cafe-list::-webkit-scrollbar {
       display: none; }
-    /* line 145, sass/_map.sass */
+    /* line 144, sass/_map.sass */
     .map .cafes .cafe-list ul {
       margin-top: 0;
       width: 100%; }
-      /* line 149, sass/_map.sass */
+      /* line 148, sass/_map.sass */
       .map .cafes .cafe-list ul li:last-child {
         padding-bottom: 24px; }
-      /* line 151, sass/_map.sass */
+      /* line 150, sass/_map.sass */
       .map .cafes .cafe-list ul li > div {
         -o-transition: all 0.5s;
         -ms-transition: all 0.5s;
@@ -838,38 +837,38 @@ div#links-to-parts-of-site {
         padding: 12px 6px;
         text-decoration: none;
         clear: both; }
-        /* line 157, sass/_map.sass */
+        /* line 156, sass/_map.sass */
         .map .cafes .cafe-list ul li > div:after, .map .cafes .cafe-list ul li > div:before {
           clear: both;
           content: " ";
           display: block; }
-        /* line 161, sass/_map.sass */
+        /* line 160, sass/_map.sass */
         .map .cafes .cafe-list ul li > div:hover, .map .cafes .cafe-list ul li > div.hover {
           background-color: rgba(255, 196, 150, 0.3); }
-      /* line 163, sass/_map.sass */
+      /* line 162, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-name {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
         float: left; }
-      /* line 168, sass/_map.sass */
+      /* line 167, sass/_map.sass */
       .map .cafes .cafe-list ul li .cafe-link {
         width: 10%;
         float: right;
         text-align: right; }
 
-/* line 177, sass/_map.sass */
+/* line 176, sass/_map.sass */
 .cafe .cafe-container {
   display: table-row; }
-  /* line 179, sass/_map.sass */
+  /* line 178, sass/_map.sass */
   .cafe .cafe-container > div {
     display: table-cell;
     vertical-align: middle; }
-    /* line 182, sass/_map.sass */
+    /* line 181, sass/_map.sass */
     .cafe .cafe-container > div:first-child {
       padding-right: 12px;
       padding-left: 6px; }
-      /* line 185, sass/_map.sass */
+      /* line 184, sass/_map.sass */
       .cafe .cafe-container > div:first-child img, .cafe .cafe-container > div:first-child .img {
         width: 100px;
         height: 100px;
@@ -878,26 +877,26 @@ div#links-to-parts-of-site {
         background-size: cover;
         background-position: center;
         text-align: center; }
-        /* line 194, sass/_map.sass */
+        /* line 193, sass/_map.sass */
         .cafe .cafe-container > div:first-child img i, .cafe .cafe-container > div:first-child .img i {
           font-size: 50px;
           line-height: 50px;
           margin: 25px; }
-    /* line 199, sass/_map.sass */
+    /* line 198, sass/_map.sass */
     .cafe .cafe-container > div:nth-child(2) {
       vertical-align: top;
       width: 100%; }
 
-/* line 204, sass/_map.sass */
+/* line 203, sass/_map.sass */
 .user-marker-window h3, .user-marker-window p {
   text-align: center; }
 
-/* line 207, sass/_map.sass */
+/* line 206, sass/_map.sass */
 .map-view, .list-view {
   left: 0px; }
 
 @media (max-width: 767px) {
-  /* line 209, sass/_map.sass */
+  /* line 208, sass/_map.sass */
   .hide-view {
     position: absolute !important;
     left: -1000px; } }

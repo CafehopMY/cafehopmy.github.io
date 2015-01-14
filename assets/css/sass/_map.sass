@@ -119,9 +119,8 @@
     position: relative
     padding: $space * 2
     height: 100%
-    @media (max-width : #{$sm-width})
-        padding-right: $space
-        padding-top: 0
+    @include breakpoint($sm-width)
+        padding: 0
     $cafe-numbers-height: $space * 2
     .cafe-list-container
         @include display-flex
