@@ -32,8 +32,10 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
     }
 
     $scope.hasHoursListed = function(cafe){
-        var periods = cafe.openingHours.periods;
-        return periods && periods.length > 0
+        if(cafe && cafe.openingHours){
+            var periods = cafe.openingHours.periods;
+            return periods && periods.length > 0
+        }
     }
 
     $scope.todaysDay = function(cafe){

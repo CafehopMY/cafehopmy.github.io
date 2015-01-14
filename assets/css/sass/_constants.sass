@@ -1,4 +1,13 @@
-@import 'fonts'
+@import "compass/css3"
+@import "fonts"
+@import "breakpoint"
+@import "susy"
+
+// Configure Susy
+$susy: (gutter-position: split)
+
+// Configure Breakpoint
+$breakpoint-default-feature: max-width
 
 // Static variables
 //Colors
@@ -70,11 +79,6 @@ $body-font: #{$font}, Helvetica, Arial, sans-serif
 @mixin text-pop($color)
     text-shadow: $color 1px 2px 0
 
-@mixin box-sizing
-    -webkit-box-sizing: border-box
-    -moz-box-sizing: border-box
-    box-sizing: border-box
-
 @mixin clear-spacing
     margin: 0 
     padding: 0    
@@ -109,6 +113,11 @@ $body-font: #{$font}, Helvetica, Arial, sans-serif
         background-color: $active
         border: 1px solid darken($active, 3%)
         color: $text-color
+
+// Span all columns for sm width
+@mixin sm-span
+    @include breakpoint($sm-width)
+        @include span(12 of 12)
 
 // Util classes
 .margin-l

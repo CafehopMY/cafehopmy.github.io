@@ -3,7 +3,7 @@
 </div>
 <ul class="list-unstyled">
     <li ng-mouseover="triggerMarkerMouseover(cafe.idKey)" ng-mouseleave="triggerMarkerMouseout(cafe.idKey)"  ng-class="{cafe: true, closed: cafe.venue.hours && !cafe.venue.hours.isOpen}" ng-repeat="cafe in cafes" id="{{cafe.idKey}}">
-        <div ng-class="{'cafe-container': true, hover: cafe.idKey == markerCallbacks.currMouseoverId}">
+        <div ng-class="{'cafe-container': true, 'hover': cafe.idKey && (cafe.idKey == markerCallbacks.currMouseoverId)}">
             <div>
                 <a target="_blank" ng-href="{{getCafeUrl(cafe)}}">
                     <img ng-show="CafeService.getPhotoUrl(cafe)" ng-style="CafeService.getPhotoStyle(cafe)">

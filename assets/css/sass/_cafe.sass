@@ -1,4 +1,5 @@
-@import 'compass/css3'
+@import 'constants'
+
 .cafe 
     section
         padding-top: $space * 4
@@ -7,15 +8,17 @@
 
     h1 
         margin-top: 0
+        text-align: left
         a 
             color: $red
             &:hover, &:focus
                 text-decoration: none
 
     .fa-external-link, .fa-spinner
-        font-size: 1.2em
+        font-size: 18px
         color: $red 
         margin-left: $space
+        float: right
 
     .cafe-map, .cafe-details
         margin-top: $space * 2
@@ -29,6 +32,13 @@
             float: none
     .cafe-details 
         width: 100%
+        > div 
+            &:first-child
+                @include span(7 of 12)
+                @include sm-span
+            &:nth-child(2)
+                @include span(5 of 12)
+                @include sm-span
         li 
             margin-bottom: $space
             display: flex
@@ -57,6 +67,9 @@
             font-weight: bold
             font-size: 18px
 
+    .cafe-photo-section
+        @include span(5 of 12)
+        @include sm-span
     .cafe-photo-featured
         max-width: 100% 
     .cafe-hours
@@ -72,3 +85,12 @@
                     flex: 1
                 &:nth-child(2)
                     flex: 2
+    .container
+        > div 
+            &:first-child
+                @include span(12 of 12)
+            &:nth-child(2)
+                @include span(7 of 12)
+                @include breakpoint($sm-width)
+                    @include span(12 of 12)
+                    margin-bottom: $space*2
