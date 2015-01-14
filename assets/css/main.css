@@ -437,66 +437,74 @@ div.cafe-types {
     font-size: 1em; } }
 @media only screen and (max-width: 768px) {
   /* line 296, sass/_style.sass */
+  header {
+    height: auto; }
+
+  /* line 298, sass/_style.sass */
   h1, .h1 {
     font-size: 2.6em; }
 
-  /* line 298, sass/_style.sass */
-  h2, h3, h4 {
+  /* line 300, sass/_style.sass */
+  h2 {
     font-size: 2em; }
 
   /* line 302, sass/_style.sass */
+  h3, h4 {
+    font-size: 1.5em; }
+
+  /* line 306, sass/_style.sass */
   .content h1, .content h2, .content h3, .content h4 {
     text-align: center; }
 
-  /* line 305, sass/_style.sass */
+  /* line 309, sass/_style.sass */
   .heading-img {
     width: 50%;
     height: 50%; }
-    /* line 308, sass/_style.sass */
+    /* line 312, sass/_style.sass */
     .heading-img img {
       width: 100%; }
 
-  /* line 312, sass/_style.sass */
+  /* line 316, sass/_style.sass */
   footer div#footer-wrapper div#social-media-share, footer div#footer-wrapper div#sponsors {
     float: none;
     width: 100%;
     display: block; }
-  /* line 316, sass/_style.sass */
+  /* line 320, sass/_style.sass */
   footer div#footer-wrapper #social-media-share {
     margin-bottom: 12px; }
-  /* line 318, sass/_style.sass */
+  /* line 322, sass/_style.sass */
   footer #share-button {
     width: 150px; }
-  /* line 320, sass/_style.sass */
+  /* line 324, sass/_style.sass */
   footer ul#sponsor_list {
     display: block; }
-    /* line 322, sass/_style.sass */
+    /* line 326, sass/_style.sass */
     footer ul#sponsor_list li {
       display: inline-block; }
-      /* line 324, sass/_style.sass */
+      /* line 328, sass/_style.sass */
       footer ul#sponsor_list li span {
         display: none; }
-      /* line 326, sass/_style.sass */
+      /* line 330, sass/_style.sass */
       footer ul#sponsor_list li img {
         width: 80px; } }
-/* line 328, sass/_style.sass */
+/* line 332, sass/_style.sass */
 .addthis_native_toolbox {
   width: 200px;
   display: block;
   overflow: hidden; }
-  /* line 332, sass/_style.sass */
+  /* line 336, sass/_style.sass */
   .addthis_native_toolbox a {
     height: 30px;
     margin-right: 12px;
     display: table-cell; }
-    /* line 335, sass/_style.sass */
+    /* line 339, sass/_style.sass */
     .addthis_native_toolbox a.addthis_button_facebook_like {
       margin-top: -3px; }
-    /* line 341, sass/_style.sass */
+    /* line 345, sass/_style.sass */
     .addthis_native_toolbox a div span {
       vertical-align: top !important; }
 
-/* line 343, sass/_style.sass */
+/* line 347, sass/_style.sass */
 #_atssh {
   display: none; }
 
