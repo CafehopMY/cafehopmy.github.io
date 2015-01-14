@@ -2231,25 +2231,29 @@ div#links-to-parts-of-site {
     flex: 2; }
 /* line 54, sass/_cafe.sass */
 .cafe .cafe-hours-toggle {
-  font-weight: bold;
-  font-size: 18px; }
-/* line 58, sass/_cafe.sass */
+  float: right;
+  display: inline-block; }
+  /* line 57, sass/_cafe.sass */
+  .cafe .cafe-hours-toggle .fa {
+    font-weight: bold;
+    font-size: 18px; }
+/* line 61, sass/_cafe.sass */
 .cafe .cafe-photo-featured {
   max-width: 100%; }
-/* line 60, sass/_cafe.sass */
+/* line 63, sass/_cafe.sass */
 .cafe .cafe-hours {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
   margin-top: 12px; }
-  /* line 65, sass/_cafe.sass */
+  /* line 68, sass/_cafe.sass */
   .cafe .cafe-hours li {
     display: flex; }
-    /* line 68, sass/_cafe.sass */
+    /* line 71, sass/_cafe.sass */
     .cafe .cafe-hours li span:first-child {
       font-weight: bold;
       flex: 1; }
-    /* line 71, sass/_cafe.sass */
+    /* line 74, sass/_cafe.sass */
     .cafe .cafe-hours li span:nth-child(2) {
       flex: 2; }
 
