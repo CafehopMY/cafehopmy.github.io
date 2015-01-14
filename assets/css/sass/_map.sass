@@ -75,30 +75,29 @@
             a 
                 padding-left: $space
                 text-align: center
-
     .mode-toggle 
-        display: table 
+        @include display-flex
+        @include flex-direction(column) 
         margin: 0
+        max-height: 100%
         text-align: center
-        height: 100%
-        li 
-            margin: 0
-            padding: 0
+        a
+            @include flex(1)
+            @include fade-in
+            @include display-flex
+            @include align-items(center)
+            min-width: 55px
             height: 100%
-            display: table-cell
+            background-color: $red
+            padding: $space 
+            color: $light-beige
             &:not(:last-child)
                 border-right: 1px solid darken($red, 10%)
-            a
-                @include fade-in
-                min-width: 55px
-                display: block
-                background-color: $red
-                padding: $space 
-                color: $light-beige
-                height: 100%
-                &:hover, &:focus, &.active
-                    background-color: darken($red, 10%)
-                    text-decoration: none
+            &:hover, &:focus, &.active
+                background-color: darken($red, 10%)
+                text-decoration: none
+            span
+                @include align-self(center)
             &.active 
                 display: none
 .map-wrapper

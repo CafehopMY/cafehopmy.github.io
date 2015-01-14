@@ -4,14 +4,10 @@
         <!-- Map and list view toggle -->
         <div class="mobile-controls hidden-sm hidden-md hidden-lg">
             <location-search class="mobile-controls-search hidden-sm hidden-md hidden-lg"></location-search>
-            <ul class="mode-toggle list-unstyled list-inline">
-                <li class="map-view-btn active">
-                    <a href="" ng-click="activateMapView()">Map</a>
-                </li>
-                <li class="list-view-btn" >
-                    <a href="" ng-click="activateListView()">List</a>
-                </li>
-            </ul>
+            <div class="mode-toggle list-unstyled list-inline">
+                <a class="map-view-btn active" ng-click="activateMapView()"><span>Map</span></a>
+                <a class="list-view-btn" href="" ng-click="activateListView()"><span>List</span></a>
+            </div>
         </div>
 
         <div class="map-wrapper">
