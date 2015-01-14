@@ -970,18 +970,18 @@ div#links-to-parts-of-site {
         margin-left: 0.83333%;
         margin-right: 0.83333%; } }
   /* line 42, sass/_cafe.sass */
-  .cafe .cafe-details li {
+  .cafe .cafe-details > div > li {
     margin-bottom: 24px;
     display: flex; }
     /* line 46, sass/_cafe.sass */
-    .cafe .cafe-details li > div:first-child {
+    .cafe .cafe-details > div > li > div:first-child {
       text-align: center;
       width: 24px;
       height: 24px;
       vertical-align: top;
       margin-right: 9px; }
     /* line 52, sass/_cafe.sass */
-    .cafe .cafe-details li > div:nth-child(2) {
+    .cafe .cafe-details > div > li > div:nth-child(2) {
       max-width: 300px;
       flex: 1; }
 /* line 55, sass/_cafe.sass */
@@ -1028,28 +1028,29 @@ div#links-to-parts-of-site {
   margin-top: 12px; }
   /* line 80, sass/_cafe.sass */
   .cafe .cafe-hours li {
-    display: flex; }
-    /* line 83, sass/_cafe.sass */
+    display: flex;
+    margin-bottom: 6px; }
+    /* line 84, sass/_cafe.sass */
     .cafe .cafe-hours li span:first-child {
       font-weight: bold;
       flex: 1; }
-    /* line 86, sass/_cafe.sass */
+    /* line 87, sass/_cafe.sass */
     .cafe .cafe-hours li span:nth-child(2) {
       flex: 2; }
-/* line 90, sass/_cafe.sass */
+/* line 91, sass/_cafe.sass */
 .cafe .container > div:first-child {
   width: 98.33333%;
   float: left;
   margin-left: 0.83333%;
   margin-right: 0.83333%; }
-/* line 92, sass/_cafe.sass */
+/* line 93, sass/_cafe.sass */
 .cafe .container > div:nth-child(2) {
   width: 56.66667%;
   float: left;
   margin-left: 0.83333%;
   margin-right: 0.83333%; }
   @media (max-width: 768px) {
-    /* line 92, sass/_cafe.sass */
+    /* line 93, sass/_cafe.sass */
     .cafe .container > div:nth-child(2) {
       width: 98.33333%;
       float: left;

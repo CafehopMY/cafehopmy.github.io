@@ -39,19 +39,19 @@
             &:nth-child(2)
                 @include span(5 of 12)
                 @include sm-span
-        li 
-            margin-bottom: $space*2
-            display: flex
-            > div
-                &:first-child
-                    text-align: center
-                    width: $space * 2
-                    height: $space * 2
-                    vertical-align: top
-                    margin-right: $space * 0.75
-                &:nth-child(2)
-                    max-width: 300px
-                    flex: 1
+            > li 
+                margin-bottom: $space*2
+                display: flex
+                > div
+                    &:first-child
+                        text-align: center
+                        width: $space * 2
+                        height: $space * 2
+                        vertical-align: top
+                        margin-right: $space * 0.75
+                    &:nth-child(2)
+                        max-width: 300px
+                        flex: 1
     .cafe-todays-hours
         font-weight: bold 
         @include display-flex
@@ -79,6 +79,7 @@
         margin-top: $space
         li 
             display: flex
+            margin-bottom: $space/2
             span 
                 &:first-child
                     font-weight: bold
