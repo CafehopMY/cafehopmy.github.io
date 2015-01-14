@@ -24,15 +24,15 @@
                                             <span class="cafe-open" ng-show="!cafe.openingHours.openNow">today</span>
                                         </strong>
                                         <br/>
-                                        <span class="cafe-todays-hours">
+                                        <a href="" class="cafe-todays-hours" ng-click="toggleShowHours()">
                                             <span>{{todaysDay();}}</span>
                                             <span>
                                                 <span ng-bind="cafe.todaysHours"></span>
-                                                <a href="" ng-click="toggleShowHours()" class="cafe-hours-toggle" >
+                                                <span class="cafe-hours-toggle" >
                                                     <i ng-class="{'fa-angle-down': !showHours, 'fa-angle-up': showHours, 'fa': true}"></i>
                                                 </span>
-                                            </a>
-                                        </span>
+                                            </span>
+                                        </a>
                                     </span>
                                     <ul ng-show="showHours" class="cafe-hours">
                                         <li ng-repeat="p in cafe.openingHours.periods">

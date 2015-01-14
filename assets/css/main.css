@@ -988,68 +988,71 @@ div#links-to-parts-of-site {
   font-weight: bold;
   display: -webkit-flex;
   display: flex; }
-  /* line 59, sass/_cafe.sass */
+  /* line 57, sass/_cafe.sass */
+  .cafe .cafe-todays-hours:hover, .cafe .cafe-todays-hours:focus {
+    text-decoration: none; }
+  /* line 61, sass/_cafe.sass */
   .cafe .cafe-todays-hours span:first-child {
     -webkit-flex: 1;
     flex: 1; }
-  /* line 61, sass/_cafe.sass */
+  /* line 63, sass/_cafe.sass */
   .cafe .cafe-todays-hours span:nth-child(2) {
     -webkit-flex: 2;
     flex: 2; }
-/* line 64, sass/_cafe.sass */
+/* line 66, sass/_cafe.sass */
 .cafe .cafe-hours-toggle {
   display: inline-block; }
-  /* line 66, sass/_cafe.sass */
+  /* line 68, sass/_cafe.sass */
   .cafe .cafe-hours-toggle .fa {
     font-weight: bold;
     font-size: 18px; }
-/* line 70, sass/_cafe.sass */
+/* line 72, sass/_cafe.sass */
 .cafe .cafe-photo-section {
   width: 40%;
   float: left;
   margin-left: 0.83333%;
   margin-right: 0.83333%; }
   @media (max-width: 768px) {
-    /* line 70, sass/_cafe.sass */
+    /* line 72, sass/_cafe.sass */
     .cafe .cafe-photo-section {
       width: 98.33333%;
       float: left;
       margin-left: 0.83333%;
       margin-right: 0.83333%; } }
-/* line 73, sass/_cafe.sass */
+/* line 75, sass/_cafe.sass */
 .cafe .cafe-photo-featured {
   max-width: 100%; }
-/* line 75, sass/_cafe.sass */
+/* line 77, sass/_cafe.sass */
 .cafe .cafe-hours {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
   margin-top: 12px; }
-  /* line 80, sass/_cafe.sass */
+  /* line 82, sass/_cafe.sass */
   .cafe .cafe-hours li {
     display: flex;
     margin-bottom: 6px; }
-    /* line 84, sass/_cafe.sass */
+    /* line 86, sass/_cafe.sass */
     .cafe .cafe-hours li span:first-child {
       font-weight: bold;
       flex: 1; }
-    /* line 87, sass/_cafe.sass */
+    /* line 89, sass/_cafe.sass */
     .cafe .cafe-hours li span:nth-child(2) {
       flex: 2; }
-/* line 91, sass/_cafe.sass */
+/* line 93, sass/_cafe.sass */
 .cafe .container > div:first-child {
   width: 98.33333%;
   float: left;
   margin-left: 0.83333%;
   margin-right: 0.83333%; }
-/* line 93, sass/_cafe.sass */
+/* line 95, sass/_cafe.sass */
 .cafe .container > div:nth-child(2) {
   width: 56.66667%;
   float: left;
   margin-left: 0.83333%;
   margin-right: 0.83333%; }
   @media (max-width: 768px) {
-    /* line 93, sass/_cafe.sass */
+    /* line 95, sass/_cafe.sass */
     .cafe .container > div:nth-child(2) {
       width: 98.33333%;
       float: left;
