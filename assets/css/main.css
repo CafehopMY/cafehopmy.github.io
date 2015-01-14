@@ -971,7 +971,7 @@ div#links-to-parts-of-site {
         margin-right: 0.83333%; } }
   /* line 42, sass/_cafe.sass */
   .cafe .cafe-details li {
-    margin-bottom: 12px;
+    margin-bottom: 24px;
     display: flex; }
     /* line 46, sass/_cafe.sass */
     .cafe .cafe-details li > div:first-child {

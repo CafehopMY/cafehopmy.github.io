@@ -18,8 +18,11 @@
                             </div>
                             <div>
                                 <div ng-show="hasHoursListed(cafe)">
-                                    <div class="cafe-open" ng-show="cafe.openingHours.openNow">Open now</div>
-                                    <span ng-show="cafe.todaysHours"> <strong>Open today</strong>
+                                    <span ng-show="cafe.todaysHours"> 
+                                        <strong>Open
+                                            <span class="cafe-open" ng-show="cafe.openingHours.openNow">Open now</span>
+                                            <span ng-show="!cafe.openingHours.openNow">today</span>
+                                        </strong>
                                         <br/>
                                         <span class="cafe-todays-hours">
                                             <span>{{todaysDay();}}</span>
