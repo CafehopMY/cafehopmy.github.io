@@ -63,7 +63,9 @@ module.exports = function(grunt) {
             files: ['assets/css/*', 'app/**'],
             tasks: ['concat', 'cssmin'],
             options: {
-                livereload: true
+                livereload: {
+                    port: 9000
+                }
             }
         },
         clean: {

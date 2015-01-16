@@ -41,7 +41,7 @@
                 @include sm-span
             > li 
                 margin-bottom: $space*2
-                display: flex
+                @include display-flex
                 > div
                     &:first-child
                         text-align: center
@@ -51,7 +51,7 @@
                         margin-right: $space * 0.75
                     &:nth-child(2)
                         max-width: 300px
-                        flex: 1
+                        @include flex(1)
     .cafe-todays-hours
         font-weight: bold 
         &:hover, &:focus 
