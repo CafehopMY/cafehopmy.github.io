@@ -6,6 +6,7 @@ body
     color: $red
     font-family: $body-font
     font-size: 18px
+    @include font-smoothing(subpixel-antialiased)
     @include display-flex
     @include flex-direction(column)
     min-height: 100vh
@@ -40,6 +41,8 @@ nav
         > li
             @include non-text-link-style
             margin-left: $space
+            @include breakpoint($sm-width)
+                margin-right: $space
             > a
                 font-size: 18px
                 line-height: 18px
@@ -229,15 +232,6 @@ footer
 ::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder 
     color: $orange
 
-//Override mCustomScrollbar css
-.mCSB_scrollTools .mCSB_draggerRail
-    background-color: $scroller-rail-color !important
-
-.mCSB_scrollTools .mCSB_draggerRail
-    background-color: $scroller-rail-color  !important
-
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
-    background: $dark-orange !important
 
 .heading-img
     @include rounded-corners($heading-icon-size/2)
@@ -336,9 +330,6 @@ $logo-size-small: $logo-size * 0.8
     a 
         height: 30px
         margin-right: $space
-        &.addthis_button_facebook_like 
-            // height: 27px
-            margin-top: -3px
         display: table-cell
 
         div 

@@ -97,7 +97,6 @@ $body-font: #{$font}, Helvetica, Arial, sans-serif
     a 
         @include rounded-corners($space/2)
         @include text-pop($dark-orange)
-        background-color: $orange
         color: $beige
         text-decoration: none    
         font-weight: bold
@@ -114,6 +113,9 @@ $body-font: #{$font}, Helvetica, Arial, sans-serif
         border: 1px solid darken($active, 3%)
         color: $text-color
 
+@mixin font-smoothing($val)
+    -webkit-font-smoothing: $val 
+    
 // Span all columns for sm width
 @mixin sm-span
     @include breakpoint($sm-width)
