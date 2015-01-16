@@ -1435,7 +1435,7 @@ nav .navbar-nav .soc-media-links a, nav .navbar-nav .soc-media-links .a {
   .navbar-brand .logo-text {
     display: inline-block;
     height: 51px;
-    padding: 2px 8px; }
+    padding: 3px 8px; }
     /* line 106, sass/_style.sass */
     .navbar-brand .logo-text img {
       height: 100%; }
