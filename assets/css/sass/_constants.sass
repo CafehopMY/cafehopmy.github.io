@@ -115,11 +115,16 @@ $body-font: #{$font}, Helvetica, Arial, sans-serif
 
 @mixin font-smoothing($val)
     -webkit-font-smoothing: $val 
-    
+
 // Span all columns for sm width
 @mixin sm-span
     @include breakpoint($sm-width)
         @include span(12 of 12)
+
+@mixin vertical-center-in-parent
+    @include translate(0%, -50%)
+    top: 50%
+    position: relative
 
 // Util classes
 .margin-l

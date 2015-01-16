@@ -99,17 +99,12 @@ nav
         width: $logo-size 
         display: inline-block
         vertical-align: top
-    .h1 
-        font-family: 'Matchbook'
-        text-transform: uppercase
-        @include non-text-link-style
-        @include text-pop($dark-orange)
-        @include clear-spacing
-        line-height: $header-height - $space*2 + 9px
-        font-size: $header-height - $space*2
-        margin-left: $space*1.5
-        text-align: left
+    .logo-text
         display: inline-block
+        height: $header-height - $space*2
+        padding: 2px 8px
+        img 
+            height: 100%
 
 div.clear-both
     clear: both
