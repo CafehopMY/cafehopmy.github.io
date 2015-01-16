@@ -1314,7 +1314,7 @@ body {
     .content > div, .content > section {
       padding-bottom: 24px; } }
   /* line 28, sass/_style.sass */
-  .content > div > .container:last-child, .content > section > .container:last-child {
+  .content > div > section:last-child, .content > section > section:last-child {
     padding-top: 0px; }
 /* line 30, sass/_style.sass */
 .content > .no-padding {
