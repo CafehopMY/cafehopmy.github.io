@@ -801,7 +801,6 @@ angular.module('cafehopApp.directives').directive('advertisements',['$http', fun
           $http.get(filename)
             .success(function(data){
                 $scope.sponsors = data.sponsors;
-              console.log($scope.sponsors)
             })
             .error(function(){
                 console.error(filename + ' not found.')
