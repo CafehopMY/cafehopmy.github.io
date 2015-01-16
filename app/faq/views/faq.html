@@ -1,25 +1,25 @@
- 
+<div> 
+     <section class="container">
+         <div class="row">
+            <div class="col-md-4">
+                <div class="heading-img">
+                    <img src="assets/images/blog-image.png"/>
+                </div>                
+            </div>
 
- <section class="container">
-     <div class="row">
-        <div class="col-md-4">
-            <div class="heading-img">
-                <img src="assets/images/blog-image.png"/>
-            </div>                
+            <div class="col-md-8">
+                <h1>Frequently Asked Questions</h1>
+                <p>Here are some questions we get in our inbox from time.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="col-md-8">
-            <h1>Frequently Asked Questions</h1>
-            <p>Here are some questions we get in our inbox from time.</p>
+    <section class="container">
+        <div>
+            <ul ng-repeat="faq in faqs" class="list-unstyled">
+                <dt><strong ng-bind-html="faq.question"></strong></dt>
+                <dd ng-bind-html="faq.answer"></dd>
+            </ul>
         </div>
-    </div>
-</section>
-
-<section class="container">
-    <div>
-        <ul ng-repeat="faq in faqs" class="list-unstyled">
-            <dt><strong ng-bind-html="faq.question"></strong></dt>
-            <dd ng-bind-html="faq.answer"></dd>
-        </ul>
-    </div>
-</section>
+    </section>
+</div>
