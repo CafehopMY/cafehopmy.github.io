@@ -5,10 +5,11 @@ body
     background-color:  $light-beige
     color: $red
     font-family: $body-font
+    min-height: 100vh
     font-size: 18px
     @include display-flex
+    @include font-smoothing(none)
     @include flex-direction(column)
-    min-height: 100vh
     > .content
         @include flex(1)
 .container 
