@@ -1784,8 +1784,10 @@ div#links-to-parts-of-site {
   display: table;
   width: 100%; }
   .location-display > div {
-    display: table-cell;
-    vertical-align: middle; }
+    display: table-cell; }
+    @media (max-width: 768px) {
+      .location-display > div {
+        vertical-align: middle; } }
     .location-display > div:first-child {
       width: 100%; }
 
@@ -1875,6 +1877,7 @@ div#links-to-parts-of-site {
   flex-direction: column;
   position: relative;
   padding: 24px;
+  padding-top: 12px;
   height: 100%; }
   @media (max-width: 768px) {
     .map .cafes {

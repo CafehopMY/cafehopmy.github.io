@@ -44,7 +44,8 @@
     width: 100%
     > div
         display: table-cell
-        vertical-align: middle
+        @include breakpoint($sm-width)
+            vertical-align: middle
         &:first-child 
             width: 100%
 
@@ -117,6 +118,7 @@
     @include flex-direction(column)
     position: relative
     padding: $space * 2
+    padding-top: $space
     height: 100%
     @include breakpoint($sm-width)
         padding: 0
