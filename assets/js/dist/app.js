@@ -797,18 +797,24 @@ angular.module('cafehopApp.directives').directive('advertisements',['$http', fun
         restrict: 'E',
         templateUrl: 'app/templates/advertisements_template.html',
         controller: function($scope, $element){
-          var filename ='app/about/models/sponsors.json';
-          $http.get(filename)
+            var filename ='app/about/models/sponsors.json';
+            $http.get(filename)
             .success(function(data){
                 $scope.sponsors = data.sponsors;
             })
             .error(function(){
                 console.error(filename + ' not found.')
             });
+
+            $scope.adClick = function(e){
+                var adId = e.target.id;
+                console.log(adId);
+
+                ga('send', 'event', 'advertisements', 'click', adId, 1);
+            }
         }
     }
 }]);
-
 angular.module('cafehopApp.directives').directive('resize', ['$window', function($window){
     return function(scope, element){
         var w = angular.element($window);
