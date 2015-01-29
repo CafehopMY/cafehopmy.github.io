@@ -4,12 +4,12 @@ module.exports = function(grunt) {
         concat: {
             js: {
                 src: [  
-                    'bower_components/jquery/dist/jquery.js',
-                    'bower_components/bootstrap/dist/js/bootstrap.js',
+                    'bower_components/jquery/dist/jquery.min.js',
+                    'bower_components/bootstrap/dist/js/bootstrap.min.js',
                     'bower_components/bluebird/js/browser/bluebird.js',
-                    'bower_components/lodash/dist/lodash.js',
-                    'bower_components/angular/angular.js',
-                    'bower_components/angular-google-maps/dist/angular-google-maps.js',
+                    'bower_components/lodash/dist/lodash.min.js',
+                    'bower_components/angular/angular.min.js',
+                    'bower_components/angular-google-maps/dist/angular-google-maps.min.js',
                     'bower_components/angular-sanitize/angular-sanitize.min.js',
                     'bower_components/angular-route/angular-route.min.js',
                     'bower_components/ngAutocomplete/src/ngAutocomplete.js',
