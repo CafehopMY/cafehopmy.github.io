@@ -12,6 +12,7 @@ body
     @include flex-direction(column)
     > .content
         @include flex(1)
+        -ms-flex-preferred-size: auto //IE11 hack
 .container 
     max-width: 900px
 .container-full 

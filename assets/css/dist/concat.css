@@ -1291,7 +1291,8 @@ body {
   flex-direction: column; }
   body > .content {
     -webkit-flex: 1;
-    flex: 1; }
+    flex: 1;
+    -ms-flex-preferred-size: auto; }
 
 .container {
   max-width: 900px; }
