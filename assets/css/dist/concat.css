@@ -1324,6 +1324,13 @@ header {
 header, .navbar-header {
   background-color: #ec6338; }
 
+a {
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
+
 nav .navbar-nav > li {
   margin-left: 12px; }
   nav .navbar-nav > li a {
