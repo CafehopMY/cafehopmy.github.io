@@ -167,6 +167,10 @@ footer {
   background-color: #90120e;
   padding: 24px 0px;
   margin-top: 0px; }
+  footer .disclaimer {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #ec6338; }
   footer h3 {
     display: block;
     margin-top: 0px;
@@ -377,6 +381,12 @@ div.cafe-types {
 
 #_atssh {
   display: none; }
+
+.float-right {
+  float: right; }
+
+.float-left {
+  float: left; }
 
 span.name {
   font-weight: bold; }
