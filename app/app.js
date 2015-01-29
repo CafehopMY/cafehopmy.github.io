@@ -37,6 +37,10 @@ angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function
 			templateUrl: 'app/cafe/views/cafe.html',
 			controller: 'CafeController',
 			title: 'Cafe',
+		})
+		.when('/tnc', {
+			templateUrl: 'app/misc/views/tnc.html',
+			title: 'Terms & Conditions',
 		});
 
 		// Enable CORS
