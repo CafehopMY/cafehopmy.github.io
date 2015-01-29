@@ -48,8 +48,10 @@ nav
         > li
             @include non-text-link-style
             margin-left: $space
-            @include breakpoint($sm-width)
+            @include breakpoint($md-width)
                 margin-right: $space
+            @include breakpoint($sm-width)
+                margin-left: 0px
             > a
                 font-size: 18px
                 line-height: 18px
@@ -70,10 +72,10 @@ nav
                 &:hover, &:focus
                     background-color: transparent !important
             
-            @media only screen and (max-width : 768px)
+            @include breakpoint($sm-width)
                 padding-left : $space
     &.navbar-collapse
-        @media (max-width: #{$sm-width})
+        @include breakpoint($sm-width)
             padding: 0
 
 .navbar-toggle
@@ -87,13 +89,13 @@ nav
 
 .nav 
     margin: ($header-height - 50px)/2 0 
-    @media (max-width: #{$sm-width})
+    @include breakpoint($sm-width)
         margin: 15px 0
 .navbar-brand
     height: $header-height
     padding: $space 0
     color: $beige
-    @media (max-width : #{$sm-width})
+    @include breakpoint($sm-width)
         margin-left: $space
     &:hover 
         color: $beige

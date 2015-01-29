@@ -81,9 +81,12 @@ nav .navbar-nav > li {
     transition: all 0.5s; }
     nav .navbar-nav > li a:hover, nav .navbar-nav > li a.selected, nav .navbar-nav > li a:focus {
       background-color: #c53d13; }
-  @media (max-width: 768px) {
+  @media (max-width: 996px) {
     nav .navbar-nav > li {
       margin-right: 12px; } }
+  @media (max-width: 768px) {
+    nav .navbar-nav > li {
+      margin-left: 0px; } }
   nav .navbar-nav > li > a {
     font-size: 18px;
     line-height: 18px; }
@@ -103,7 +106,7 @@ nav .navbar-nav .soc-media-links a, nav .navbar-nav .soc-media-links .a {
   line-height: 20px; }
   nav .navbar-nav .soc-media-links a:hover, nav .navbar-nav .soc-media-links a:focus, nav .navbar-nav .soc-media-links .a:hover, nav .navbar-nav .soc-media-links .a:focus {
     background-color: transparent !important; }
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   nav .navbar-nav .soc-media-links {
     padding-left: 12px; } }
 @media (max-width: 768px) {
@@ -631,7 +634,7 @@ div#links-to-parts-of-site {
   padding: 24px;
   padding-top: 12px;
   height: 100%; }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .map .cafes {
       padding: 0; } }
   .map .cafes .cafe-list-container {
