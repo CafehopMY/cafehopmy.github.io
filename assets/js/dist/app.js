@@ -41,6 +41,14 @@ angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function
 		.when('/tnc', {
 			templateUrl: 'app/misc/views/tnc.html',
 			title: 'Terms & Conditions',
+		})
+		.when('/404', {
+			templateUrl: 'app/misc/views/404.html',
+			title: '404 Page not found',
+		})
+		.otherwise({
+			redirectTo: '/404',
+			title: '404 Page not found',
 		});
 
 		// Enable CORS
@@ -52,7 +60,13 @@ angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function
 angular.module('cafehopApp').run(['$rootScope', function($rootScope){
     // Set title based on route
     $rootScope.$on("$routeChangeSuccess", function(event, currentRoute, previousRoute) {
- 		window.document.title = (currentRoute.title || "") + ' | Cafehop MY';
+
+    if(currentRoute){
+ 			window.document.title = (currentRoute.title || "") + ' | Cafehop MY';
+    }
+    else{
+ 			window.document.title = 'Cafehop MY';
+    }
  	});
 }]);
 

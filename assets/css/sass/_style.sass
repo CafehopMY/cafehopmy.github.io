@@ -20,6 +20,7 @@ body
     max-width: 100% !important
 
 .content
+    overflow-x: hidden
     > 
         div, section
             padding-bottom: $space * 4
@@ -49,9 +50,7 @@ nav
             @include non-text-link-style
             margin-left: $space
             @include breakpoint($md-width)
-                margin-right: $space
-            @include breakpoint($sm-width)
-                margin-left: 0px
+                margin-right: 0px
             > a
                 font-size: 18px
                 line-height: 18px

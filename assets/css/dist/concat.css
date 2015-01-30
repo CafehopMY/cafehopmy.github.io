@@ -1301,15 +1301,17 @@ body {
   width: 100%;
   max-width: 100% !important; }
 
-.content > div, .content > section {
-  padding-bottom: 48px; }
-  @media (max-width: 768px) {
-    .content > div, .content > section {
-      padding-bottom: 24px; } }
-  .content > div > section:last-child, .content > section > section:last-child {
-    padding-top: 0px; }
-.content > .no-padding {
-  padding-bottom: 0; }
+.content {
+  overflow-x: hidden; }
+  .content > div, .content > section {
+    padding-bottom: 48px; }
+    @media (max-width: 768px) {
+      .content > div, .content > section {
+        padding-bottom: 24px; } }
+    .content > div > section:last-child, .content > section > section:last-child {
+      padding-top: 0px; }
+  .content > .no-padding {
+    padding-bottom: 0; }
 
 section {
   padding: 24px 0; }
@@ -1351,10 +1353,7 @@ nav .navbar-nav > li {
       background-color: #c53d13; }
   @media (max-width: 996px) {
     nav .navbar-nav > li {
-      margin-right: 12px; } }
-  @media (max-width: 768px) {
-    nav .navbar-nav > li {
-      margin-left: 0px; } }
+      margin-right: 0px; } }
   nav .navbar-nav > li > a {
     font-size: 18px;
     line-height: 18px; }

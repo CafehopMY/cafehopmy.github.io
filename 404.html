@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+    <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+<![endif]-->
+<!--[if IE 7]>
+    <html class="no-js lt-ie9 lt-ie8">
+<![endif]-->
+<!--[if IE 8]>
+    <html class="no-js lt-ie9">
+<![endif]-->
+<!--[if gt IE 8]>
+<!-->
+<html class="no-js">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="CafeHop MY is a project mapping independent cafes around Malaysia. We have compiled a map of the best cafes in the country for your cafe hopping adventures.">
+        <meta name="keywords" content="cafes cafe coffee kl kuala lumpur malaysia my klang valley mapping map cafehop cafehopmy cafehopkl hopping hop joachim leong shean tan phil choong sher minn chong kopi">
+        <meta name="viewport" content="width=device-width">
+        <meta property="og:image" content="http://cafehopkl.com/img/chkl_logo.png" />
+        <meta property="og:title" content="CafeHop MY - Mapping Unique Cafes around KL" />
+        <meta property="og:description" content="CafeHop MY is a project mapping independent cafes around Malaysia. We have compiled a map of the best cafes in the country for your cafe hopping adventures." />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=0.5, maximum-scale=1.0">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="http://cafehop.my/assets/vendor/bootstrap/bootstrap.min.css"/>
+        <link rel="stylesheet" href="http://cafehop.my/assets/css/dist/concat.min.css"/>
+        <link rel="stylesheet" href="http://cafehop.my/assets/css/dist/concat.min.css"/>
+        <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="icon" href="./favicon.ico"/>
+        <title>CafeHop MY - Mapping unique cafes around Malaysia</title>
+        
+    </head>
+    <body ng-app="cafehopApp">
+        <header>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a href="http://cafehop.my/" class="navbar-brand">
+                <img class='logo' src="assets/images/chkl_logo_small.png" alt="CafeHop MY"/>
+                <div class='logo-text'><img title="CafeHop MY" src="assets/images/cafehopmy-logo.png"></div>
+            </a>
+        </div>
+
+        <nav class="navbar-collapse collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="http://cafehop.my/#about">About</a>
+                </li>
+                <li>
+                    <a href="http://cafehop.my/blog">Blog</a>
+                </li>
+                <li>
+                    <a href="http://cafehop.my/#faq">FAQ</a>
+                </li>
+                <li>
+                    <a href="http://cafehop.my/#contact">Contact</a>
+                </li>
+                <li class="soc-media-links">
+                    <a target="_blank" href="https://www.facebook.com/CafeHopKl"><i class="fa fa-facebook-square"></i></a>
+                    <a target="_blank" href="https://twitter.com/CafeHopKl"><i class="fa fa-twitter-square"></i></a>
+                    <a target="_blank" href="http://instagram.com/cafehopmy"><i class="fa fa-instagram"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+        <div class="content" ng-view>
+             <section class="container">
+                <h1>Oh no!</h1>
+                <p>
+                    Looks like we couldn't find the page you are looking for. We have recently moved to <a href="http://cafehop.my">cafehop.my</a> and some things might have moved. 
+                </p>
+                <p>
+                    <a href="http://cafehop.my">Go back to CafeHop MY <i class="fa fa-angle-right"></i></a>
+                </p>
+            </section>
+        </div>
+
+
+        <script src="http://cafehop.my/assets/js/dist/dependencies.min.js"></script>
+        <script src="http://cafehop.my/assets/vendor/modernizr/modernizr-2.6.2.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9EG2XGeh9UYfYK7jqX_SQ0W03QYHYD_4&sensor=true&libraries=places"></script>
+       
+        <script src="http://cafehop.my/assets/js/main.js"></script>
+        <script src="http://cafehop.my/assets/js/plugins.js"></script>
+
+        <script>
+            // Close navbar on click item
+            $(document).ready(function(){
+                var navbarToggle = $('.navbar-toggle');
+
+                $(".navbar-nav li a").on('click', function(){
+                    if(navbarToggle.is(":visible")){
+                        navbarToggle.trigger('click');
+                    }
+                });
+            });
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-43969265-1', 'auto', {'allowLinker': true});
+            ga('require', 'linker');
+            ga('linker:autoLink', ['cafehopkl.com'] );
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>
