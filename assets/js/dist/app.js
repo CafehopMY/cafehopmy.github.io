@@ -71,11 +71,7 @@ angular.module('cafehopApp').run(['$rootScope', function($rootScope){
     if(previousRoute && previousRoute.redirectTo != "/"){
     	console.log(previousRoute.redirectTo)
 	    // Log GA event
-	    ga('send', 'pageview', {
-	      'page': window.location.href ,
-	    });
-
-	    console.log('ga-routechange')
+	    gaSendSPAPageview();
     }
  	});
 }]);

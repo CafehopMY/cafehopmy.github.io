@@ -57,10 +57,17 @@
             ga('create', 'UA-43969265-1', 'auto', {'allowLinker': true});
             ga('require', 'linker');
             ga('linker:autoLink', ['cafehopkl.com'] );
-            ga('send', 'pageview', {
-              'page': window.location.href ,
-            });
-            console.log('ga-index')
+            
+            function gaSendSPAPageview(){
+                var pathWithHash = window.location.pathname + window.location.hash;
+                ga('send', 'pageview', {
+                  'page':  pathWithHash,
+                });
+
+                console.log(pathWithHash);
+            }
+
+            gaSendSPAPageview();
         </script>
     </body>
 </html>
