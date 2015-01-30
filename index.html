@@ -57,7 +57,10 @@
             ga('create', 'UA-43969265-1', 'auto', {'allowLinker': true});
             ga('require', 'linker');
             ga('linker:autoLink', ['cafehopkl.com'] );
-            ga('send', 'pageview');
+            ga('send', 'pageview', {
+              'page': window.location.href ,
+            });
+            console.log('ga-index')
         </script>
     </body>
 </html>

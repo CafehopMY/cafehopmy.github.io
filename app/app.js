@@ -67,6 +67,16 @@ angular.module('cafehopApp').run(['$rootScope', function($rootScope){
     else{
  			window.document.title = 'Cafehop MY';
     }
+    // If landed from within app (not new page load) and is not redirect from original / to /# link
+    if(previousRoute && previousRoute.redirectTo != "/"){
+    	console.log(previousRoute.redirectTo)
+	    // Log GA event
+	    ga('send', 'pageview', {
+	      'page': window.location.href ,
+	    });
+
+	    console.log('ga-routechange')
+    }
  	});
 }]);
 
