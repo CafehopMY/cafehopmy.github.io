@@ -69,7 +69,6 @@ angular.module('cafehopApp').run(['$rootScope', function($rootScope){
     }
     // If landed from within app (not new page load) and is not redirect from original / to /# link
     if(previousRoute && previousRoute.redirectTo != "/"){
-    	console.log(previousRoute.redirectTo)
 	    // Log GA event
 	    gaSendSPAPageview();
     }

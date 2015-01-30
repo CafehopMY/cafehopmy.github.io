@@ -14,8 +14,6 @@ angular.module('cafehopApp.directives').directive('advertisements',['$http', fun
 
             $scope.adClick = function(e){
                 var adId = e.target.id;
-                console.log(adId);
-
                 ga('send', 'event', 'advertisements', 'click', adId, 1);
             }
         }
