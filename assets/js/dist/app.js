@@ -223,8 +223,8 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
     // when user selects new location, update marker and trigger callbacks
     $scope.onUserSelectNewLocation = function(newValue, oldValue){
-        console.log('update details')
         if($scope.user.location.details.geometry){
+            console.log('update details')
             var ll =  $scope.user.location.details.geometry.location;
 
             if($scope.user.location.updateMarkerOnGeolocation){
@@ -292,7 +292,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
     $scope.placeDefaultUser = function(marker){
         marker.coords = $scope.mapDefaults.center;
         var latlng = new google.maps.LatLng($scope.mapDefaults.center.latitude, $scope.mapDefaults.center.longitude);
-        $scope.geolocateUser(latlng);
+        $scope.geolocateUser(latlng, false);
         $scope.instance.panTo(latlng);
     }
 
@@ -310,13 +310,12 @@ angular.module('cafehopApp.controllers').controller('MapController',
             $scope.userMarker.coords.longitude = pos.coords.longitude;
             var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
             $scope.onUserMarkerPlaced(latlng);    
-            $scope.user.location.updateMarkerOnGeolocation = false;
-            console.log('set updateMarker to false');
-            $scope.geolocateUser(latlng);
+            $scope.geolocateUser(latlng, false);
        }
 
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(geolocationSuccess, null, geolocationOptions);
+            return true;
         }
     }
 
@@ -327,7 +326,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
 
     // Geolocate address using Places API
-    $scope.geolocateUser = function(ll){
+    $scope.geolocateUser = function(ll, updateMarker){
         var service = new google.maps.places.PlacesService($scope.instance);
         service.nearbySearch({
             location: ll,
@@ -335,6 +334,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         }, function(results, status){
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 $scope.cannotFindUser = false;
+                $scope.user.location.updateMarkerOnGeolocation = updateMarker;
                 $scope.user.location.details = results[0];
                 $scope.user.location.name = results[0].name;
             }
@@ -385,7 +385,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
                 map: $scope.instance,
                 llCallback: function(ll){
                     $scope.user.location.updateMarkerOnGeolocation = false;
-                    $scope.geolocateUser(ll);
+                    $scope.geolocateUser(ll, true);
                     $scope.getCafes(ll);
                 },
                 showWindow: $scope.setWindowMarker,
