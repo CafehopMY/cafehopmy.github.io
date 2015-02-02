@@ -52,8 +52,8 @@ angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function
 		});
 
 		// Enable CORS
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
 }]);
 
@@ -61,8 +61,8 @@ angular.module('cafehopApp').run(['$rootScope', function($rootScope){
     // Set title based on route
     $rootScope.$on("$routeChangeSuccess", function(event, currentRoute, previousRoute) {
 
-    if(currentRoute){
- 			window.document.title = (currentRoute.title || "") + ' | Cafehop MY';
+    if(currentRoute && currentRoute.title){
+ 			window.document.title = (currentRoute.title) + ' | Cafehop MY';
     }
     else{
  			window.document.title = 'Cafehop MY';
@@ -324,8 +324,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
     // Geolocate address using Places API
     $scope.geolocateUser = function(ll, updateMarker){
-        var service = new google.maps.places.PlacesService($scope.instance);
-        service.nearbySearch({
+        $scope.PlacesService.nearbySearch({
             location: ll,
             radius: 1000
         }, function(results, status){
@@ -348,6 +347,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.initialized = true;
 
         $scope.instance = map;
+        $scope.PlacesService = new google.maps.places.PlacesService($scope.instance);
         $scope.$apply(function(){
             // Create user marker
             $scope.userMarker = {

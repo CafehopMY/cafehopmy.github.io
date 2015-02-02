@@ -52,8 +52,8 @@ angular.module('cafehopApp').config(['$routeProvider', '$httpProvider', function
 		});
 
 		// Enable CORS
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
 }]);
 
@@ -61,8 +61,8 @@ angular.module('cafehopApp').run(['$rootScope', function($rootScope){
     // Set title based on route
     $rootScope.$on("$routeChangeSuccess", function(event, currentRoute, previousRoute) {
 
-    if(currentRoute){
- 			window.document.title = (currentRoute.title || "") + ' | Cafehop MY';
+    if(currentRoute && currentRoute.title){
+ 			window.document.title = (currentRoute.title) + ' | Cafehop MY';
     }
     else{
  			window.document.title = 'Cafehop MY';

@@ -148,8 +148,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
     // Geolocate address using Places API
     $scope.geolocateUser = function(ll, updateMarker){
-        var service = new google.maps.places.PlacesService($scope.instance);
-        service.nearbySearch({
+        $scope.PlacesService.nearbySearch({
             location: ll,
             radius: 1000
         }, function(results, status){
@@ -172,6 +171,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.initialized = true;
 
         $scope.instance = map;
+        $scope.PlacesService = new google.maps.places.PlacesService($scope.instance);
         $scope.$apply(function(){
             // Create user marker
             $scope.userMarker = {
