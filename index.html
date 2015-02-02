@@ -60,9 +60,9 @@
             
             function gaSendSPAPageview(){
                 var pathWithHash = window.location.pathname + window.location.hash;
-                // ga('send', 'pageview', {
-                //   'page':  pathWithHash,
-                // });
+                ga('send', 'pageview', {
+                  'page':  pathWithHash,
+                });
             }
             gaSendSPAPageview();
         </script>

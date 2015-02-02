@@ -224,18 +224,15 @@ angular.module('cafehopApp.controllers').controller('MapController',
     // when user selects new location, update marker and trigger callbacks
     $scope.onUserSelectNewLocation = function(newValue, oldValue){
         if($scope.user.location.details.geometry){
-            console.log('update details')
             var ll =  $scope.user.location.details.geometry.location;
 
             if($scope.user.location.updateMarkerOnGeolocation){
-                console.log('update')
                 $scope.userMarker.coords = {
                     latitude: ll.lat(),
                     longitude: ll.lng()
                 }
             }
             else{
-                console.log('was false, update to true')
                 $scope.user.location.updateMarkerOnGeolocation = true;
             }
             $scope.onUserMarkerPlaced(ll);
