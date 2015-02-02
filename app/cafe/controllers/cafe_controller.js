@@ -60,6 +60,13 @@ angular.module('cafehopApp.controllers').controller('CafeController', ['$scope',
         return 'Closed';
     }
 
+    $scope.openToday = function(cafe){
+        if($scope.todaysHours(cafe) != 'Closed'){
+            return true;
+        }
+        return false;
+    }
+
 
     CafeService.getCafe({
         id: cafeId,
