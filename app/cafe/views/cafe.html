@@ -35,9 +35,9 @@
                                         </a>
                                     </span>
                                     <ul ng-show="showHours" class="cafe-hours">
-                                        <li ng-repeat="p in cafe.openingHours.periods">
-                                            <span>{{constants.daysInWeek[p.day]}}</span>
-                                            <span>{{p.time}}</span>
+                                        <li ng-repeat="(d,p) in getPeriods(cafe)">
+                                            <span>{{constants.daysInWeek[d]}}</span>
+                                            <span>{{p}}</span>
                                         </li>
                                     </ul>
                                 </div>
