@@ -45,23 +45,28 @@ angular.module('cafehopApp.controllers').controller('MapController',
         }
     }
 
-    $scope.$watch('user.location.details', function(newValue, oldValue){
-        // If user selects new location,
+    // when user selects new location, update marker and trigger callbacks
+    $scope.onUserSelectNewLocation = function(newValue, oldValue){
+        console.log('update details')
         if($scope.user.location.details.geometry){
             var ll =  $scope.user.location.details.geometry.location;
 
             if($scope.user.location.updateMarkerOnGeolocation){
+                console.log('update')
                 $scope.userMarker.coords = {
                     latitude: ll.lat(),
                     longitude: ll.lng()
                 }
             }
             else{
+                console.log('was false, update to true')
                 $scope.user.location.updateMarkerOnGeolocation = true;
             }
             $scope.onUserMarkerPlaced(ll);
         }
-    }, true);
+    }
+
+    $scope.$watch('user.location.details', $scope.onUserSelectNewLocation, true);
 
     $scope.showUserLocationInput = function(){
         $scope.userLocationInput.live = true;
@@ -98,10 +103,12 @@ angular.module('cafehopApp.controllers').controller('MapController',
     }
 
     $scope.panToUser = function(){
-        var user =  $scope.findMarker($scope.userMarker.idKey);
-        if(user){
-            var ll = user.getPosition();
-            $scope.instance.panTo(ll);
+        if($scope.userMarker){
+            var user =  $scope.findMarker($scope.userMarker.idKey);
+            if(user){
+                var ll = user.getPosition();
+                $scope.instance.panTo(ll);
+            }
         }
     }
 
@@ -113,17 +120,27 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.instance.panTo(latlng);
     }
 
+    // Get user's current position
     $scope.getUserLocation = function(){
         $scope.panToUser();
 
+        var geolocationOptions = {
+            enableHighAccuracy: true,
+        }
+
+        var geolocationSuccess = function(pos){
+            $scope.loadingCafes = true;
+            $scope.userMarker.coords.latitude = pos.coords.latitude;
+            $scope.userMarker.coords.longitude = pos.coords.longitude;
+            var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+            $scope.onUserMarkerPlaced(latlng);    
+            $scope.user.location.updateMarkerOnGeolocation = false;
+            console.log('set updateMarker to false');
+            $scope.geolocateUser(latlng);
+       }
+
         if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(function(pos){
-                $scope.loadingCafes = true;
-                $scope.userMarker.coords = pos.coords;
-                var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-                $scope.onUserMarkerPlaced(latlng);                 
-                $scope.geolocateUser(latlng);
-           });
+            navigator.geolocation.getCurrentPosition(geolocationSuccess, null, geolocationOptions);
         }
     }
 
@@ -131,6 +148,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $scope.instance.panTo(latlng);
         $scope.getCafes(latlng);
     }
+
 
     // Geolocate address using Places API
     $scope.geolocateUser = function(ll){
@@ -221,7 +239,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
             },
             success: successCallback,
             ll: llString
-        })
+        });
     }
 
     $scope.map = {
