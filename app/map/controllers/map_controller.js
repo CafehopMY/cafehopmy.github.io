@@ -228,6 +228,9 @@ angular.module('cafehopApp.controllers').controller('MapController',
         var successCallback = function(cafes){
             $scope.loadingCafes = false;
             $scope.addMarkers(cafes);
+
+            // Scroll to top of list
+            $('.cafe-list').scrollTop(0);
         }
 
         $scope.mapCafes.getCafes({
