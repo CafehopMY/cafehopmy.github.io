@@ -1992,6 +1992,11 @@ div#links-to-parts-of-site {
     position: absolute !important;
     left: -1000px; } }
 
+@media (max-width: 768px) {
+  .error-map {
+    padding: 6px 12px;
+    margin-bottom: 12px; } }
+
 .cafe section {
   padding-top: 48px !important; }
   @media (max-width: 768px) {

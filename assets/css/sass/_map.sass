@@ -206,7 +206,13 @@
 
 .map-view, .list-view 
     left: 0px
+
 .hide-view 
     @media (max-width: 767px)
         position: absolute !important
         left: -1000px
+
+.error-map
+    @include breakpoint($sm-width)
+        padding: $space/2 $space
+        margin-bottom: $space

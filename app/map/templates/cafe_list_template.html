@@ -1,5 +1,8 @@
-<div ng-show="cafes.length < 1 && !loadingCafes || cannotFindUser">
-    Sorry, we couldn't find any cafes or your location. Try another location perhaps?
+<div ng-show="cafes.length < 1 && !loadingCafes" class="error-map error-cafes">
+    Sorry, we couldn't find any cafes or your location. Try a cafe hotspot like <strong>Kuala Lumpur</strong> perhaps?
+</div>
+<div ng-show="cannotFindUser" class="error-map error-location">
+    Sorry, we couldn't find your location. Please try turning on location services for your device.
 </div>
 <ul class="list-unstyled">
     <li ng-mouseover="triggerMarkerMouseover(cafe.idKey)" ng-mouseleave="triggerMarkerMouseout(cafe.idKey)"  ng-class="{cafe: true, closed: cafe.venue.hours && !cafe.venue.hours.isOpen}" ng-repeat="cafe in cafes" id="{{cafe.idKey}}">

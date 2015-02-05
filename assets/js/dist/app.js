@@ -337,7 +337,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
         var geolocationOptions = {
             enableHighAccuracy: true,
-        }
+        }  
 
         var geolocationSuccess = function(pos){
             $scope.loadingCafes = true;
@@ -346,10 +346,15 @@ angular.module('cafehopApp.controllers').controller('MapController',
             var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
             $scope.onUserMarkerPlaced(latlng);    
             $scope.geolocateUser(latlng, false);
+            $scope.cannotFindUser = false;
+       }
+
+       var geolocationError = function(err){
+            $scope.cannotFindUser = true;
        }
 
         if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(geolocationSuccess, null, geolocationOptions);
+            navigator.geolocation.watchPosition(geolocationSuccess, geolocationError, geolocationOptions);
             return true;
         }
     }

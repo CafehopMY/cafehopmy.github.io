@@ -60,7 +60,7 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            files: ['assets/css/*', 'app/**'],
+            files: ['assets/css/*', 'app/**/*.js'],
             tasks: ['concat', 'cssmin'],
             options: {
                 livereload: {
