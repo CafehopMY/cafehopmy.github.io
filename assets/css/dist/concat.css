@@ -1995,7 +1995,7 @@ div#links-to-parts-of-site {
 @media (max-width: 768px) {
   .error-map {
     padding: 6px 12px;
-    margin-bottom: 12px; } }
+    margin-bottom: 6px; } }
 
 .cafe section {
   padding-top: 48px !important; }
