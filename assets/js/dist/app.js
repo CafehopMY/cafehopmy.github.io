@@ -355,7 +355,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
        }
 
         if(navigator.geolocation){
-            navigator.geolocation.watchPosition(geolocationSuccess, geolocationError, geolocationOptions);
+            navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, geolocationOptions);
             return true;
         }
     }
