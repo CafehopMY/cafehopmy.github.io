@@ -337,6 +337,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
         var geolocationOptions = {
             enableHighAccuracy: true,
+            maximumAge: 5000
         }  
 
         var geolocationSuccess = function(pos){
