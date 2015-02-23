@@ -535,15 +535,22 @@ div#links-to-parts-of-site {
       top: 12px; } }
 
 .location-display {
-  display: table;
-  width: 100%; }
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center; }
   .location-display > div {
-    display: table-cell; }
+    display: inline-block; }
     @media (max-width: 768px) {
       .location-display > div {
         vertical-align: middle; } }
     .location-display > div:first-child {
-      width: 100%; }
+      -webkit-flex: 1;
+      flex: 1;
+      padding: 6px 0; }
+    .location-display > div:nth-child(2) {
+      float: right; }
 
 .location-input {
   display: table;
@@ -567,7 +574,8 @@ div#links-to-parts-of-site {
   .mobile-controls .mobile-controls-search {
     -webkit-flex: 1;
     flex: 1;
-    padding: 6px 12px; }
+    padding: 6px;
+    padding-left: 12px; }
     .mobile-controls .mobile-controls-search .location-input input {
       margin: 12px 0; }
     .mobile-controls .mobile-controls-search .location-input a {
