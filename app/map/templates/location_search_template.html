@@ -3,7 +3,7 @@
             <span ng-show="!loadingCafes" ng-bind="cafes.length"></span>
             <span ng-show="loadingCafes">Loading</span>
             cafes around
-            <a class="location" ng-click="showUserLocationInput()" href="" ng-bind="user.location.name">
+            <a class="location" ng-click="showUserLocationInput()" href="" ng-bind="user.location.name" ng-show="!userLocationInput.live">
             </a>
         </div>
 
@@ -14,7 +14,7 @@
     </div>
     <div class="location-input" ng-show="userLocationInput.live">
         <input id="search-location" ng-model="user.location.name" details="user.location.details" type="text" ng-autocomplete options="userLocationInput.options" />
-        <a ng-click="hideUserLocationInput()" href="" >
+        <a ng-click="clearUserLocationInput()" href="" >
             <i class="fa fa-times"></i>
         </a>
     </div>

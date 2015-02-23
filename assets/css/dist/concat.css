@@ -1822,7 +1822,7 @@ div#links-to-parts-of-site {
     font-size: 14px;
     border: 1px solid #90120e;
     padding: 6px;
-    margin-top: 12px; }
+    margin: 12px 0; }
   .location-input a {
     display: table-cell;
     color: #90120e;

@@ -355,6 +355,10 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
     }
 
+    $scope.clearUserLocationInput = function(){
+        $scope.user.location.name = "";
+    }
+
     $scope.init = function(){
         $scope.getCafes();
     }
