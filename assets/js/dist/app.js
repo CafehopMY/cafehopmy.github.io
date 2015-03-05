@@ -62,10 +62,10 @@ angular.module('cafehopApp').run(['$rootScope', function($rootScope){
     $rootScope.$on("$routeChangeSuccess", function(event, currentRoute, previousRoute) {
 
     if(currentRoute && currentRoute.title){
- 			window.document.title = (currentRoute.title) + ' | Cafehop MY';
+ 			window.document.title = (currentRoute.title) + ' | CafeHop MY';
     }
     else{
- 			window.document.title = 'Cafehop MY';
+ 			window.document.title = 'CafeHop MY';
     }
     // If landed from within app (not new page load) and is not redirect from original / to /# link
     if(previousRoute && previousRoute.redirectTo != "/"){
@@ -337,6 +337,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
 
         var geolocationOptions = {
             enableHighAccuracy: true,
+            maximumAge: 5000
         }  
 
         var geolocationSuccess = function(pos){
@@ -354,7 +355,7 @@ angular.module('cafehopApp.controllers').controller('MapController',
        }
 
         if(navigator.geolocation){
-            navigator.geolocation.watchPosition(geolocationSuccess, geolocationError, geolocationOptions);
+            navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, geolocationOptions);
             return true;
         }
     }
@@ -566,6 +567,10 @@ angular.module('cafehopApp.controllers').controller('MapController',
         $('.list-view-btn').addClass('active');
         $('.map-view-btn').removeClass('active');
 
+    }
+
+    $scope.clearUserLocationInput = function(){
+        $scope.user.location.name = "";
     }
 
     $scope.init = function(){

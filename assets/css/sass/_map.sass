@@ -40,14 +40,19 @@
         top: $space 
 
 .location-display
-    display: table
     width: 100%
+    @include display-flex
+    @include align-items(center)
     > div
-        display: table-cell
+        display: inline-block
         @include breakpoint($sm-width)
             vertical-align: middle
         &:first-child 
-            width: 100%
+            @include flex(1)
+            @include breakpoint($sm-width)
+            padding: $space/2 0
+        &:nth-child(2)
+            float: right
 
 .location-input
     display: table
@@ -58,7 +63,7 @@
         font-size: 14px
         border: 1px solid $red
         padding: $space/2
-        margin-top: $space
+        margin: $space 0
     a
         display: table-cell
         color: $red
@@ -69,7 +74,8 @@
     border-bottom: 1px solid $dark-red
     .mobile-controls-search
         @include flex(1)
-        padding: $space/2 $space
+        padding: $space/2
+        padding-left: $space
         .location-input
             input 
                 margin: $space 0
