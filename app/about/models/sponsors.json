@@ -1,44 +1,20 @@
 {
-  "sponsors":
-  [
-    {
-      "name" : "A Coffee Company",
-      "url" : "http://example.com"
-    },
-    {
-      "name" : "Coffee 'n' Cakes",
-      "url" : "http://example.com"
-    },
-    {
-      "name" : "Your Coffee People",
-      "url" : "http://example.com"
-    },
-    {
-      "name" : "Kopitiam!",
-      "url" : "http://example.com"
-    },    {
-      "name" : "Local Kopi Place",
-      "url" : "http://example.com"
-    },
-    {
-      "name" : "Coffee 'n' Cakes",
-      "url" : "http://example.com"
-    },
-    {
-      "name" : "Espresso Central",
-      "url" : "http://example.com"
-    },
-    {
-      "name" : "Food + Stuff Cafe",
-      "url" : "http://example.com"
-    },
-    {
-      "name" : "Coffeetastic",
-      "url" : "http://example.com"
-    },
-    {
-      "name" : "Bittersweet",
-      "url" : "http://example.com"
-    }
+  "sponsors": [
+      {
+          "name": "Coffex Coffee MY",
+          "url" : "http://www.coffexcoffee.com/"
+      },{
+          "name": "Global Harvest Coffee",
+          "url" : "http://globalharvestcoffee.com//"
+      },{
+          "name": "Sprezzatura Coffee",
+          "url" : "http://www.sprezzatura.my/"
+      },{
+          "name": "The Roast Things",
+          "url" : "https://www.facebook.com/theroastthings.my"
+      },{
+          "name": "Q Cup Coffee Lab",
+          "url" : "http://www.qcup.com.my/"
+      }
   ]
 }

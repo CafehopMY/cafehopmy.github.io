@@ -1268,8 +1268,8 @@ table {
 
 @font-face {
   font-family: "Matchbook";
-  src: url('fonts/Matchbook.eot?1413988642');
-  src: url('fonts/Matchbook.eot?&1413988642#iefix') format('embedded-opentype'), url('fonts/Matchbook.eot?1413988642') format('embedded-opentype'), url('fonts/Matchbook.ttf?1413988642') format('truetype');
+  src: url('fonts/Matchbook.eot?1425543193');
+  src: url('fonts/Matchbook.eot?&1425543193#iefix') format('embedded-opentype'), url('fonts/Matchbook.eot?1425543193') format('embedded-opentype'), url('fonts/Matchbook.ttf?1425543193') format('truetype');
   font-weight: normal; }
 .margin-l {
   margin-left: 12px; }
@@ -1553,9 +1553,12 @@ footer {
     height: 206px;
     background-color: transparent;
     border: 1px solid #90120e; }
+    .ad .sponsors p {
+      font-size: 15px;
+      margin-top: 6px; }
     .ad .sponsors .sponsor-list {
       padding: 0px;
-      font-size: 16px;
+      font-size: 15px;
       color: #90120e; }
       .ad .sponsors .sponsor-list a {
         color: #90120e; }
