@@ -1,20 +1,24 @@
 {
   "sponsors": [
       {
-          "name": "Coffex Coffee MY",
-          "url" : "http://www.coffexcoffee.com/"
-      },{
-          "name": "Global Harvest Coffee",
-          "url" : "http://globalharvestcoffee.com//"
-      },{
           "name": "Sprezzatura Coffee",
           "url" : "http://www.sprezzatura.my/"
-      },{
+      },
+      {
+          "name": "Global Harvest Coffee",
+          "url" : "http://globalharvestcoffee.com//"
+      },
+      {
           "name": "The Roast Things",
           "url" : "https://www.facebook.com/theroastthings.my"
-      },{
+      },
+      {
           "name": "Q Cup Coffee Lab",
           "url" : "http://www.qcup.com.my/"
+      },
+      {
+          "name": "Coffex Coffee MY",
+          "url" : "http://www.coffexcoffee.com/"
       }
   ]
 }

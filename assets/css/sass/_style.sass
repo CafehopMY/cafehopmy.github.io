@@ -151,9 +151,6 @@ footer
             color: $light-orange
     div#footer-wrapper
         margin: 0 auto
-        div#sponsors 
-            float: right
-            width: 70%
         div#social-media-share
             float: left
             width: 30%
@@ -175,25 +172,6 @@ footer
                         display: inline-block
                     span    
                         line-height: 18px
-    ul#sponsor_list
-        @include clear-spacing
-        width: 100%
-        display: table
-        li 
-            display: inline-block
-            vertical-align: middle
-            max-width: $sponsor_width
-            clear: both
-            margin-right: $space * 2
-            img
-                margin: 0 auto
-                margin-bottom: $space
-                max-width: $sponsor_width
-                display: block
-            span 
-                display: block
-                font-size: $small-font
-
     h1, h2, h3, p, a 
         color: $orange
     a 
@@ -224,8 +202,9 @@ footer
     color: $red
     margin: $space
     .sponsors 
-        padding: $space
-        height: 206px
+        padding: $space*1.5 $space
+        padding-top: $space
+        height: auto
         background-color: transparent
         border: 1px solid $red
         p 
@@ -236,6 +215,7 @@ footer
             padding: 0px
             font-size: 15px
             color: $red
+            margin-top: $space/2
             a 
                 color: $red
                 // font-weight: normal 

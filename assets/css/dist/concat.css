@@ -1456,9 +1456,6 @@ footer {
     color: #FFC496; }
   footer div#footer-wrapper {
     margin: 0 auto; }
-    footer div#footer-wrapper div#sponsors {
-      float: right;
-      width: 70%; }
     footer div#footer-wrapper div#social-media-share {
       float: left;
       width: 30%; }
@@ -1484,25 +1481,6 @@ footer {
             display: inline-block; }
           footer div#footer-wrapper div#social-media-share ul a.share-button span {
             line-height: 18px; }
-  footer ul#sponsor_list {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: table; }
-    footer ul#sponsor_list li {
-      display: inline-block;
-      vertical-align: middle;
-      max-width: 100px;
-      clear: both;
-      margin-right: 24px; }
-      footer ul#sponsor_list li img {
-        margin: 0 auto;
-        margin-bottom: 12px;
-        max-width: 100px;
-        display: block; }
-      footer ul#sponsor_list li span {
-        display: block;
-        font-size: 0.8em; }
   footer h1, footer h2, footer h3, footer p, footer a {
     color: #ec6338; }
   footer a {
@@ -1549,8 +1527,9 @@ footer {
     .ad > div img {
       max-width: 100%; }
   .ad .sponsors {
-    padding: 12px;
-    height: 206px;
+    padding: 18px 12px;
+    padding-top: 12px;
+    height: auto;
     background-color: transparent;
     border: 1px solid #90120e; }
     .ad .sponsors p {
@@ -1559,7 +1538,8 @@ footer {
     .ad .sponsors .sponsor-list {
       padding: 0px;
       font-size: 15px;
-      color: #90120e; }
+      color: #90120e;
+      margin-top: 6px; }
       .ad .sponsors .sponsor-list a {
         color: #90120e; }
 

@@ -1,15 +1,14 @@
+<div class="sponsors">
+  <strong>Our Sponsors</strong>
+      <div class="sponsor-list">
+      <span ng-repeat="s in sponsors"><a href="{{s.url}}" target="_blank">{{s.name}}</a> <span ng-if="!$last">|</span> </span>
+  </div>
+  <!-- <p>Wanna advertise with us? Drop us an email at cafehopkl@gmail.com.</p> -->
+</div>
 <div class="advertisement">
   <a href="http://auresso.com.my" target="_blank" ><img id="ad-auresso-01" src="assets/images/ads/auresso-01.png" title="Auresso Promo Code" ng-click="adClick($event)"/></a>
 </div>
 
 <div class="advertisement">
   <a href="http://blaqcoffee.com" target="_blank"><img id="ad-blaq-01" src="assets/images/ads/blaq-01.jpg" title="Blaq Coffee" ng-click="adClick($event)"/></a>
-</div>
-
-<div class="sponsors">
-  <strong>Our Sponsors</strong>
-      <div class="sponsor-list">
-      <span ng-repeat="s in sponsors"><a href="{{s.url}}" target="_blank">{{s.name}}</a> <span ng-if="!$last">|</span> </span>
-  </div>
-  <p>Wanna advertise with us? Drop us an email at cafehopkl@gmail.com.</p>
 </div>
